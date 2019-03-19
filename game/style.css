@@ -1,0 +1,43 @@
+body{
+	background-image: url(bg.gif);
+	background-position: 0% 0%;
+	background-attachment: fixed;
+	animation: bg 30s infinite linear;
+}
+@keyframes bg{
+	from{background-position: 0px 0px;}
+	to{background-position: -728px -428px;}
+}
+.t-shadow{
+	/*text-shadow: 0 0 2px ;*/
+}
+#title{
+	color: #F48FB1;
+	text-shadow: 1px 1px 0 #c3073f,2px 2px 0 #950740,3px 3px 0 #6f2232;
+	animation: title .2s infinite steps(3);
+}
+
+@keyframes title{
+	from{color:#F48FB1}
+	to{color:white}
+}
+
+a{
+	transition: none !important;
+}
+
+.shadow-solid{
+	box-shadow: 1px 1px #ddd8,-1px -1px #ddd8,2px 2px 0 #c3073f,4px 4px 0 #c3073f,6px 6px 0 #950740;;
+}
+
+.game-pic{
+	background-position-x:0%;
+}
+.game-wrap:hover .game-pic{
+	animation: pic 1s steps(4) infinite;
+}
+
+@keyframes pic{
+	from{background-position-x: 0%}
+	to{background-position-x: 133.33%}
+}

@@ -1,0 +1,64 @@
+<html>
+<head></head>
+<link rel="stylesheet" type="text/css" href="style.css">
+<link rel="stylesheet" type="text/css" href="./font/style.css">
+<body>
+    <start><start>
+    <div id='game'>
+        <road id='run'>
+            <enemy></enemy>
+            <enemy></enemy>
+            <enemy></enemy>
+            <enemy></enemy>
+            <enemy></enemy>
+            <enemy></enemy>
+            <enemy></enemy>
+            <enemy></enemy>
+            <enemy></enemy>
+            <enemy></enemy>
+            <enemy></enemy>
+            <enemy></enemy>
+            <enemy></enemy>
+            <enemy></enemy>
+            <enemy></enemy>
+            <enemy></enemy>
+            <car id='player'></car>
+        </road>
+        <left>
+            <score>
+            </score>
+            <score1 id='scoreboard'>
+                <h2 id='time'>Time<h2>
+                <h1 id='score'></h1>
+                <h2 id='br'>Brain</h2>
+                <slow></slow>
+            </score1>
+            <score>
+            </score>
+            <h2 id='Dura'>Direction</h2>
+            <h2 id='brain'>Brainbreak</h2>
+            <wasd></wasd>
+            <arrow></arrow>
+            <space></space>
+            <test>
+                <gametitle>EndlessRoad</gametitle>
+                <play onclick='rungame()'>play</play>
+            </test>
+        </left>
+        <p id='inspd'>increase speed</p>
+        <div id='gameover'>
+            <h1 id='gametext1'>time</h1>
+            <h1 id='gamescore'></h1>
+            <h1 id='gametext2' onclick='rungame()' >Play again</h1>
+        </div>
+    </div>
+<audio id="bgm" preload="auto" loop>
+<source src="sound/bgm.mp3" type="audio/ogg">
+</audio>
+<audio id="boom" preload="auto">
+<source src="sound/ex.wav" type="audio/ogg">
+</audio>
+<script type="text/javascript" src="game.js"></script>
+</body>
+</html>
+

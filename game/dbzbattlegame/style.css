@@ -1,0 +1,182 @@
+body {
+  font-family: 'Lilita One', cursive;
+  margin: 0;
+  background: url(background.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  cursor: url(cursor.png), auto;
+}
+div {
+  margin:0;
+}
+button {
+  font-family: 'Lilita One', cursive;
+}
+.box {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+}
+.text {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.score {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: center;
+}
+
+.button:hover {
+  background-color: hsl(49, 100%, 51%);
+  color: hsl(359, 82%, 52%);
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+.button {
+  background-color: hsl(359, 82%, 52%);
+  display: inline-block;
+  border-radius: 4px;
+  color: hsl(49, 100%, 51%);
+  text-align: center;
+  font-size: 18px;
+  border: none;
+  padding: 20px;
+  width: 200px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+  box-shadow: 3px 3px #888888;
+}
+.btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  background-color: hsl(359, 82%, 52%);
+  color: hsl(49, 100%, 51%);
+  font-size: 16px;
+  padding: 16px 30px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  text-align: center;
+}
+.btn2 {
+  position: absolute;
+  top: 62%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  background-color: hsl(359, 82%, 52%);
+  color: hsl(49, 100%, 51%);
+  font-size: 16px;
+  padding: 16px 30px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  text-align: center;
+}
+.button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.button span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.button:hover span {
+  padding-right: 25px;
+}
+
+.button:hover span:after {
+  opacity: 1;
+  right: 0;
+
+}
+.play{
+  position: relative;
+  width: 100%;
+  max-width:
+}
+.play #play {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  z-index: 1;
+}
+#box1 {
+  width: 25vw;
+  height: 62vh;
+  background-image: url(1-stand2.gif);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+#box2 {
+  width: 25vw;
+  height: 65vh;
+  background-image: url(2-stand.gif);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  -moz-transform: scaleX(-1);
+  -o-transform: scaleX(-1);
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
+  filter: FlipH;
+  -ms-filter: "FlipH";
+}
+#sign {
+  width: 30vw;
+  height: 70vh;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+#theTime{
+  font-size: 60px;
+}
+#play{
+  font-size: 20px;
+}
+#Howtoplay{
+  font-size: 20px;
+}
+#subTitle{
+  font-size: 30px;
+}
+#blood1 {
+  height: 20px;
+  width: 0%;
+  background-image: linear-gradient(to right, #F85B1A, red);
+  transition: .5s;
+}
+#blood2 {
+  height: 20px;
+  width: 0%;
+  background-image: linear-gradient(to left, #181463, blue);
+  transition: .5s
+}
+.boxblood {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: column;
+  justify-content: center;
+  width: 35vw;
+}

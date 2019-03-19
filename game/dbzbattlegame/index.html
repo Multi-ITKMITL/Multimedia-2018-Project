@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dragon Ball Battle Game</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Orbitron" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lilita+One" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="Goku.ico">
+</head>
+<body>
+    <audio id="hit" preload="auto"><source src="fight.wav" type="audio/ogg"></audio>
+    <audio id="hit1" preload="auto"><source src="fight1.wav" type="audio/ogg"></audio>
+    <audio id="bgm" preload="auto" loop><source src="bgm.mp3" type="audio/ogg"></audio>
+    <audio id="miss" preload="auto"><source src="flash.mp3" type="audio/ogg"></audio>
+    <div class="play">
+        <button id="play" class='btn button' href='#!' onclick='ready2()'><span>PLAY</span></button>
+        <button id="Howtoplay" class='btn2 button' href='#!' onclick='Howtoplay()'><span>HOW TO PLAY</span></button>
+        <div class="score">
+            <h1 style="color: hsl(49, 100%, 51%)"><span id="theTime">Dragon Ball Battle Game</span></h1>
+            <h2 style="color: hsl(359, 82%, 52%)"><span id="subTitle">loading...</span></h2>
+        </div>
+        <div class="text">
+            <h1 style="color: #F85B1A">GOKU : <span id="score1"></span></h2>
+            <div class="boxblood">
+                <div id="blood1"></div>
+            </div>
+            <h1>TIME: <span id="round">0</span></h2>
+            <div class="boxblood">
+                <div id="blood2"></div>
+            </div>
+            <h1 style="color: #181463"> : VEGETA<span id="score2"></span></h2>
+        </div>
+        <div class="box">
+            <div id="box1"></div>
+            <div id="sign"></div>
+            <div id="box2"></div>
+
+        </div>
+    </div>
+<script type="text/javascript" src="script.js"></script>
+</body>
+</html>

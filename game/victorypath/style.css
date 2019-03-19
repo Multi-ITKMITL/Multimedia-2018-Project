@@ -1,0 +1,173 @@
+body{
+	background-color: black;
+	margin: 0px;
+    overflow-x: hidden;
+}
+a {
+    text-decoration: none;
+}
+a.butt {
+    border-radius: 10%;
+    border: 4px solid green;
+    display: inline-block;
+    width: 200px;
+    height: 40px;
+    margin-top: 15px;
+    margin-left: 20px;
+    font: 1.5em Open Sans, Impact;
+    color: #0c0;
+    padding-top: 15px;
+    transition: 0.5s;
+}
+a.butt:hover {
+    border-radius: 5%;
+    border: 5px solid green;
+    border-image-source: linear-gradient(to left, #00C853, #B2FF59);
+    border-image-slice: 5;
+    display: inline-block;
+    transform: scale(1.1);
+    margin-left: 20px;
+    font: 1.75 em Open Sans, Impact;
+    color: #0F6;
+    padding-top: 15px;
+}
+div.boxE {
+    display: inline-block;
+    background-color: #222;
+    width: 100px;
+    height: 100px;
+    margin: 5px;
+    border-radius: 100%;
+    transition: .2s;
+}
+div.boxE:active {
+    width: 85px;
+    height: 85px;
+}
+div.boxN {
+    display: inline-block;
+    background-color: #222;
+    width: 75px;
+    height: 75px;
+    margin: 5px;
+    border-radius: 100%;
+    transition: .2s;
+}
+div.boxN:active {
+    width: 60px;
+    height: 60px;
+}
+div.boxH {
+    display: inline-block;
+    background-color: #222;
+    width: 55px;
+    height: 55px;
+    margin: 5px;
+    border-radius: 100%;
+    transition: .2s;
+}
+div.boxH:active {
+    width: 40px;
+    height: 40px;
+}
+div#mode {
+    /*background-color: yellow;*/
+    width: 6em;
+    height: 2em;
+    border-radius: 10px;
+    border: 2px solid white;
+    margin-top: 10px;
+    padding-top: 12px;
+    font: 1em Open Sans, Impact;
+    color: white;
+    transition: 0.1s;
+}
+div#mode:hover {
+    transform: scale(1.1);
+}
+html {
+    background: black;
+}
+audio {
+    display: none;
+}
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:800);
+h1 {
+    font: 2.8em Open Sans, Impact;
+    color: white;
+    text-transform: uppercase;
+}
+h2 {
+    font: 2em Open Sans, Impact;
+    color: white;
+}
+h2.b {
+    font: 1em Open Sans, Impact;
+    color: white;
+}
+img.button {
+    position: relative;
+    width: 50px;
+    height: 50px;
+    transition: 0.1s;
+}
+img.button:hover {
+    width: 53px;
+    height: 53px;
+}
+.modal {
+    display: none;
+    /* Hidden by default */
+    position: fixed;
+    /* Stay in place */
+    z-index: 1;
+    /* Sit on top */
+    padding-top: 250px;
+    /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%;
+    /* Full width */
+    height: 100%;
+    /* Full height */
+    overflow: auto;
+    /* Enable scroll if needed */
+}
+/* Modal Content */
+
+.modal-content {
+    background-color: black;
+    margin: auto;
+    padding: 20px;
+    width: 300px;
+    height: 100px;
+}
+#howto {
+    padding-top: 100px;
+}
+.modal-howto {
+    background-color: black;
+    margin: auto;
+    padding: 10px;
+    width: 70%;
+    height: 80vh;
+}
+/* The Close Button */
+
+.close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+.close:hover, .close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+/*#2fc1ce
+#ffb300
+#ff1280
+#ca8dc9
+#f9ec00
+#6f369d*/

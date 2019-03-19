@@ -1,0 +1,127 @@
+body{
+  font-family: 'Press Start 2P', cursive;
+  background: repeating-linear-gradient(to bottom, #0f0a1e, #0f0a1e 2px, #140e29 2px, #140e29 4px);
+}
+
+canvas{
+  background: repeating-linear-gradient(to bottom, #0f0a1e, #0f0a1e 2px, #140e29 2px, #140e29 4px);
+  display: block;
+  margin: 0 auto;
+  padding-top: 30px;
+  z-index: 0;
+}
+
+h1{
+  z-index: -1;
+  font-size: 4em;
+  color: white;
+  padding-top: 10%;
+  height: 80px;
+  text-align: center;
+  line-height: 40px;
+  letter-spacing: 5px;
+  position: relative;
+  text-shadow: -2px 0 0 #fdff2a, -4px 0 0 #df4a42, 2px 0 0 #91fcfe, 4px 0 0 #4405fc;
+  animation: crt-flicker 10ms infinite;
+  flex: 1;
+}
+
+@keyframes crt-flicker {
+  0% {opacity: 0.85;}
+  100% {opacity: 1;}
+}
+
+h1.selection{
+  background: white;
+}
+
+button.selection{
+  background: white;
+}
+
+p.selection{
+  background: white;
+}
+
+ul.selection{
+  background: white;
+}
+
+button{
+  outline: none;
+  cursor: pointer;
+  font-family: 'Press Start 2P', cursive;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  height: 90px;
+  color: white;
+  background: rgba(0,0,0,0);
+  border: none;
+  width: 100%;
+  text-align: center;
+  margin: auto;
+  font-size: 40px;
+  line-height: 40px;
+  letter-spacing: 4px;
+  position: absolute;
+  z-index: 1;
+  text-shadow: -2px 0 0 #fdff2a, -4px 0 0 #df4a42, 2px 0 0 #91fcfe, 4px 0 0 #4405fc;
+  animation: crt-flicker 10ms infinite;
+  padding: 3rem 2rem;
+  flex: 1;
+}
+
+@keyframes crt-flicker{
+  0%{opacity: 0.85;}
+  100%{opacity: 1;}
+}
+
+p {
+  cursor: pointer;
+  font-family: 'Press Start 2P', cursive;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  height: 50px;
+  color: white;
+  width: 60%;
+  text-align: center;
+  margin: auto;
+  font-size: 18px;
+  line-height: 30px;
+  letter-spacing: 3px;
+  position: absolute;
+  z-index: 1;
+}
+
+ul {
+  text-align: left;
+  position: absolute;
+  top: 20%;
+  left: 20%;
+  color: white;
+  font-size: 18px;
+  line-height: 30px;
+  letter-spacing: 3px;
+}
+#gameoverLabel, #helpLabel, #helpback, #pauseback{
+  top: 70%;
+  left: 1%;
+}
+
+#copyright{
+  top: 105%;
+  left: 2%;
+  }
+
+#help{
+  top: 100%;
+  left: 2%;
+  font-size: 10px;
+  }
+

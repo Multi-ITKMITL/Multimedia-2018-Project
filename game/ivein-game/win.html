@@ -1,0 +1,32 @@
+<!--Winner page -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Ivein Game</title>
+    <link rel="icon" type="image/png" href="img/char3.png">
+    <style type="text/css">
+        body{
+            background: url("img/winner.png") no-repeat center center fixed;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+
+        }
+        .play img{
+        height: 50%;
+        position: fixed;
+        left: 80vh;
+        top: 55vh;
+        z-index: 0;
+        }
+    </style>
+</head>
+<body>
+    <div><audio autoplay loop>
+        <source src="sound/Won.wav" type="audio/wav" volume="-3000">
+    </audio></div>
+    <div class="play">
+        <a href="index.html"><img src="img/again.gif"></a>
+    </div>
+</html>

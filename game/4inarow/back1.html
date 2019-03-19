@@ -1,0 +1,52 @@
+<style type="text/css">
+  body{
+  background: url("howto.gif");
+  background-size: 100%;
+}
+
+.button{
+  padding: 5em;
+  margin-top: 22em;
+  margin-left: 22em;
+  margin-right: 22em;
+}
+
+.button {
+  font-family: 'Press Start 2P', cursive;
+  display: inline-block;
+  padding: 15px 25px;
+  font-size: 24px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  background-color: #E58200;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 9px #FCD6B4;
+}
+
+.button:hover {background-color:#FF5733}
+
+.button:active {
+  background-color: #E58200;
+  box-shadow: 0 5px #FCD6B4;
+  transform: translateY(4px);
+}
+</style>
+
+<script type="text/javascript">
+  function playSound(){
+    document.getElementById('sound').play();
+  }
+</script>
+<body>
+  <audio id="sound" src="sound.mp3"></audio>
+<a href="index(new)moreandmoreandmore.html" style="text-decoration: none"><button class="button" onclick="playSound()">START NOW</button></a>
+<link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
+<iframe src="sound2.mp3" allow="auto" style="display:none" id="iframeAudio">
+  </iframe>
+  <audio autoplay loop>
+<source src="sound2.mp3">
+</body>

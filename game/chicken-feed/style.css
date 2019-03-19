@@ -1,0 +1,255 @@
+html{
+  position: relative;
+  margin: 0%;
+  font-family: 'Raleway', sans-serif;
+  background-size: cover;
+  background-image: url("image/grass.jpg");
+}
+body{
+  margin: 0;
+}
+#farm{
+    margin:0 auto;
+    position: relative;
+    top: 70px;
+    width: 1200px;
+    height: 500px;
+    border-radius: 30px;
+    background: #7b5651;
+    border: 1px black solid;
+}
+#farm[shopchick = "1"]{
+  cursor: url('http://25.media.tumblr.com/tumblr_m7fatdCTUd1rv3zrno1_100.png'),auto;
+}
+#farm[shopchick = "2"]{
+  cursor: url('image/wheat.png'),auto;
+}
+img{
+    display: inline-block;
+    position: absolute;
+    width: 0px;
+    height: 0px;
+}
+img[size = 'c']{
+    width: 180px;
+    height: 140px;
+    transition: top 0.4s, left 0.4s;
+}
+img[size = 'e']{
+  z-index: 1;
+  width: 60px;
+  height: 60px;
+}
+.statusbar{
+  display: inline-block;
+  width:100%;
+  height: 4.1em;
+  background-color:#474747;
+}
+#money{
+  display: inline-block;
+  margin-left: 21.5%;
+  color: white;
+  bottom: 10px;
+  text-align: center;
+}
+#score{
+  display: inline-block;
+  margin-left: 35%;
+  position: static;
+  display: inline-block;
+  text-align: center;
+  color: white;
+}
+.tools {
+   position: fixed;
+   left: 0;
+   bottom: 0;
+   margin: 0 auto;
+   width: 100%;
+   height: 125px;
+   background-color: #474747;
+   color: white;
+   color: black;
+   justify-content: center;
+}
+#gun{
+  position: absolute;
+  bottom: 10px;
+  width: 100px;
+  height: 100px;
+  margin-left: 37%;
+  border-radius: 15px;
+  transition-duration: 0.4s;
+  background: #5f5f5f;
+  border: 4px solid #4CAF50;
+  background-image: url('image/fist.png');
+  background-size: cover;
+  color: white;
+}
+#food{
+  position: absolute;
+  bottom: 10px;
+  width: 100px;
+  height: 100px;
+  margin-left: 47%;
+  border-radius: 15px;
+  transition-duration: 0.4s;
+  background: #5f5f5f;
+  border: 4px solid #4CAF50;
+  background-image: url('image/sack.png');
+  background-size: cover;
+  color: white;
+}
+
+#shop{
+  position: absolute;
+  bottom: 10px;
+  width: 100px;
+  height: 100px;
+  margin-left: 57%;
+  border-radius: 15px;
+  transition-duration: 0.4s;
+  border: 4px solid #4CAF50;
+  background: #5f5f5f;
+  background-image: url('image/chick_flip2.gif');
+  background-size: cover;
+  color: white;
+}
+
+#all{
+  position: absolute;
+  top: 50%;
+  width: 140px;
+  height: 140px;
+  margin-left: 88%;
+  background-size: cover;
+  background-image: url('image/all.png');
+}
+#enemy{
+  height: 185px;
+  cursor: url('http://www.rw-designer.com/cursor-extern.php?id=10674'),auto;
+}
+
+#gun:hover{
+  color: black;
+  cursor: pointer;
+  background-color: white;
+}
+#food:hover{
+  cursor: pointer;
+  color: black;
+  background-color: white;
+}
+#all:hover{
+  cursor: pointer;
+  transform: rotate(-20deg);
+  transition-duration: 0.4s;
+}
+#shop:hover{
+  cursor: pointer;
+  color: black;
+  background-color: white;
+}
+#gunlv{
+  position: absolute;
+  bottom: 65px;
+  left: 1px;
+}
+#gun:active {
+  background-color:#FF9900;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+#food:active {
+  background-color:#FF9900;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+#shop:active {
+  background-color:#FF9900;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+.overlay{
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.7);
+  transition: opacity 500ms;
+  visibility: hidden;
+  opacity: 0;
+}
+.overlay:target {
+  visibility: visible;
+  opacity: 1;
+}
+
+.popup {
+  margin: 70px auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 5px;
+  width: 30%;
+  position: relative;
+  transition: all 5s ease-in-out;
+}
+
+.popup h2 {
+  margin-top: 0;
+  color: #333;
+  font-family: Tahoma, Arial, sans-serif;
+}
+.popup .close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  transition: all 200ms;
+  font-size: 30px;
+  font-weight: bold;
+  text-decoration: none;
+  color: #333;
+}
+.popup .close:hover {
+  color: #06D85F;
+}
+.popup #content {
+  max-height: 30%;
+  overflow: auto;
+}
+h2{
+  font-family: 'Sniglet';
+  font-size: 50px;
+  text-align: center;
+}
+#total{
+  font-family: 'Sniglet';
+  text-align: center;
+  font-size: 40px;
+}
+button{
+  font-family: 'Sniglet';
+  font-size: 20px;
+  display: block;
+  border: 0;
+  border: 3px solid #222222;
+  border-radius: 40px;
+  margin-left: 40%;
+  width: 110px;
+  height: 40px;
+  transition: 0.7s;
+}
+button:hover{
+  color: white;
+  background-color: #222222;
+}
+@media screen and (max-width: 700px){
+  .box{
+    width: 70%;
+  }
+  .popup{
+    width: 70%;
+  }
+}

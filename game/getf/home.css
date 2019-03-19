@@ -1,0 +1,13 @@
+img{
+    width:12vw;
+    height: 7vw;
+    position: relative;
+    left: 40vw;
+    top: 65vh;
+}
+body{
+    background-image: url("img/T04.gif");
+    background-repeat: no-repeat;
+    background-size: 100vw 100vh;
+    background-attachment: fixed;
+}

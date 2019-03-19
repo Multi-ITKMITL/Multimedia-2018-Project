@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Information</title>
+	<div class="background">
+		<div class="name">Information</div>
+		<div class="move"></div>
+		<div class="move2"></div>
+		<div class="text"> Player2: ซ้าย ขวา = ควบคุมทิศทาง</div>
+		<div class="text2">Player1:  A D = ควบคุมทิศทาง</div>
+		<button type="button" class="in" onclick="back()">Back</button>
+	</div>
+	<style type="text/css">
+	body{
+		margin:0;
+		font-size: 0;
+		background-image: url("foแดง.png");
+		background-size: cover;
+	}
+	.background{
+		text-align: center;
+		width: 50%;
+		height: 100vh;
+		background-image: url("ป่างุด.jpg");
+		background-size: cover;
+		margin-left: 25%;
+	}
+	.name{
+		width: 325px;
+		height: 70px;
+		color: red;
+		display: block;
+		font-size: 50px;
+		margin: auto;
+	}
+	.move{
+		background-image: url("ลูกศร.jpg");
+		background-size: cover;
+		width: 14%;
+		height: 20vh;
+		position: absolute;
+		top:100px;
+		margin-left: 10%;
+	}
+	.text{
+		display: block;
+		width: 720px;
+		height: 50px;
+		background-color: white;
+		font-size: 40px;
+		color: red;
+		position: absolute;
+		top: 320px;
+		left: 600px;
+
+	}
+	.move2{
+		background-image: url("ลูกศร2.jpg");
+		width: 14%;
+		height: 20vh;
+		position: absolute;
+		top:400px;
+		margin-left: 10%;
+		background-size: cover;
+	}
+	.text2{
+		display: block;
+		width: 610px;
+		height: 50px;
+		background-color: white;
+		font-size: 40px;
+		color: red;
+		position: absolute;
+		top: 620px;
+		left: 590px;
+
+	}
+	.in{
+		font-size: 40px;
+		color: red;
+		position: absolute;
+		top: 600px;
+		left:  0px;
+		z-index: 1;
+	}
+</style>
+</head>
+<body>
+	<script type="text/javascript">function back(){location.href = "jumping.html";}</script>
+	<embed name="music" loop=" " hidden="true" src="c2.mp3">
+</body>
+</html>

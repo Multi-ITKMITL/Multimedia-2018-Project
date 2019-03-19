@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<!-- เป็น file html -->
+<html>
+
+<head>
+    <title> Game ของมด </title>
+    <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
+    <style>
+        body {
+            background-image: url("http://i.imgur.com/jXVjf.jpg");
+            z-index: 0;
+            width: 100%;
+        }
+
+        .name-game {
+         /*   text-align: center;
+            font-family: 'Pacifico', cursive;
+            height: 56px;
+            width: 300px;
+            font-size: 40px;
+            padding-bottom: 30px;
+            padding-top: 10px;
+            margin-bottom: 230px;
+            border-style: dashed;
+            margin-left: auto;
+            margin-top: 40px;
+            border-radius: 10px;
+            margin-right: auto; */
+            color: #e4e40c; 
+            text-decoration: underline;
+            text-align: center;
+            font-family: 'Pacifico', cursive;
+            height: 56px;
+            width: 300px;
+            font-size: 40px;
+            padding-bottom: 30px;
+            padding-top: 10px;
+            margin-bottom: 230px;
+            margin-left: auto;
+            margin-top: 40px;
+            border-radius: 10px;
+            margin-right: auto; 
+        }
+    </style>
+    <link rel="stylesheet" type="text/css" href="button.css">
+</head>
+
+<body>
+    <audio autoplay loop>
+  <source src="song.mp3" type="audio/mpeg">
+</audio>
+
+    <h1 class="name-game" style="text-align: center;font-family: 'Pacifico', cursive;">God of finger</h1>
+
+    <div class="canvas" id="player1" style="float:left;margin-left: 8%;">
+        <p class="score">Player 1 Score : &nbsp; </p><p id="score1" class="score"> &nbsp; 0</p>
+
+        <div id="clap" class="clap-container two">
+            <!-- <img class="imgclick" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAQ3SURBVGhD7VhtiFRVGJ4ygiDDoEIjc9fde0cCFUzCj/AL/NEaRuzqj8UIoz9JIv7QDBU/IRH8ITijjkuSOzN3dsscSHNXaxdXamHZrUUjvzIiQSIE3Tt+4cd5fc6dd/TO+I7InbPuFPPAwx3OOe953ve97/mYG6qgggr+xxgbzbxSHclsqo64v1RHM1c96t9oq93uvszDyhNwdkFVNJPBkyRWRTJu9Q63gYeXF6p2ZhYi00pyPI/eGLeezcoDumy87PoctaKXqTHWQfWxn7zf/j68pYGyKic4tNnv4Ju7/qYz8XeIDrxLlH6Pzsfn0uxdv+cFAW5g86EHyqLf71xs72ai9pVEfSey7NhGv8Xn09io6wvA/ZXNhx6F5dPX3EDUfehBAF1fEjk2LWlK3x+jbdh86FEYwNF9HxP98AXRz2mithVwfpwXwOl4HdVEB8ovAF0O/gA+2nPYc1jip3u+5XHBSkglww0qafWAfyrH2qGaa1/gruDwDi5fAJr98ffFAM5icXtvIZJZz+aPDTg9r3A+BPE1dweHtI1+GDuSJ+TnsqaW6/Zu9yU2LwpqfeNZlbKnI+uTiUJPIYC0NB8l7LfZJDj0CVt4kHmLWRB0k5Mu0LrQ02wqQsXD43WZ5GyQ6ePKsQ/55/H1/chmpUGfsPqQygXwQezoQ2I5Kqe2kc1EkGP1PmSTtDsL23JUKWsGm5YGXRqo740Ipk+XVe+++juiYNI6Ta2hYdqGOmc+g+x+Age/wnOt2v/6qCI2tzHmryJ9nZ4DpgHBOZKgJvoWcW1/n99unURZ/ONvu9+Xsrukdk2slaUsaxZw9JgsaJ0pFiD6OuR2W2mKfY59mSXNgpzwLElQE5neWaT9Fhy6K/U9iqrFXsiyZqFrVBR07BvoEzMajFYvS5qF3iVkQfNUqfBsljULvV9LgqaJNdLFkmahT0xJcDCoEtZbLGsWqPkjkqBp4m1HWNIslBOeJgmaJsqonyXNA9lpk0SNMmlfYTnzUKnaKaKoSQ5mABrY+/OuD6aJt3yKpQYHepeQhE0RATSzVHDgcvUqFtNWcD8lrS14ztF/Urhb70gHJXETRILqWCYY4OhI5Yy7QO34U3+siehAXXZixx4Av8E6WIwymoegDF4jssS8PfqWy64EAyZZQ+2rHnxa0d+JCoVwWTMdAOa7hmvLRHYjOOBczPselAvg4GJR0CShiYtheD67UBow2WfUtjzrfE83UcsEUdQUkflzKlEzleVLByXGv4hsnKPDS4m+axRFTRCO/4sdZ4Vqee05ljYH5dSMhkACArck8VKIOS9hnX2OzeJ5lhs8eG9D7zrYNhHQTcmhxyUcvwiuVunwcJ7+yYL2jhmBIBYhe2m96CQnJcKmWyfBf44MOXQWKRVe4O1Y+CuYLQv7Dp5X8fwDh18rnF+lP3KxSQUVVFDBfx6h0D2eoAOlZUuRhAAAAABJRU5ErkJggg==">
+            -->
+        </div>
+        <div id="particles" class="particles-container">
+            <div class="triangle">
+                <div class="square"></div>
+            </div>
+            <div class="triangle">
+                <div class="square"></div>
+            </div>
+            <div class="triangle">
+                <div class="square"></div>
+            </div>
+            <div class="triangle">
+                <div class="square"></div>
+            </div>
+            <div class="triangle">
+                <div class="square"></div>
+            </div>
+        </div>
+
+        <div id="particles-2" class="particles-container">
+            <div class="triangle">
+                <div class="square"></div>
+            </div>
+            <div class="triangle">
+                <div class="square"></div>
+            </div>
+            <div class="triangle">
+                <div class="square"></div>
+            </div>
+            <div class="triangle">
+                <div class="square"></div>
+            </div>
+            <div class="triangle">
+                <div class="square"></div>
+            </div>
+        </div>
+
+        <div id="particles-3" class="particles-container">
+            <div class="triangle">
+                <div class="square"></div>
+            </div>
+            <div class="triangle">
+                <div class="square"></div>
+            </div>
+            <div class="triangle">
+                <div class="square"></div>
+            </div>
+            <div class="triangle">
+                <div class="square"></div>
+            </div>
+            <div class="triangle">
+                <div class="square"></div>
+            </div>
+        </div>
+        <div id="particles-4" class="particles-container">
+            <div class="triangle">
+                <div class="square"></div>
+            </div>
+            <div class="triangle">
+                <div class="square"></div>
+            </div>
+            <div class="triangle">
+                <div class="square"></div>
+            </div>
+            <div class="triangle">
+                <div class="square"></div>
+            </div>
+            <div class="triangle">
+                <div class="square"></div>
+            </div>
+        </div>
+        <div id="particles-5" class="particles-container">
+            <div class="triangle">
+                <div class="square"></div>
+            </div>
+            <div class="triangle">
+                <div class="square"></div>
+            </div>
+            <div class="triangle">
+                <div class="square"></div>
+            </div>
+            <div class="triangle">
+                <div class="square"></div>
+            </div>
+            <div class="triangle">
+                <div class="square"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="start-game">
+        <p class="score" id="player-win"></p>
+        <button id="start-button" class="start-style" style="float:left;margin-left: 1%;">Start Here</button>
+    </div>
+    
+
+    <div class="canvas" id="player2" style="float: left;margin-left: 8%;margin-right: 0px;">
+        <p class="score">Player 2 Score : &nbsp; </p><p id="score2" class="score"> &nbsp; 0</p>
+        <div id="clap1" class="clap-container tuksin">
+            <!-- <img class="imgclick" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAQ3SURBVGhD7VhtiFRVGJ4ygiDDoEIjc9fde0cCFUzCj/AL/NEaRuzqj8UIoz9JIv7QDBU/IRH8ITijjkuSOzN3dsscSHNXaxdXamHZrUUjvzIiQSIE3Tt+4cd5fc6dd/TO+I7InbPuFPPAwx3OOe953ve97/mYG6qgggr+xxgbzbxSHclsqo64v1RHM1c96t9oq93uvszDyhNwdkFVNJPBkyRWRTJu9Q63gYeXF6p2ZhYi00pyPI/eGLeezcoDumy87PoctaKXqTHWQfWxn7zf/j68pYGyKic4tNnv4Ju7/qYz8XeIDrxLlH6Pzsfn0uxdv+cFAW5g86EHyqLf71xs72ai9pVEfSey7NhGv8Xn09io6wvA/ZXNhx6F5dPX3EDUfehBAF1fEjk2LWlK3x+jbdh86FEYwNF9HxP98AXRz2mithVwfpwXwOl4HdVEB8ovAF0O/gA+2nPYc1jip3u+5XHBSkglww0qafWAfyrH2qGaa1/gruDwDi5fAJr98ffFAM5icXtvIZJZz+aPDTg9r3A+BPE1dweHtI1+GDuSJ+TnsqaW6/Zu9yU2LwpqfeNZlbKnI+uTiUJPIYC0NB8l7LfZJDj0CVt4kHmLWRB0k5Mu0LrQ02wqQsXD43WZ5GyQ6ePKsQ/55/H1/chmpUGfsPqQygXwQezoQ2I5Kqe2kc1EkGP1PmSTtDsL23JUKWsGm5YGXRqo740Ipk+XVe+++juiYNI6Ta2hYdqGOmc+g+x+Age/wnOt2v/6qCI2tzHmryJ9nZ4DpgHBOZKgJvoWcW1/n99unURZ/ONvu9+Xsrukdk2slaUsaxZw9JgsaJ0pFiD6OuR2W2mKfY59mSXNgpzwLElQE5neWaT9Fhy6K/U9iqrFXsiyZqFrVBR07BvoEzMajFYvS5qF3iVkQfNUqfBsljULvV9LgqaJNdLFkmahT0xJcDCoEtZbLGsWqPkjkqBp4m1HWNIslBOeJgmaJsqonyXNA9lpk0SNMmlfYTnzUKnaKaKoSQ5mABrY+/OuD6aJt3yKpQYHepeQhE0RATSzVHDgcvUqFtNWcD8lrS14ztF/Urhb70gHJXETRILqWCYY4OhI5Yy7QO34U3+siehAXXZixx4Av8E6WIwymoegDF4jssS8PfqWy64EAyZZQ+2rHnxa0d+JCoVwWTMdAOa7hmvLRHYjOOBczPselAvg4GJR0CShiYtheD67UBow2WfUtjzrfE83UcsEUdQUkflzKlEzleVLByXGv4hsnKPDS4m+axRFTRCO/4sdZ4Vqee05ljYH5dSMhkACArck8VKIOS9hnX2OzeJ5lhs8eG9D7zrYNhHQTcmhxyUcvwiuVunwcJ7+yYL2jhmBIBYhe2m96CQnJcKmWyfBf44MOXQWKRVe4O1Y+CuYLQv7Dp5X8fwDh18rnF+lP3KxSQUVVFDBfx6h0D2eoAOlZUuRhAAAAABJRU5ErkJggg==">
+            -->
+        </div>
+        <div id="user1-particles" class="particles-container">
+            <div class="triangle">
+                <div class="square"></div>
+            </div>
+            <div class="triangle">
+                <div class="square"></div>
+            </div>
+            <div class="triangle">
+                <div class="square"></div>
+            </div>
+            <div class="triangle">
+                <div class="square"></div>
+            </div>
+            <div class="triangle">
+                <div class="square"></div>
+            </div>
+        </div>
+
+        <div id="user1-particles-2" class="particles-container">
+            <div class="triangle">
+                <div class="square"></div>
+            </div>
+            <div class="triangle">
+                <div class="square"></div>
+            </div>
+            <div class="triangle">
+                <div class="square"></div>
+            </div>
+            <div class="triangle">
+                <div class="square"></div>
+            </div>
+            <div class="triangle">
+                <div class="square"></div>
+            </div>
+        </div>
+
+        <div id="user1-particles-3" class="particles-container">
+            <div class="triangle">
+                <div class="square"></div>
+            </div>
+            <div class="triangle">
+                <div class="square"></div>
+            </div>
+            <div class="triangle">
+                <div class="square"></div>
+            </div>
+            <div class="triangle">
+                <div class="square"></div>
+            </div>
+            <div class="triangle">
+                <div class="square"></div>
+            </div>
+        </div>
+        <div id="user1-particles-4" class="particles-container">
+            <div class="triangle">
+                <div class="square"></div>
+            </div>
+            <div class="triangle">
+                <div class="square"></div>
+            </div>
+            <div class="triangle">
+                <div class="square"></div>
+            </div>
+            <div class="triangle">
+                <div class="square"></div>
+            </div>
+            <div class="triangle">
+                <div class="square"></div>
+            </div>
+        </div>
+        <div id="user1-particles-5" class="particles-container">
+            <div class="triangle">
+                <div class="square"></div>
+            </div>
+            <div class="triangle">
+                <div class="square"></div>
+            </div>
+            <div class="triangle">
+                <div class="square"></div>
+            </div>
+            <div class="triangle">
+                <div class="square"></div>
+            </div>
+            <div class="triangle">
+                <div class="square"></div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        var score1 = 0;
+        var score2 = 0; 
+        var time = 4;
+        var timeLoop;
+        var start = false;
+
+        document.getElementById('start-button').onclick = function () { 
+            if(time!=4){return 0;}
+            document.getElementById('player-win').classList.remove('winner');
+            document.getElementById('player-win').innerText = "";
+            const timer = document.getElementById('start-button');
+            timeLoop = setInterval(function(){ 
+                if(time==1){
+                    start = true;
+                    clearInterval(timeLoop);
+                    gameStart();
+                    return 0;
+                }
+                time--;
+                timer.innerText = time;
+                console.log(time)
+            }, 1000);      
+        }
+
+        function gameStart(){
+            clearInterval(timeLoop);
+            const timer = document.getElementById('start-button');
+            time = 15;
+            timer.innerText = time;
+            timeLoop = setInterval(function(){ 
+                if(time==0){
+                    start = false;
+                    clearInterval(timeLoop);
+
+                    if(score1 > score2){
+                        //alert("Player1 win")
+                        var winnerObj = document.getElementById('player-win');
+                        winnerObj.classList.add('winner');
+                        winnerObj.innerText = "Player 1 is Winer";
+                    }else if(score2 > score1){
+                        var winnerObj = document.getElementById('player-win');
+                        winnerObj.classList.add('winner');
+                        winnerObj.innerText = "Player 2 is Winer"
+                        //alert("Player2 win")
+                    }else{
+                        //alert("Draw")
+                        var winnerObj = document.getElementById('player-win');
+                        winnerObj.classList.add('winner');
+                        winnerObj.innerText = "Draw"
+                    }
+                    
+                    time = 4;
+                    timer.innerText = "Start";
+                    score1 = 0;
+                    document.getElementById('score1').innerText = score1;
+                    score2 = 0;
+                    document.getElementById('score2').innerText = score2;
+
+                    return 0;
+                }
+                time--;
+                timer.innerText = time;
+                console.log(time)
+            }, 1000); 
+        }
+
+        let accCounter = 0;
+        let totalCount = 127;
+        const minDeg = 1;
+        const maxDeg = 72;
+        const particlesClasses = [
+            {
+                class: "pop-top"
+            },
+            {
+                class: "pop-top-left"
+            },
+            {
+                class: "pop-top-right"
+            },
+            {
+                class: "pop-bottom-right"
+            },
+            {
+                class: "pop-bottom-left"
+            },
+        ];
+
+        
+        document.body.addEventListener('keyup', function(e) {
+            if(!start){ return; }
+            if(e.keyCode==83){
+                const clap = document.getElementById('clap');
+                clap.classList.remove('push-active');
+            }
+            if(e.keyCode==75){
+                const clap = document.getElementById('clap1');
+                clap.classList.remove('push-active');
+            }   
+        });
+
+        document.body.addEventListener('keydown', function(e) {
+            if(!start){ return 0; }
+            if(e.keyCode == 83){
+                score1++;
+                document.getElementById('score1').innerText = score1;
+                const clap = document.getElementById('clap');
+                const particles = document.getElementById('particles');
+                const particles2 = document.getElementById('particles-2');
+                const particles3 = document.getElementById('particles-3');
+                const particles4 = document.getElementById('particles-4');
+                const particles5 = document.getElementById('particles-5');
+                clap.classList.add('clicked');
+                clap.classList.add('push-active');
+
+                if (!particles.classList.contains('animating')) {
+                    animateParticles(particles, 700);
+                } else if (!particles2.classList.contains('animating')) {
+                    animateParticles(particles2, 700);
+                } else if (!particles3.classList.contains('animating')) {
+                    animateParticles(particles3, 700);
+                } else if (!particles4.classList.contains('animating')) {
+                    animateParticles(particles4, 700);
+                } else if (!particles5.classList.contains('animating')) {
+                    animateParticles(particles5, 700);
+                }
+                
+            }
+            if(e.keyCode == 75){
+                score2++;
+                document.getElementById('score2').innerText = score2;
+                const clap = document.getElementById('clap1');
+                const particles = document.getElementById('user1-particles');
+                const particles2 = document.getElementById('user1-particles-2');
+                const particles3 = document.getElementById('user1-particles-3');
+                const particles4 = document.getElementById('user1-particles-4');
+                const particles5 = document.getElementById('user1-particles-5');
+                clap.classList.add('clicked');
+                clap.classList.add('push-active');
+
+                if (!particles.classList.contains('animating')) {
+                    animateParticles(particles, 700);
+                } else if (!particles2.classList.contains('animating')) {
+                    animateParticles(particles2, 700);
+                } else if (!particles3.classList.contains('animating')) {
+                    animateParticles(particles3, 700);
+                } else if (!particles4.classList.contains('animating')) {
+                    animateParticles(particles4, 700);
+                } else if (!particles5.classList.contains('animating')) {
+                    animateParticles(particles5, 700);
+                }
+                
+            }
+            
+        });
+        document.getElementById('clap').onclick = function () {
+            
+        }
+
+        document.getElementById('clap1').onclick = function () {
+            const clap = document.getElementById('clap1');
+            const particles = document.getElementById('user1-particles');
+            const particles2 = document.getElementById('user1-particles-2');
+            const particles3 = document.getElementById('user1-particles-3');
+            const particles4 = document.getElementById('user1-particles-4');
+            const particles5 = document.getElementById('user1-particles-5');
+            clap.classList.add('clicked');
+
+            if (!particles.classList.contains('animating')) {
+                animateParticles(particles, 700);
+            } else if (!particles2.classList.contains('animating')) {
+                animateParticles(particles2, 700);
+            } else if (!particles3.classList.contains('animating')) {
+                animateParticles(particles3, 700);
+            } else if (!particles4.classList.contains('animating')) {
+                animateParticles(particles4, 700);
+            } else if (!particles5.classList.contains('animating')) {
+                animateParticles(particles5, 700);
+            }
+        }
+
+        function runAnimationCycle(el, className, duration) {
+            if (el && !el.classList.contains(className)) {
+                el.classList.add(className);
+            } else {
+                el.classList.remove(className);
+                void el.offsetWidth; // Trigger a reflow in between removing and adding the class name
+                el.classList.add(className);
+            }
+        }
+
+        function runParticleAnimationCycle(el, className, duration) {
+            if (el && !el.classList.contains(className)) {
+                el.classList.add(className);
+                setTimeout(() => {
+                    el.classList.remove(className);
+                }, duration);
+            }
+        }
+
+        function animateParticles(particles, dur) {
+            addRandomParticlesRotation(particles.id, minDeg, maxDeg);
+            for (let i = 0; i < particlesClasses.length; i++) {
+                runParticleAnimationCycle(particles.children[i], particlesClasses[i].class, dur);
+            }
+            // Boolean functionality only to activate particles2, particles3 when needed
+            particles.classList.add('animating');
+            setTimeout(() => {
+                particles.classList.remove('animating');
+            }, dur);
+        }
+
+        function getRandomInt(min, max) {
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+        }
+
+        function addRandomParticlesRotation(particlesName, minDeg, maxDeg) {
+            const particles = document.getElementById(particlesName);
+            const randomRotationAngle = getRandomInt(minDeg, maxDeg) + 'deg';
+            particles.style.transform = `rotate(${randomRotationAngle})`;
+        }
+    </script>
+</body>
+
+</html>

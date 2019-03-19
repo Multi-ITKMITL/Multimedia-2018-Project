@@ -1,0 +1,181 @@
+@import url('https://fonts.googleapis.com/css?family=Press+Start+2P');
+@import url('https://fonts.googleapis.com/css?family=Black+Ops+One|Press+Start+2P');
+body {
+  margin:0px;
+  padding:0px;
+  text-align:center;
+  background: url(star.gif);
+  background-size:  cover;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 24px;
+  color: white;
+  text-shadow: 5px 1px #464CB4;
+  cursor: url(11436.png),auto;
+}
+#gui{
+  display: block;
+  height:99vh;
+  width:650px;
+  background: #FFF;
+  border:1px solid #000;
+  margin: auto;
+  right:0;
+  left:0;
+  bottom:0;
+  top:0;
+  background: url("w.jpg");
+  background-size: cover;
+  overflow: hidden;
+  cursor: url(23907.gif),auto;
+}
+#over, #gui, #canvas{
+  border:5px solid white; 
+}
+#over{
+  z-index: 1;
+  display: none;
+  height:99vh;
+  width:650px;
+  margin: auto;
+  right:0;
+  left:0;
+  bottom:0;
+  top:0;
+  background: url("u.jpg");
+  background-size: cover;
+  overflow: hidden;
+  cursor: url(23907.gif),auto;
+}
+canvas{
+  display: none;
+  height:99vh;
+  outline:0;
+  margin: auto;
+  right:0;
+  left:0;
+  bottom:0;
+  top:0;
+  cursor: url(23907.gif),auto;
+}
+#restart{
+  color: #9A5A0E;
+  width:150px;
+  height:40px;
+  visibility:visible;
+  position:relative;
+  bottom:5vh;
+  left: 100;
+  z-index: 1;
+  margin:auto;
+  margin-top: 11%;
+  cursor: url(11436.png),auto;
+  border-radius: 40px;
+  opacity: 0.8;
+  box-shadow: 1px 1px 25px papayawhip;
+}
+#restart:hover{
+  background-color: #D493FF;
+  color: white;
+  transform: scale(1.5);
+  transition: all 0.5s;
+  font-family: 'Press Start 2P', cursive;
+}
+.txt{
+  margin-top: 12%;
+  font-family: 'Press Start 2P', cursive;
+}
+.click:hover{
+  transition: all 1s;
+  color: #BCD5E8;
+  transform: scale(2);
+}
+p{
+  cursor: url(11436.png),auto;
+}
+.click {
+  font-size: 40px;
+}
+.ufo{
+  position: relative;
+  bottom: 40%;
+  width: 180px;
+  animation: ufo 5s infinite alternate;
+}
+
+@keyframes ufo{
+  0%{
+    transform: translateX(-200%);
+  }
+  100%{
+    transform: translateX(150%);
+  }
+}
+.alien{
+  width: 200px;
+  position: relative;
+  right: 100;
+  bottom: 30;
+  border: 5px solid;
+  border-radius: 40px;
+}
+.last{
+  margin-top: 8%;
+  color: #ECECCE;
+  font-size: 26px;
+}
+#myNav{cursor: url(11436.png),auto;}
+.overlay {
+  height: 0%;
+  width: 100%;
+  position: relative;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: rgba(0,0,0, 0.9);
+  overflow-y: hidden;
+  transition: 0.5s;
+}
+
+.overlay-content {
+  position: relative;
+  top: 25%;
+  width: 100%;
+  text-align: center;
+  margin-top: 30px;
+}
+
+.overlay a {
+  padding: 8px;
+  text-decoration: none;
+  font-size: 36px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.overlay a:hover, .overlay a:focus {
+  color: #f1f1f1;
+}
+
+.overlay .closebtn {
+  position: absolute;
+  top: 20px;
+  right: 45px;
+  font-size: 60px;
+}
+
+@media screen and (max-height: 450px) {
+  .overlay {overflow-y: auto;}
+  .overlay a {font-size: 20px}
+  .overlay .closebtn {
+  font-size: 40px;
+  top: 15px;
+  right: 35px;
+  }
+}
+#game_platform {display: none;}
+#bg1,#bg2,#bg3{
+  display: none;
+  height:99vh;
+  width:650px;
+}

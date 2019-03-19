@@ -1,0 +1,50 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Breakout</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
+  </head>
+
+  <body>
+  <audio id="startup" autoplay ontimeupdate="restrictAudio(this)" src="sound/start.mp3"></audio>
+  <audio id="coin" src="start.mp3"></audio>
+  <audio id="beep" src="sound/brick.wav"></audio><!-- ลูกบอลชนบล็อก -->
+  <audio id="plop" src="sound/paddle.wav"></audio><!-- ลูกบอลชนไม้ตี -->
+  <audio id="peep" src="sound/wall.wav"></audio><!-- ลูกบอลชนพื้น -->
+  <audio id="over" src="sound/game_over.wav"></audio><!-- game over -->
+
+  <button id="paused">Paused </button><!-- หยุด -->
+  <button id="gameOverScreen">GameOver </button><!-- game over -->
+  <button id="winScreen">Congratulations </button><!-- win -->
+  <button id="coinbut" onclick="play()" >Start Game </button><!-- เริ่มเกม -->
+
+  <canvas id="canvas"  width="1000" height="650"></canvas>
+  <h1 id="title">BreakOut</h1>
+        <p id="helpLabel" class="label"></p>
+  <p id="gameoverLabel" class="label">Press R to restart</p><!-- restart game -->
+  <p id="helpback" class="label">Press H to resume</p><!-- คำแนะนำเกม -->
+  <p id="pauseback" class="label">Press P to resume</p><!-- pause game -->
+
+      <ul id="helpMenu">
+        <li>
+          กด Start เพื่อเริ่มเกม
+        </li>
+        <li>
+          ใช้เมาส์เพื่อควบคุมแถบข้างล่างที่รองรับลูกบอล
+        </li>
+        <li>
+          เมื่อลูกบอลทำลายบล็อคคะแนนของคุณจะเพิ่มขึ้น(สามารถดูคะแนนได้ที่มุมซ้ายบน)
+        </li>
+        <li>
+          หากลูกบอลตกโดนพื้น คุณจะสูญเสีย 1 ชีวิต(ดูชีวิตได้ที่มุมขวา)
+        </li>
+        <li>ถ้าคุณสูญเสียครบ 3 ชีวิต GAME OVER!</li>
+      </ul>
+  <p id="help"><font color=“#0120a8”>Help press H | Pause press P</font></p>
+  <p id="copyright"><font color=“#0120a8”>Information Technology KMITL &copy; 2019</font></p>
+
+  <script src="script.js"></script>
+  </body>
+</html>
+

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css">
+    <link rel="stylesheet" media="screen" href="https://fontlibrary.org/face/8bit-wonder" type="text/css"/>
+    <script src="main.js">
+    </script>
+</head>
+<body>
+    <div id="myStart" class="modal-start">
+        <div class="modal-content-2">
+            <img src="img/ex.png" class="start">
+            <img src="img/play.gif" class="play" onclick="startGame()">
+        </div>
+    </div>
+     
+<div id="myModal" class="modal">
+    <div class="modal-content">
+        <span id="point"></span>
+        <img id="myImg" src="img/dead.gif" style="width:100%; max-width:300px">
+        <img class="close" src="img/restart.gif">
+    </div>
+</div>
+</body>
+<script>
+    var modal = document.getElementById('myModal');
+    var modalStart = document.getElementById('myStart');
+    var span = document.getElementsByClassName("close")[0];    
+</script>
+</html>

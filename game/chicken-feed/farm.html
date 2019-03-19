@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Chicken Feed</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+  <link rel="icon" type="image/icon.png" href="https://upload.wikimedia.org/wikipedia/commons/thumb/9/92/Chicken_icon_05.svg/816px-Chicken_icon_05.svg.png"/>
+  <link href="https://fonts.googleapis.com/css?family=Sniglet" rel="stylesheet">
+</head>
+<body id="body1">
+
+  <div class="statusbar">
+    <img src="image/money.png" style="width: 55px; height: 55px; margin-left:18%; position: fixed;">
+    <img src="image/thophy.png" style="width: 60px; height: 60px; margin-left: 61%; position: fixed; "> </img>
+    <h1 id="money" style="font-family: 'Sniglet', cursive;">Money : 500</h1>
+    <h1 id="score" style="font-family: 'Sniglet', cursive;">Score : 0</h1>
+  </div>
+  <div id="farm" shopchick="0">
+      <img src="image/egg.png" id="e1" size="a" x="0" y="0" onclick="Egg('e1')" />
+      <img src="image/egg.png" id="e2" size="a" x="0" y="0" onclick="Egg('e2')" />
+      <img src="image/egg.png" id="e3" size="a" x="0" y="0" onclick="Egg('e3')" />
+      <img src="image/egg.png" id="e4" size="a" x="0" y="0" onclick="Egg('e4')" />
+      <img src="image/egg.png" id="e5" size="a" x="0" y="0" onclick="Egg('e5')" />
+      <img src="image/egg.png" id="e6" size="a" x="0" y="0" onclick="Egg('e6')" />
+      <img src="image/egg.png" id="e7" size="a" x="0" y="0" onclick="Egg('e7')" />
+      <img src="image/egg.png" id="e8" size="a" x="0" y="0" onclick="Egg('e8')" />
+      <img src="image/chick_flip.gif" id="b1" size="a" grow="0" onclick="change('b1')" />
+      <img src="image/chick_flip.gif" id="b2" size="a" grow="0" onclick="change('b2')"/>
+      <img src="image/chick_flip.gif" id="b3" size="a" grow="0" onclick="change('b3')"/>
+      <img src="image/chick_flip.gif" id="b4" size="a" grow="0" onclick="change('b4')"/>
+      <img src="image/chick_flip.gif" id="b5" size="a" grow="0" onclick="change('b5')"/>
+      <img src="image/chick_flip.gif" id="b6" size="a" grow="0" onclick="change('b6')"/>
+      <img src="image/chick_flip.gif" id="b7" size="a" grow="0" onclick="change('b7')"/>
+      <img src="image/chick_flip.gif" id="b8" size="a" grow="0" onclick="change('b8')"/>
+      <img src="image/theft_flip.gif" id="enemy" size="a" x="500" y="100" onclick="kill()"/>
+  </div>
+  </div>
+    <div id="all" onclick="allFood()"></div>
+  <div class="tools">
+    <div id="gun" onclick="gunMan()">
+    <p id="gunlv">Lv.1 200$</p>
+    </div>
+    <div id="food" onclick="Food()">30$</div>
+    <div id="shop" onclick="Shop()">100$</div>
+  </div>
+  <div id="popup1" class="overlay">
+  <div class="popup">
+    <h2 style="font-family: 'Sniglet'; ">Game over!</h2>
+    <a class="close" href="#">&times;</a>
+    <div id="content">
+      <p id="total">Score: 0</p>
+      <button id="again"onclick="window.location.href = 'farm.html'">replay</button>
+    </div>
+  </div>
+</div>
+
+  <script src="scripts.js"></script>
+
+</body>
+</html>

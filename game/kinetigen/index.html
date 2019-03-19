@@ -1,0 +1,131 @@
+<head>
+    <title>KinetiGen</title>
+
+    <link rel="stylesheet" type="text/css" href="styles.css"/>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Major+Mono+Display" rel="stylesheet">
+
+    <script src="jquery-3.3.1.min.js"></script>
+    <script src="config_achievement.js"></script>
+    <script src="config_buildings.js"></script>
+    <script src="config_upgrades.js"></script>
+    <script src="config_story.js"></script>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <table class="grid">
+        <tr>
+            <th class="ui-set side-bar">
+
+                <div class="col" style="height:20%;">
+
+                    <div id="main-info">
+                        <h1 style="font-family: 'Major Mono Display'">Kinetigen</h1><br>
+                        <h4>Power Generatred (MWs)</h4>
+                        <h1 id="kgs_display">0</h1>
+                        <h5><span id="rate_display"></span> MW/s</h5>
+                        <!-- <span class="focus-notice">Productions are halved when losing focus</span> -->
+                    </div>
+
+                </div>
+    
+                <div id="btn-place" style="height:20%;">
+
+                    <button id="btn-dig">
+                        <i style="font-size: 1.5em" class="fas fa-bolt"></i>
+                    </button>
+
+                </div>
+    
+                <div class="col" style="height:60%;padding: 0;box-sizing: content-box;">
+                    <h3>Buildings</h3>
+                    <div id="bldg-slots" style="height: 90%;overflow-y: scroll;">
+                        <span id="bldg-slot-area"></span>
+                    </div>
+                </div>
+            </th>
+            
+            <th class="canvas_space">
+                <canvas id="backCanvas"></canvas>
+                <canvas id="gameCanvas"></canvas>
+            </th> 
+
+            <th class="ui-set side-bar">
+                <div class="col" style="height:40%;">
+                    <h3>Status</h3>
+                    <div class="usure" style="display: none"><br>
+                        <b>New Game (This action cannot be undone)</b><br><br>
+                        <button class="end-btn endy" onclick="newGame();location.reload();">Yes</button>
+                        <button class="end-btn endn" onclick="location.reload();">No</button>
+                    </div>
+                    <table class="status-table">
+                        <tbody>
+                            <tr>
+                                <th scope="row">Condition</th>
+                                <td id="cond_text">[cond_text]</td>
+                            </tr>
+                            <tr>
+                                <th colspan="2" id="desc_text" style="font-weight: normal;">
+                                    [desc_text]
+                                </th>
+                            <tr>
+                            <tr>
+                                <th scope="row">Tasks</th>
+                                <td id="task_text">[task_text]</td>
+                            </tr>
+                            <tr>
+                                <th colspan="2" class="endbtn" style="font-weight: normal;">
+
+                                    <div id="progress">
+                                        <div id="pbar"></div>
+                                    </div>
+
+                                </th>
+                            </tr>
+                            <tr>
+                                <th colspan="2" class="text-center text-muted task-sts" style="font-weight: normal;">
+                                    [<span id="task-cur">0</span>/<span id="task-goal">0</span>]
+                                </th>
+                            </tr>
+                        </tbody>
+                    </table>
+    
+                </div>
+    
+                <div class="col text-center" style="height:60%;padding: 0;">
+                    <h3 class="text-center">Upgrades</h3>
+                    <div id="bldg-slots" style="height: 90%;overflow-y:scroll;">
+                        <span id="upgrade-slot-area"></span>
+                    </div>
+                </div>
+            </th>
+        </tr>
+    </table>
+    
+    </div>
+
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2 style="font-family: 'Major Mono Display'">Kinetigen</h2>
+            &nbsp;Made with <i class="fas fa-heart"></i> by kinetiGen team. - <a target="_blank" href="https://github.com/phwt/kinetiGen">GitHub</a>
+            <br>
+            <span class="sec sec-stats">
+                    &nbsp;<br><b>Stats</b><br>
+                    &nbsp;<span>- Total Power Generated | </span><b class="sts_total_pwr">0</b><br>
+                    &nbsp;<span>- Total Clicks | </span><b class="sts_total_click">0</b>
+            </span>
+            <!-- <hr> -->
+            <!-- <span class="sec sec-settings">
+                <button class="end-btn">NEW GAME</button>
+                <button class="end-btn">SAVE GAME</button>
+                <button class="end-btn">EXPORT SAVE</button>
+                <button class="end-btn">IMPORT SAVE</button>
+            </span> -->
+        </div>
+    </div>
+    <button class="end-btn st-btn"><i class="fas fa-info-circle"></i></button>
+</body>
+<script src="scripts.js"></script>

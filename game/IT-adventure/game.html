@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>test</title>
+    <link rel="stylesheet" type="text/css" href="./styles/board.css">
+    <link rel="stylesheet" type="text/css" href="./styles/character.css">
+    <link rel="stylesheet" type="text/css" href="./styles/game.css">
+    <link rel="stylesheet" type="text/css" href="./styles/select.css">
+    <link rel="stylesheet" type="text/css" href="./styles/event.css">
+</head>
+<body>
+<game id="game">
+    <div id="theBoard" class="game">
+        <box id="b0" x="0" y="4">start</box>
+        <box id="b1" x="1" y="4">1</box>
+        <box id="b2" x="2" y="4">2</box>
+        <box id="b3" x="3" y="4">3</box>
+        <box id="b4" x="4" y="4">4</box>
+        <box id="b5" x="5" y="4">5</box>
+        <box id="b6" x="6" y="4">6</box>
+        <box id="b7" x="7" y="4">7</box>
+        <box id="b8" x="8" y="4">8</box>
+        <box id="b9" x="9" y="4">9</box>
+        <box id="b10" x="10" y="4">10</box>
+        <box id="b11" x="11" y="4">11</box>
+        <box id="b12" x="12" y="4">12</box>
+        <box id="b13" x="13" y="4">13</box>
+        <box id="b14" x="13" y="3">14</box>
+        <box id="b15" x="13" y="2">15</box>
+        <box id="b16" x="12" y="2">16</box>
+        <box id="b17" x="11" y="2">17</box>
+        <box id="b18" x="10" y="2">18</box>
+        <box id="b19" x="9" y="2">19</box>
+        <box id="b20" x="9" y="3">20</box>
+        <box id="b21" x="8" y="3">21</box>
+        <box id="b22" x="7" y="3">22</box>
+        <box id="b23" x="6" y="3">23</box>
+        <box id="b24" x="6" y="2">24</box>
+        <box id="b25" x="6" y="1">25</box>
+        <box id="b26" x="5" y="1">26</box>
+        <box id="b27" x="4" y="1">27</box>
+        <box id="b28" x="3" y="1">28</box>
+        <box id="b29" x="3" y="2">29</box>
+        <box id="b30" x="3" y="3">30</box>
+        <box id="b31" x="2" y="3">31</box>
+        <box id="b32" x="1" y="3">32</box>
+        <box id="b33" x="0" y="3">33</box>
+        <box id="b34" x="0" y="2">34</box>
+        <box id="b35" x="0" y="1">35</box>
+        <box id="b36" x="0" y="0">36</box>
+        <box id="b37" x="1" y="0">37</box>
+        <box id="b38" x="2" y="0">38</box>
+        <box id="b39" x="3" y="0">39</box>
+        <box id="b40" x="4" y="0">40</box>
+        <box id="b41" x="5" y="0">41</box>
+        <box id="b42" x="6" y="0">42</box>
+        <box id="b43" x="7" y="0">43</box>
+        <box id="b44" x="8" y="0">44</box>
+        <box id="b45" x="9" y="0">45</box>
+        <box id="b46" x="10" y="0">46</box>
+        <box id="b47" x="11" y="0">47</box>
+        <box id="b48" x="11" y="1">48</box>
+        <box id="b49" x="12" y="1">49</box>
+        <box id="b50" x="13" y="1">50</box>
+        <box id="b51" x="14" y="1">51</box>
+        <box id="b52" x="14" y="0">52</box>
+        <box id="b53" x="15" y="0">53</box>
+        <box id="b54" x="16" y="0">54</box>
+        <box id="b55" x="17" y="0">55</box>
+        <box id="b56" x="17" y="1">56</box>
+        <box id="b57" x="17" y="2">57</box>
+        <box id="b58" x="17" y="3">58</box>
+        <box id="b59" x="17" y="4">finish</box>
+        <character id="player4" color="yellow" animate="0" character="0" step="0">p4</character>
+        <character id="player3" color="green" animate="0" character="0" step="0">p3</character>
+        <character id="player2" color="blue" animate="0" character="0" step="0">p2</character>
+        <character id="player1" color="red" animate="0" character="0" step="0">p1</character>
+        <div id="server"></div>
+        <div id="shopNougPloy"></div>
+        <div id="shop"></div>
+        <div id="vending"></div>
+    </div>
+    <div class="obtion">
+        <div id="theTurn" class="game">
+
+        </div>
+        <div id="theLife">
+            <h3>Player1 <img src="imgs/heart.gif"> x <span id="player1_life"></span></h3>
+            <h3>Player2 <img src="imgs/heart.gif"> x <span id="player2_life"></span></h3>
+            <h3>Player3 <img src="imgs/heart.gif"> x <span id="player3_life"></span></h3>
+            <h3>Player4 <img src="imgs/heart.gif"> x <span id="player4_life"></span></h3>
+        </div>
+        <div id="theDice" class="game">
+            <dice id="theDice1" score="1" onclick="diceFunction()"></dice>
+            <dice id="theDice2" score="1" onclick="diceFunction()"></dice>
+        </div>
+    </div>
+    <div id="theEvent">
+    </div>
+</game>
+<div id="select">
+    <div id="selectPlayer">
+        <h1 id="select1" class="select1" onclick="setPlayer(this)"></h1><br>
+        <h1 id="select2" class="select2" onclick="setPlayer(this)"></h1><br>
+        <h1 id="select3" class="select3" onclick="setPlayer(this)"></h1>
+    </div>
+    <div id="selectCharacter">
+        <div class="character" id="Jay" charId="01" onclick="setCharacter(this)">
+            <div class="selected"></div>
+        </div>
+        <div class="character" id="Deen" charId="02" onclick="setCharacter(this)">
+            <div class="selected"></div>
+        </div>
+        <div class="character" id="Ome" charId="03" onclick="setCharacter(this)">
+            <div class="selected"></div>
+        </div>
+        <div class="character" id="Tin" charId="04" onclick="setCharacter(this)">
+            <div class="selected"></div>
+        </div>
+    </div>
+    <div id="startGame" onclick="gameStart()"></div>
+</div>
+<div id="theBattle">
+    <div id="theWinner"></div>
+    <div id="press1"></div>
+    <div id="plot1">
+        <div class="battle" id="battle1"></div>
+    </div>
+    <div id="fighter1" class="fighter"></div>
+    <br>
+    <div id="press2"></div>
+    <div id="plot2">
+        <div class="battle" id="battle2"></div>
+    </div>
+    <div id="fighter2" class="fighter"></div>
+</div>
+<audio autoplay loop id="playAudio">
+    <source src="source/Sneaky_Snitch.mp3">
+</audio>
+<a id="restart" href="game.html"></a>
+<script src="./js/player.js"></script>
+<script src="./js/board.js"></script>
+<script src="./js/select.js"></script>
+<script src="./js/event.js"></script>
+
+</body>
+</html>

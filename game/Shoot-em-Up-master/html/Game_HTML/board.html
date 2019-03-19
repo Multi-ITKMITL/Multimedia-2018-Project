@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Board</title>
+    <link rel="stylesheet" type="text/css" href="CSS/board.css">
+    <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $('.sidebarBtn').click(function(){
+                $('.sidebar').toggleClass('active');
+                $('.sidebarBtn').toggleClass('toggle');
+            })
+        })
+    </script>
+</head>
+<body>
+    <div class="container">
+        <div class="box">
+            <div class="img_box">
+                <img src="IMG/1-10/two.png">
+            </div>
+            <h3 id="theName_2">NAME</h3>
+            <p id="thePoint_2">POINT</p>
+        </div>
+        <div class="box" style="top: -140px">
+            <div class="img_box">
+                <img src="IMG/1-10/wreath.png">
+            </div>
+            <h3 id="theName_1">NAME</h3>
+            <p id="thePoint_1">POINT</p>
+        </div>
+        <div class="box">
+            <div class="img_box">
+                <img src="IMG/1-10/three.png">
+            </div>
+            <h3 id="theName_3">NAME</h3>
+            <p id="thePoint_3">POINT</p>
+        </div>
+    </div>
+    <div class="board">
+        <ul>
+            <li>
+                <img src="IMG/1-10/four.png">
+                <h3 id="theName_4">NAME</h3>
+                <p id="thePoint_4">POINT</p>
+            </li>
+            <li>
+                <img src="IMG/1-10/five.png">
+                <h3 id="theName_5">NAME</h3>
+                <p id="thePoint_5">POINT</p>
+            </li>
+            <li>
+                <img src="IMG/1-10/six.png">
+                <h3 id="theName_6">NAME</h3>
+                <p id="thePoint_6">POINT</p>
+            </li>
+            <li>
+                <img src="IMG/1-10/seven.png">
+                <h3 id="theName_7">NAME</h3>
+                <p id="thePoint_7">POINT</p>
+            </li>
+            <li>
+                <img src="IMG/1-10/eight.png">
+                <h3 id="theName_8">NAME</h3>
+                <p id="thePoint_8">POINT</p>
+            </li>
+            <li>
+                <img src="IMG/1-10/nine.png">
+                <h3 id="theName_9">NAME</h3>
+                <p id="thePoint_9">POINT</p>
+            </li>
+            <li>
+                <img src="IMG/1-10/ten.png">
+                <h3 id="theName_10">NAME</h3>
+                <p id="thePoint_10">POINT</p>
+            </li>
+        </ul>
+    </div>
+    <div class="sidebar">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="howTo.html">How To Play</a></li>
+            <li><a href="#">Score Board</a></li>
+            <li><a href="dev.html">Dev Team</a></li>
+        </ul>
+        <button class="sidebarBtn">
+            <span></span>
+        </button>
+    </div>
+    <script type="text/javascript" src="JS/board.js"></script>
+</body>
+</html>

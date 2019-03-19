@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>【Home】 • Magic School Matching •</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="javascript" href="java.js">
+</head>
+
+<body>
+    <button onclick = "Fullscreen()" id="fullscreen"><img src="src/full.png"></button>
+    <button onclick = "mute()" id="mute"><img id="imgmute" src="src/mute.png"></button>
+    <img class="main-title" src="MagicSchool.png">
+    <audio id="main_audio" autoplay="autoplay" loop="loop" preload="auto">
+        <source src="sound/main.mp3" type="audio/mpeg" />
+        <embed src="sound/main.mp3" width="0" height="0" loop="true" autostart="true" hidden="true" />
+    </audio>
+    <iframe width="500" height="280" src="https://www.youtube.com/embed/QKtsLC-aXPM" class="video">
+    </iframe>
+    <img class="play" id="myBtn" src="NoteCG/Index/Play2.png" width="400" height="250">
+    <a class="normal" href="page.html"><img id="normal" src="NoteCG/Index/normal2.png" width="270" height="170"></a>
+    <a class="hard" href="page2.html"><img id="hard"src="NoteCG/Index/Hard2.png" width="270" height="170"></a>
+    <div class="bird-container bird-container--one">
+        <div class="bird bird--one"></div>
+    </div>
+    <div class="bird-container bird-container--two">
+        <div class="bird bird--two"></div>
+    </div>
+    <div class="bird-container bird-container--three">
+        <div class="bird bird--three"></div>
+    </div>
+    <div class="bird-container bird-container--four">
+        <div class="bird bird--four"></div>
+    </div>
+
+ <!-- popup -->
+ <div id="myModal" class="modal">
+    <div class="modal-content">
+    <p></p>
+    <span class="close">&times;</span>
+  </div>
+
+
+</div>
+<script>
+var modal = document.getElementById('myModal');
+
+var btn = document.getElementById("myBtn");
+
+var span = document.getElementsByClassName("close")[0];
+
+btn.onclick = function() {
+  modal.style.display = "block";
+}
+
+span.onclick = function() {
+  modal.style.display = "none";
+}
+
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+</script>
+<script type="text/javascript">
+var sound = true;
+function mute(){
+    if (sound == true){
+        sound = false;
+        document.getElementById("main_audio").pause();
+    } else {
+        document.getElementById("main_audio").play();
+        sound = true;
+    }
+}
+var check2 = false;
+function Fullscreen(){
+    var screen = document.documentElement;
+    if (check2 == false){
+        screen.requestFullscreen();
+        check2 = true;
+    }
+    else if (check2 == true){
+        document.exitFullscreen();
+        check2 = false
+    }
+
+}
+</script>
+</body>
+
+</html>

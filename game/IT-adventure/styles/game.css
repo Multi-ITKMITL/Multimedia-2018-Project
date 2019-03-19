@@ -1,0 +1,305 @@
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-image: url("../imgs/background_fixed.png");
+    background-repeat: repeat;
+    width: 100%;
+    height: 100%;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: initial;
+    color: white;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
+game {
+    display: none;
+    width: 3000px;
+    height: 720px;
+    position: relative;
+    overflow: hidden;
+    margin-top: 20px;
+}
+
+#theBoard {
+    position: absolute;
+    left: 290px;
+}
+
+#theTurn {
+    position: absolute;
+    width: 240px;
+    height: 240px;
+    color: white;
+    top: 2%;
+    left: 50%;
+    transform: translate(-50%, 2%);
+    background-size: cover;
+}
+
+#theTurn[character = "01"] {
+    background-image: url("../imgs/Charecter_Jay.gif");
+}
+
+#theTurn[character = "02"] {
+    background-image: url("../imgs/Charecter_Deen.gif");
+}
+
+#theTurn[character = "03"] {
+    background-image: url("../imgs/Charecter_Ome.gif");
+}
+
+#theTurn[character = "04"] {
+    background-image: url("../imgs/Charecter_TinTo.gif");
+}
+
+#theDice {
+    position: absolute;
+    left: 0px;
+    top: 580px;
+}
+
+#theLife {
+    position: absolute;
+    top: 240px;
+    color: white;
+    padding: 30px;
+}
+
+div#theLife h3 {
+    margin-bottom: 10px;
+    line-height: 25px;
+    font-size: 25px;
+}
+
+dice {
+    background: url("../imgs/dice_type_new_1.png");
+    width: 130px;
+    height: 130px;
+    position: absolute;
+    left: 10px;
+    background-size: cover;
+    text-align: center;
+    font-size: 30px;
+}
+
+dice[score="2"] {
+    background: url("../imgs/dice_type_new_1.png");
+    background-size: cover;
+}
+
+dice[score="2"] {
+    background: url("../imgs/dice_type_new_2.png");
+    background-size: cover;
+}
+
+dice[score="3"] {
+    background: url("../imgs/dice_type_new_3.png");
+    background-size: cover;
+}
+
+dice[score="4"] {
+    background: url("../imgs/dice_type_new_4.png");
+    background-size: cover;
+}
+
+dice[score="5"] {
+    background: url("../imgs/dice_type_new_5.png");
+    background-size: cover;
+}
+
+dice[score="6"] {
+    background: url("../imgs/dice_type_new_6.png");
+    background-size: cover;
+}
+
+dice[score="0"] {
+    background: url("../imgs/dice_new_type_1_full.gif");
+    background-size: cover;
+}
+
+#theDice1 {
+    display: inline-block;
+}
+
+#theDice2 {
+    left: 140px;
+    display: inline-block;
+}
+
+#id {
+    border-style: solid;
+    width: 200px;
+    text-align: center;
+    display: inline-block;
+}
+
+#theObj {
+    width: 100%;
+}
+
+#plot1 {
+    position: fixed;
+    border-style: solid;
+    border-radius: 20px;
+    top: 50%;
+    left: 10%;
+    transform: translate(10%, -50%);
+    width: 500px;
+    height: 70px;
+    margin-bottom: 30px;
+    display: inline-block;
+}
+
+#plot2 {
+    position: fixed;
+    border-style: solid;
+    border-radius: 20px;
+    top: 50%;
+    left: 80%;
+    transform: translate(-80%, -50%);
+    width: 500px;
+    height: 70px;
+    margin-bottom: 30px;
+    display: inline-block;
+}
+
+.battle {
+    background: green;
+    border-radius: 20px;
+    margin-top: 2px;
+    margin-left: 2px;
+    width: 0px;
+    height: 68px;
+}
+
+#press1 {
+    position: fixed;
+    width: 200px;
+    height: 200px;
+    background-size: cover;
+    background-image: url("../imgs/pressA.gif");
+    top: 30%;
+    left: 30%;
+    transform: translate(-70%, -50%);
+}
+
+#press2 {
+    position: fixed;
+    width: 200px;
+    height: 200px;
+    background-size: cover;
+    background-image: url("../imgs/pressL.gif");
+    top: 30%;
+    left: 70%;
+    transform: translate(-30%, -50%);
+}
+
+#theBattle {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    background: rgba(0, 0, 0, 0.7);
+    left: 0;
+    top: 0;
+    z-index: 100;
+    display: none;
+}
+.fighter{
+    width: 200px;
+    height: 200px;
+    position: fixed;
+    background-size: cover;
+}
+.fighter[character = "01"] {
+    background-image: url("../imgs/Charecter_Jay.gif");
+}
+
+.fighter[character = "02"] {
+    background-image: url("../imgs/Charecter_Deen.gif");
+}
+
+.fighter[character = "03"] {
+    background-image: url("../imgs/Charecter_Ome.gif");
+}
+
+.fighter[character = "04"] {
+    background-image: url("../imgs/Charecter_TinTo.gif");
+}
+#fighter1{
+    top: 70%;
+    left: 30%;
+    transform: translate(-70%, -50%);
+}
+#fighter2{
+    top: 70%;
+    left: 70%;
+    transform: translate(-30%, -50%);
+}
+
+.theLife {
+    display: inline-flex;
+    height: 25px;
+}
+
+h3 img {
+    height: 20px;
+    width: 20px;
+}
+
+.obtion {
+    position: fixed;
+    height: 720px;
+    width: 280px;
+    left: 10px;
+    top: 20px;
+    background-image: url("../imgs/background.png");
+    background-size: cover;
+    border: 3px black solid;
+    border-radius: 20px;
+    z-index: 5;
+}
+
+div#server {
+    background: url("../imgs/backG/server.gif");
+    width: 170px;
+    height: 170px;
+    position: absolute;
+    background-size: cover;
+    top: 263px;
+    left: 190px;
+}
+
+div#shopNougPloy {
+    background: url("../imgs/backG/ploy_shop.gif");
+    width: 200px;
+    height: 200px;
+    position: absolute;
+    background-size: cover;
+    top: 395px;
+    left: 620px;
+}
+
+div#shop {
+    background: url("../imgs/backG/shop.gif");
+    width: 200px;
+    height: 200px;
+    position: absolute;
+    background-size: cover;
+    top: 262px;
+    left: 1020px;
+}
+
+div#vending {
+    background: url("../imgs/backG/vending_machine.gif");
+    width: 160px;
+    height: 160px;
+    position: absolute;
+    background-size: cover;
+    top: -7px;
+    left: 1750px;
+}

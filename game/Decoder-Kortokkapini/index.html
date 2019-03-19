@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <style type="text/css">
+    @import url('https://fonts.googleapis.com/css?family=Press+Start+2P');
+body{
+    display: inline-block;
+    background:url(start.gif) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    background-position: center;
+    background-size:cover;
+}
+.btn {
+    position: absolute;
+    box-sizing: border-box;
+    appearance: none;
+    background-color: transparent;
+    border: 2px solid hsla(240,90%,50%,80%);
+    border-radius: 0.6em;
+    color: white;
+    cursor: pointer;
+    display: flex;
+    align-self: center;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1;
+    padding: 1.2em 2.8em;
+    text-decoration: none;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 700;
+    top: 70vh;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    font-family: 'Press Start 2P', cursive;
+    color: #fff;
+    outline: 0;
+  }
+}
+
+#third {
+    border-color: hsla(240,90%,50%,80%);
+    color: #fff;
+    box-shadow: 0 0 40px 40px hsla(240,100%,60%,80%) inset, 0 0 0 0 hsla(240,100%,60%,80%);
+    transition: all 150ms ease-in-out;
+    }
+#third:hover {
+    box-shadow: 0 0 10px 0 hsla(240,100%,60%,80%) inset, 0 0 10px 4px hsla(240,100%,60%,80%);
+}
+
+.bt{
+    display: inline-block;
+    position: absolute;
+    height: 100vh;
+    width: 100%;
+    text-align: center;
+    font-size: 1.7em;
+}
+
+#decoder{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+img{
+    position: absolute;
+    display: block;
+}
+    </style>
+    <title>DECODER</title>
+</head>
+
+<body>
+    <img id="decoder" src="logo_decoder3.png">
+    <div class="bt">
+    <a onclick="sound()" href="Game.html" class="btn" id="third">START</a>
+    </div>
+
+
+    <script type="text/javascript">
+    var start = new Audio();
+    start.src = "start_btn_sound.mp3";
+
+    function sound(){
+        start.play();
+    }
+    </script>
+    <audio autoplay>
+        <source src="start_music.mp3" type="audio/mp3" loop="50"/>
+    </audio>
+</body>
+
+</html>

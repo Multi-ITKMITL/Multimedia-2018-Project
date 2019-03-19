@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html>
+<link rel="stylesheet" type="text/css" href="../css/1.css">
+<link href="https://fonts.googleapis.com/css?family=ZCOOL+QingKe+HuangYou" rel="stylesheet">
+
+<head>
+  <script type="text/javascript">
+var right = new Audio("../sound/g.mp3");
+var newgame = new Audio("../sound/a.mp3")
+var colour="random"; // in addition to "random" can be set to any valid colour eg "#f0f" or "red"
+var sparkles=50;
+
+var x=ox=400;
+var y=oy=300;
+var swide=800;
+var shigh=600;
+var sleft=sdown=0;
+var tiny=new Array();
+var star=new Array();
+var starv=new Array();
+var starx=new Array();
+var stary=new Array();
+var tinyx=new Array();
+var tinyy=new Array();
+var tinyv=new Array();
+
+window.onload=function() { if (document.getElementById) {
+  var i, rats, rlef, rdow;
+  for (var i=0; i<sparkles; i++) {
+    var rats=createDiv(3, 3);
+    rats.style.visibility="hidden";
+    document.body.appendChild(tiny[i]=rats);
+    starv[i]=0;
+    tinyv[i]=0;
+    var rats=createDiv(5, 5);
+    rats.style.backgroundColor="transparent";
+    rats.style.visibility="hidden";
+    var rlef=createDiv(1, 5);
+    var rdow=createDiv(5, 1);
+    rats.appendChild(rlef);
+    rats.appendChild(rdow);
+    rlef.style.top="2px";
+    rlef.style.left="0px";
+    rdow.style.top="0px";
+    rdow.style.left="2px";
+    document.body.appendChild(star[i]=rats);
+  }
+  set_width();
+  sparkle();
+}}
+
+function sparkle() {
+  var c;
+  if (x!=ox || y!=oy) {
+    ox=x;
+    oy=y;
+    for (c=0; c<sparkles; c++) if (!starv[c]) {
+      star[c].style.left=(starx[c]=x)+"px";
+      star[c].style.top=(stary[c]=y)+"px";
+      star[c].style.clip="rect(0px, 5px, 5px, 0px)";
+      star[c].childNodes[0].style.backgroundColor=star[c].childNodes[1].style.backgroundColor=(colour=="random")?newColour():colour;
+      star[c].style.visibility="visible";
+      starv[c]=50;
+      break;
+    }
+  }
+  for (c=0; c<sparkles; c++) {
+    if (starv[c]) update_star(c);
+    if (tinyv[c]) update_tiny(c);
+  }
+  setTimeout("sparkle()", 40);
+}
+
+function update_star(i) {
+  if (--starv[i]==25) star[i].style.clip="rect(1px, 4px, 4px, 1px)";
+  if (starv[i]) {
+    stary[i]+=1+Math.random()*3;
+    if (stary[i]<shigh+sdown && starx[i]>0) {
+      star[i].style.top=stary[i]+"px";
+      starx[i]+=(i%5-2)/5;
+      star[i].style.left=starx[i]+"px";
+    }
+    else {
+      star[i].style.visibility="hidden";
+      starv[i]=0;
+      return;
+    }
+  }
+  else {
+    tinyv[i]=50;
+    tiny[i].style.top=(tinyy[i]=stary[i])+"px";
+    tiny[i].style.left=(tinyx[i]=starx[i])+"px";
+    tiny[i].style.width="2px";
+    tiny[i].style.height="2px";
+    tiny[i].style.backgroundColor=star[i].childNodes[0].style.backgroundColor;
+    star[i].style.visibility="hidden";
+    tiny[i].style.visibility="visible"
+  }
+}
+
+function update_tiny(i) {
+  if (--tinyv[i]==25) {
+    tiny[i].style.width="1px";
+    tiny[i].style.height="1px";
+  }
+  if (tinyv[i]) {
+    tinyy[i]+=1+Math.random()*3;
+    if (tinyy[i]<shigh+sdown && tinyx[i]>0) {
+      tiny[i].style.top=tinyy[i]+"px";
+      tinyx[i]+=(i%5-2)/5;
+      tiny[i].style.left=tinyx[i]+"px";
+    }
+    else {
+      tiny[i].style.visibility="hidden";
+      tinyv[i]=0;
+      return;
+    }
+  }
+  else tiny[i].style.visibility="hidden";
+}
+
+document.onmousemove=mouse;
+function mouse(e) {
+  set_scroll();
+  y=(e)?e.pageY:event.y+sdown;
+  x=(e)?e.pageX:event.x+sleft;
+}
+
+function set_scroll() {
+  if (typeof(self.pageYOffset)=="number") {
+    sdown=self.pageYOffset;
+    sleft=self.pageXOffset;
+  }
+  else if (document.body.scrollTop || document.body.scrollLeft) {
+    sdown=document.body.scrollTop;
+    sleft=document.body.scrollLeft;
+  }
+  else if (document.documentElement && (document.documentElement.scrollTop || document.documentElement.scrollLeft)) {
+    sleft=document.documentElement.scrollLeft;
+  sdown=document.documentElement.scrollTop;
+  }
+  else {
+    sdown=0;
+    sleft=0;
+  }
+}
+
+window.onresize=set_width;
+function set_width() {
+  var sw_min=999999;
+  var sh_min=999999;
+  if (document.documentElement && document.documentElement.clientWidth) {
+    if (document.documentElement.clientWidth>0) sw_min=document.documentElement.clientWidth;
+    if (document.documentElement.clientHeight>0) sh_min=document.documentElement.clientHeight;
+  }
+  if (typeof(self.innerWidth)!="undefined" && self.innerWidth) {
+    if (self.innerWidth>0 && self.innerWidth<sw_min) sw_min=self.innerWidth;
+    if (self.innerHeight>0 && self.innerHeight<sh_min) sh_min=self.innerHeight;
+  }
+  if (document.body.clientWidth) {
+    if (document.body.clientWidth>0 && document.body.clientWidth<sw_min) sw_min=document.body.clientWidth;
+    if (document.body.clientHeight>0 && document.body.clientHeight<sh_min) sh_min=document.body.clientHeight;
+  }
+  if (sw_min==999999 || sh_min==999999) {
+    sw_min=800;
+    sh_min=600;
+  }
+  swide=sw_min;
+  shigh=sh_min;
+}
+
+function createDiv(height, width) {
+  var div=document.createElement("div");
+  div.style.position="absolute";
+  div.style.height=height+"px";
+  div.style.width=width+"px";
+  div.style.overflow="hidden";
+  return (div);
+}
+
+function newColour() {
+  var c=new Array();
+  c[0]=255;
+  c[1]=Math.floor(Math.random()*256);
+  c[2]=Math.floor(Math.random()*(256-c[1]/2));
+  c.sort(function(){return (0.5 - Math.random());});
+  return ("rgb("+c[0]+", "+c[1]+", "+c[2]+")");
+}
+</script>
+</head>
+<body>
+  <img src="../img/ok.png" id="img2">
+    </div>
+<div id="myNav" class="overlay">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    <div class="overlay-content">
+      <a>Now level: EASY</a>
+    <button class="easy" onclick="closeNav()">EASY</button><button class="hard"><a href="2.html" class="hardtext">HARD</a></button><button class="ttt"><a href="3.html" id="time">TIMER</a></button><p id="text2">Different colors <br>will be made to be easily visible.</p>
+    <p id="text3">The colors are more similar, <br>increasing the difficulty of seeing.</p>
+    <p id="text4">There are 60 seconds to play in each stage.<br>If the time is over, the game is over.</p>
+  </div>
+  </div>
+
+  <div id="myNav2" class="overlay">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav2()">&times;</a>
+    <div class="overlay-content">
+    <p><b>How to play?</b><br>
+  Let the player choose the color from the bottom of the table <br>that is the same as the beginning of the table above.
+  Choose the color until the table is one color.
+  <br>
+  <br>
+  <b>Warning</b><br>
+  The number of colors change is limited.</p>
+  </div>
+  </div>
+   <button><a href="../index.html" class="home">Main menu</a></button>
+  <button onclick="openNav()" class="level">Difficulty Level</button>
+  <button onclick="openNav2()" class="howto">How To Play</button>
+	<main>
+  <div class="box">
+    <div class="item"><a href="1.html"><br><center>&nbspRestart</a></center> </div>
+    <div class="item"><a href="1.html"><br><center>&nbspRestart</a></center> </div>
+    <div class="item"><a href="1.html"><br><center>&nbspRestart</a></center> </div>
+    <div class="item"><a href="1.html"><br><center>&nbspRestart</a></center> </div>
+    <div class="item"><a href="1.html"><br><center>&nbspRestart</a></center> </div>
+    <div class="item"><a href="1.html"><br><center>&nbspRestart</a></center> </div>
+    </div>
+    <div class="controls">
+    <div class="text">Moves <span class="moves">0</span> / <span class="total">35</span></div>
+  </div>
+  <div id="board"></div>
+  <div id="colors"></div><br>
+  <div id="game-over"></div>
+</main>
+<audio controls autoplay loop>
+  <source src="../sound/m2.ogg" type="audio/ogg">
+  <source src="../sound/m2.mp3" type="audio/mpeg">
+</audio>
+</audio>
+<script type="text/javascript">
+	var board = document.querySelector('#board')
+var colors = document.querySelector('#colors')
+var gameover = document.querySelector('#game-over')
+var tally = document.querySelector('.moves')
+var total = document.querySelector('.total')
+
+var colorArray = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j']
+
+var running = false
+
+var cell = '-x'
+var skill = 7
+var moves = 0
+var cap = 40
+var color
+
+var shuffle = function(collection) {
+  for (var i = collection.length; i; i--) {
+    var j = Math.floor(Math.random() * i);
+    [collection[i - 1], collection[j]] = [collection[j], collection[i - 1]];
+  }
+  return collection
+}
+
+var setColors = function(collection, n) {
+  console.log(collection)
+  return n < 10 ? shuffle(collection).slice(0, n) : collection
+}
+
+var checkWin = function(moves) {
+  let n = 0
+  let msg = ''
+  if (moves <= cap) {
+    if (board.childNodes[99].className.indexOf(cell) > -1) {
+      for (var i = 0; i < 100; i++) {
+        if (board.childNodes[i].className.indexOf(cell) > -1) {
+          n++
+        }
+      }
+    }
+
+    if (n === 100) {
+      msg = '<span class="new-game">You Win!</span>'
+      running = false
+    } else if (n < 100 && moves >= cap) {
+      msg = '<span class="new-game">GAME OVER</span>'
+      running = false
+    }
+  }
+  if(!running) {
+    gameover.innerHTML = msg
+  }
+}
+
+var checkColor = function(color) {
+  var tiles = board.childNodes
+  for(var x = 0; x < 100; x++) {
+    if(tiles[x].className.indexOf(cell) > -1) {
+      tiles[x].className = color + cell
+      if (x + 1 < 100 && tiles[x + 1].className === color) {
+        tiles[x + 1].className += cell
+      }
+      if (x + 10 < 100 && tiles[x + 10].className === color) {
+        tiles[x + 10].className += cell
+      }
+      if (x - 1 >= 0 && x % 10 > 0 && tiles[x - 1].className === color) {
+        tiles[x - 1].className += cell
+      }
+      if (x - 10 >= 0 && x % 10 > 0 && tiles[x - 10].className === color) {
+        tiles[x - 10].className += cell
+      }
+    }
+  }
+
+}
+
+var builder = function(container, element, collection, count, randomize) {
+  container.innerHTML = ''
+  count = count || collection.length
+  randomize = randomize || false
+  for (var i = 0; i < count; i++) {
+    var child = document.createElement(element)
+    child.className = randomize ? collection[Math.floor((Math.random() * collection.length))] : collection[i]
+    container.appendChild(child)
+  }
+
+}
+
+var newGame = function() {
+  var options = setColors(colorArray.slice(), skill)
+  console.log(options)
+  moves = 0
+  tally.innerText = moves
+  total.innerText = cap
+  gameover.innerHTML = ''
+  running = true
+  builder(colors, 'chip', options)
+  builder(board, 'tile', options, 100, true)
+  color = board.childNodes[0].className
+  board.className = ''
+  board.childNodes[0].className = color + cell
+  checkColor(color)
+}
+
+var play = function(chip) {
+  if (running && color !== chip){
+    color = chip
+    if(board.className !== 'started') {
+      board.className = 'started'
+    }
+    moves++
+    tally.innerText = moves
+    checkColor(chip)
+    checkWin(moves)
+    right.play();
+  }
+}
+
+document.addEventListener("DOMContentLoaded", function() {
+  newGame()
+  newgame.play();
+}, false)
+
+document.addEventListener('click', function(event) {
+  var css = Array.from(event.target.classList)
+  console.log(event.target.tagName)
+  if(event.target.tagName === 'CHIP') {
+    play(event.target.className)
+  }
+  else if(css.includes('new-game')) {
+    newGame()
+  }
+})
+function openNav() {
+  document.getElementById("myNav").style.display = "block";
+  right.play();
+}
+
+  function closeNav() {
+  document.getElementById("myNav").style.display = "none";
+  right.play();
+}
+function openNav2() {
+  document.getElementById("myNav2").style.display = "block";
+  right.play();
+}
+
+  function closeNav2() {
+  document.getElementById("myNav2").style.display = "none";
+  right.play();
+}
+
+</script>
+</body>
+</html>

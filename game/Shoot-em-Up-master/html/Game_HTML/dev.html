@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Dev Team</title>
+	<link rel="stylesheet" type="text/css" href="CSS/dev.css">
+    <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
+	<script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $('.sidebarBtn').click(function(){
+                $('.sidebar').toggleClass('active');
+                $('.sidebarBtn').toggleClass('toggle');
+            })
+        })
+    </script>
+</head>
+<body>
+    <div class="container">
+        <div class="box">
+            <div class="img_box">
+                <img src="IMG/dev/jab.jpg">
+            </div>
+            <h3> Tetat Chulchue</h3>
+            <p>
+                Lead Programmer
+            </p>
+        </div>
+        <div class="box">
+            <div class="img_box">
+                <img class="charter" src="IMG/character/left_center.gif">
+            </div>
+            <h3> SHOOT EM UP</h3>
+        </div>
+        <div class="box">
+            <div class="img_box">
+                <img src="IMG/dev/jam.jpg">
+            </div>
+            <h3> Patcharapon Saisamuth</h3>
+            <p>
+                Web Deverloper, Designer, Video Editer
+            </p>
+        </div>
+        <div class="box">
+            <div class="img_box">
+                <img src="IMG/dev/pu.jpg">
+            </div>
+            <h3> Teerasak Wongpoo</h3>
+            <p>
+                Programmer, Tester
+            </p>
+        </div>
+        <div class="box">
+            <div class="img_box">
+                <img src="IMG/dev/tae.jpg">
+            </div>
+            <h3> Tanawat Chanhom</h3>
+            <p>
+                Lead Designer, Lead Web Deverloper, Video Editer
+            </p>
+        </div>
+        <div class="box">
+            <div class="img_box">
+                <img src="IMG/dev/tag.jpg">
+            </div>
+            <h3> Kasitin Yenutok</h3>
+            <p>
+                Programmer
+            </p>
+        </div>
+    </div>
+	<div class="sidebar">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="howTo.html">How To Play</a></li>
+            <!--<li><a href="board.html">Score Board</a></li>-->
+            <li><a href="dev.html">Dev Team</a></li>
+        </ul>
+        <button class="sidebarBtn">
+            <span></span>
+        </button>
+    </div>
+</body>
+</html>

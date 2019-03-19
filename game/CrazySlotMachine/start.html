@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Slot Machine</title>
+	<style type="text/css">
+		body{
+			background-image: url("https://media1.tenor.com/images/2be965e95d78fa958e4e57aca6f79372/tenor.gif?itemid=5280260");
+			width: 100%;
+			background-size: 100%;
+            background-repeat: no-repeat;
+		}
+		.button{
+	background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 50px;
+    margin: auto;
+    cursor: pointer;
+    position: relative;
+    top: 136px;
+    left: 50%;
+		}
+		.button:after {
+  			content: '';
+  			position: absolute;
+  			top: 0;
+  			left: 0;
+  			width: 0;
+  			height: 100%;
+  			background-color: rgba(255,255,255,0.4);
+				-webkit-transition: none;
+				   -moz-transition: none;
+				        transition: none;
+		}
+		.button:hover:after {
+		  width: 120%;
+		  background-color: rgba(255,255,255,0);
+		  
+			-webkit-transition: all 0.4s ease-in-out;
+				   -moz-transition: all 0.4s ease-in-out;
+			        transition: all 0.4s ease-in-out;
+		}
+    img{
+    width: 60%;
+    position: relative;
+    top: 6%;
+    left: 18%;
+    margin: 0px;
+    border-radius: 10%;
+    }
+	</style>
+</head>
+<body>
+    <audio autoplay loop>
+  <source src="res/sounds/startbg.mp3" type="audio/mpeg">
+</audio>
+	<a href="index.html" class="button">Start</a>
+    <img src="https://prodimages.everythingneon.com/giant/l100-7011-casino-open-animated-led-sign.gif">
+</body>
+</html>

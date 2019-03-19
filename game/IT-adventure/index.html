@@ -1,0 +1,48 @@
+<html>
+    <head>
+        <style>
+          body{
+              background-image: url("imgs/background.png");
+          }
+          div{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            display: block;
+            width: 240px;
+            height: 240px;
+            background-position: center;
+          }         
+          div.logo{
+            background-image: url("imgs/IT aventure orange text.gif");
+            width: 450px;
+            height: 450px;
+            top: 40%;
+            left: 51%;
+            transform: translate(-50%, -50%);
+            background-size: cover;
+            background-repeat: no-repeat;
+          }
+          a.start{
+            background-image: url("imgs/startButton/Start-1.png");
+            position: absolute;
+            top: 65%;
+            left: 50%;
+            width: 240px;
+            height: 240px;
+            transform: translate(-50%, -50%);
+          }
+          a.start:hover{
+            background-image: url("imgs/startButton/Start-2.png");
+            background-repeat: no-repeat;
+            width: 240px;
+            height: 240px;
+          }
+        </style>
+    </head>
+    <body>
+        <div class="logo"></div>
+        <a class="start" href="game.html"></a>
+    </body>
+</html>

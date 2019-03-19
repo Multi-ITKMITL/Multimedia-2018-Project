@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<body id="DafuG">
+
+<h2>JavaScript addEventListener()</h2>
+
+<p>This example uses the addEventListener() method to add many events on the same button.</p>
+
+<button id="myBtn">Try it</button>
+
+<p id="demo"></p>
+
+<script>
+// var x = document.getElementsById("DafuG");
+// x.addEventListener("keypress", mySecondFunction);
+
+var x = document.getElementById("DafuG");
+x.addEventListener("mouseover", myFunction);
+x.addEventListener("click", mySecondFunction);
+x.addEventListener("mouseout", myThirdFunction);
+// x.addEventListener("keydown", myTestFunction(e));
+x.addEventListener('keydown', function(e) {
+    if(e.keyCode == 68){
+      alert("FK");
+    }
+});
+
+function myFunction() {
+  document.getElementById("demo").innerHTML += "Moused over!<br>";
+}
+
+function mySecondFunction() { 
+  document.getElementById("demo").innerHTML += "Clicked!<br>";
+}
+
+function myThirdFunction() {
+  document.getElementById("demo").innerHTML += "Moused out!<br>";
+}
+
+// function myTestFunction(e){
+//     // var keyCode = e.keyCode;
+//     if(e.keyCode == 68){
+//         console.log("You pressed W!");
+//         alert("You pressed W!");
+//     }
+// }
+</script>
+
+</body>
+</html>

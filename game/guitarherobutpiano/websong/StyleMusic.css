@@ -1,0 +1,284 @@
+@import url('https://fonts.googleapis.com/css?family=Nova+Flat');
+
+body {
+    margin: 0;
+    padding: 0;
+    background-image: url(images/bg-6.jpg);
+    background-size: cover;
+}
+
+h1{
+    position: relative;
+    top: 10%;
+    text-align: center;
+    color : rgb(255, 144, 196);
+    font-family: 'Nova Flat', cursive;
+    font-size: 60px;
+
+}
+
+p{
+    padding: 10px;
+}
+
+
+
+.beauty {
+    width: 200px;
+    height: 150px;
+    border: 1px solid #3498db;
+    font-size: 20px;
+    font-family: 'Nova Flat', cursive;
+    transition: all 0.3s;
+    position: absolute;
+    left: 0px;
+    overflow: hidden; 
+    box-shadow: 0px 0px 45px white;
+    color : white;
+    text-shadow: -2px 0 rgba(0,0,0,0.9), 0 1px rgba(0,0,0,0.9), 1px 0 rgba(0,0,0,0.9), 0 -2px rgba(0,0,0,0.9);
+    background-size: cover;
+    background-position : center;
+    text-align: center;
+ 
+    
+}
+.beauty.b1{
+    top: 25%;
+    left: 25%;
+}
+.beauty.b2{
+    top: 25%;
+    left: 25%;
+}
+.beauty.b3{
+    top: 25%;
+    left: 25%;
+}
+
+#songpic{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3em;
+}
+
+#songname{
+    background-color: rgba(0,0,0,0.1);
+}
+
+
+#songpic[song="0"]{
+    z-index: 0;
+    position: absolute;
+    background-image: url(images/bad_apple.jpg);
+    width: 50%;
+    height: 55%;
+}
+#songpic[song="1"]{
+    z-index: 0;
+    position: absolute;
+    background-image: url(images/song2.jpg);
+    width: 50%;
+    height: 55%;
+
+}
+#songpic[song="2"]{
+    z-index: 0;
+    position: absolute;
+    background-image: url(images/song3.jpg);
+    width: 50%;
+    height: 55%;
+}
+#bottom{
+    text-align: center;
+    margin: auto;
+    width: 70px;
+    height: 30px;
+    top: 85%;
+}
+#bottom.left{
+    position: absolute;
+    z-index: 1;
+    right: 72%;
+    top: 43%;
+    cursor: pointer;
+    height: 150px;
+    width: 150px;
+    background-size:contain;
+    background-image: url(images/arrow_l.png);
+    background-repeat: no-repeat;
+
+
+}
+#bottom.left:hover{
+    opacity: .8;
+}
+#bottom.right{
+    position: absolute;
+    z-index: 1;
+    left: 72%;
+    top: 43%;
+    cursor: pointer;
+    height: 150px;
+    width: 150px;
+    background-size:contain;
+    background-image: url(images/arrow_r.png);
+    background-repeat: no-repeat;
+}
+
+#bottom.right:hover{
+    opacity: .8;
+}
+#swap {
+    margin: auto;
+    top: 28%;
+    right: 0;
+    bottom: 0;
+    left: 75%;
+    position: fixed;
+
+}
+@keyframes show1{
+    0% {background-image: url(pic2/guitar.png);}
+    25% {background-image: url(pic/guitar.png);}
+    50% {background-image: url(pic2/guitar.png);}
+    100% {background-image: url(pic/guitar.png);}
+}
+@keyframes show2{
+    0% {background-image: url(pic2/guitar-pic.png);}
+    25% {background-image: url(pic/guitar-pic.png);}
+    50% {background-image: url(pic2/guitar-pic.png);}
+    100% {background-image: url(pic/guitar-pic.png);}
+}
+@keyframes show3{
+    0% {background-image: url(pic2/but.png);}
+    100% {background-image: url(pic/but.png);}
+}
+@keyframes show4{
+    0% {background-image: url(pic2/piano.png);}
+    25% {background-image: url(pic/piano.png);}
+    50% {background-image: url(pic2/piano.png);}
+    100% {background-image: url(pic/piano.png);}
+}
+@keyframes show5{
+    0% {background-image: url(pic2/piano-pic.png);}
+    25% {background-image: url(pic/piano-pic.png);}
+    50% {background-image: url(pic2/piano-pic.png);}
+    100% {background-image: url(pic/piano-pic.png);}
+}
+@keyframes show6{
+    0% {background-image: url(pic2/note.png);}
+    25% {background-image: url(images/note.png);}
+    50% {background-image: url(pic2/note.png);}
+    100% {background-image: url(images/note.png);}
+}
+@keyframes show7{
+    0% {background-image: url(pic2/note1.png);}
+    25% {background-image: url(images/note1.png);}
+    50% {background-image: url(pic2/note1.png);}
+    100% {background-image: url(images/note1.png);}
+}
+
+#logo1 {
+    width: 400px;
+    height: 400px;
+    background-size:cover;
+    background-image: url(pic2/guitar.png);
+    display: block;
+    position: absolute;
+    animation: show1 2s forwards;
+    animation-delay: 2s;
+    
+}
+#logo2 {
+    width: 400px;
+    height: 400px;
+    background-size:cover;
+    background-image: url(pic2/guitar-pic.png);
+    display: block;
+    position: absolute;
+    animation: show2 2s forwards;
+    animation-delay: 4s;
+    
+}
+#logo3 {
+    width: 400px;
+    height: 400px;
+    background-size:cover;
+    background-image: url(pic2/but.png);
+    display: block;
+    position: absolute;
+    animation: show3 1s forwards;
+    animation-delay: 6s;
+    
+}
+#logo4 {
+    width: 400px;
+    height: 400px;
+    background-size:cover;
+    background-image: url(pic2/piano.png);
+    display: block;
+    position: absolute;
+    animation: show4 2s forwards;
+    animation-delay: 7s;
+    
+}
+#logo5 {
+    width: 400px;
+    height: 400px;
+    background-size:cover;
+    background-image: url(pic2/piano-pic.png);
+    display: block;
+    position: absolute;
+    animation: show5 2s forwards;
+    animation-delay: 9s;
+}
+.note {
+    width: 274px;
+    height: 168px;
+    background-size:contain;
+    background-image: url(pic2/note.png);
+    display: block;
+    top: 75%;
+    position: absolute;
+    animation: show6 1s forwards;
+    animation-delay: 2.5s;
+    
+}
+
+.noteadd {
+    width: 300px;
+    height: 300px;
+    background-size:cover;
+    background-image: url(pic2/note1.png);
+    top: 45%;
+    left: 15%;
+    display: block;
+    position: absolute;
+    animation: show7 1s forwards;
+    animation-delay: 3.15s;
+}
+.entertain {
+    text-align: center;
+    margin-top: 250px;
+}
+.pretty {
+    border: 1.5px solid #3498db;
+    background-color: white;
+    padding: 10px 20px;
+    font-size: 20px;
+    font-family: 'Nova Flat', cursive;
+    cursor: pointer;
+    margin: 10px;
+    transition: 0.8s;
+    position: absolute;
+    left: 45.5%;
+    top: 83%;
+    overflow: hidden; 
+    border-radius: 10px;
+    text-shadow: 0px 0px 10px white;
+}
+.pretty:hover{
+    opacity: 0.8;
+}
+

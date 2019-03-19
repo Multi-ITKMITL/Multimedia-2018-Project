@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>EYE TEST</title>
+</head>
+<body>
+	<video autoplay muted loop id="myVideo">
+  <source src="Blue.mp4" type="video/mp4">
+</video>
+<div class="content">
+    <h1>Select the wrong color block</h1>
+    <button id="reset" onclick="myFunction()">Start Game</button>
+    <h2>SCORE : <span id="display">0</span></h2>
+    <h2>TIME left : <span id="countdown" class="timer"></span><span id="change"> sec</span></h2>
+    <h3 id="demo"></h3>
+ <game>
+
+<pit x="0" y="0"  class="square"></pit>
+<pit x="0" y="1"  class="square"></pit>
+<pit x="0" y="2"  class="square"></pit>
+<pit x="0" y="3"  class="square"></pit>
+<pit x="0" y="4"  class="square"></pit>
+<pit x="0" y="5"  class="square"></pit>
+<pit x="0" y="6"  class="square"></pit>
+<pit x="1" y="0"  class="square"></pit>
+<pit x="1" y="1"  class="square"></pit>
+<pit x="1" y="2"  class="square"></pit>
+<pit x="1" y="3"  class="square"></pit>
+<pit x="1" y="4"  class="square"></pit>
+<pit x="1" y="5"  class="square"></pit>
+<pit x="1" y="6"  class="square"></pit>
+<pit x="2" y="0"  class="square"></pit>
+<pit x="2" y="1"  class="square"></pit>
+<pit x="2" y="2"  class="square"></pit>
+<pit x="2" y="3"  class="square"></pit>
+<pit x="2" y="4"  class="square"></pit>
+<pit x="2" y="5"  class="square"></pit>
+<pit x="2" y="6"  class="square"></pit>
+<pit x="3" y="0"  class="square"></pit>
+<pit x="3" y="1"  class="square"></pit>
+<pit x="3" y="2"  class="square"></pit>
+<pit x="3" y="3"  class="square"></pit>
+<pit x="3" y="4"  class="square"></pit>
+<pit x="3" y="5"  class="square"></pit>
+<pit x="3" y="6"  class="square"></pit>
+<pit x="3" y="0"  class="square"></pit>
+<pit x="3" y="1"  class="square"></pit>
+<pit x="3" y="2"  class="square"></pit>
+<pit x="3" y="3"  class="square"></pit>
+<pit x="3" y="4"  class="square"></pit>
+<pit x="3" y="5"  class="square"></pit>
+<pit x="3" y="6"  class="square"></pit>
+<pit x="4" y="0"  class="square"></pit>
+<pit x="4" y="1"  class="square"></pit>
+<pit x="4" y="2"  class="square"></pit>
+<pit x="4" y="3"  class="square"></pit>
+<pit x="4" y="4"  class="square"></pit>
+<pit x="4" y="5"  class="square"></pit>
+<pit x="4" y="6"  class="square"></pit>
+<pit x="4" y="7"  class="square"></pit>
+<pit x="5" y="0"  class="square"></pit>
+<pit x="5" y="1"  class="square"></pit>
+<pit x="5" y="2"  class="square"></pit>
+<pit x="5" y="3"  class="square"></pit>
+<pit x="5" y="4"  class="square"></pit>
+<pit x="5" y="5"  class="square"></pit>
+<pit x="5" y="6"  class="square"></pit>
+<pit x="6" y="0"  class="square"></pit>
+<pit x="6" y="1"  class="square"></pit>
+<pit x="6" y="2"  class="square"></pit>
+<pit x="6" y="3"  class="square"></pit>
+<pit x="6" y="4"  class="square"></pit>
+<pit x="6" y="5"  class="square"></pit>
+<pit x="6" y="6"  class="square"></pit>
+<pit x="7" y="0"  class="square"></pit>
+<pit x="7" y="1"  class="square"></pit>
+<pit x="7" y="2"  class="square"></pit>
+<pit x="7" y="3"  class="square"></pit>
+<pit x="7" y="4"  class="square"></pit>
+<pit x="7" y="5"  class="square"></pit>
+<pit x="7" y="6"  class="square"></pit>
+    </game>
+    </div>
+    <EMBED SRC="Stranger Things.mp3" HIDDEN="True" AUTOSTART="Yes" LOOP="True">
+    
+</body>
+<style>
+    body {
+      cursor: url("https://media.giphy.com/media/nKBHg6xfm79Cw/giphy.gif"), auto;
+        font-family: sans-serif;
+        margin:0;
+}
+h1{
+    text-transform:uppercase;
+    text-shadow: 0px 0px 15px #03A9F4;
+    color:white;
+    letter-spacing: 2px;
+    margin-left:30%;
+    margin-top: 25px;
+}
+h2{
+    text-align:center;
+    text-shadow: 0px 0px 15px #03A9F4;
+    text-transform:uppercase;
+    color:white;
+    margin-left: 50px;
+    display:inline;
+}
+  button {
+    width:150px;
+    height:100px;
+    margin-left:30%;
+    margin-top:20px;
+    border: none;
+    background-color:#3c9cec;
+    text-transform: uppercase;
+    height: 100%;
+    font-weight: 900;
+    color: white;
+    letter-spacing: 2px;
+    font-size: inherit;
+    transition: all 0.3s;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    outline: none;
+    padding:10px;
+    cursor: url("https://media.giphy.com/media/nKBHg6xfm79Cw/giphy.gif"),auto;
+  }
+  button:hover{
+    box-shadow: 0px 0px 20px white;
+  }
+    game{
+        display:block;
+        margin:30px auto;
+        background:#DCDCDC;
+        width:464px;
+        height:460px;
+        position:fixed;
+        border-radius:10px;
+        overflow:hidden;
+        margin-left:35%;
+        box-shadow: 0px 0px 20px #03A9F4;
+        cursor: url("https://media.giphy.com/media/nKBHg6xfm79Cw/giphy.gif"), auto;
+    }
+    pit{
+        display:inline-block;
+        width:50px;
+        height:50px;
+        border:solid 2px black;
+        border-radius:10%;
+        transition: 0.1s;
+        box-shadow: 0px 0px 20px #03A9F4;
+  
+    }
+h3{
+    text-align:center;
+    text-shadow: 0px 0px 15px #03A9F4;
+    text-transform:uppercase;
+    color:white;
+    margin-left:0%;
+    margin-top:40px;
+}
+#myVideo {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%; 
+  min-height: 100%;
+
+}
+.content {
+  position: fixed;
+  top:0;
+  background: rgba(0, 0, 0, 0.5);
+  color: #f1f1f1;
+  width: 100%;
+  padding: 10px;
+
+}
+  pit[y="0"]{
+    top:0px;
+  }
+    pit[y="1"]{
+        top:50px;
+    }
+    pit[y="2"]{
+        top:100px;
+    }
+    pit[y="3"]{
+        top:150px;
+    }
+    pit[y="4"]{
+        top:200px;
+    }
+    pit[y="5"]{
+        top:250px;
+    }
+    pit[y="6"]{
+        top:300px;
+    }
+    
+  pit[x="0"]{
+    left:0px;
+}
+    pit[x="1"]{
+        left:50px;
+    }
+    pit[x="2"]{
+        left:100px;
+    }
+    pit[x="3"]{
+        left:150px;
+    }
+    pit[x="4"]{
+        left:200px;
+    }
+    pit[x="5"]{
+        left:250px;
+    }
+    pit[x="6"]{
+        left:300px;
+    }
+</style>
+<script>
+var square=document.querySelectorAll(".square");
+var show = document.querySelector("#display");
+var reset=document.querySelector("#reset");
+var countdown=document.querySelector("#countdown"); 
+var change=document.querySelector("#change");
+var endgame=document.querySelector("game");
+var numcolor=64;
+var color=[];
+var r,g,b,o,q;
+var arr=[];
+var selectedcolor;
+res();
+function counter()
+{
+  function secondPassed() {
+    countdown.innerHTML =seconds;
+    if (seconds == 0) {
+        clearInterval(countdownTimer);
+        countdown.innerHTML = "Time's Up";
+        change.innerHTML="";
+        gameLost();
+    } else {
+        seconds--;
+    }
+}
+var countdownTimer = setInterval(secondPassed, 1000);
+}
+
+function res()
+{
+color=generaterandomcolor(numcolor);
+console.log(selectedcolor+"1");
+for(var i=0;i<square.length;i++)
+{
+square[i].style.background=color[i];
+square[i].addEventListener("click",function(){
+
+
+var clickedcolor=this.style.backgroundColor;
+
+
+console.log(clickedcolor+"4");
+console.log(this.style.backgroundColor+"5");
+if(clickedcolor===selectedcolor)
+{
+console.log(selectedcolor+"2");
+point++;
+show.textContent = point;
+ res();
+}
+else
+{
+  console.log("error");
+}
+});
+}}
+function generaterandomcolor(num){
+r=Math.floor(Math.random()*256);
+g=Math.floor(Math.random()*256);
+b=Math.floor(Math.random()*256);
+  var min=0.1;
+  var max=0.9;
+o=Number(((Math.random()*(max-min))+min).toFixed(1));
+q=Number(((Math.random()*(max-min))+min).toFixed(1));
+arr=[];
+//Gives a particular color and then we provide this color to the entire grid
+for(z=0;z<num;z++)
+{
+      arr.push("rgba("+r+", "+g+", "+b+", "+o+")");
+}
+ y=Math.floor(Math.random()*35);
+arr[y]="rgba("+r+", "+g+", "+b+", "+q+")";
+selectedcolor=arr[y];
+console.log(selectedcolor+"3");
+return arr;
+}
+
+//ใส่ชื่อหลังจากกด new game
+function myFunction() {
+  var txt;
+  var person = prompt("Please enter your name:", "");
+  if (person == null || person == "") {
+    txt = "Name player : Noname";
+  } else {
+    txt = "Name player : "+ person ;
+  }
+  document.getElementById("demo").innerHTML = txt;
+}
+
+//pop up แสดงหลังจบเกม
+function gameLost() {
+  if(point<=10)
+  {
+    alert("คุณตาสายเเย่มาก ต้องไปรับการตรวจตาอย่างด่วน");
+    reset.textContent="PLAY AGAIN"
+  black();
+  }
+  else if(point>10 && point<=20)
+  {
+    alert("สายตาของคุณปกติ")
+    reset.textContent="PLAY AGAIN"
+ black();
+    }
+  else if(point>20&&point<=30)
+  {
+    alert("คุณสายตาดีมากๆ")
+    reset.textContent="PLAY AGAIN"
+  black();
+}
+  else if(point>50&&point<=999)
+  {
+    alert("WTFFFFF THE GODDDDD")
+    reset.textContent="PLAY AGAIN"
+  black();
+}
+}
+
+reset.addEventListener("click",function(){
+reset.textContent="New Game";
+res();
+show.textContent=0;
+point=0;
+counter();
+seconds=60;
+countdown.innerHTML = ""
+change.innerHTML=" sec";
+})
+function black()
+{
+  for(var i=0;i<square.length;i++)
+      square[i].style.backgroundColor="#232323";
+      endgame.style.backgroundColor="#232323";
+}
+
+</script>
+</html>

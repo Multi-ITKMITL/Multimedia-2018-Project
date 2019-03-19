@@ -1,0 +1,385 @@
+<hmtl>
+
+    <head>
+        <title>Septette for dead princess</title>
+        <link rel="icon" href="pic/instrument.png" size="300x300">
+        <link rel="stylesheet" type="text/css" href="style.css">
+    </head>
+
+    <body>
+        <div id="statdisplay">
+            <h1 id="text">Score</h1>
+            <h1 id="Thescore">00000</h1>
+            <p id="accuracy">ACC :</p>
+            <p id="Thecombo">COMBO :</p>
+        </div>
+        <div class="dropdown">
+            <button>Menu</button>
+            <div>
+                <a href="song3.html">Restart</a>
+                <a href="ChooseMusic.html">Choose Song</a>
+            </div>
+        </div>
+        <form action=""></form>
+        <!-- <button onclick="playsound('C2', 1)">C sound test</button> -->
+        <game>
+            <tile id="TC" keytype="normal" x="0" status="unpress"></tile>
+            <tile id="TD" keytype="normal" x="1" status="unpress"></tile>
+            <tile id="TE" keytype="normal" x="2" status="unpress"></tile>
+            <tile id="TF" keytype="normal" x="3" status="unpress"></tile>
+            <tile id="TG" keytype="normal" x="4" status="unpress"></tile>
+            <tile id="TA" keytype="normal" x="5" status="unpress"></tile>
+            <tile id="TB" keytype="normal" x="6" status="unpress"></tile>
+            <tile id="TbC" keytype="sharp" x="0.75" status="unpress"></tile>
+            <tile id="TbD" keytype="sharp" x="1.75" status="unpress"></tile>
+            <tile id="TbF" keytype="sharp" x="3.75" status="unpress"></tile>
+            <tile id="TbA" keytype="sharp" x="4.75" status="unpress"></tile>
+            <tile id="TbB" keytype="sharp" x="5.75" status="unpress"></tile>
+            <pianokey id="C" x="0" status="unpress">
+                <p>A</p>
+            </pianokey>
+            <pianokey id="D" x="1" status="unpress">
+                <p>S</p>
+            </pianokey>
+            <pianokey id="E" x="2" status="unpress">
+                <p>D</p>
+            </pianokey>
+            <pianokey id="F" x="3" status="unpress">
+                <p>F</p>
+            </pianokey>
+            <pianokey id="G" x="4" status="onpress">
+                <p>G</p>
+            </pianokey>
+            <pianokey id="A" x="5" status="unpress">
+                <p>H</p>
+            </pianokey>
+            <pianokey id="B" x="6" status="unpress">
+                <p>J</p>
+            </pianokey>
+            <!-- # key -->
+            <sharpkey id="bC" x="0.75" status="unpress">
+                <p>W</p>
+            </sharpkey>
+            <sharpkey id="bD" x="1.75" status="unpress">
+                <p>E</p>
+            </sharpkey>
+            <sharpkey id="bF" x="3.75" status="unpress">
+                <p>T</p>
+            </sharpkey>
+            <sharpkey id="bA" x="4.75" status="unpress">
+                <p>Y</p>
+            </sharpkey>
+            <sharpkey id="bB" x="5.75" status="unpress">
+                <p>U</p>
+            </sharpkey>
+            <div id="Thecountdown">
+                <h1 id="Thecountdowntext"onclick="countdown(3);">Start</h1>
+                <h1 id="Thecountdownnum">3s</h1>
+            </div>
+        </game>
+        <div class="progress-bar">
+            <div id="pacman">
+                <div class="header" id="progress-header1"></div>
+                <div class="header" id="progress-header2"></div>
+            </div>
+            <div class="progress" id="progress"></div>
+        </div>
+        <div id="swap">
+                <div id="logo1"></div>
+                <div id="logo2"></div>
+                <div id="logo3"></div>
+                <div id="logo4"></div>
+                <div id="logo5"></div>
+        </div>
+        <div id="model">
+            <h1 id="summary">Score</h1>
+            <h2 id="sumscore">00000</h2>
+            <h2 id="resultacc">ACC : </h2>
+            <h2 id="Mcombo">Max Combo : </h2>
+            <a id="rank"></a>
+            <a href="song3.html"><h2 id="replay">Replay</h2></a>
+            <a href="ChooseMusic.html"><h2 id="Cmusic">Choose Music</h2></a>
+        </div>
+
+
+        <audio data-key="C2-4" src="asset/sounduse/C2-4.wav"></audio>
+        <audio data-key="D2-4" src="asset/sounduse/D2-4.wav"></audio>
+        <audio data-key="E2-4" src="asset/sounduse/E2-4.wav"></audio>
+        <audio data-key="F2-4" src="asset/sounduse/F2-4.wav"></audio>
+        <audio data-key="G2-4" src="asset/sounduse/G2-4.wav"></audio>
+        <audio data-key="A2-4" src="asset/sounduse/A2-4.wav"></audio>
+        <audio data-key="B2-4" src="asset/sounduse/B2-4.wav"></audio>
+        <audio data-key="bC2-4" src="asset/sounduse/bC2-4.wav"></audio>
+        <audio data-key="bD2-4" src="asset/sounduse/bD2-4.wav"></audio>
+        <audio data-key="bF2-4" src="asset/sounduse/bF2-4.wav"></audio>
+        <audio data-key="bA2-4" src="asset/sounduse/bA2-4.wav"></audio>
+        <audio data-key="bB2-4" src="asset/sounduse/bB2-4.wav"></audio>
+
+
+        <audio data-key="C3-4" src="asset/sounduse/C3-4.wav"></audio>
+        <audio data-key="D3-4" src="asset/sounduse/D3-4.wav"></audio>
+        <audio data-key="E3-4" src="asset/sounduse/E3-4.wav"></audio>
+        <audio data-key="F3-4" src="asset/sounduse/F3-4.wav"></audio>
+        <audio data-key="G3-4" src="asset/sounduse/G3-4.wav"></audio>
+        <audio data-key="A3-4" src="asset/sounduse/A3-4.wav"></audio>
+        <audio data-key="B3-4" src="asset/sounduse/B3-4.wav"></audio>
+        <audio data-key="bC3-4" src="asset/sounduse/bC3-4.wav"></audio>
+        <audio data-key="bD3-4" src="asset/sounduse/bD3-4.wav"></audio>
+        <audio data-key="bF3-4" src="asset/sounduse/bF3-4.wav"></audio>
+        <audio data-key="bA3-4" src="asset/sounduse/bA3-4.wav"></audio>
+        <audio data-key="bB3-4" src="asset/sounduse/bB3-4.wav"></audio>
+
+        <audio data-key="C4-4" src="asset/sounduse/C4-4.wav"></audio>
+        <audio data-key="D4-4" src="asset/sounduse/D4-4.wav"></audio>
+        <audio data-key="E4-4" src="asset/sounduse/E4-4.wav"></audio>
+        <audio data-key="F4-4" src="asset/sounduse/F4-4.wav"></audio>
+        <audio data-key="G4-4" src="asset/sounduse/G4-4.wav"></audio>
+        <audio data-key="A4-4" src="asset/sounduse/A4-4.wav"></audio>
+        <audio data-key="B4-4" src="asset/sounduse/B4-4.wav"></audio>
+        <audio data-key="bC4-4" src="asset/sounduse/bC4-4.wav"></audio>
+        <audio data-key="bD4-4" src="asset/sounduse/bD4-4.wav"></audio>
+        <audio data-key="bF4-4" src="asset/sounduse/bF4-4.wav"></audio>
+        <audio data-key="bA4-4" src="asset/sounduse/bA4-4.wav"></audio>
+        <audio data-key="bB4-4" src="asset/sounduse/bB4-4.wav"></audio>
+
+        <!-- 3 -->
+
+        <audio data-key="C2-3" src="asset/sounduse/C2-3.wav"></audio>
+        <audio data-key="D2-3" src="asset/sounduse/D2-3.wav"></audio>
+        <audio data-key="E2-3" src="asset/sounduse/E2-3.wav"></audio>
+        <audio data-key="F2-3" src="asset/sounduse/F2-3.wav"></audio>
+        <audio data-key="G2-3" src="asset/sounduse/G2-3.wav"></audio>
+        <audio data-key="A2-3" src="asset/sounduse/A2-3.wav"></audio>
+        <audio data-key="B2-3" src="asset/sounduse/B2-3.wav"></audio>
+        <audio data-key="bC2-3" src="asset/sounduse/bC2-3.wav"></audio>
+        <audio data-key="bD2-3" src="asset/sounduse/bD2-3.wav"></audio>
+        <audio data-key="bF2-3" src="asset/sounduse/bF2-3.wav"></audio>
+        <audio data-key="bA2-3" src="asset/sounduse/bA2-3.wav"></audio>
+        <audio data-key="bB2-3" src="asset/sounduse/bB2-3.wav"></audio>
+
+
+        <audio data-key="C3-3" src="asset/sounduse/C3-3.wav"></audio>
+        <audio data-key="D3-3" src="asset/sounduse/D3-3.wav"></audio>
+        <audio data-key="E3-3" src="asset/sounduse/E3-3.wav"></audio>
+        <audio data-key="F3-3" src="asset/sounduse/F3-3.wav"></audio>
+        <audio data-key="G3-3" src="asset/sounduse/G3-3.wav"></audio>
+        <audio data-key="A3-3" src="asset/sounduse/A3-3.wav"></audio>
+        <audio data-key="B3-3" src="asset/sounduse/B3-3.wav"></audio>
+        <audio data-key="bC3-3" src="asset/sounduse/bC3-3.wav"></audio>
+        <audio data-key="bD3-3" src="asset/sounduse/bD3-3.wav"></audio>
+        <audio data-key="bF3-3" src="asset/sounduse/bF3-3.wav"></audio>
+        <audio data-key="bA3-3" src="asset/sounduse/bA3-3.wav"></audio>
+        <audio data-key="bB3-3" src="asset/sounduse/bB3-3.wav"></audio>
+
+        <audio data-key="C4-3" src="asset/sounduse/C4-3.wav"></audio>
+        <audio data-key="D4-3" src="asset/sounduse/D4-3.wav"></audio>
+        <audio data-key="E4-3" src="asset/sounduse/E4-3.wav"></audio>
+        <audio data-key="F4-3" src="asset/sounduse/F4-3.wav"></audio>
+        <audio data-key="G4-3" src="asset/sounduse/G4-3.wav"></audio>
+        <audio data-key="A4-3" src="asset/sounduse/A4-3.wav"></audio>
+        <audio data-key="B4-3" src="asset/sounduse/B4-3.wav"></audio>
+        <audio data-key="bC4-3" src="asset/sounduse/bC4-3.wav"></audio>
+        <audio data-key="bD4-3" src="asset/sounduse/bD4-3.wav"></audio>
+        <audio data-key="bF4-3" src="asset/sounduse/bF4-3.wav"></audio>
+        <audio data-key="bA4-3" src="asset/sounduse/bA4-3.wav"></audio>
+        <audio data-key="bB4-3" src="asset/sounduse/bB4-3.wav"></audio>
+
+        <!-- 2 -->
+        <audio data-key="C2-2" src="asset/sounduse/C2-2.wav"></audio>
+        <audio data-key="D2-2" src="asset/sounduse/D2-2.wav"></audio>
+        <audio data-key="E2-2" src="asset/sounduse/E2-2.wav"></audio>
+        <audio data-key="F2-2" src="asset/sounduse/F2-2.wav"></audio>
+        <audio data-key="G2-2" src="asset/sounduse/G2-2.wav"></audio>
+        <audio data-key="A2-2" src="asset/sounduse/A2-2.wav"></audio>
+        <audio data-key="B2-2" src="asset/sounduse/B2-2.wav"></audio>
+        <audio data-key="bC2-2" src="asset/sounduse/bC2-2.wav"></audio>
+        <audio data-key="bD2-2" src="asset/sounduse/bD2-2.wav"></audio>
+        <audio data-key="bF2-2" src="asset/sounduse/bF2-2.wav"></audio>
+        <audio data-key="bA2-2" src="asset/sounduse/bA2-2.wav"></audio>
+        <audio data-key="bB2-2" src="asset/sounduse/bB2-2.wav"></audio>
+
+
+        <audio data-key="C3-2" src="asset/sounduse/C3-2.wav"></audio>
+        <audio data-key="D3-2" src="asset/sounduse/D3-2.wav"></audio>
+        <audio data-key="E3-2" src="asset/sounduse/E3-2.wav"></audio>
+        <audio data-key="F3-2" src="asset/sounduse/F3-2.wav"></audio>
+        <audio data-key="G3-2" src="asset/sounduse/G3-2.wav"></audio>
+        <audio data-key="A3-2" src="asset/sounduse/A3-2.wav"></audio>
+        <audio data-key="B3-2" src="asset/sounduse/B3-2.wav"></audio>
+        <audio data-key="bC3-2" src="asset/sounduse/bC3-2.wav"></audio>
+        <audio data-key="bD3-2" src="asset/sounduse/bD3-2.wav"></audio>
+        <audio data-key="bF3-2" src="asset/sounduse/bF3-2.wav"></audio>
+        <audio data-key="bA3-2" src="asset/sounduse/bA3-2.wav"></audio>
+        <audio data-key="bB3-2" src="asset/sounduse/bB3-2.wav"></audio>
+
+        <audio data-key="C4-2" src="asset/sounduse/C4-2.wav"></audio>
+        <audio data-key="D4-2" src="asset/sounduse/D4-2.wav"></audio>
+        <audio data-key="E4-2" src="asset/sounduse/E4-2.wav"></audio>
+        <audio data-key="F4-2" src="asset/sounduse/F4-2.wav"></audio>
+        <audio data-key="G4-2" src="asset/sounduse/G4-2.wav"></audio>
+        <audio data-key="A4-2" src="asset/sounduse/A4-2.wav"></audio>
+        <audio data-key="B4-2" src="asset/sounduse/B4-2.wav"></audio>
+        <audio data-key="bC4-2" src="asset/sounduse/bC4-2.wav"></audio>
+        <audio data-key="bD4-2" src="asset/sounduse/bD4-2.wav"></audio>
+        <audio data-key="bF4-2" src="asset/sounduse/bF4-2.wav"></audio>
+        <audio data-key="bA4-2" src="asset/sounduse/bA4-2.wav"></audio>
+        <audio data-key="bB4-2" src="asset/sounduse/bB4-2.wav"></audio>
+
+        <!-- 1 -->
+        <audio data-key="C2-1" src="asset/sounduse/C2-1.wav"></audio>
+        <audio data-key="D2-1" src="asset/sounduse/D2-1.wav"></audio>
+        <audio data-key="E2-1" src="asset/sounduse/E2-1.wav"></audio>
+        <audio data-key="F2-1" src="asset/sounduse/F2-1.wav"></audio>
+        <audio data-key="G2-1" src="asset/sounduse/G2-1.wav"></audio>
+        <audio data-key="A2-1" src="asset/sounduse/A2-1.wav"></audio>
+        <audio data-key="B2-1" src="asset/sounduse/B2-1.wav"></audio>
+        <audio data-key="bC2-1" src="asset/sounduse/bC2-1.wav"></audio>
+        <audio data-key="bD2-1" src="asset/sounduse/bD2-1.wav"></audio>
+        <audio data-key="bF2-1" src="asset/sounduse/bF2-1.wav"></audio>
+        <audio data-key="bA2-1" src="asset/sounduse/bA2-1.wav"></audio>
+        <audio data-key="bB2-1" src="asset/sounduse/bB2-1.wav"></audio>
+
+
+        <audio data-key="C3-1" src="asset/sounduse/C3-1.wav"></audio>
+        <audio data-key="D3-1" src="asset/sounduse/D3-1.wav"></audio>
+        <audio data-key="E3-1" src="asset/sounduse/E3-1.wav"></audio>
+        <audio data-key="F3-1" src="asset/sounduse/F3-1.wav"></audio>
+        <audio data-key="G3-1" src="asset/sounduse/G3-1.wav"></audio>
+        <audio data-key="A3-1" src="asset/sounduse/A3-1.wav"></audio>
+        <audio data-key="B3-1" src="asset/sounduse/B3-1.wav"></audio>
+        <audio data-key="bC3-1" src="asset/sounduse/bC3-1.wav"></audio>
+        <audio data-key="bD3-1" src="asset/sounduse/bD3-1.wav"></audio>
+        <audio data-key="bF3-1" src="asset/sounduse/bF3-1.wav"></audio>
+        <audio data-key="bA3-1" src="asset/sounduse/bA3-1.wav"></audio>
+        <audio data-key="bB3-1" src="asset/sounduse/bB3-1.wav"></audio>
+
+        <audio data-key="C4-1" src="asset/sounduse/C4-1.wav"></audio>
+        <audio data-key="D4-1" src="asset/sounduse/D4-1.wav"></audio>
+        <audio data-key="E4-1" src="asset/sounduse/E4-1.wav"></audio>
+        <audio data-key="F4-1" src="asset/sounduse/F4-1.wav"></audio>
+        <audio data-key="G4-1" src="asset/sounduse/G4-1.wav"></audio>
+        <audio data-key="A4-1" src="asset/sounduse/A4-1.wav"></audio>
+        <audio data-key="B4-1" src="asset/sounduse/B4-1.wav"></audio>
+        <audio data-key="bC4-1" src="asset/sounduse/bC4-1.wav"></audio>
+        <audio data-key="bD4-1" src="asset/sounduse/bD4-1.wav"></audio>
+        <audio data-key="bF4-1" src="asset/sounduse/bF4-1.wav"></audio>
+        <audio data-key="bA4-1" src="asset/sounduse/bA4-1.wav"></audio>
+        <audio data-key="bB4-1" src="asset/sounduse/bB4-1.wav"></audio>
+
+
+        <!--  cord  -->
+
+
+        <audio data-key="C0-1" src="asset/sounduse/C0-1.wav"></audio>
+        <audio data-key="D0-1" src="asset/sounduse/D0-1.wav"></audio>
+        <audio data-key="E0-1" src="asset/sounduse/E0-1.wav"></audio>
+        <audio data-key="F0-1" src="asset/sounduse/F0-1.wav"></audio>
+        <audio data-key="G0-1" src="asset/sounduse/G0-1.wav"></audio>
+        <audio data-key="A0-1" src="asset/sounduse/A0-1.wav"></audio>
+        <audio data-key="B0-1" src="asset/sounduse/B0-1.wav"></audio>
+        <audio data-key="bC0-1" src="asset/sounduse/bC0-1.wav"></audio>
+        <audio data-key="bD0-1" src="asset/sounduse/bD0-1.wav"></audio>
+        <audio data-key="bF0-1" src="asset/sounduse/bF0-1.wav"></audio>
+        <audio data-key="bA0-1" src="asset/sounduse/bA0-1.wav"></audio>
+        <audio data-key="bB0-1" src="asset/sounduse/bB0-1.wav"></audio>
+
+        <audio data-key="C1-1" src="asset/sounduse/C1-1.wav"></audio>
+        <audio data-key="D1-1" src="asset/sounduse/D1-1.wav"></audio>
+        <audio data-key="E1-1" src="asset/sounduse/E1-1.wav"></audio>
+        <audio data-key="F1-1" src="asset/sounduse/F1-1.wav"></audio>
+        <audio data-key="G1-1" src="asset/sounduse/G1-1.wav"></audio>
+        <audio data-key="A1-1" src="asset/sounduse/A1-1.wav"></audio>
+        <audio data-key="B1-1" src="asset/sounduse/B1-1.wav"></audio>
+        <audio data-key="bC1-1" src="asset/sounduse/bC1-1.wav"></audio>
+        <audio data-key="bD1-1" src="asset/sounduse/bD1-1.wav"></audio>
+        <audio data-key="bF1-1" src="asset/sounduse/bF1-1.wav"></audio>
+        <audio data-key="bA1-1" src="asset/sounduse/bA1-1.wav"></audio>
+        <audio data-key="bB1-1" src="asset/sounduse/bB1-1.wav"></audio>
+
+
+        <audio data-key="C0-2" src="asset/sounduse/C0-2.wav"></audio>
+        <audio data-key="D0-2" src="asset/sounduse/D0-2.wav"></audio>
+        <audio data-key="E0-2" src="asset/sounduse/E0-2.wav"></audio>
+        <audio data-key="F0-2" src="asset/sounduse/F0-2.wav"></audio>
+        <audio data-key="G0-2" src="asset/sounduse/G0-2.wav"></audio>
+        <audio data-key="A0-2" src="asset/sounduse/A0-2.wav"></audio>
+        <audio data-key="B0-2" src="asset/sounduse/B0-2.wav"></audio>
+        <audio data-key="bC0-2" src="asset/sounduse/bC0-2.wav"></audio>
+        <audio data-key="bD0-2" src="asset/sounduse/bD0-2.wav"></audio>
+        <audio data-key="bF0-2" src="asset/sounduse/bF0-2.wav"></audio>
+        <audio data-key="bA0-2" src="asset/sounduse/bA0-2.wav"></audio>
+        <audio data-key="bB0-2" src="asset/sounduse/bB0-2.wav"></audio>
+
+        <audio data-key="C1-2" src="asset/sounduse/C1-2.wav"></audio>
+        <audio data-key="D1-2" src="asset/sounduse/D1-2.wav"></audio>
+        <audio data-key="E1-2" src="asset/sounduse/E1-2.wav"></audio>
+        <audio data-key="F1-2" src="asset/sounduse/F1-2.wav"></audio>
+        <audio data-key="G1-2" src="asset/sounduse/G1-2.wav"></audio>
+        <audio data-key="A1-2" src="asset/sounduse/A1-2.wav"></audio>
+        <audio data-key="B1-2" src="asset/sounduse/B1-2.wav"></audio>
+        <audio data-key="bC1-2" src="asset/sounduse/bC1-2.wav"></audio>
+        <audio data-key="bD1-2" src="asset/sounduse/bD1-2.wav"></audio>
+        <audio data-key="bF1-2" src="asset/sounduse/bF1-2.wav"></audio>
+        <audio data-key="bA1-2" src="asset/sounduse/bA1-2.wav"></audio>
+        <audio data-key="bB1-2" src="asset/sounduse/bB1-2.wav"></audio>
+
+
+        <audio data-key="C0-3" src="asset/sounduse/C0-3.wav"></audio>
+        <audio data-key="D0-3" src="asset/sounduse/D0-3.wav"></audio>
+        <audio data-key="E0-3" src="asset/sounduse/E0-3.wav"></audio>
+        <audio data-key="F0-3" src="asset/sounduse/F0-3.wav"></audio>
+        <audio data-key="G0-3" src="asset/sounduse/G0-3.wav"></audio>
+        <audio data-key="A0-3" src="asset/sounduse/A0-3.wav"></audio>
+        <audio data-key="B0-3" src="asset/sounduse/B0-3.wav"></audio>
+        <audio data-key="bC0-3" src="asset/sounduse/bC0-3.wav"></audio>
+        <audio data-key="bD0-3" src="asset/sounduse/bD0-3.wav"></audio>
+        <audio data-key="bF0-3" src="asset/sounduse/bF0-3.wav"></audio>
+        <audio data-key="bA0-3" src="asset/sounduse/bA0-3.wav"></audio>
+        <audio data-key="bB0-3" src="asset/sounduse/bB0-3.wav"></audio>
+
+        <audio data-key="C1-3" src="asset/sounduse/C1-3.wav"></audio>
+        <audio data-key="D1-3" src="asset/sounduse/D1-3.wav"></audio>
+        <audio data-key="E1-3" src="asset/sounduse/E1-3.wav"></audio>
+        <audio data-key="F1-3" src="asset/sounduse/F1-3.wav"></audio>
+        <audio data-key="G1-3" src="asset/sounduse/G1-3.wav"></audio>
+        <audio data-key="A1-3" src="asset/sounduse/A1-3.wav"></audio>
+        <audio data-key="B1-3" src="asset/sounduse/B1-3.wav"></audio>
+        <audio data-key="bC1-3" src="asset/sounduse/bC1-3.wav"></audio>
+        <audio data-key="bD1-3" src="asset/sounduse/bD1-3.wav"></audio>
+        <audio data-key="bF1-3" src="asset/sounduse/bF1-3.wav"></audio>
+        <audio data-key="bA1-3" src="asset/sounduse/bA1-3.wav"></audio>
+        <audio data-key="bB1-3" src="asset/sounduse/bB1-3.wav"></audio>
+
+
+
+        <audio data-key="C0-4" src="asset/sounduse/C0-4.wav"></audio>
+        <audio data-key="D0-4" src="asset/sounduse/D0-4.wav"></audio>
+        <audio data-key="E0-4" src="asset/sounduse/E0-4.wav"></audio>
+        <audio data-key="F0-4" src="asset/sounduse/F0-4.wav"></audio>
+        <audio data-key="G0-4" src="asset/sounduse/G0-4.wav"></audio>
+        <audio data-key="A0-4" src="asset/sounduse/A0-4.wav"></audio>
+        <audio data-key="B0-4" src="asset/sounduse/B0-4.wav"></audio>
+        <audio data-key="bC0-4" src="asset/sounduse/bC0-4.wav"></audio>
+        <audio data-key="bD0-4" src="asset/sounduse/bD0-4.wav"></audio>
+        <audio data-key="bF0-4" src="asset/sounduse/bF0-4.wav"></audio>
+        <audio data-key="bA0-4" src="asset/sounduse/bA0-4.wav"></audio>
+        <audio data-key="bB0-4" src="asset/sounduse/bB0-4.wav"></audio>
+
+        <audio data-key="C1-4" src="asset/sounduse/C1-4.wav"></audio>
+        <audio data-key="D1-4" src="asset/sounduse/D1-4.wav"></audio>
+        <audio data-key="E1-4" src="asset/sounduse/E1-4.wav"></audio>
+        <audio data-key="F1-4" src="asset/sounduse/F1-4.wav"></audio>
+        <audio data-key="G1-4" src="asset/sounduse/G1-4.wav"></audio>
+        <audio data-key="A1-4" src="asset/sounduse/A1-4.wav"></audio>
+        <audio data-key="B1-4" src="asset/sounduse/B1-4.wav"></audio>
+        <audio data-key="bC1-4" src="asset/sounduse/bC1-4.wav"></audio>
+        <audio data-key="bD1-4" src="asset/sounduse/bD1-4.wav"></audio>
+        <audio data-key="bF1-4" src="asset/sounduse/bF1-4.wav"></audio>
+        <audio data-key="bA1-4" src="asset/sounduse/bA1-4.wav"></audio>
+        <audio data-key="bB1-4" src="asset/sounduse/bB1-4.wav"></audio>
+
+
+        <tile id="T0"></tile>
+    </body>
+    <script src="song3.js" charset="UTF-8"></script>
+</hmtl>

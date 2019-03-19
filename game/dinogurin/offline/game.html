@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+  <link rel="stylesheet" type="text/css" href="style2.css">
+  <link href="https://fonts.googleapis.com/css?family=Kanit" rel="stylesheet">
+	<title></title>
+</head>
+<body>
+  <div id="music_board" status="off">
+    <div id="music"></div>
+    <audio loop>
+      <source src="bgm.wav" type="audio/wav">
+
+    </audio>
+  </div>
+  <section id="score_push" class="push_sc" style="display: none;">
+    <div class="input">กดเพื่อเล่นใหม่ค่ะ</div>
+    <div>
+    <button onclick="ready_go();" class="input">Restart</button>
+    </div>
+    <div>
+    <button onclick="window.location.href='index.html'" class="input">Index</button>
+    </div>
+  </section>
+
+   <section id="input" class="sec">
+    <div class="input">Your name :</div>
+    <div>
+    <div id="warning"></div>
+    <input type="text" id="users" required minlength="3" maxlength="20" size="10">
+    </div>
+    <button onclick="textcheck();" class="input">start</button>
+    </section>
+  <div>
+  <div class="main-container">
+    <div id="conl"></div>
+    <div id="conr"></div>
+    <div class="content" id="content">
+      <div id="dino" x="3"></div>
+      <div class="col">c1
+      	<div id="plit"></div>
+      </div>
+      <div class="col">c2<div class="bg"></div></div>
+      <div class="col">c3</div>
+      <div class="col">c4</div>
+      <div class="col">c5</div>
+      <div class="col-ch">c1</div>
+      <div class="col-ch">c2</div>
+      <div class="col-ch">c3</div>
+      <div class="col-ch">c4</div>
+      <div class="col-ch">c5</div>
+
+    </div>
+  </div>
+  <div id="name"></div>
+  <div id="score">SCORE: 0</div>
+  <div id="hp">HP: 5</div>
+  </div>
+<script src="https://www.gstatic.com/firebasejs/5.8.6/firebase.js"></script>
+<script type="text/javascript" src="controll1.js"></script>
+<script type="text/javascript" src="fdrop.js"></script>
+<script type="text/javascript" src="formcheck.js"></script>
+<script type="text/javascript" src="music.js"></script>
+</body>
+
+</html>

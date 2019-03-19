@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<meta charset="UTF-8"> 
+
+<head>
+    <title>Tokyo 7th Sisters Tribute Game</title>
+    <script src="gameScripts/gameRules.js"></script>
+    <script src="gameScripts/gameManifests.js"></script>
+    <link href="style.css" rel="stylesheet">
+    <script src="gameScripts/gameState.js"></script>
+    <script src="gameScripts/keyboard.js"></script>
+    <script src="gameScripts/index.js"></script>
+    <script src="gameScripts/canvas.js"></script>
+    <script src="gameScripts/assetManager.js"></script>
+    <script src="gameScripts/audio.js"></script>
+    <script src="gameScripts/prepLoader.js"></script>
+
+</head>
+
+<body onload="onloadPrep()">
+    <h1>Tokyo 7th Sisters Tribute Game</h1>
+    <div class="game" id = "game">
+        <canvas class="center" id="canvas" width="1280" height="720"></canvas>
+        <span id = "tip">Select A Song Below to Start Playing!</span>
+        <div class="judgeLine" id="judgeline"></div>
+        <div id = "selected"></div>
+        <div id = "selectedArtist"></div>
+        <div id="hudLeft">
+            <img id="jacketDisplay"></img>
+            <div id="title" class="hudText"></div>
+            <div id="artist" class="hudText"></div>
+            <span id="judgeText"></span>
+            <span id="score"></span>
+            <span id="combo"></span>
+        </div>
+        <div id="endScreen">
+            <span id = "endGrade" class = "endText"></span>
+            <span id = "endScore" class = "endText"></span>
+            <span id = "endCombo" class = "endText"></span>
+            <span id = "endGrade" class = "gradeText"></span>
+            <span id = "fullCombo" class = "gradeText"></span>
+            <span id = "blurb" class = "endText"> Refresh the page to try again or select new song.</span>
+            <span id = "endGrade" class = "endText"></span>
+        </div>
+    </div>
+    <div class = help>Press "D" key for left lane and "J" key for the right lane. best played on Chrome or Firefox. Best played without lag. </div>
+    <br>
+    <h1>available songs</h1>
+    <div id="selectableSongs">
+        <a href="#game"><img src="imgs/forgetting.png" class="jacket" id="forgetting" onclick="set(this)" title="Forgetting Machine" onmouseover="setInfo(this)"></a>
+        <a href="#game"><img src="imgs/star_glitter.jpg" class="jacket" id="star_glitter" onclick="set(this)" title="Star*Glitter" onmouseover="setInfo(this)"></a>
+        <a href="#game"><img src="imgs/seventh_haven.jpg" class="jacket" id="seventh_haven" onclick="set(this)" title="SEVENTH HAVEN" onmouseover="setInfo(this)"></a>
+        <a href="#game"><img src="imgs/omoi.jpg" class="jacket" id="omoi" onclick="set(this)" title="オ・モ・イ アプローチ" onmouseover="setInfo(this)"></a>
+
+    </div>
+<div class = "footer">
+    <a href = "help.html"><button class = "help">Help</button></a>
+    <a href = "about.html"><button class = "about">About</button></a>
+</div>
+
+</body>

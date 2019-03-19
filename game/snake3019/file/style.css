@@ -1,0 +1,161 @@
+html{
+    cursor: url(http://cur.cursors-4u.net/cursors/cur-2/cur117.cur), auto;
+    overflow: hidden;
+
+}
+body{
+    background-image: url(../src/pic/bg1.gif);
+    background-repeat: no-repeat;
+    background-size: cover;
+    resize: both;
+}
+@font-face {
+    font-family: spaceage;
+    src: local(spaceage), url("../src/fonts/spaceage.otf");
+    /*src: url(../src/fonts/spaceage.ttf);*/
+  }
+#myCanvas{
+    border: 2px solid #1FD01F;
+    box-shadow: 0 0 5px rgb(28, 218, 28), 0 0 10px rgb(26, 216, 26),0px 0px 20px #1FEA1F,0px 0px 30px #1FEA1F;
+    background-color: #1F1F1F;
+    position: absolute;
+    top: 3%;
+    left: 0;
+    right: 0;
+    margin: auto;
+    display: block;
+}
+#myBomb{
+    height: 0;
+}
+h2{
+    color: white;
+    margin-left: 10px;
+    font-family: 'Audiowide', cursive;
+    font-size: 40px;
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #228DFF, 0 0 35px #228DFF, 0 0 40px #228DFF;
+}
+#www{
+    right: 34%;
+    top: 83%;
+    position: fixed;
+    display: block;
+    text-align: center;
+    font-size: 50px;
+    text-shadow:  0 0 10px #fff, 0 0 20px #fff, 0 0 30px #FF1177, 0 0 30px #FF1177, 0 0 50px #FF1177, 0 0 60px #FF1177;
+}
+#pressStart{
+    color: white;
+}
+#startGame{
+    margin: auto;
+    display: block;
+    position: absolute;
+    top: 70%;
+    left: 31.5%;
+    z-index: 100;
+    font-size: 3em
+}
+#keyW{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 500px;
+    height: 500px;
+    margin-top: -250px;
+    margin-left: -250px;
+}
+#endGame{
+    position: relative;
+    bottom: 150px;
+    width: 1080px;
+    height: 695px;
+    display: none;
+    background-image: url(../src/pic/snake.gif);
+    background-repeat: no-repeat;
+    background-size: contain;
+    border-color: rgb(253, 253, 253);
+    border-style: solid;
+    border-width: 10px;
+    transition: 1s;
+    animation-name: ani;
+    animation-duration: 1.5s;
+}
+
+#youDied{
+    position: absolute;
+    bottom: 480px;
+    left: 85px;
+    font-size: 130px;
+    margin: 0px;
+    color: aliceblue;
+    font-family: 'Monoton', cursive;
+    text-shadow:  0 0 10px rgb(52, 255, 1), 0 0 20px rgb(0, 148, 12), 0 0 30px rgb(255, 194, 221), 0 0 30px rgb(170, 255, 113), 0 0 50px rgb(70, 255, 147), 0 0 60px rgb(0, 255, 55);
+}
+#nscoreone{
+    font-size: 40px;
+    position: relative;
+    margin-top: 330px;
+    /* bottom: 230px; */
+    left: 350px;
+    text-shadow:  0 0 10px rgb(200, 255, 1), 0 0 20px rgba(255, 251, 3, 0.658), 0 0 30px rgb(255, 217, 2), 0 0 30px rgba(255, 251, 0, 0.829)
+}
+#nscoretwo{
+    font-size: 40px;
+    position: relative;
+    margin-top: 20px;
+    /* bottom: 230px; */
+    left: 350px;
+    text-shadow:  0 0 10px rgb(200, 255, 1), 0 0 20px rgba(255, 251, 3, 0.658), 0 0 30px rgb(255, 217, 2), 0 0 30px rgba(255, 251, 0, 0.829)
+}
+button{
+    text-decoration: none;
+    display: inline-block;
+    position: relative;
+    top: 110px;
+    height: 60px;
+    width: 250px;
+    font-size: 30px;
+    text-align: center;
+    border: 3px solid rgb(166, 255, 1);
+    color: rgba(113, 173, 0, 0.822);
+    border-radius: 50px;
+    box-shadow: 0 0 10px rgb(166, 255, 1), 0 0 20px rgba(144, 221, 2, 0.822), 0 0 30px rgba(125, 192, 0, 0.555);
+    font-family: 'Orbitron', sans-serif;
+}
+
+button:hover{
+    border: 3px solid rgba(255, 0, 0, 0.719);
+    box-shadow: 0 0 10px rgb(248, 62, 62), 0 0 20px rgba(255, 11, 3, 0.452), 0 0 30px rgba(255, 11, 3, 0.973), 0 0 40px rgba(255, 3, 179, 0.973), 0 0 50px rgba(255, 3, 179, 0.397), 0 0 60px rgba(255, 3, 179, 0.034), 0 0 0px rgba(255, 3, 179), 0 0 80px rgba(255, 3, 179);
+    font-family: 'Orbitron', sans-serif;
+    color: rgb(255, 72, 72);
+    cursor: url(http://ani.cursors-4u.net/cursors/cur-12/cur1136.ani), url(http://ani.cursors-4u.net/cursors/images12/cur1136.png), auto;
+    touch-action: none;
+}
+@keyframes ani {
+    from {bottom:1000px;}
+    to {bottom:150px;}
+}
+#itembox{
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.6);
+    border-radius: 20px;
+    width: 250px;
+    height: 250px;
+    top: 100px;
+}
+.item{
+    display: inline-block;
+    margin-top:15px;
+    margin-left: 30px;
+}
+.txtitem{
+    display: inline-block;
+    position: fixed;
+    font-family: 'Audiowide', cursive;
+    font-size: 20px;
+    color: white;
+    text-shadow:  0 0 10px rgb(217, 1, 255), 0 0 20px rgba(255, 3, 221, 0.658), 0 0 30px rgb(255, 104, 104), 0 0 30px rgba(255, 0, 0, 0.829);
+    margin-top: 25px;
+    margin-left: 30px;
+}

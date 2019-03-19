@@ -1,0 +1,65 @@
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Choose Music</title>
+    <link rel="icon" href="images/instrument.png" size="300x300"/>
+    <link rel="stylesheet" href="StyleMusic.css">
+</head>
+
+<body>
+    <embed id = "selectsong" src="asset/sounduse/select.mp3" loop="true" autostart="true" hidden="true">
+    <h1>Choose Music</h1>
+    <div id="swap">
+        <div id="logo1"></div>
+        <div id="logo2"></div>
+        <div id="logo3"></div>
+        <div id="logo4"></div>
+        <div id="logo5"></div>
+    </div>
+    <div class="note"></div>
+    <div class="noteadd"></div>
+    <div id="bottom" class="left"onclick="changesong(-1);"></div>
+    <div id="entertain">
+        <button class="pretty" onclick="playgame();">SELECT</button>
+    </div>
+    <div id="bottom" class="right"onclick="changesong(1);"></div>
+
+        <div id="songpic" class="beauty b1" song="0">
+            <p id="songname">U.N. Owen Was Her?</p>
+        </div>
+
+    
+</body>
+<script>
+    selectsong.volume = 0.1 ;
+    document.onkeydown = function(e){
+        var code = e.code;
+        if(code == "ArrowLeft"){
+            changesong(-1);
+        }
+        if(code == "ArrowRight"){
+            changesong(1);
+        }
+        if(code == "Space" || code == "Enter"){
+            playgame();
+        }
+    }
+    var pagesong = {0:"U.N. Owen Was Her?", 1:"A Cruel Angel's Thesis", 2:"Septette for dead princess"};
+    var page = 0;
+    function changesong(shift){
+        page += shift;
+        page = (page+3)%3;
+        console.log(page);
+        songpic.setAttribute("song", page);
+        songname.innerText = pagesong[page];
+    }
+    function playgame(){
+        page += 1;
+        console.log("song" + page + ".html");
+        window.location.href = "song" + page + ".html";
+    }
+
+</script>
+
+</html>

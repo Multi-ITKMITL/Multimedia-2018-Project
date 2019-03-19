@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="description" content="A game made to inspire developers to use GSAP, ES6 and Flexbox">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"> 
+    <meta name="apple-mobile-web-app-capable" content="yes">
+
+
+    <title>ALIEN BOUNCE</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Baloo" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700,900" rel="stylesheet" type="text/css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js" type="text/javascript"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.0/TweenMax.min.js" type="text/javascript"></script>
+    
+    
+<!---------------------- Link CSS ---------------------->
+
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+
+<!---------------------- Link Babel JS ---------------------->
+
+    <script src="js.js" type="text/javascript"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.24.0/babel.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.1.0/react.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.1.0/react-dom.min.js"></script>
+
+
+<!---------------------- Social Share ---------------------->
+
+    <meta property="og:image" content="Pic/BOUNCING-image.jpg">
+    <meta property="og:title" content="ALIEN BOUNCE">
+    <meta property="og:url" content="https://suphakit01.github.io/alien-bounce-game/">
+    <meta property="og:description" content="A game made to inspire developers to use GSAP, ES6 and Flexbox">
+
+</head>
+<body>
+
+    <div class="splash"></div>
+    <div class="container">
+
+        <div class="start-game game-full-flex" id="start-game">
+            <span id="animated-text">ALIEN BOUNCE</span>
+            <div class="logo-holder">
+                <a class="play-button" href="#" onclick="game.start()">Play</a>
+                <a class="help-button" href="#">Help</a><br>
+                <h4 class="hint">hint: <span>red</span> color always comes first</h4>
+            </div>
+
+            <div class="how-to-play">
+                <div class="section section-1">
+                    <h4>Bouncing Alien<br>changes color</h4>
+                    <div class="content">
+                        <div class="ball-demo" id="ball-demo"></div>
+                    </div>
+                </div>
+                <div class="section section-2">
+                    <h4>Tap on the bar to switch the colors<br>(Red, Yellow, Green)</h4>
+                    <div class="content">
+                        <div class="bar bar-1" data-index="0"></div>
+                        <div class="bar bar-2"></div>
+                        <div class="bar bar-3"></div>
+                    </div>
+                </div>
+                <div class="section section-3">
+                    <h4>Always match the<br>Alien and bar colors</h4>
+                    <div class="content">
+                        <div class="ball-demo" id="ball-demo"></div>
+                        <div class="bar bar-1"></div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="stop-game game-full-flex">
+
+            <div class="score-container">
+
+                <h1>RESULT</h1>
+                <div class="boxscore">
+                        <div class="final-score"></div>
+                        <div class="result"></div>
+                    </div>
+
+                <div>
+                    <a class="play-again" href="#" onclick="game.start()">Play Again</a>
+                    <a class="main-menu" href="index.html" onclick="game.intro()">Menu</a>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="small-glows"></div>
+
+        <div class="glow"><div class="sun"></div></div>
+
+        <div class="waves">
+            <div class="top_wave"></div>
+            <div class="wave1"></div>
+            <div class="wave2"></div>
+        </div>
+
+        <div class="mounts">
+            <div class="mount1"></div>
+            <div class="mount2"></div>
+        </div>
+
+        <div class="star">
+            <div class="star1"></div>
+            <div class="star2"></div>
+        </div>
+
+        <div class="clouds"></div>
+
+        <div class="scene">
+            <div class="learn-to-play">Click on the bars to change the color!</div>
+            <div class="score" id="score"></div>
+            <div class="ball-holder"></div>
+            <div class="sticks" id="sticks"></div>
+        </div>
+
+        <div class="noise"></div>
+
+    </div>
+
+    <!---------------------- Music ---------------------->
+    
+    <audio controls loop autoplay hidden><source src="Music/Kerorin.mp3" type="audio/mpeg"></audio>
+
+    <script>
+        /* LOGO */
+        var animateText = document.getElementById("animated-text");
+        var textArray = animateText.innerText.split("");
+
+        animateText.firstChild.remove();
+
+        //Probably a better way to do this.
+        var elArray = textArray.map(
+        (letter,index)=>{
+            if(letter==" ") letter = '&nbsp;';
+            var el = document.createElement("span");
+            el.className = "letter";
+            el.innerHTML = letter;
+            el.style.animationDelay = index/(textArray.length)+"s";
+            animateText.appendChild(el);
+            return el;
+        }
+        );
+
+        animateText.innerHtml = elArray;
+    </script>
+</body>
+
+</html>

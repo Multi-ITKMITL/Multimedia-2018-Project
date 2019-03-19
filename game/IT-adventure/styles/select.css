@@ -1,0 +1,179 @@
+
+#selectPlayer{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin: 0;
+}
+h1.select1{
+    background-image: url("../imgs/Pbutton/2P-1.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 200px;
+    height: 175px;    
+    margin: 0;
+
+}h1.select1:hover{
+    background-image: url("../imgs/Pbutton/2P-2.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 200px;
+    height: 175px;
+    margin: 0;
+}
+h1.select2{
+    background-image: url("../imgs/Pbutton/3P-1.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 200px;
+    height: 175px;
+    margin: 0;
+
+}h1.select2:hover{
+    background-image: url("../imgs/Pbutton/3P-2.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 200px;
+    height: 175px;
+    margin: 0;
+}
+h1.select3{
+    background-image: url("../imgs/Pbutton/4P-1.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 200px;
+    height: 200px;
+    margin: 0;
+
+}h1.select3:hover{
+    background-image: url("../imgs/Pbutton/4P-2.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 200px;
+    height: 200px;
+    margin: 0;
+}
+div#startGame{
+    background-image: url("../imgs/enterButton/Enter-1.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 250px;
+    height: 250px;
+}div#startGame:hover{
+    background-image: url("../imgs/enterButton/Enter-2.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 250px;
+    height: 250px;
+}
+a#restart{
+    background-image: url("../imgs/restartButton/restart-1.png");
+    display: none;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 300px;
+    height: 300px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+a#restart:hover{
+    background-image: url("../imgs/restartButton/restart-2.png");
+    display: none;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 300px;
+    height: 300px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+#selectCharacter{
+    width: 1350px;
+    height: 400px;
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+}
+.character{
+    width: 300px;
+    height: 300px;
+    border: 5px white solid;
+    position: absolute;
+    top: 50px;
+    left: var(--x);
+    background-size: cover;
+    border-radius: 90%/50%;
+}
+
+.character[selection="1"]{
+    border: 7px red solid;
+}
+
+#Jay{
+    background-image: url("../imgs/Charecter_Jay.gif");
+    --x: 0px;
+}
+
+#Deen{
+    background-image: url("../imgs/Charecter_Deen.gif");
+    --x: 350px;
+}
+
+#Ome{
+    background-image: url("../imgs/Charecter_Ome.gif");
+    --x: 700px;
+}
+
+#Tin{
+    background-image: url("../imgs/Charecter_TinTo.gif");
+    --x: 1050px;
+}
+
+#startGame{
+    display: none;
+    position: absolute;
+    width: 50px;
+    top: 73%;
+    left: 50%;
+    transform: translate(-50%, -20%);
+}
+
+.selected{
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80px;
+    height: 80px;
+    position: absolute;
+}
+
+.selected[player = "player1"]{
+   background-image: url("../imgs/Pbutton/1P-1.png");
+}
+.selected[player = "player2"]{
+    background-image: url("../imgs/Pbutton/2P-1.png");
+}
+.selected[player = "player3"]{
+    background-image: url("../imgs/Pbutton/3P-1.png");
+}
+.selected[player = "player4"]{
+    background-image: url("../imgs/Pbutton/4P-1.png");
+}
+
+/*.child {*/
+    /*position: absolute;*/
+    /*top: 50%;*/
+    /*left: 50%;*/
+    /*transform: translate(-50%, -50%);*/
+/*}*/
+
+
+
+

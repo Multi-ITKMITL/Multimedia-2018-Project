@@ -1,0 +1,161 @@
+body {
+    font-family: 'Sigmar One', cursive;
+    padding: 0;
+    margin: auto;
+    display: block;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-image: url("water_animated.png");
+    -webkit-animation: play 1.2s steps(10) infinite;
+       -moz-animation: play 1.2s steps(10) infinite;
+        -ms-animation: play 1.2s steps(10) infinite;
+         -o-animation: play 1.2s steps(10) infinite;
+            animation: play 1.2s steps(10) infinite;
+}
+*{
+    cursor: url('cursor.png'), auto;
+    /*cursor: url('cursor2.png'), pointer;*/
+}
+/*div.index{
+    background-image: url('map_background.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    position: fixed;
+    margin-top: 2vh;
+    left: 25vw;
+    height: 95vh;
+    width: 95vh;
+}*/
+#demo {
+    border: rgb(255, 255, 255) 10px solid;
+    border-radius: 10px;
+    padding: 0;
+    margin: auto;
+    display: block;
+    position: fixed;
+    top: 8%;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-image: url("water_animated.png");
+    -webkit-animation: play 1.2s steps(10) infinite;
+       -moz-animation: play 1.2s steps(10) infinite;
+        -ms-animation: play 1.2s steps(10) infinite;
+         -o-animation: play 1.2s steps(10) infinite;
+            animation: play 1.2s steps(10) infinite;
+    -webkit-filter: drop-shadow(0px 3px 2px #222);
+            filter: drop-shadow(0px 3px 2px #222);
+}
+#lifeline {
+    display: block;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+}
+
+@-webkit-keyframes play {
+    from { background-position:    0px; }
+      to { background-position: -3200px; }
+ }
+ 
+ @-moz-keyframes play {
+    from { background-position:    0px; }
+      to { background-position: -3200px; }
+ }
+ 
+ @-ms-keyframes play {
+    from { background-position:    0px; }
+      to { background-position: -3200px; }
+ }
+ 
+ @-o-keyframes play {
+    from { background-position:    0px; }
+      to { background-position: -3200px; }
+ }
+ 
+ @keyframes play {
+    from { background-position:    0px; }
+      to { background-position: -3200px; }
+ }
+#charec{
+    position: fixed;
+    margin: 10px;
+    padding: 6px;
+    width: 80px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 50%;
+    -webkit-filter: drop-shadow(0px 3px 2px #222);
+            filter: drop-shadow(0px 3px 2px #222);
+}
+.health-bar {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 200px;
+    height: 20px;
+    padding: 5px;
+    margin: 10px;
+    top: 20px;
+    left: 7%;
+    background: rgb(255, 255, 255);
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    position: relative;
+    -webkit-filter: drop-shadow(0px 3px 2px #222);
+            filter: drop-shadow(0px 3px 2px #222);
+  }
+  .bar {
+    background: #c54;
+    width: 100%;
+    height: 10px;
+    position: relative;
+    
+    transition: width .5s linear;
+  }
+  
+  .hit {
+    /*background: rgba(230, 135, 135, 0.811);*/
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 0px;
+    
+    transition: width .5s linear;
+  }
+  .arrow.left{
+    position: fixed;
+    display: inline-block;
+    content:url('arrow.png');
+    padding: 0%;
+    top: 38%;
+    margin: auto;
+    left: 4%;
+    width: 15%;
+    transition: 0.7s;
+}
+.arrow.left:hover{
+    position: fixed;
+    display: inline-block;
+    content:url('arrow.png');
+    width: 22%;
+    padding: 0%;
+    top: 33%;
+    margin: auto;
+    left: 1%;
+}
+#logo{
+    position: fixed;
+    width: 12%;
+    left: 44%;
+    top: 0%;
+    margin: 0%;
+    border: 0%;
+    padding: 0%;
+    z-index: 4000;
+}

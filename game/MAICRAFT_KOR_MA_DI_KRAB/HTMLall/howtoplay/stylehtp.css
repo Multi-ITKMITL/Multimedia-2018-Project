@@ -1,0 +1,41 @@
+ body {
+    margin: 0;
+    cursor: url("../mo.png") 0 0, default;
+    background-image: url("bg.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+}
+        
+img {
+    width: 40%;
+    height: 40%;
+    margin-top: 5%;
+    align-content: center;
+}
+        
+.container {
+    width: 500px;
+    margin: 2em auto;
+    padding: 2em;
+    box-shadow: 0px 0px 10px #0005;
+    border-radius: 1em;
+    background-color: rgba(255, 255, 255, 0.5);
+     filter: alpha(opacity=40);
+}
+        
+#text {
+    font-family: "Waffle Regular";
+    font-size: 2em;
+    color: black;
+}
+        
+.icon {
+    width: 10%;
+    height: 10%;
+    margin-top: 2em;
+}

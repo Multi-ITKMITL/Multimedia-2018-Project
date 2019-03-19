@@ -1,0 +1,47 @@
+<!doctype html>
+<html>
+<head>
+    <title>GAME | PARADISE ISLAND</title>
+    <meta charset="utf-8">
+    <link rel="shortcut icon" href="head.png" />
+    <link rel="stylesheet" href="styles.css" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Sigmar+One" rel="stylesheet">
+    <script src="common.js" rel="preload" as="script"></script>
+    <script src="logic-grid.js" rel="preload" as="script"></script>
+    <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+    <script src="health.js"></script>
+</head>
+<body class="fadeIn">
+    <a href="index.html"><div class="arrow left"></div></a>
+        <img src="head.png" id="charec"></img>
+    <div class="health-bar" data-total="1000" data-value="1000">
+        <div class="bar">
+            <div class="hit"></div>
+        </div>
+    </div>
+    <!--   
+    <br />
+        
+    <button class="damage random">hit random</button>
+    <button class="reset">reset</button>
+        
+    <div class="log">
+        <div>What's going on...</div>
+    </div>
+    -->
+    <img src="logo.png" id="logo"></img>
+    <canvas id="demo"  width="704" height="704"></canvas>
+    <audio id="bgm" autoplay loop>
+        <source src="8-Bit Nyan.mp3" type="audio/ogg">
+    </audio>
+    <script>
+        function endgame(){
+            if (this.x == 2208 && this.y == 4096) {
+                alert('SUCCESS EDOK');
+            }
+        }
+    </script>
+    <script src="common.js"></script>
+    <script src="logic-grid.js"></script>
+</body>
+</html>

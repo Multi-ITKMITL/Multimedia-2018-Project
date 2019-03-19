@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Type Warrior</title>
+        <link rel="icon" type="image/ico" href="./img/icon.png" />
+        <link rel="stylesheet" type="text/css" href="./style.css">
+    </head>
+    <body onload="myFunction()">
+        <div id="loadingstart">
+            <h1>LOADING..</h1>
+        </div>
+        <div id="presshere"><a onclick="menuGame()">PRESS HERE TO START</a></div>
+        <div id="load">
+            <hr/><hr/><hr/><hr/>
+        </div>
+        <div id="loadsuccess">
+            <a onclick="menuGame()"><hr/></a>
+        </div>
+        <div id= "mainmenu">
+            <div id="menu">
+                <img class="mainlogo" src="img/logo.png">
+                <a onclick="levelSelect()">START</a>
+                <a href="#howtoplay" onclick="soundClick()">HOW TO PLAY ?</a>
+            </div>
+            <div id="howtoplay" class="overlay">
+              <div class="popup">
+                <h1>How to play</h1>
+                <p>1. Beat the monster by typing in words!</p>
+                <p>2. Complete the whole word to damage the the monsters.</p>
+                <p>3. Don't worry of your typo. DON'T BACKSPACE! Just finish your word in time.</p>
+                <p>4. If you failed to type the word in time. You will get damaged. If your health hits zero. The game will be over!</p>
+                <p>5. If you type correctly one after the another, you will gain combo! You will gain a stacking 0.5 point multiplier for 10 consecutive correct input, but you will lose them if you type wrong!</p>
+                <a class="close" href="#Close" onclick="soundClick()">&times;</a>
+              </div>
+            </div>
+        </div>
+
+        <div id="level">
+            <img src="img/logo.png" class="menuLogo">
+            <div class="mylevel">
+                <a id="statusmode" mode="easy" onclick="setMode(mode)">Easy</a>
+                <a class="rightturn" onclick="rightChange()"> > </a>
+            </div>
+        </div>
+
+        <div id="game">
+            <img src="img/logo.png" class="menuLogo">
+            <div id="startdelay">3</div>
+            <div id="gamebox">
+                <div class="healthBar">
+                    <div class="bossHp">Boss Hp :</div>
+                    <div class="healthBg">
+                        <div class="health"></div>
+                    </div>
+                </div>
+                <div class="myhealthBar">
+                    <div class="myHp">My Hp :</div>
+                    <div class="myhealthBg">
+                        <div class="myhealth"></div>
+                    </div>
+                </div>
+                <img src="" id="monster_start">
+                <img src="" id="monster_die">
+                <div id="myword">
+                    <div class="wordsWrap">
+                        <p class="words"></p>
+                    </div>
+                </div>
+                <p id="mytranslate">_</p>
+                <div id="timestatus">
+                    <h1 class="time">Time : <span id="theTime">_</span></h1>
+                </div>
+            </div>
+        </div>
+
+        <div id="gamewin">
+            <img src="img/logo.png" class="menuLogo">
+            <h1 class="win">You Win</h1>
+            <a onclick="levelSelect()">Play Again</a>
+            <a href="#Menu" onclick="menuGame()">Menu</a>
+        </div>
+
+        <div id="gameover">
+            <img src="img/logo.png" class="menuLogo">
+            <h1 class="lose">Game Over</h1>
+            <a onclick="levelSelect()">Play Agian</a>
+            <a href="#Menu" onclick="menuGame()">Menu</a>
+        </div>
+
+        <div id="score">
+            <div class="mycombo">Combo : <span id="updatecombo">0</span></div>
+            <div class="myscore"><span id="updatescore">0</span>Score</div>
+        </div>
+
+        <div id="contact">
+            <a href="https://github.com/max180643/Type_Warrior"><img src="./img/github.png"></a>
+        </div>
+
+        <div id="preload">
+            <img src="img/logo.png">
+            <img src="./img/bg.jpg">
+            <img src="img/cursor.png">
+            <img src="img/github.png">
+            <img src="./img/Mons0.gif">
+            <img src="./img/Mons0-die.gif">
+            <img src="./img/Mons1.gif">
+            <img src="./img/Mons1-die.gif">
+            <img src="./img/Mons2.gif">
+            <img src="./img/Mons2-die.gif">
+            <img src="./img/Mons3.gif">
+            <img src="./img/Mons3-die.gif">
+            <img src="./img/Mons4.gif">
+            <img src="./img/Mons4-die.gif">
+            <img src="./img/Mons5.gif">
+            <img src="./img/Mons5-die.gif">
+        </div>
+        <audio preload="auto">
+            <source src="./sound/1.click.wav" type="audio/wav">
+            <source src="./sound/2.countdown.wav" type="audio/wav">
+            <source src="./sound/3.press.wav" type="audio/wav">
+            <source src="./sound/4.damage.mp3" type="audio/mpeg">
+            <source src="./sound/5.hurt.wav" type="audio/wav">
+            <source src="./sound/6.die.wav" type="audio/wav">
+            <source src="./sound/7.win.mp3" type="audio/mpeg">
+            <source src="./sound/8.gameover.wav" type="audio/wav">
+            <source src="./sound/9.missed.wav" type="audio/wav">
+            <source src="./sound/10.music.mp3" type="audio/mpeg">
+            <source src="./sound/11.coupe.mp3" type="audio/mpeg">
+        </audio>
+        <script src="word.js"></script>
+        <script src="thai.js"></script>
+        <script src="script.js"></script>
+    </body>
+</html>

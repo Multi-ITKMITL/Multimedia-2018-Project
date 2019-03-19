@@ -1,0 +1,258 @@
+@import url('https://fonts.googleapis.com/css?family=Righteous');
+html {
+    height: 100%;
+  }
+  
+
+  body {
+    background: url("b1.gif") no-repeat center center fixed;
+    margin: 0;
+    top: 200px;
+    font-family: 'Righteous', cursive;
+    margin: 0;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  }
+  body:before {
+    width: 100%;
+    height: 100%;
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    background-image: -moz-linear-gradient(top left, rgba(0, 47, 75, 0.75), rgba(47, 245, 170, 0.1));
+    background-image: -ms-linear-gradient(top left, rgba(0, 47, 75, 0.75), rgba(47, 245, 170, 0.1));
+    background-image: -webkit-linear-gradient(top left, rgba(0, 47, 75, 0.75), rgba(53, 238, 167, 0.1));
+    background-image: -o-linear-gradient(top left, rgba(0, 47, 75, 0.75), rgba(47, 245, 170, 0.1));
+    background-image: linear-gradient(to bottom right, rgba(0, 47, 75, 0.75), rgba(47, 245, 170, 0.1));
+    background-size: auto;
+  }
+  
+  
+  
+  .container {
+    max-width: 700px;
+    margin: 0 auto;
+    animation:  bounceIn 5s ease;
+  }
+  
+  
+  h1 {
+    text-align: center;
+    margin: 0;
+    font-size: 36px;
+    padding: 25px 0;
+    animation: fadeInDown 2s ease-in-out;
+    color: white;
+    text-transform: uppercase;
+    text-shadow: 0.03em 0.2em 0 hsla(230,40%,50%,1);
+  }
+  
+  .title {
+    text-transform: uppercase;
+    font-size: 150%;
+  }
+  
+  .bar {
+    text-align: center;
+    background: white;
+    height:30px;
+    color:hsla(230,40%,50%,1);
+    margin: 0;
+    font-family: 'Righteous', cursive;
+    text-transform: uppercase;
+    
+  }
+  
+  .msgResult {
+    display: inline-block;
+    width: 15%;
+    margin-left: 3%;
+  }
+  
+  @media screen and (max-width: 400px) {
+    .btns {
+      font-size: 11px;
+      color:hsla(230,40%,50%,1);
+    }
+    
+    .msgDisplay {
+      font-size: 11px;
+      color:hsla(230,40%,50%,1);
+    }
+    
+    .msgResult {
+      font-size: 11px;
+      width: 25%;
+      color:hsla(230,40%,50%,1);
+    }
+  }
+  
+  .colourCode {
+    text-align: center;
+    color: white;
+    margin: 2% 0;
+    font-size: 30px;
+    text-shadow: 0.03em 0.2em 0 hsla(230,40%,50%,1);
+    animation:  bounceIn 2s ease;
+  }
+  
+  .square {
+    width: 30%;
+    margin: 1.66%;
+    padding-bottom: 30%;
+    float: left;
+    border-radius: 20%;
+    transition: opacity 1s, background 1s;
+    -webkit-transition: opacity 1s, background 1s;
+    -moz-transition: opacity 1s, background 1s;
+    
+    
+    
+  
+  }
+  
+  button {
+    border: none;
+    background: none;
+    color: white;
+    height: 100%;
+    font-family: "Merriweather";
+    font-size: 17px;
+    transition: background 0.5s;
+    -webkit-transition: background 0.5s;
+    -moz-transition: background 0.5s;
+  
+  }
+  
+  button:focus {
+    outline: none;
+  }
+  
+  button:hover {
+    color:white;
+    background: hsla(230,40%,50%,1);
+  }
+  
+  .selected {
+    color:white;
+    background: hsla(230,40%,50%,1);
+  }
+  
+  .msgDisplay {
+    margin-right: 3%;
+  }
+  
+  footer {
+    clear: both;
+    margin-left: 45%;
+  }
+  #hardBtn{
+    font-family: 'Righteous', cursive;
+    color: hsla(230,40%,50%,1);
+  }
+  #easyBtn{
+    font-family: 'Righteous', cursive;
+    color: hsla(230,40%,50%,1);
+  }
+
+  #restartBtn{
+    font-family: 'Righteous', cursive;
+    color: hsla(230,40%,50%,1);
+  }
+
+  #hardBtn.selected{
+    font-family: 'Righteous', cursive;
+    background: hsla(230,40%,50%,1);
+    color:white;
+  }
+
+  #easyBtn.selected{
+    font-family: 'Righteous', cursive;
+    background: hsla(230,40%,50%,1);
+    color:white;
+  }
+
+  #restartBtn:hover{
+    font-family: 'Righteous', cursive;
+    background: hsla(230,40%,50%,1);
+    color:white;
+  }
+
+  #easyBtn:hover{
+    font-family: 'Righteous', cursive;
+    background: hsla(230,40%,50%,1);
+    color:white;
+  }
+
+  #hardBtn:hover{
+    font-family: 'Righteous', cursive;
+    background: hsla(230,40%,50%,1);
+    color:white;
+  }
+  #colourDisplay{
+      font-size: 50px;
+  }
+
+  @keyframes fadeInDown {
+
+    0% {opacity: 0;} // CSS properties at start
+	100% {opacity: 100;} // CSS properties at end
+	}  
+}
+
+
+@keyframes bounceIn {
+  from,
+  20%,
+  40%,
+  60%,
+  80%,
+  to {
+    -webkit-animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+    animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+  }
+
+  0% {
+    opacity: 0;
+    -webkit-transform: scale3d(0.3, 0.3, 0.3);
+    transform: scale3d(0.3, 0.3, 0.3);
+  }
+
+  20% {
+    -webkit-transform: scale3d(1.1, 1.1, 1.1);
+    transform: scale3d(1.1, 1.1, 1.1);
+  }
+
+  40% {
+    -webkit-transform: scale3d(0.9, 0.9, 0.9);
+    transform: scale3d(0.9, 0.9, 0.9);
+  }
+
+  60% {
+    opacity: 1;
+    -webkit-transform: scale3d(1.03, 1.03, 1.03);
+    transform: scale3d(1.03, 1.03, 1.03);
+  }
+
+  80% {
+    -webkit-transform: scale3d(0.97, 0.97, 0.97);
+    transform: scale3d(0.97, 0.97, 0.97);
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+}
+
+.bounceIn {
+  -webkit-animation-duration: 0.75s;
+  animation-duration: 0.75s;
+  -webkit-animation-name: bounceIn;
+  animation-name: bounceIn;
+}

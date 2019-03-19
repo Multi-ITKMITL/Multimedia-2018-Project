@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <iframe width="0" height="0"  src="bgm.mp3" frameborder="0" allowfullscreen></iframe>
+    </head>
+    <body onload="gamestart()">
+        <h2>P1 Score:<span id="score_2">0</span> P2 Score:<span id="score_1">0</span></h2>
+        <img id="p1-win" width="200" height="100" src="p1-win.png" alt="p1-win.png">
+        <img id="p2-win" width="200" height="100" src="p2-win.png" alt="p2-win.png">
+        
+
+        <canvas Style="border: black solid 10px" id="canvas" class="center">
+        
+        
+            
+        </canvas>
+        <div class="r"></div>
+        <div class="p1"></div>
+        <div class="p2"></div>
+        <script src="js.js">
+        </script>
+  </body>
+  <audio autoplay loop>
+            <source src="bgm.mp3" type="audio/mpeg">
+        </audio>
+</html>

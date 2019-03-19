@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>HOME | PARADISE ISLAND</title>
+    <link rel="shortcut icon" href="head.png" />
+    <link href="https://fonts.googleapis.com/css?family=Sigmar+One" rel="stylesheet">
+    <link rel="stylesheet" href="index.css" type="text/css">
+</head>
+<body class="fadeIn">
+    <div id="char"></div>
+
+    <div id="logo"></div>
+
+    <div class="wrapper">
+    <a href="tutorial.html" class="p2">Tutorial</a>
+    <a href="logic-grid.html" class="p1">Start Game</a>    
+    <div class="rope">
+        <img src="rope.png"></img>
+    </div>
+    <div class="sign">
+        <img src="sign.png"></img>
+    </div>
+    <div class="sign2">
+        <img src="sign.png"></img>
+    </div>
+    </div>
+    <script>
+    $( document ).ready(function() {
+    $('body').show();
+    });
+    bgm.play();
+    </script>
+    <script>
+        $(document).ready(function(){
+            $("div").hover(function(){
+                $(this).whoop();
+            });
+        });
+    </script>
+    <audio id="whoop" preload="auto">
+            <source src="whoosh.mp3" type="audio/ogg">
+    </audio>
+    <audio id="bgm" autoplay loop>
+        <source src="BGM.mp3" type="audio/ogg">
+    </audio>
+</body>
+</html>

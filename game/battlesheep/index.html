@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<head>
+	<title>Battlesheep</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="styles.css">
+	<link rel="icon" href="favicon.png">
+	<link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
+</head>
+<body>
+	<iframe  src="assets/sound/Silent.wav" allow="autoplay" style="display:none"></iframe> 
+	<audio autoplay loop preload="auto" id="Audio">
+			<source src="assets/sound/bgm.wav" type="audio/wav">
+	</audio>
+	<audio autoplay loop preload="auto" id="SFX">
+		<source src="assets/sound/silent.wav" type="audio/wav">
+	</audio>
+	<audio autoplay preload="auto" id="hit"></audio>
+	<audio autoplay preload="auto" id="mob"></audio>
+	<div>
+		<div id="howtoplay">
+			<div class="textbox">
+				<div class="box">
+					<p><code onclick="game.hideAnnounce()">X</code></p>
+					<p>How to play!</p>	
+					<p>
+						<code>W</code> <code>A</code> <code>S</code> <code>D</code><span>Move</span> 
+					</p>
+					<p>
+						<code></code> <code></code> <code></code> <code>I</code><span>Inventory</span>
+					</p>
+					<p>
+						<code class="special">Doubleclick</code><span>Equip</span>
+					</p>
+					<p>
+						<code></code> <code>J</code> <code>K</code> <code>L</code><span>Shoot</span>
+					</p>
+					<p>Game end when all the monsters has die!</p><p>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div>
+		<div id="option">
+			<div class="textbox">
+				<div class="box">
+						<p><code onclick="game.togglePause()">X</code></p>
+						<p>Options</p>
+						<p>
+							<code id="bgmmute" onclick="soundMute()" style="background-image: url(assets/unmute.png)" onclick="soundMute()" sound></code>
+							<span>Music</span>
+						</p>
+						<p><code id="sfxmute" onclick="sfxMute()" style="background-image: url(assets/unmute.png)"onclick="sfxMute()" sound></code>
+							<span>SFX</span>
+						</p>
+				</div>
+				</div>
+			</div>
+		</div>
+			
+	</div>
+	<div class="board" id="board">
+		<div id="title">
+			<div id="battlesheep"></div>
+		</div>
+		<div id="menu">
+			<div id="startGame" onclick="game.init()"><p>Start Game</p></div>
+			<div id="loadGame" onclick="game.showAnnounce('1')"><p>How to play</p></div>
+			<div id="Options" onclick="game.togglePause('0')"><p>Options</p></div>
+		</div>
+		<div id="gameover">
+			<p style="font-size: 8em;">
+				<span id="gameover_text">Game Over</span>
+			</p>
+			<p id='playagain' style='font-size: 2.5em;'>
+				<span onclick="game.init()" clickable> Play Again ? </span>
+			</p>
+			<p id='backtomenu' style='font-size: 2.5em;'>
+				<span onclick="game.showInterface()" clickable> Go back to menu </span>
+			</p>
+		</div>
+		<div id="gameboard">
+			<div id="interface"></div>
+			<canvas id="GameBoard">Your browser may not be support Javascript</canvas>
+			<canvas id="GameMap">Your browser may not be support Javascript</canvas>
+			<div id="backdrop"></div>
+		</div>
+	</div>
+	<script src="scripts/utils/Vector2D.js"></script>
+	<script src="scripts/Map.js"></script>
+	<script src="scripts/Entitys.js"></script>
+	<script src="scripts/LivingEntity.js"></script>
+	<script src="scripts/Enemy.js"></script>
+	<script src="scripts/UI.js"></script>
+	<script src="scripts/Item.js"></script>
+	<script src="scripts/Inventory.js"></script>
+	<script src="scripts/Character.js"></script>
+	<script src="scripts/Sound.js"></script>
+	<script src="game.js"></script>
+
+</body>

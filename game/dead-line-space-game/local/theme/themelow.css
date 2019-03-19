@@ -1,0 +1,566 @@
+body{
+  background-color: black;
+  margin: 0;;
+  cursor: url("http://ani.cursors-4u.net/cursors/images13/cur1158.gif") 0 0, default;
+  background-image: url("stargif.gif");
+   
+}
+#imgf{
+  position: fixed;
+  top: 0px;
+  right: -80px;
+}
+
+#imgf {
+  animation: imgf 5s infinite;
+}
+/*-
+@keyframes imgf{
+    0%{
+        top: 0%;
+    }
+    50%{
+       top: 5%;
+    }
+    100%{
+        top: 0%;
+    }
+}
+*/
+.bdg{
+  background-image: url("stargif.gif");
+  animation: b1 240s infinite;
+  z-index: -1;
+  position: fixed;
+  top: -1500px;
+  left: -1500px;
+  width: 5000px;
+  height: 5000px;
+}
+
+/*-@keyframes b1{
+  0%{
+      transform: rotate(0deg);
+    }
+
+  100%{
+      transform: rotate(350deg);
+    }
+}
+*/
+.BG{
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 3;
+  width: 400px;
+  height: 600px;
+  padding: 10px;
+  border: 10px outset grey;
+  border-radius: 4%;
+  box-shadow: 0px 0px 250px #1E90FF;
+  position: fixed;
+  background-image: url("Bggame.gif");
+}
+
+#ROCKET{
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  top: 10;
+  left: 10;
+  overflow: hidden;
+  background-image: url("playerShip2_orange.png");
+  background-size: 100% 100%, auto;
+}
+
+#LASER{
+    background-image: url("laserRed06.png");
+    box-shadow: 0px 0px 50px red;
+    background-size: 100% 100%, auto;
+    width: 20px;
+    height: 20px;
+    top: 0;
+    left: 0;
+    position: absolute;
+}
+
+.enemy1 {
+  width: 35px;
+  height: 35px;
+  position: absolute;
+  top: -40;
+  left: -500;
+   background-image: url("mons1/2.png");
+   background-size: 100% 100%, auto;
+   border-radius: 100%;
+   box-shadow: 0px 0px 150px blue;
+  /*animation: e1 1s infinite;*/
+}
+
+@keyframes e1{
+  0%{
+      box-shadow: 0px 0px 0px hsl(143, 38%, 0%);
+    }
+
+
+  100%{
+      box-shadow: 0px 0px 20px hsl(143, 38%, 48%);
+    }
+}
+
+.enemy2 {
+  width: 35px;
+  height: 35px;
+  position: absolute;
+  top: -40;
+  left: -500;
+   background-image: url("mons1/11.png");
+   background-size: 100% 100%, auto;
+   border-radius: 100%;
+   box-shadow: 0px 0px 150px blue;
+  /*animation: e2 1s infinite;*/
+}
+
+@keyframes e2{
+  0%{
+      box-shadow: 0px 0px 0px hsl(143, 100%, 0%);
+    }
+
+
+  100%{
+      box-shadow: 0px 0px 20px hsl(143, 100%, 77%);
+    }
+}
+.enemy3 {
+  width: 35px;
+  height: 35px;
+  position: absolute;
+  top: -40;
+  left: -500;
+   background-image: url("mons1/22.png");
+   background-size: 100% 100%, auto;
+   border-radius: 100%;
+   box-shadow: 0px 0px 150px blue;
+  /*animation: e3 1s infinite;*/
+}
+
+@keyframes e3{
+  0%{
+      box-shadow: 0px 0px 0px hsl(351, 100%,0%);
+    }
+
+  100%{
+      box-shadow: 0px 0px 20px hsl(351, 100%, 77%);
+    }
+}
+.enemy4 {
+  width: 35px;
+  height: 35px;
+  position: absolute;
+  top: -40;
+  left: -500;
+   background-image: url("mons1/37.png");
+   background-size: 100% 100%, auto;
+   border-radius: 100%;
+   box-shadow: 0px 0px 150px blue;
+  /*animation: e4 1s infinite;*/
+}
+
+@keyframes e4{
+  0%{
+      box-shadow: 0px 0px 0px hsl(60, 100%, 0%);
+    }
+
+  100%{
+      box-shadow: 0px 0px 20px hsl(60, 100%, 77%);
+    }
+}
+
+.enemy5 {
+  width: 35px;
+  height: 35px;
+  position: absolute;
+  top: -40;
+  left: -500;
+   background-image: url("mons1/3.png");
+   background-size: 100% 100%, auto;
+   border-radius: 100%;
+   box-shadow: 0px 0px 150px blue;
+  /*animation: e5 1s infinite;*/
+}
+
+@keyframes e5{
+  0%{
+      box-shadow: 0px 0px 0px hsl(298, 100%, 0%);
+    }
+
+  100%{
+      box-shadow: 0px 0px 20px hsl(298, 100%, 77%);
+    }
+}
+.enemy6 {
+  width: 35px;
+  height: 35px;
+  position: absolute;
+  top: -40;
+  left: -500;
+   background-image: url("mons1/9.png");
+   background-size: 100% 100%, auto;
+   border-radius: 100%;
+   box-shadow: 0px 0px 150px blue;
+  /*animation: e6 1s infinite;*/
+}
+
+@keyframes e6{
+  0%{
+      box-shadow: 0px 0px 0px hsl(168, 100%, 0%);
+    }
+
+  100%{
+      box-shadow: 0px 0px 20px hsl(168, 100%, 77%);
+    }
+}
+.enemy7 {
+  width: 35px;
+  height: 35px;
+  position: absolute;
+  top: -40;
+  left: -500;
+   background-image: url("mons1/24.png");
+   background-size: 100% 100%, auto;
+   border-radius: 100%;
+   box-shadow: 0px 0px 150px blue;
+  /*animation: e7 1s infinite;*/
+}
+
+@keyframes e7{
+  0%{
+      box-shadow: 0px 0px 0px hsl(54, 100%, 0%);
+    }
+
+  100%{
+      box-shadow: 0px 0px 20px hsl(54, 100%, 100%);
+    }
+}
+.enemy8 {
+  width: 35px;
+  height: 35px;
+  position: absolute;
+  top: -40;
+  left: -500;
+   background-image: url("mons1/33.png");
+   background-size: 100% 100%, auto;
+   border-radius: 100%;
+   box-shadow: 0px 0px 150px blue;
+  /*animation: e8 1s infinite;*/
+}
+
+@keyframes e8{
+  0%{
+      box-shadow: 0px 0px 0px hsl(54, 100%, 0%);
+    }
+
+
+  100%{
+      box-shadow: 0px 0px 20px hsl(54, 100%, 65%);
+    }
+}
+.enemy9 {
+  width: 35px;
+  height: 35px;
+  position: absolute;
+  top: -40;
+  left: -500;
+   background-image: url("mons1/29.png");
+   background-size: 100% 100%, auto;
+   border-radius: 100%;
+   box-shadow: 0px 0px 150px blue;
+  /*animation: e9 1s infinite;*/
+}
+
+@keyframes e9{
+  0%{
+      box-shadow: 0px 0px 0px hsl(40, 100%, 0%);
+    }
+
+  100%{
+      box-shadow: 0px 0px 20px hsl(40, 100%, 65%);
+    }
+}
+.enemy10 {
+  width: 35px;
+  height: 35px;
+  position: absolute;
+  top: -40;
+  left: -500;
+   background-image: url("mons1/15.png");
+   background-size: 100% 100%, auto;
+   border-radius: 100%;
+   box-shadow: 0px 0px 150px blue;
+  /*animation: e10 1s infinite;*/
+}
+
+@keyframes e10{
+  0%{
+      box-shadow: 0px 0px 0px hsl(185, 32%, 0%);
+    }
+
+  100%{
+      box-shadow: 0px 0px 20px hsl(185, 32%, 65%);
+    }
+}
+.enemy {
+   width: 35px;
+   height: 35px;
+   position: absolute;
+   top: -40;
+   left: -500;
+   background-size: 100% 100%, auto;
+   background-image: url("mons1/1.png");
+   border-radius: 100%;
+   box-shadow: 0px 0px 10px blue;
+   /*animation: e 1s infinite;*/
+}
+
+@keyframes e{
+  0%{
+      box-shadow: 0px 0px 0px hsl(240, 100%, 0%);
+    }
+
+
+  100%{
+      box-shadow: 0px 0px 20px hsl(240, 100%, 62%);
+    }
+}
+
+
+#END {
+  text-align: center;
+  background-image: url("end.gif");
+  background-size: 100% 100%, auto;
+  position: absolute;
+  width: 420px;
+  height: 620px;
+  top: 0;
+  left: 0;
+  color: black;
+  visibility: hidden;
+  z-index: 3;
+}
+
+#textover{
+  display: block;
+  margin: auto;
+}
+#check1{
+  position: fixed;
+  left: 40px;
+  width: 200px;
+  height: 30px;
+  text-align: center;
+  bottom: 50px;
+  border: 2px solid white;
+  color:gray;
+  background-color: hsl(270,100%,0%);
+  padding: 5px;
+/*  box-shadow: 0px 0px 25px green;*/
+  /*border: solid 10px pink;*/
+
+  opacity: 1;
+}
+@keyframes check{
+  0%{
+      box-shadow: 0px 0px 50px #FF34B3;
+    }
+  50%{
+      box-shadow: 0px 0px 100px #FF3E96;
+    }
+  100%{
+      box-shadow: 0px 0px 50px #FF82AB;
+    }
+}
+#distance{
+  background-color: grey;
+  position: fixed;
+  font-family: 'Satisfy', cursive;
+  z-index: 8;
+  left: 40px;
+  top: 105px;
+  margin-right: 100px;
+  width: 320px;
+  height: 40px;
+  text-align: center;
+  border-radius: 10%;
+  border: 1px solid grey;
+  padding: 5px;
+
+
+  color:white;
+/*  box-shadow: 0px 0px 25px green;*/
+  /*border: solid 10px pink;*/
+
+  opacity: 0.60;
+  /*animation: check 1s infinite;*/
+}
+#score{
+  background-color: grey;
+  position: fixed;
+  font-family: 'Satisfy', cursive;
+  z-index: 2;
+  left: 40px;
+  top: 193px;
+  margin-right: 100px;
+  width: 320px;
+  height: 40px;
+  text-align: center;
+  border-radius: 10%;
+  border: 1px solid grey;
+  padding: 5px;
+
+  color:white;
+/*  box-shadow: 0px 0px 25px green;*/
+  /*border: solid 10px pink;*/
+
+  opacity: 0.60;
+  /*animation: check 1s infinite;*/
+}
+
+
+#whitespace{
+  position: fixed;
+  z-index: 3;
+  right: -80px;
+  bottom: 0px;
+  margin-right: 100px;
+  width: 300px;
+  height: 50px;
+  text-align: center;
+
+
+  color:gray;
+/*  box-shadow: 0px 0px 25px green;*/
+  /*border: solid 10px pink;*/
+
+  opacity: 1;
+  animation: check 1s infinite;
+}
+#imgb{
+  position: fixed;
+  bottom: -100px;
+  right: -80px;
+  z-index: 10;
+  animation: star 8s infinite;
+}
+/*-
+@keyframes star{
+    0%{
+        top: 50%;
+    }
+    50%{
+       top: 45%;
+    }
+    100%{
+        top: 50%;
+    }
+}
+*/
+
+
+#rulesgame{
+  z-index:3;
+  background: silver;
+  height: 130px;
+  width: 300px;
+  border: 5px solid grey;
+  border-radius: 5%;
+  position: fixed;
+  right: 40px;
+  top: 40px;
+  padding: 10px;
+  box-shadow: 0px 0px 80px silver;
+  font-size: 18px;
+}
+
+#roc{
+  width: 40px;
+  height: 80px;
+}
+@keyframes namegame{
+  0%{
+    font-size:19px;
+    text-shadow:5px 5px 5px yellow;
+  }
+  25%{
+    font-size:20.5px;
+    text-shadow:10px 10px 10px red;
+  }
+  50%{
+    font-size:21.5px;
+    text-shadow:15px 15px 15px blue;
+  }
+  75%{
+    font-size:20.5px;
+    text-shadow:10px 10px 10px red;
+  }
+  100%{
+    font-size:19px;
+    text-shadow:5px 5px 5px yellow;
+  }
+}
+
+
+#endgame{
+  position: fixed;
+  font-family: 'Permanent Marker', cursive;
+  background-color: black;
+  color: white;
+  width: 270px;
+  height: 130px;
+  top: 300px;
+  left: 73px;
+}
+#retry{
+  position: absolute;
+  top: 420px;
+  left: 110px;
+}
+#namegame{
+  position: fixed;
+  font-family: 'Satisfy', cursive;
+  color: white;
+/*  background-color: white;*/
+  text-align:center;
+  /*border: 5px solid white;*/
+  width: 500px;
+  height: 100px;
+  top:380px;
+  font-size: 19px;
+  left: 0px;
+  text-shadow: 5px 5px 5px blue;
+  transform: rotate(-30deg);
+  /*animation: namegame 2s infinite;*/
+}
+
+
+#ar1{
+  position: fixed;
+  z-index: 12;
+  bottom: 0px;
+  right: 5px;
+  transform: rotate(165deg);
+  cursor: url("http://ani.cursors-4u.net/cursors/images13/cur1158.gif") 0 0, default;
+
+}
+
+#ar1:hover{
+  position: fixed;
+  z-index: 12;
+  bottom: 0px;
+  right: 5px;
+  transform: rotate(165deg);
+  width: 120px;
+  height: 120px;
+  cursor: url("http://ani.cursors-4u.net/cursors/images13/cur1158.gif") 0 0, default;
+
+}

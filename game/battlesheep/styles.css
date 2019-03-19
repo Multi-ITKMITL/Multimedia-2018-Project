@@ -1,0 +1,560 @@
+* {
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+	user-select: none;
+}
+
+body {
+	background: url("assets/bgja.png");
+	background-size: cover;
+	background-blend-mode: normal;
+	text-align: center;
+}
+
+#GameBoard {
+	margin: 0 0;
+	padding: 0 0;
+	filter: drop-shadow(0 0 5px #000);
+	z-index: 0;
+}
+
+#battlesheep{
+	position: absolute;
+	background-image: url("assets/title.png");
+	background-size: 800px 201px;
+	width: 800px;
+	height: 201px;
+	margin: 50px;
+}
+#howtoplay{
+	display: none;
+	position: absolute;
+	width: 600px;
+	height: 500px;
+	background-size: cover;
+	left: calc(50vw - 300px);
+	top: calc(50vh - 250px);
+	z-index: 1000;
+}
+
+#howtoplay::after {
+	content: "";
+	position: absolute;
+	display: block;
+	background: url("assets/btja.png");
+	background-position: right;
+	left: 300px;
+	width: 300px;
+	height: 500px;
+	z-index: 998;
+}
+#howtoplay::before {
+	content: "";
+	position: absolute;
+	display: block;
+	background: url("assets/btja.png");
+	background-position: left;
+	left: 0px;
+	width: 350px;
+	height: 500px;
+	z-index: 999;
+}
+
+#option{
+	display: none;
+	position: absolute;
+	width: 600px;
+	height: 500px;
+	background-size: cover;
+	left: calc(50vw - 300px);
+	top: calc(50vh - 250px);
+	z-index: 1000;
+}
+
+#option > .textbox > .box > p > span {
+	padding-left: 30px;
+	padding-bottom: 10px;
+	font-size: 30px;
+}	
+
+#howtoplay > .textbox > .box > p > span {
+	padding-left: 30px;
+	padding-bottom: 10px;
+}	
+
+#option > .textbox > .box > p code[sound] {
+	width: 100px;
+	height: 90px;
+	z-index: 999;
+}
+
+
+#option::after {
+	content: "";
+	position: absolute;
+	display: block;
+	background: url("assets/btja.png");
+	background-position: right;
+	left: 300px;
+	width: 300px;
+	height: 500px;
+	z-index: 998;
+}
+#option::before {
+	content: "";
+	position: absolute;
+	display: block;
+	background: url("assets/btja.png");
+	background-position: left;
+	left: 0px;
+	width: 350px;
+	height: 500px;
+	z-index: 999;
+}
+
+#howtoplay > .textbox > .box > p > .special {
+	width: 180px;
+}
+
+.textbox {
+	font-family: 'Press Start 2P', cursive;
+	letter-spacing: -2px;
+	font-size: 25px;
+	padding-top: 25px;
+	color: #441521;
+	position: absolute;
+	display: block;
+	left: calc(50% - 200px);
+	top: calc(50% - 180px);
+	width: 500px;
+	height: 300px;
+	z-index: 1000;
+}
+
+.textbox > .box {
+	text-align: left;
+	padding-left: 22px;
+}
+
+.textbox > .box code {
+	font-family: 'Press Start 2P', cursive;
+	padding-top: 10px;
+	font-size: 15px;
+	margin-top: 5%;
+	text-align: center;
+	display: inline-block;
+	background:  #441521;
+	color: white;
+	width: 32px;
+	height: 25px;
+}
+.textbox > .box p:nth-child(n+3) {
+	margin-bottom: 14px;
+	font-size: 20px;
+}
+.textbox > .box p:first-child {
+	left: 70%;
+	margin-bottom: 10px;
+	padding: 0%;
+	top: 0%;
+	position: absolute;
+}
+#option > .textbox > .box code:hover{
+	cursor: pointer;
+	color: #ffffff;
+	text-shadow: 5px 5px #000000;
+	-webkit-animation-name: animacao2;
+	-webkit-animation-duration: 0.8s;
+	-webkit-animation-timing-function:  linear;
+	-webkit-animation-iteration-count: infinite;
+	-webkit-animation-direction: alternate;
+
+	-moz-animation-name: animacao2;
+	-moz-animation-duration: 0.8s;
+	-moz-animation-timing-function:  linear;
+	-moz-animation-iteration-count: infinite;
+	-moz-animation-direction: alternate;
+
+	animation-name: animacao2;
+	animation-duration: 0.8s;
+	animation-timing-function:  linear;
+	animation-iteration-count: infinite;
+	animation-direction: alternate;}
+
+	.textbox > .box p:first-child:hover{
+		cursor: pointer;
+		color: #ffffff;
+		text-shadow: 5px 5px #000000;
+		-webkit-animation-name: animacao2;
+		-webkit-animation-duration: 0.8s;
+		-webkit-animation-timing-function:  linear;
+		-webkit-animation-iteration-count: infinite;
+		-webkit-animation-direction: alternate;
+	
+		-moz-animation-name: animacao2;
+		-moz-animation-duration: 0.8s;
+		-moz-animation-timing-function:  linear;
+		-moz-animation-iteration-count: infinite;
+		-moz-animation-direction: alternate;
+	
+		animation-name: animacao2;
+		animation-duration: 0.8s;
+		animation-timing-function:  linear;
+		animation-iteration-count: infinite;
+		animation-direction: alternate;
+}
+
+#menu {
+	position: absolute;
+	left: 20%;
+	z-index: 999;
+	transform: translate(-50%, 0);
+	margin-top: 25vh;
+}
+
+#menu > div {
+	background-image: url("assets/btja.png");
+	background-size: 330px 80px;
+	width: 330px;
+	height: 80px;
+}
+
+#gameover {
+	position: absolute;
+	display: none;
+	width: 100vw;
+	height: 100vh;
+	background: rgba(0, 0, 0, 0.87);
+	color: #FFF;
+	z-index: 999;
+}
+
+#gameover p {
+	margin: 1.25em 0;
+	font-size: 1.5em;
+	font-family: 'Press Start 2P', cursive;
+}
+
+#playagain:hover {
+	cursor: pointer;
+	color: #ffffff;
+	text-shadow: 5px 5px #000000;
+	-webkit-animation-name: animacao2;
+	-webkit-animation-duration: 0.8s;
+	-webkit-animation-timing-function:  linear;
+	-webkit-animation-iteration-count: infinite;
+	-webkit-animation-direction: alternate;
+
+	-moz-animation-name: animacao2;
+	-moz-animation-duration: 0.8s;
+	-moz-animation-timing-function:  linear;
+	-moz-animation-iteration-count: infinite;
+	-moz-animation-direction: alternate;
+
+	animation-name: animacao2;
+	animation-duration: 0.8s;
+	animation-timing-function:  linear;
+	animation-iteration-count: infinite;
+	animation-direction: alternate;
+	}
+
+#backtomenu:hover {
+	cursor: pointer;
+	text-shadow: 5px 5px #000000;
+	-webkit-animation-name: animacao3;
+	-webkit-animation-duration: 0.15s;
+	-webkit-animation-timing-function:  linear;
+	-webkit-animation-iteration-count: infinite;
+	-webkit-animation-direction: alternate;
+
+	-moz-animation-name: animacao3;
+	-moz-animation-duration: 0.15s;
+	-moz-animation-timing-function:  linear;
+	-moz-animation-iteration-count: infinite;
+	-moz-animation-direction: alternate;
+
+	animation-name: animacao3;
+	animation-duration: 0.15s;
+	animation-timing-function:  linear;
+	animation-iteration-count: infinite;
+	animation-direction: alternate;
+	}
+
+#playagain > span[clickable]:hover {
+	color: #4caf50;
+}
+
+#backtomenu > span[clickable]:hover {
+	color: #ec4747;
+}
+
+#startGame {
+	margin-top: 20vh;
+	background-size: cover;
+	display: block;
+	text-align: center;
+}
+
+#startGame:hover, #loadGame:hover, #Options:hover{
+	text-shadow: 0px 0px 10px #91fbe7;
+	color: #7a4952;
+	cursor: pointer;
+}
+
+#startGame:active, #loadGame:active, #Options:active{
+	transform: translate(0px, 5px);
+	-webkit-transform: translate(0px, 5px);
+	box-shadow: 0px 1px 0px 0px;
+}
+
+#startGame p, #loadGame p, #Options p {
+	font-family: 'Press Start 2P', cursive;
+	letter-spacing: -2px;
+	font-size: 25px;
+	padding-top: 25px;
+	color: #441521;
+}
+
+#loadGame {
+	display: block;
+	margin-top: 20px;
+	text-align: center;
+}
+
+#Options {
+	display: block;
+	margin-top: 20px;
+	text-align: center;
+}
+
+#interface {
+	position: absolute;
+	height: 100vh;
+	width: 100vw;
+	z-index: 1;
+}
+
+#interface > div {
+	position: absolute;
+	background: #875a50c4;
+	z-index: 10;
+}
+
+#interface div > * {
+	margin: 0 auto;
+}
+
+#interface div > .header {
+	text-align: left;
+	margin: 2px 0;
+	padding: 4px 0 4px 0.67vw;
+	border: 1px solid #6b4840c4;
+	border-radius: 3px;
+	background: #815950c4;
+	color: #fff;
+	font-family: 'Press Start 2P', cursive;
+	font-size: 12px;
+}
+
+#interface > #inventory > table, tr, td {
+	border: 1px solid #6b4840c4;
+	border-radius: 3px;
+	background: #815950c4;
+}
+
+#interface > #inventory > table, tr, td > *:hover{
+	background-color: #fff4;
+	cursor: grab;
+}
+
+#interface > #inventory > td {
+	position: absolute;
+	padding: 2px;
+}
+
+#interface > #inventory > #player_inventory .amount_item {
+	position: relative;
+	display: block;
+	text-align: right;
+    top: -20px;
+	color: white;
+	font-family: 'Press Start 2P', cursive;
+	font-size: 10px;
+}
+
+#interface div > .header {
+	text-align: left;
+	margin: 2px 0;
+	padding: 4px 0 4px 0.67vw;
+	border: 1px solid #6b4840c4;
+	border-radius: 3px;
+	background: #815950c4;
+	color: #fff;
+	font-family: 'Press Start 2P', cursive;
+	font-size: 12px;
+}
+
+#interface > #player_status > div {
+	border: 1px solid #6b4840c4;
+	border-radius: 3px;
+	background: #815950c4;
+}
+#interface > #player_status > div, tr, td {
+	border: 1px solid #6b4840c4;
+	border-radius: 3px;
+	background: #815950c4;
+}
+
+#interface > #player_status > td {
+	position: absolute;
+	padding: 2px;
+}
+
+#interface > #player_status > div #p_name {
+	/* display: grid;
+	grid-template-columns: 160px, 160px;
+	grid-template-rows: 32px, 32px, 32px, 32px, 32px;
+	grid-column-start: 1;
+	grid-column-end: 5;
+	grid-row-start: 1;
+	grid-row-end: 5; */
+	width: 200px;
+	margin: 10px;
+	padding: 2px;
+	color: #fff;
+	font-family: 'Press Start 2P', cursive;
+	font-size: 10px;
+	text-align: left;
+}
+
+#player_panel_slot {
+	cursor: default;
+	margin: 10px;
+	padding: 2px;
+	padding-left: 10px;
+	text-align: left;
+	color: #fff;
+	font-family: 'Press Start 2P', cursive;
+	font-size: 10px;
+}
+
+#interface > #healthbar {
+	padding: 8px 12px;
+	text-align: left;
+	color: #fff;
+	font-family: 'Press Start 2P', cursive;
+	font-size: 12px;
+}
+
+#interface > #healthbar > .bar {
+	position: relative;
+	width: 100%;
+	height: 28.5%;
+	margin-top: 4px;
+	margin-left: 0;
+	background: #e7b9b7;
+	border-radius: 10px;
+	z-index: 21;
+}
+
+#interface > #healthbar > #hpbar {
+	background: #e7b9b7;
+	border: solid #b9312c 2px;
+}
+
+#interface > #healthbar > #expbar {
+	background: #81d17d;
+	border: solid #0ca000 2px;
+}
+
+#interface > #healthbar > .bar > .health {
+	position: relative;
+	height: 100%;
+	margin-left: 0;
+	background: #b9312c;
+	z-index: 22;
+	/* animation: blink .2s step-end infinite alternate; */
+}
+
+
+#interface > #healthbar > .bar > .experience {
+	position: relative;
+	height: 100%;
+	margin-left: 0;
+	background: #0ca000;
+	z-index: 22;
+}
+
+#interface > #healthbar > .bar > .floatText {
+	position: absolute;
+	color: #fff;
+	z-index: 23;
+	font-family: 'Press Start 2P', cursive;
+	font-size: 10px;
+	margin: 4px;
+	margin-left: 10px;
+}
+
+#interface > div > .draggable {
+	cursor: move;
+}
+
+#interface > .textbox {
+	background: rgba(240, 240, 240, 0.97);
+	padding: 5px;
+	border-radius: 4px;
+	z-index: 11;
+}
+
+#backdrop {
+	position: absolute;
+	display: none;
+	width: 100vw;
+	height: 100vh;
+	min-height: 100vh;
+	top: 0;
+	left: 0;
+	background: black;
+	z-index: -99;
+}
+
+@keyframes game-over {
+	100% { opacity: 1; }
+}
+
+@keyframes blink {
+	50% { background: #fff; }
+}
+
+@keyframes blinktxt {
+	0% { color: red; }
+	50% { color: #000000}
+}
+
+@-webkit-keyframes animacao2 { from {-webkit-transform: scale(1);}
+	to {-webkit-transform: scale(1.2);} }
+
+@-moz-keyframes animacao2 { from {-moz-transform: scale(1);}
+	to {-moz-transform: scale(1.1);} }
+
+@keyframes animacao2 { from {transform: scale(1);}
+	to {transform: scale(1.1);} }
+
+@-webkit-keyframes animacao3 { 0% {-webkit-transform: translate(-5px,0px);}
+	25% {-webkit-transform: translate(-2.5px, 0px);}
+	50% {-webkit-transform: translate(0px, 0px);}
+	75% {-webkit-transform: translate(2.5px, 0px);}
+	100% {-webkit-transform: translate(5px, 0px);} }
+
+@-moz-keyframes animacao3 { 0% {-moz-transform: translate(-5px,0px);}
+	25% {-moz-transform: translate(-2.5px, 0px);}
+	50% {-moz-transform: translate(0px, 0px);}
+	75% {-moz-transform: translate(2.5px, 0px);}
+	100% {-moz-transform: translate(5px, 0px);} }
+
+@keyframes animacao3 { 0% {transform: translate(-5px,0px);}
+	25% {transform: translate(-2.5px, 0px);}
+	50% {transform: translate(0px, 0px);}
+	75% {transform: translate(2.5px, 0px);}
+	100% {transform: translate(5px, 0px);} }

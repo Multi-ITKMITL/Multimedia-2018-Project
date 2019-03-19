@@ -1,0 +1,270 @@
+body{
+    width: 50vw;
+    height:50vh;
+    cursor: url("http://ani.cursors-4u.net/cursors/images13/cur1158.gif") 0 0, default;
+}
+
+
+.name{
+    position: fixed;
+    font-family: 'Permanent Marker', cursive;
+    color: white;
+    text-shadow: 7px 3px hsl(80,70%,50%);
+    font-size: 79px;
+    margin: 2%;
+    right: 0;
+    left: 0;
+    top: 0;
+    bottom: 0;
+
+}
+.name{
+    animation: name .5s infinite;
+
+}
+@keyframes name{
+    0%{
+        text-shadow: 0px 0px 50px hsl(80,70%,50%);
+    }
+    50%{
+        text-shadow: 0px 0px 100px hsl(80,100%,50%);
+    }
+    100%{
+        text-shadow: 0px 0px 50px hsl(80,70%,50%);
+    }
+}
+
+
+/*     Pic     */
+
+img{
+    display: block;
+    position: absolute;
+    margin: auto;
+    height: 500px;
+    width: 500px;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+}
+
+.pic1{
+    height: 150px;
+    width: 150px;
+    top: 80%;
+    position: fixed;
+
+}
+
+.pic2{
+    height: 100px;
+    width: 100px;
+    transform: rotate(50deg);
+    left: 45%;
+    bottom: 45%;
+    position: fixed;
+}
+.pic2{
+    animation: pictwo 2s infinite;
+}
+
+.pic3{
+
+    height: 100px;
+    width: 100px;
+    transform: rotate(75deg);
+    left: 50%;
+    top: 45%;
+    bottom: 45%;
+    position: fixed;
+}
+.pic3{
+    animation: picthree 2s infinite;
+}
+@keyframes picthree{
+    0%{
+        bottom: 40%;
+    }
+    50%{
+        bottom: 45%
+    }
+    100%{
+        bottom: 40%
+    }
+}
+
+.pic4{
+    height: 100px;
+    width: 100px;
+    transform: rotate(120deg);
+    left: 35%;
+    top: 50%;
+    position: fixed;
+}
+.pic4{
+    animation: picfour 2s infinite;
+}
+@keyframes picfour{
+    0%{
+        top: 50%;
+    }
+    50%{
+        top: 55%
+    }
+    100%{
+        top: 50%
+    }
+}
+.pic5{
+    height: 100px;
+    width: 100px;
+    transform: rotate(-50deg);
+    right: 45%;
+    bottom: 45%;
+    position: fixed;
+}
+.pic5{
+    animation: picfive 2s infinite;
+}
+@keyframes picfive{
+    0%{
+        bottom: 45%;
+    }
+    50%{
+        bottom: 50%
+    }
+    100%{
+        bottom: 45%
+    }
+}
+
+.pic6{
+    height: 100px;
+    width: 100px;
+    transform: rotate(-50deg);
+    right: 55%;
+    bottom: 2%;
+    position: fixed;
+}
+.pic6{
+    animation: picsix 2s infinite;
+}
+@keyframes picsix{
+    0%{
+        bottom: 6%;
+    }
+    50%{
+        bottom: 2%
+    }
+    100%{
+        bottom: 6%
+    }
+}
+
+.pic7{
+    height: 100px;
+    width: 100px;
+    transform: rotate(-50deg);
+    right: 35%;
+    top: 50%;
+    position: fixed;
+}
+.pic7{
+    animation: picseven 1.7s infinite;
+}
+@keyframes picseven{
+    0%{
+        top: 50%;
+    }
+    50%{
+        top: 55%
+    }
+    100%{
+        top: 50%
+    }
+}
+
+/*     Pic     */
+
+/*     BG     */
+
+.bg1{
+
+    height: 600px;
+    width: 600px;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    border-radius: 50%;
+    box-shadow: 0px 0px 500px blue;
+    position: fixed;
+}
+
+.bg1{
+    animation: warp 5s infinite;
+}
+
+@keyframes warp{
+    0%{
+        box-shadow: 0px 0px 12000px #3366ff;
+    }
+    25%{
+        box-shadow: 0px 0px 7000px #66ffff
+    }
+    50%{
+        box-shadow: 0px 0px 3000px #6666cc;
+    }
+    75%{
+        box-shadow: 0px 0px 7000px #ff33cc;
+    }
+    100%{
+        box-shadow: 0px 0px 10000px #9933CC;
+    }
+}
+
+@keyframes pictwo{
+    0%{
+        bottom: 45%;
+    }
+    50%{
+        bottom: 40%;
+    }
+    100%{
+        bottom: 45%
+    }
+}
+/*@-moz-keyframes pictwo
+{from {bottom:45% ;}
+to {bottom: 40%}}
+
+@-webkit-keyframes pictwo
+{from {bottom:45% ;}
+to {bottom: 40%}}
+
+@-o-keyframes pictwo
+{from {bottom:45% ;}
+to {bottom: 40%}}
+
+/*     BG     */
+
+/*   ส่วนของปุ่มกด*/
+
+
+#pp:hover{
+
+    transition: 0.2s;
+    width: 300px;
+    height: 300px;
+    cursor: url("http://ani.cursors-4u.net/cursors/images13/cur1158.gif") 0 0, default;
+
+}
+#pp{
+    width: 250px;
+    height: 250px;
+    left: 3vw;
+
+}
+
+/*   ส่วนของปุ่มกด*/

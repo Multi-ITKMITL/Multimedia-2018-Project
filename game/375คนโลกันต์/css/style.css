@@ -1,0 +1,27 @@
+body{
+  background:url(https://i.imgur.com/MuSVLBF.gif)no-repeat center center fixed;
+  background-size:cover;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+#container{
+  margin-top: 10%;
+  display: inline-block;
+}
+canvas{
+  background:url(https://i.pinimg.com/originals/af/3c/09/af3c090f6a81b6a526e3ce48e018a9c7.png) no-repeat fixed;
+  background-size:cover;
+  overflow: hidden;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 640px 700px;
+  background-attachment: fixed;
+  
+  border: 2px solid #181818;
+}
+
+.controlls{
+  color: #92f6a1;
+}

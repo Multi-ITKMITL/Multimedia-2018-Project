@@ -1,0 +1,537 @@
+@import url('https://fonts.googleapis.com/css?family=Nova+Flat');
+
+#Thecountdown{
+    position:absolute;
+    top: 30%;
+    left: 35%;
+    height: 100px;
+    width: 100px;
+    border-radius: 10px;
+
+
+}
+#Thecountdowntext{
+    position: absolute;
+    top: 30%;
+    left: 15%;
+    color:#d18700;
+}
+#Thecountdowntext:hover{
+    color: orange;
+}
+#Thecountdownnum{
+    position: absolute;
+    visibility: hidden;
+    top: 34%;
+    left: 39%;
+    color: orange;
+
+}
+
+body{    
+    background-color:rgb(43, 66, 91);
+    cursor: url(http://www.rw-designer.com/cursor-view/21658.gif), auto;
+    touch-action: none;
+    background-image: url(images/bg-6.jpg);
+    display: fixed;
+    text-shadow: 2px 1px 8px black;
+    font-family: 'Nova Flat', cursive;
+    background-size: cover;
+}
+.dropdown {
+    display: inline-block;
+    position: relative;
+    float: right;
+}
+.dropdown button{
+    border: 1px solid #3498db;
+    background-color: #3498db;
+    color: #fff;
+    padding: 10px 20px;
+    font-size: 20px;
+    font-family: 'Nova Flat', cursive;
+    cursor: pointer;
+    transition: 0.3s;
+
+}
+.dropdown button:hover{
+    background-color: skyblue; 
+}
+.dropdown div{
+    background-color: #fff;
+    box-shadow: 0px 4px 8px rgba(0,0,0,0.2);
+    z-index: 1;
+    visibility: hidden;
+    position: relative;
+    min-width: 100%;
+    opacity: 0;
+    transition: 0.3s;
+}
+.dropdown:hover div{
+    visibility: visible;
+    opacity: 1;
+}
+.dropdown div a{
+    display: block;
+    text-decoration: none;
+    padding: 8px;
+    color: #000;
+    transition: -1s;
+    white-space: nowrap;
+}
+.dropdown div a:hover{
+    background-color: skyblue;
+    color: #fff;
+}
+h2, h3 {
+    text-align: right;
+    color: red;
+}
+h1 {
+    text-align: center;
+    color : red;
+}
+game{
+    margin: 5px auto;
+    display:block;
+    height: 600px;
+    width: 352px;
+    position: relative;
+    box-shadow: 5px 0px 100px #c783e4;
+    background-color: #313172;
+}
+
+blind{
+    margin-top: 30px;
+    display:block;
+    height: 80px;
+    width: 406px;
+    position: absolute;
+    background-color: black;
+}
+
+pianokey{
+    width: 50px;
+    height: 150px;
+    display: block;
+    box-shadow: 0px 0px 20px black;
+    position: absolute;
+    background-color: white;
+}
+
+pianokey[status="unpress"]{background-color: #FFFFFF;}
+
+pianokey[status = "onpress"]{background-color: #C0C0C0;}
+
+sharpkey{
+    width: 25px;
+    height: 100px;
+    display: block;
+    position: absolute;
+    box-shadow: 0px 0px 20px white;
+}
+
+sharpkey#S6{width: 13px;}
+
+sharpkey[status="unpress"]{background-color: #000000;}
+
+sharpkey[status = "onpress"]{background-color: #404040;}
+
+sharpkey>p{color:white;}
+
+div#statdisplay{
+    display: block;
+    background-color: rgba(255, 255, 255, 0.5);
+    height: 235px;
+    width: 400px;
+    position: absolute;
+    top: 20vh;
+    right: 70vw;
+    border-radius: 10px;
+    box-shadow: 0px 0px 100px darkmagenta;
+}
+
+
+div.note{
+    border: 1px solid white;
+    display:block;
+    height: 20px;
+    width: 50px;
+    background-color: violet;
+    position:absolute;
+}
+
+div.note[size = "0.5"]{
+    height: 10px;
+    background-color: #92c9ff;
+}
+
+div.note[size = "1"]{
+    height: 20px;
+    background-color: #92c9ff;
+}
+
+div.note[size = "2"]{
+    height: 40px;
+    background-color: #92c9ff;
+}
+
+div.note[size = "3"]{
+    height: 60px;
+    background-color: #92c9ff;
+}
+
+div.note[size = "4"]{
+    height: 80px;
+    background-color: #92c9ff;
+}
+
+div.note[hit = "true"]{box-shadow: 0px 0px 20px white; background-color: rgb(199, 231, 243);}
+
+tile#T0{display:none;}
+
+tile{
+    box-shadow: 0px 0px 2px white;
+}
+
+tile[keytype = "normal"]{
+    display: block;
+    height: 450px;
+    width: 50px;
+
+    position: absolute;
+}
+/* tile[status = "miss"]{background-color: rgba(153, 0, 0, 0.2);}
+
+tile[status = "unpress"]{background-image: linear-gradient(#FEAC5E, #C779D0, #4BC0C8);} */
+/* 
+tile[keytype = "normal"][status = "onpress"]{background-color: black;} */
+
+tile[keytype = "sharp"]{
+    display: block;
+    height: 450px;
+    width: 25px;
+    /* background-image: linear-gradient(#FEAC5E, #C779D0, #4BC0C8); */
+    position: absolute;
+}
+
+tile[keytype = "sharp"]>div.note{width:25px;}
+
+tile#TS6{width:13px;}
+
+p{
+    margin-top: 90%;
+    margin-left: 30%;
+    
+}
+h1#Thescore{
+    color: yellow; 
+    
+}
+h1#text{
+    color: orange;   
+}
+
+p#accuracy{
+    margin-left: 10%;
+    margin-top: 0%;
+    position: relative;
+    background: red;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 25px;
+    text-shadow: none;
+
+    
+}
+p#Thecombo{
+    margin-left: 10%;
+    margin-top: 0%;
+    position: relative;
+    background: red;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 25px;
+    text-shadow: none;
+
+}
+
+#S6{width: 20px;}
+
+#subtitle{color:white;}
+
+* {
+    box-sizing: border-box;
+}
+#pacman{
+ position:relative;
+ bottom: 3px;
+}
+
+.progress-bar{
+    position:fixed;
+    bottom: 50px;
+    left: 25vw;
+    width: 50vw;
+    height: 30px;
+    /* background-color: yellow;    */
+    border-radius: 13px;
+    padding: 5px;
+    margin: 0px auto;
+
+}
+.progress{
+    top: 10px;
+    bottom: 10px;
+    width: 20px;
+    height: 15px;
+    border-radius: 10px;
+    background-image: url(images/pacman.png);
+    background-size: contain;
+}
+@keyframes circle {
+    from {
+     transform: rotate(-225deg);
+    }
+    to {
+    transform: rotate(-180deg);
+    }
+  }
+  
+  @keyframes circle2 {
+    from {
+     transform: rotate(-135deg);
+    }
+    to {
+    transform: rotate(-180deg);
+    }
+  }
+  #progress-header1 {
+    position:absolute;
+    width: 0px;
+    height: 0px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border-right: 10px solid transparent;
+    border-top: 10px solid yellow;
+    border-left: 10px solid yellow;
+    border-bottom: 10px solid yellow;
+    transform: rotate(-225deg);
+    animation: circle 0.5s infinite alternate;    
+  }
+  #progress-header2 {
+    position:absolute;
+    width: 0px;
+    height: 0px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border-right: 10px solid transparent;
+    border-top: 10px solid yellow;
+    border-left: 10px solid yellow;
+    border-bottom: 10px solid yellow;
+    transform: rotate(-135deg);
+    animation: circle2 0.5s infinite alternate;    
+  }
+#model{
+    position: absolute;
+    top: 10%;
+    left: 25%;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    height: 80%;
+    width: 50%;
+    border-radius: 0.5rem;
+    visibility: hidden;
+}
+#summary{
+    position: absolute;
+    bottom: 70%;
+    left: 38%;
+    font-size: 70px;
+    text-shadow: 0px 0px 10px black;
+}
+#sumscore{
+    position: absolute;
+    top: 20%;
+    left: 41.5%;
+    font-size: 40px;
+    text-align: center;
+    color: chartreuse;
+    text-shadow: 0px 0px 30px white;
+}
+#resultacc{
+    font-size: 30px;
+    position: absolute;
+    top: 40%;
+    left: 15%;
+    color: orange;
+    text-shadow: 0px 0px 30px white;
+}
+#Mcombo{
+    font-size: 30px;
+    position: absolute;
+    left: 15%;
+    top: 55%;
+    color: red;
+    text-shadow: 0px 0px 30px white;
+}
+#replay{
+    position: absolute;
+    top: 80%;
+    left: 15%;
+    font-size: 30px;
+    width: 120px;
+    height: 40px;
+    color: magenta;
+
+}
+#replay:hover{
+    text-shadow: 0px 0px 30px white;
+}
+#Cmusic{
+    position: absolute;
+    top: 80%;
+    right: 30%;
+    font-size: 30px;
+    width: 120px;
+    height: 40px;
+    color: pink;
+    white-space: nowrap;
+}
+#Cmusic:hover{
+    text-shadow: 0px 0px 30px white;
+}
+#swap {
+    margin: auto;
+    top: 28%;
+    right: 0;
+    bottom: 0;
+    left: 65%;
+    position: fixed;
+
+}
+@keyframes show1{
+    0% {background-image: url(pic2/guitar.png);}
+    25% {background-image: url(pic/guitar.png);}
+    50% {background-image: url(pic2/guitar.png);}
+    100% {background-image: url(pic/guitar.png);}
+}
+@keyframes show2{
+    0% {background-image: url(pic2/guitar-pic.png);}
+    25% {background-image: url(pic/guitar-pic.png);}
+    50% {background-image: url(pic2/guitar-pic.png);}
+    100% {background-image: url(pic/guitar-pic.png);}
+}
+@keyframes show3{
+    0% {background-image: url(pic2/but.png);}
+    100% {background-image: url(pic/but.png);}
+}
+@keyframes show4{
+    0% {background-image: url(pic2/piano.png);}
+    25% {background-image: url(pic/piano.png);}
+    50% {background-image: url(pic2/piano.png);}
+    100% {background-image: url(pic/piano.png);}
+}
+@keyframes show5{
+    0% {background-image: url(pic2/piano-pic.png);}
+    25% {background-image: url(pic/piano-pic.png);}
+    50% {background-image: url(pic2/piano-pic.png);}
+    100% {background-image: url(pic/piano-pic.png);}
+}
+
+#logo1 {
+    width: 476px;
+    height: 476px;
+    background-size:cover;
+    background-image: url(pic2/guitar.png);
+    display: block;
+    position: absolute;
+    animation: show1 2s forwards;
+    animation-delay: 2s;
+    
+}
+#logo2 {
+    width: 476px;
+    height: 476px;
+    background-size:cover;
+    background-image: url(pic2/guitar-pic.png);
+    display: block;
+    position: absolute;
+    animation: show2 2s forwards;
+    animation-delay: 4s;
+    
+}
+#logo3 {
+    width: 476px;
+    height: 476px;
+    background-size:cover;
+    background-image: url(pic2/but.png);
+    display: block;
+    position: absolute;
+    animation: show3 1s forwards;
+    animation-delay: 6s;
+    
+}
+#logo4 {
+    width: 476px;
+    height: 476px;
+    background-size:cover;
+    background-image: url(pic2/piano.png);
+    display: block;
+    position: absolute;
+    animation: show4 2s forwards;
+    animation-delay: 7s;
+    
+}
+#logo5 {
+    width: 476px;
+    height: 476px;
+    background-size:cover;
+    background-image: url(pic2/piano-pic.png);
+    display: block;
+    position: absolute;
+    animation: show5 2s forwards;
+    animation-delay: 9s;
+}
+#rank[Getrank = "S"]{
+    background-image: url(images/S.png);
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    top: 54%;
+    right: 10%;
+    background-size: cover;
+}
+#rank[Getrank = "A"]{
+    background-image: url(images/A.png);
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    top: 54%;
+    right: 10%;
+    background-size: cover;
+}
+#rank[Getrank = "B"]{
+    background-image: url(images/B.png);
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    top: 54%;
+    right: 10%;
+    background-size: cover;
+}
+#rank[Getrank = "C"]{
+    background-image: url(images/C.png);
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    top: 54%;
+    right: 10%;
+    background-size: cover;
+}
+

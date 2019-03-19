@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<head>
+	<script src="https://cdn.rawgit.com/coderitual/odoo/feature/codevember16/lib/odoo.js"></script>
+	<title>Slot Machine</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<html>
+	
+
+<body onload="toggleAudio()">
+	<!-- พื้นหลังเคลือนไหว -->
+	<audio id="bgsound"autoplay loop>
+  <source src="res/sounds/sound.mp3" type="audio/mpeg">
+</audio>
+		<video autoplay loop mute id="video">
+			<source src="res/io.mp4" type="video/mp4">
+		</video>
+	<!-- ตัวอักษรเคลื่อนไหว slottext.js -->
+	<div class="js-odoo"></div>
+
+<main>
+	
+	<!-- คันโยก ID= Gira -->
+	<div onclick="doSlot()" id="Gira" href="#" class="but">
+		<div class="boxdot">
+		</div>
+	</div>
+	<!-- ตัวแสดง การได้คะแนน -->
+	<div class="score"><br><img src="./res/icon/1.jpg" class="img"><br><img src="./res/icon/2.jpg" class="img"><br><img src="./res/icon/3.jpg" class="img"><br><img src="./res/icon/4.jpg" class="img"><br><img src="./res/icon/5.jpg" class="img"><br><img src="./res/icon/6.jpg" class="img"><br><img src="./res/icon/7.jpg" class="img"><br><img src="./res/icon/8.jpg" class="img"><br><img src="./res/icon/9.jpg" class="img"><br><img src="./res/icon/10.jpg" class="img"><br><img src="./res/icon/11.jpg" class="img"><br><img src="./res/icon/12.jpg" class="img"></div>
+	</div>
+	<section id="status"></section>
+	<!-- ช่องใส่รูป Slot ทั้ง 3 ตัว -->
+	<section id="Slots">
+		<div id="rool"><div id="slot1" class="a1"></div></div>
+		<div id="rool"><div id="slot2" class="a1"></div></div>
+		<div id="rool"><div id="slot3" class="a1"></div></div>
+	</section>
+	<!-- ทำให้หมุน ด้วย  js -->
+	<script class="slotmove" src="slottext.js"></script>
+	<!-- เสียง id="audio" class="option" -->
+	<section id="options">
+	<img src="res/icons/audioOn.png" id="audio" class="option" onclick="toggleAudio()" />
+	</section>
+	<div id="score-all"><span id="numscore">100</span></div>
+</main>
+<!-- /* ตัวนับคะแนน ทั้งหมด */ -->
+
+
+<script class="font" src="js.js"></script>
+</body>
+</html>

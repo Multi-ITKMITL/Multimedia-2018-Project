@@ -1,0 +1,59 @@
+html {
+cursor: url(image/cursor.cur), auto;
+}
+body{
+    font-family: 'Press Start 2P', cursive;
+    background: #495c6b;
+    width:100%;
+    margin: 0;
+    margin: 0;
+}   
+canvas{
+    position: relative;
+    left: 50%;
+	transform: translateX(-50%);
+	background: url(image/mapground.png);
+	animation: animatedBackground 6.5s linear infinite;
+	margin: 0 auto;
+}
+h1,h2,h3{
+    text-align:center;
+    text-transform:uppercase;
+}
+#top{
+    margin: 0;
+    padding: 8px;
+    color: #EC7063;
+	background: #495c6b;
+}
+#game {
+	position: relative;
+    padding: 1em;
+	background-image: url('image/bg2.png');
+    background-size:100%;
+    background-repeat: repeat-y;
+    background-attachment: fixed;
+}
+#bottom{
+    margin: 0;
+    padding: 8px;
+    color: #EC7063;
+	background: #495c6b;
+	text-align: center;
+}
+#bottom h3 {
+	display: inline-block;
+    padding: 0 1em;
+}
+#gameTitle {
+  animation: jump .5s ease-out alternate infinite;
+}
+@keyframes animatedBackground {
+    0% { background-position: 0 0; }
+    100% { background-position: -1200px 0; }
+}
+@keyframes jump {
+  0%   {transform: translateY(20%)}
+  100% {transform: translateY(-20%)}
+}
+

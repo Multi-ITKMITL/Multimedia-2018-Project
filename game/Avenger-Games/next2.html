@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link href="styles.css" rel="stylesheet">
+  <script src="script.js" async></script>
+  <title>Avenger Games</title>
+  <link rel="icon" type="image/.png" href="Assets/Images/Avengers-Icon.png"/>
+  <style type="text/css">
+    .game-container {
+      margin: 50px auto;
+      display: grid;
+      grid-template-columns: repeat(6, auto);
+      grid-gap: 20px;
+      justify-content: center;
+      perspective: 600px;
+    }
+    a{
+      text-decoration: none;
+      color: #ff6d00;
+    }
+    #num{
+      display: none;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="vdo-contain">
+    <video autoplay loop muted id="vdo-bg">
+      <source src="Assets/Images/space.mp4" type="video/mp4">
+    </video>
+  </div>
+  <p class="lv">level&#160;&#160;2</p>
+  <p class="game">Avenger Games</p>
+
+  <!--กำหนดว่าจะจบเกมเมื่อพลิกการ์ดถึงจำนวนที่เท่าไหร่-->
+  <div id="num">45</div>
+
+  <a href="#about">
+    <div class="overlay-text visible">
+      level 2
+      <div class="how">
+        how to play &#160;:&#160; level 2<br>
+        1. there are 9 pairs of cards.<br>
+        2. flip can not exceed 45 times.<br>
+        3. every level, if matched correctly, will increase by 5 seconds.<br>
+        <p id="continue">click to start</p>
+      </div>
+    </div>
+  </a>
+  <div id="game-over-text" class="overlay-text">
+    GAME OVER <!--เมื่อเวลานับถอยหลังถึง 0 หรือ จำนวนที่พลิกการ์ด = 35 จะจบเกมส์แล้วแสดงข้อความนี้ขึ้นมา-->
+    <a href="index.html"><span class="overlay-text-small" id="continue">click to restart</span></a>
+  </div>
+  <div id="victory-text" class="overlay-text">
+    VICTORY <!--เมื่อหาการ์ดได้ครบจนหมด จะจบเกมส์แล้วแสดงข้อความนี้ขึ้นมา-->
+    <a href="next3.html"><span class="overlay-text-small" id="continue">click to next level</span></a>
+  </div>
+
+  <!--ตัวนับถอยหลังและนับจำนวนที่พลิกการ์ด-->
+  <section id="about">
+    <div class="game-container">
+      <div class="game-info-container">
+        <div class="game-info">
+          Time &#160;&#160;<span id="time-remaining">30</span>&#160;&#160;<span id="addtime"></span>
+        </div>
+        <div class="game-info">
+          Flips &#160;&#160;<span id="flips">0</span>
+        </div>
+      </div>
+
+      <!--การ์ดทั้งหมดบนหน้าเว็บ-->
+      <div class="card">
+        <div class="card-back card-face">
+          <img class="avg" src="Assets/Images/avg.png">
+        </div>
+        <div class="card-front card-face">
+          <img class="card-value" src="Assets/Images/ironman.png">
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-back card-face">
+          <img class="avg" src="Assets/Images/avg.png">
+        </div>
+        <div class="card-front card-face">
+          <img class="card-value" src="Assets/Images/ironman.png">
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-back card-face">
+          <img class="avg" src="Assets/Images/avg.png">
+        </div>
+        <div class="card-front card-face">
+          <img class="card-value" src="Assets/Images/captain.png">
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-back card-face">
+          <img class="avg" src="Assets/Images/avg.png">
+        </div>
+        <div class="card-front card-face">
+          <img class="card-value" src="Assets/Images/captain.png">
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-back card-face">
+          <img class="avg" src="Assets/Images/avg.png">
+        </div>
+        <div class="card-front card-face">
+          <img class="card-value" src="Assets/Images/natacha.png">
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-back card-face">
+          <img class="avg" src="Assets/Images/avg.png">
+        </div>
+        <div class="card-front card-face">
+          <img class="card-value" src="Assets/Images/natacha.png">
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-back card-face">
+          <img class="avg" src="Assets/Images/avg.png">
+        </div>
+        <div class="card-front card-face">
+          <img class="card-value" src="Assets/Images/thor.png">
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-back card-face">
+          <img class="avg" src="Assets/Images/avg.png">
+        </div>
+        <div class="card-front card-face">
+          <img class="card-value" src="Assets/Images/thor.png">
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-back card-face">
+          <img class="avg" src="Assets/Images/avg.png">
+        </div>
+        <div class="card-front card-face">
+          <img class="card-value" src="Assets/Images/antman.png">
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-back card-face">
+          <img class="avg" src="Assets/Images/avg.png">
+        </div>
+        <div class="card-front card-face">
+          <img class="card-value" src="Assets/Images/antman.png">
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-back card-face">
+          <img class="avg" src="Assets/Images/avg.png">
+        </div>
+        <div class="card-front card-face">
+          <img class="card-value" src="Assets/Images/hokeye.png">
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-back card-face">
+          <img class="avg" src="Assets/Images/avg.png">
+        </div>
+        <div class="card-front card-face">
+          <img class="card-value" src="Assets/Images/hokeye.png">
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-back card-face">
+          <img class="avg" src="Assets/Images/avg.png">
+        </div>
+        <div class="card-front card-face">
+          <img class="card-value" src="Assets/Images/Dracula.png">
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-back card-face">
+          <img class="avg" src="Assets/Images/avg.png">
+        </div>
+        <div class="card-front card-face">
+          <img class="card-value" src="Assets/Images/Dracula.png">
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-back card-face">
+          <img class="avg" src="Assets/Images/avg.png">
+        </div>
+        <div class="card-front card-face">
+          <img class="card-value" src="Assets/Images/hug.png">
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-back card-face">
+          <img class="avg" src="Assets/Images/avg.png">
+        </div>
+        <div class="card-front card-face">
+          <img class="card-value" src="Assets/Images/hug.png">
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-back card-face">
+          <img class="avg" src="Assets/Images/avg.png">
+        </div>
+        <div class="card-front card-face">
+          <img class="card-value" src="Assets/Images/x-man.png">
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-back card-face">
+          <img class="avg" src="Assets/Images/avg.png">
+        </div>
+        <div class="card-front card-face">
+          <img class="card-value" src="Assets/Images/x-man.png">
+        </div>
+      </div>
+
+    </div>
+  </section>
+</body>
+</html>

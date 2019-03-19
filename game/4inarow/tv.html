@@ -1,0 +1,51 @@
+<style type="text/css">
+body {
+  margin: 32px auto;
+  background: url("op.gif");
+  background-size: 100%;
+}
+
+h1{
+  margin-top: 7.5em;
+  display: block;
+  margin-left: 25em;
+  position: absolute;
+  font-family: 'Press Start 2P', cursive;
+  color:white;
+}
+h1:hover{
+  color : #33FFBD;
+  text-shadow : 2px 2px white;
+}
+.hah{
+  padding: 2em;
+}
+
+
+</style>
+
+
+<script type="text/javascript">
+  function playSound(){
+    document.getElementById('sound').play();
+  }
+</script>
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>FOUR IN A ROW</title>
+</head>
+<body>
+  <audio id="sound" src="sound.mp3"></audio>
+  <a href="index(new)moreandmoreandmore.html" style="text-decoration: none" ><h1 onclick="playSound()"> ► START NOW </h1></a><br>
+  <a href="back1.html" style="text-decoration: none"><h1 class="hah" onclick="playSound()"> ► HOW TO PLAY</h1></a></br>
+<iframe src="sound2.mp3" allow="auto" style="display:none" id="iframeAudio">
+  </iframe>
+  <audio autoplay loop>
+<source src="sound2.mp3">
+</body>
+</html>
+
+
+<link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">

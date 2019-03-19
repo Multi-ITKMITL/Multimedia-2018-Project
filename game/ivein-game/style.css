@@ -1,0 +1,64 @@
+body{
+    background: #171717;
+}
+p{
+    color: #fff;
+    font-size: 40px;
+}
+
+
+.background{
+    table-layout: fixed;
+    border-spacing: 0;
+}
+
+
+.wall{
+    background: #70189c;
+    border: dashed 3px #b871c8;
+    box-sizing: content-box;
+
+}
+.gem{
+    background-image: url("img/gemHD.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 0%;
+    width: 50px;
+    height: 50px;
+
+}
+.trap{
+    background: #70189c;
+    border: dashed 3px #b871c8;
+    box-sizing: content-box;
+}
+
+
+.player{
+    background-image: url("img/char1.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.lost .player {
+
+    background-image: url("img/char2.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.win .player{
+    background-image: url("img/char3.png");
+
+}
+.actor{
+    position: absolute;
+}
+
+.game{
+    position: relative;
+    overflow: hidden;
+}

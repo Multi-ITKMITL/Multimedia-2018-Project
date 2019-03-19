@@ -1,0 +1,61 @@
+<html>
+  <meta charset="utf-8">
+  <head>
+    <title>ASK REAL DOODLE</title>
+    <link rel="icon" type="image/png" sizes="16x16" href="11708.png">
+    <link rel="stylesheet" type="text/css" href="style.css">
+  </head>
+  <body onload="">
+    <img id="bg1" src="./bgg.jpg">
+    <img id="bg2" src="./k.gif">
+    <img id="bg3" src="./p.jpg">
+    <img id="game_platform" src="./platform.png">
+
+    <div id="gui">
+      <div class="txt">
+        <p>&#9733;Welcome To ASK REAL&#9733;</p>
+        <p class="click" onclick="start()">&#9889;START&#9889;</p>
+        <img class="ufo" src="ufo.gif" />
+        <img class="alien" src="ssss.png"/>
+      </div> 
+
+
+<div id="myNav" class="overlay">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <div class="overlay-content">
+    <script language=Javascript>
+function ResizeTable(){
+  var objTable = document.getElementById("maintable") ;
+  objTable.style.width = (screen.width - 20);
+  objTable.style.height = (screen.height - 100);
+}
+</script>
+<table id=maintable border=0 cellpadding=0 cellspacing=0 align=center width=100%><tr><td align=center valign=middle>
+The aim of "Ask real" is to guide your Doodler character as he jumps up the screen through a series of platforms.
+    The beauty of the game is its intuitive controls and addictive gameplay. Even young kids can master the controls, 
+    and the need to beat your highest score engages older kids and adults. 
+
+<br />
+<br />
+</td></tr></table>
+    
+  </div>
+</div>
+<span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9733; HOWTO&#9733;</span>
+
+    </div>
+    <div id="over">
+      <div class="last">
+      <p>GAME OVER!</p>
+      <p>score: <span class="score"></span></p>
+      </div>
+      <button id="restart" onmousedown="start()">RESTART</button>
+      <img class="ufo" src="ufo.gif" />
+    </div> 
+    <canvas id='canvas'></canvas>
+<audio autoplay="autoplay" loop="">
+  <source src="StarFoxIIIOST.mp3" type="audio/ogg" />
+</audio>
+    <script type="text/javascript" src="jsgame.js"></script>
+</body>
+</html>

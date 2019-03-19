@@ -1,0 +1,14 @@
+{
+  "name": "osu-to-projectthreeseven",
+  "version": "1.0.0",
+  "description": "converts .osu files to projectThreeSeven chart format ",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "seizuresmiley",
+  "license": "ISC",
+  "dependencies": {
+    "osu-parser": "^0.3.3"
+  }
+}

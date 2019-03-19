@@ -1,0 +1,458 @@
+body{ 
+    background: url('BG.jpg') no-repeat center center fixed;
+    padding: 0%;
+    margin: 0%;
+}
+*{
+    cursor: url('cursor.png'), auto;
+    /*cursor: url('cursor2.png'), pointer;*/
+}
+#char {
+    position: fixed;
+    display: inline-block;
+    content:url('bg.png');
+    bottom: -5%;
+    padding: 0%;
+    margin: 0%;
+    height: 75vh;
+}
+#logo {
+    position: fixed;
+    display: inline-block;
+    content:url('logo.png');
+    top: 20%;
+    left: 10%;
+    padding: 0%;
+    margin: 0%;
+    height: 35vh;
+    animation: logo 3s infinite;
+}
+@keyframes logo{
+    0%   { top:1%;height:35vh; }
+  50% { top: 1%;height: 50vh;left: 4%; }
+  100%   { top:1%;height:35vh; }
+}
+.rope {
+    position: fixed;
+    display: inline-block;
+    content:url('rope.png');
+    top: -65%;
+    right: 9%;
+    padding: 0%;
+    margin: 0%;
+    transition: 0.4s;
+}
+.sign {
+    position: fixed;
+    display: inline-block;
+    content:url('sign.png');
+    top: 5%;
+    right: 4%;
+    padding: 0%;
+    margin: 0%;
+    transition: 0.4s;
+}
+.sign2 {
+    position: fixed;
+    display: inline-block;
+    content:url('sign.png');
+    top: -30%;
+    right: 4%;
+    padding: 0%;
+    margin: 0%;
+    transition: 0.4s;
+}
+.wrapper:hover .rope{
+    position: fixed;
+    display: inline-block;
+    content:url('rope.png');
+    top: -35%;
+    right: 9%;
+    padding: 0%;
+    margin: 0%;
+}
+.wrapper:hover .sign{
+    position: fixed;
+    display: inline-block;
+    content:url('sign.png');
+    top: 35%;
+    right: 4%;
+    padding: 0%;
+    margin: 0%;
+}
+.wrapper:hover .sign2{
+    position: fixed;
+    display: inline-block;
+    content:url('sign.png');
+    top: 5%;
+    right: 4%;
+    padding: 0%;
+    margin: 0%;
+}
+.p1{
+    position: fixed;
+    z-index: 4000;
+    display: block;
+    margin: 0%;
+    padding: 0%;
+    top: 15%;
+    left: 66.5%;
+    transition: 0.4s;
+    font-family: 'Sigmar One', cursive;
+    font-weight: bold;
+    font-size: 250%;
+    color: rgb(128, 72, 26);
+    text-shadow: 0 2px 0 #301e06,
+                0 3px 0 rgb(80, 41, 8),
+                0 4px 0 #3a240a,
+                0 5px 0 rgb(41, 21, 3),
+                0 6px 1px rgba(0,0,0,.1),
+                0 0 5px rgba(0,0,0,.1),
+                0 1px 3px rgba(0,0,0,.3),
+                0 3px 5px rgba(0,0,0,.2),
+                0 5px 10px rgba(0,0,0,.25),
+                0 10px 10px rgba(0,0,0,.2),
+                0 20px 20px rgba(0,0,0,.15);
+}
+.wrapper:hover .p1{
+    position: fixed;
+    z-index: 4000;
+    display: block;
+    margin: 0%;
+    padding: 0%;
+    top: 44%;
+    left: 62.75%;
+    transition: 0.4s;
+    font-family: 'Sigmar One', cursive;
+    font-weight: bold;
+    font-size: 330%;
+    color: rgb(128, 72, 26);
+    text-shadow: 0 2px 0 #301e06,
+                0 3px 0 rgb(80, 41, 8),
+                0 4px 0 #3a240a,
+                0 5px 0 rgb(41, 21, 3),
+                0 6px 1px rgba(0,0,0,.1),
+                0 0 5px rgba(0,0,0,.1),
+                0 1px 3px rgba(0,0,0,.3),
+                0 3px 5px rgba(0,0,0,.2),
+                0 5px 10px rgba(0,0,0,.25),
+                0 10px 10px rgba(0,0,0,.2),
+                0 20px 20px rgba(0,0,0,.15);
+}
+.p2{
+    position: fixed;
+    z-index: 4000;
+    display: block;
+    font-family: 'Sigmar One', cursive;
+    font-weight: bold;
+    font-size: 250%;
+    color: rgb(128, 72, 26);
+    text-shadow: 0 2px 0 #301e06,
+                0 3px 0 rgb(80, 41, 8),
+                0 4px 0 #3a240a,
+                0 5px 0 rgb(41, 21, 3),
+                0 6px 1px rgba(0,0,0,.1),
+                0 0 5px rgba(0,0,0,.1),
+                0 1px 3px rgba(0,0,0,.3),
+                0 3px 5px rgba(0,0,0,.2),
+                0 5px 10px rgba(0,0,0,.25),
+                0 10px 10px rgba(0,0,0,.2),
+                0 20px 20px rgba(0,0,0,.15);
+    margin: 0%;
+    padding: 0%;
+    top: -10%;
+    left: 70%;
+    transition: 0.4s;
+}
+.wrapper:hover .p2{
+    position: fixed;
+    z-index: 4000;
+    display: block;
+    margin: 0%;
+    padding: 0%;
+    top: 13%;
+    left: 65.5%;
+    transition: 0.4s;
+    font-family: 'Sigmar One', cursive;
+    font-weight: bold;
+    font-size: 350%;
+    color: rgb(128, 72, 26);
+    text-shadow: 0 2px 0 #301e06,
+                0 3px 0 rgb(80, 41, 8),
+                0 4px 0 #3a240a,
+                0 5px 0 rgb(41, 21, 3),
+                0 6px 1px rgba(0,0,0,.1),
+                0 0 5px rgba(0,0,0,.1),
+                0 1px 3px rgba(0,0,0,.3),
+                0 3px 5px rgba(0,0,0,.2),
+                0 5px 10px rgba(0,0,0,.25),
+                0 10px 10px rgba(0,0,0,.2),
+                0 20px 20px rgba(0,0,0,.15);
+}
+/* unvisited link */
+a:link {
+    font-family: 'Sigmar One', cursive;
+    font-weight: bold;
+    font-size: 250%;
+    color: rgb(128, 72, 26);
+    text-shadow: 0 2px 0 #301e06,
+                0 3px 0 rgb(80, 41, 8),
+                0 4px 0 #3a240a,
+                0 5px 0 rgb(41, 21, 3),
+                0 6px 1px rgba(0,0,0,.1),
+                0 0 5px rgba(0,0,0,.1),
+                0 1px 3px rgba(0,0,0,.3),
+                0 3px 5px rgba(0,0,0,.2),
+                0 5px 10px rgba(0,0,0,.25),
+                0 10px 10px rgba(0,0,0,.2),
+                0 20px 20px rgba(0,0,0,.15);
+    text-decoration: none;
+  }
+  
+  /* visited link */
+  a:visited {
+    font-family: 'Sigmar One', cursive;
+    font-weight: bold;
+    font-size: 250%;
+    color: rgb(128, 72, 26);
+    text-shadow: 0 2px 0 #301e06,
+                0 3px 0 rgb(80, 41, 8),
+                0 4px 0 #3a240a,
+                0 5px 0 rgb(41, 21, 3),
+                0 6px 1px rgba(0,0,0,.1),
+                0 0 5px rgba(0,0,0,.1),
+                0 1px 3px rgba(0,0,0,.3),
+                0 3px 5px rgba(0,0,0,.2),
+                0 5px 10px rgba(0,0,0,.25),
+                0 10px 10px rgba(0,0,0,.2),
+                0 20px 20px rgba(0,0,0,.15);
+    text-decoration: none;
+  }
+  
+  /* selected link */
+  a:active {
+    font-family: 'Sigmar One', cursive;
+    font-weight: bold;
+    font-size: 250%;
+    color: rgb(128, 72, 26);
+    text-shadow: 0 2px 0 #301e06,
+                0 3px 0 rgb(80, 41, 8),
+                0 4px 0 #3a240a,
+                0 5px 0 rgb(41, 21, 3),
+                0 6px 1px rgba(0,0,0,.1),
+                0 0 5px rgba(0,0,0,.1),
+                0 1px 3px rgba(0,0,0,.3),
+                0 3px 5px rgba(0,0,0,.2),
+                0 5px 10px rgba(0,0,0,.25),
+                0 10px 10px rgba(0,0,0,.2),
+                0 20px 20px rgba(0,0,0,.15);
+    text-decoration: none;
+  }
+
+#tutorial{
+    position: fixed;
+    display: inline-block;
+    content:url('tutorial.png');
+    padding: 0%;
+    top: 10%;
+    margin: auto;
+    left: 25%;
+    width: 50%;
+}
+
+#tutorial2{
+    position: fixed;
+    display: inline-block;
+    content:url('tutorial2.png');
+    padding: 0%;
+    top: 10%;
+    margin: auto;
+    left: 25%;
+    width: 50%;
+}
+
+#tutorial3{
+    position: fixed;
+    display: inline-block;
+    content:url('tutorial3.png');
+    padding: 0%;
+    top: 10%;
+    margin: auto;
+    left: 25%;
+    width: 50%;
+}
+#tutorial4{
+    position: fixed;
+    display: inline-block;
+    content:url('tutorial4.png');
+    padding: 0%;
+    top: 10%;
+    margin: auto;
+    left: 25%;
+    width: 50%;
+}
+#tutorial5{
+    position: fixed;
+    display: inline-block;
+    content:url('tutorial5.png');
+    padding: 0%;
+    top: 10%;
+    margin: auto;
+    left: 25%;
+    width: 50%;
+}
+#tutorial6{
+    position: fixed;
+    display: inline-block;
+    content:url('tutorial6.png');
+    padding: 0%;
+    top: 10%;
+    margin: auto;
+    left: 25%;
+    width: 50%;
+}
+#tutorial7{
+    position: fixed;
+    display: inline-block;
+    content:url('tutorial7.png');
+    padding: 0%;
+    top: 10%;
+    margin: auto;
+    left: 25%;
+    width: 50%;
+}
+.back{
+    position: fixed;
+    display: inline-block;
+    content:url('back.png');
+    width: 22%;
+    padding: 0%;
+    top: 36%;
+    margin: auto;
+    right: 3%;
+}
+.arrow.left{
+    position: fixed;
+    display: inline-block;
+    content:url('arrow.png');
+    padding: 0%;
+    top: 38%;
+    margin: auto;
+    left: 4%;
+    width: 20%;
+    transition: 0.7s;
+}
+.arrow.left:hover{
+    position: fixed;
+    display: inline-block;
+    content:url('arrow.png');
+    width: 22%;
+    padding: 0%;
+    top: 37%;
+    margin: auto;
+    left: 3%;
+}
+.arrow.right{
+    position: fixed;
+    display: inline-block;
+    content:url('arrow.png');
+    padding: 0%;
+    top: 38%;
+    margin: auto;
+    right: 4%;
+    width: 20%;
+    transition: 0.7s;
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+}
+.arrow.right:hover{
+    position: fixed;
+    display: inline-block;
+    content:url('arrow.png');
+    width: 22%;
+    padding: 0%;
+    top: 37%;
+    margin: auto;
+    right: 3%;
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+}
+/*
+div.rope:hover {
+    position: fixed;
+    display: inline-block;
+    content:url('rope.png');
+    top: -35%;
+    right: 9%;
+    padding: 0%;
+    margin: 0%;
+}
+div.sign:hover {
+    position: fixed;
+    display: inline-block;
+    content:url('sign.png');
+    top: 20%;
+    right: 4%;
+    padding: 0%;
+    margin: 0%;
+}*/
+@-webkit-keyframes fadeIn {
+    0% {opacity: 0;}
+    100% {opacity: 1;}
+}
+
+@keyframes fadeIn {
+    0% {opacity: 0;}
+    100% {opacity: 1;}
+}
+
+.fadeIn {
+    -webkit-animation-duration: 2s;
+    animation-duration: 2s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    -webkit-animation-name: fadeIn;
+    animation-name: fadeIn;
+}
+#txt{
+    position: fixed;
+    font-family: 'Sigmar One', cursive;
+    font-weight: bold;
+    right: 9.75%;
+    top: 50%;
+    font-size: 75%;
+    color: rgb(128, 72, 26);
+    text-shadow: 0 2px 0 #301e06,
+                0 3px 0 rgb(80, 41, 8),
+                0 4px 0 #3a240a,
+                0 5px 0 rgb(41, 21, 3),
+                0 6px 1px rgba(0,0,0,.1),
+                0 0 5px rgba(0,0,0,.1),
+                0 1px 3px rgba(0,0,0,.3),
+                0 3px 5px rgba(0,0,0,.2),
+                0 5px 10px rgba(0,0,0,.25),
+                0 10px 10px rgba(0,0,0,.2),
+                0 20px 20px rgba(0,0,0,.15);
+    text-decoration: none;
+}
+#txt:hover{
+    position: fixed;
+    font-family: 'Sigmar One', cursive;
+    font-weight: bold;
+    right: 9.25%;
+    top: 49.75%;
+    font-size: 85%;
+    color: rgb(128, 72, 26);
+    text-shadow: 0 2px 0 #301e06,
+                0 3px 0 rgb(80, 41, 8),
+                0 4px 0 #3a240a,
+                0 5px 0 rgb(41, 21, 3),
+                0 6px 1px rgba(0,0,0,.1),
+                0 0 5px rgba(0,0,0,.1),
+                0 1px 3px rgba(0,0,0,.3),
+                0 3px 5px rgba(0,0,0,.2),
+                0 5px 10px rgba(0,0,0,.25),
+                0 10px 10px rgba(0,0,0,.2),
+                0 20px 20px rgba(0,0,0,.15);
+    text-decoration: none;
+}

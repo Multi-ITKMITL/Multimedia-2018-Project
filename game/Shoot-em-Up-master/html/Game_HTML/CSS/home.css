@@ -1,0 +1,156 @@
+body {
+    padding: 0;
+    margin: 0;
+    background-image: url(../IMG/bg_1.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top;
+    font-family: 'Press Start 2P', cursive;
+}
+
+.bar {
+    padding: 0;
+    margin-top: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+img {
+    transition: 1s;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.box:hover img {
+    filter: blur(0.5em);
+}
+
+p {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    height: 500px;
+}
+
+li {
+    position: relative;
+    list-style: none;
+    margin: auto 70px;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    box-sizing: border-box;
+    transition-duration: 0.5s;
+}
+
+li:hover {
+    width: 200px;
+    height: 200px;
+}
+
+.loader {
+    position: relative;
+    width: 150px;
+    height: 150px;
+    border-radius: 100%;
+    /*-webkit-transition: 0.5s;*/
+    transition: 0.5s;
+    animation: animate 0.5s linear infinite;
+    animation-play-state: paused;
+    box-shadow: 0px 0px 3px 6px #2d2d2d;
+}
+
+.box:hover .loader {
+    animation-play-state: running;
+    width: 200px;
+    height: 200px;
+}
+
+@keyframes animate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.loader span {
+    transition: 0.5s;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: linear-gradient(#a5a5a5, #727272, #494949);
+}
+
+.box:hover .loader span {
+    background: linear-gradient(#14ffe5, #ffeb3b, #ff00e0);
+}
+
+/*#14ffe5, #ffeb3b, #ff00e0*/
+
+.loader span:nth-child(1) {
+    filter: blur(5px);
+}
+.loader span:nth-child(2) {
+    filter: blur(10px);
+}
+.loader span:nth-child(3) {
+    filter: blur(25px);
+}
+.loader span:nth-child(4) {
+    filter: blur(50px);
+}
+
+.text_title {
+    width: 1200px;
+    height: 125px;
+    border: 7px solid #fff;
+    position: absolute;
+    margin: auto;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin-top: 130px;
+}
+
+p {
+    color: #fff;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    font-size: 100px;
+    margin-top: 20px;
+    text-align: center;
+}
+
+.text_bottom {
+    transition: 0.5s;
+    position: absolute;
+    padding-top: 60px;
+    font-size: 35px;
+    color: rgba(76, 175, 80, 0.0);
+    text-align: center;
+    text-transform: uppercase;
+    margin: 0;
+}
+
+.box:hover .text_bottom {
+    opacity: 100%;
+    padding-top: 85px;
+    color: rgba(76, 175, 80, 1);
+}
+

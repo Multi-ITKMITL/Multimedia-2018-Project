@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bestfriend Strike!</title>
+  <link rel="stylesheet" href="css/main.css">
+  <link href="https://fonts.googleapis.com/css?family=Hanalei+Fill|Sriracha|Kanit" rel="stylesheet">
+  <link rel="icon" href="img/clown.png">
+</head>
+
+<body>
+   
+  <div class="wrap">
+    <div class="head">Best Friend Forever!</div>
+    <div class="game-wrapper">
+      <div class="game">
+          <div class="story">
+            <img class="story_mini" src="img/story/first/1.jpg"/>
+              <!-- <button class="story_but" onclick="nextstory()">&#10095;</button> -->
+          </div>
+          <div class="countdown"></div>
+          <div class="gui">
+              <h1 class="homePage">Best Friend Forever!</h1>
+              <h2 class="homePage">เป็นได้แค่......เพื่อน</h2>
+              <h1 class="homePage">Choose you character</h1>
+              <img src="img/arrow_right.png" class="slidebut homePage" onclick="slideIMG(-1)"></img>
+              <img src="img/player/1.gif" id="playerchoose"/>
+              <img src="img/arrow_left.png" class="slidebut homePage" onclick="slideIMG(+1)"></img><br>
+              <button class="btn" id="bnt-on-homepage" onclick="story()">START</button>
+            </div>
+            <div id="itemslot">
+              <div class="slot">
+                <img class="slot1"/>
+                <p>Z</p>
+              </div>
+              <div class="slot">
+                  <img class="slot2"/>
+                <p>X</p>
+              </div>
+              <div class="slot">
+                  <img class="slot3"/>
+                <p>C</p>
+              </div>
+            </div>
+
+          <div id= "ingame">
+        <div id="maxhealth"> <div id="P_health"> </div></div>
+        <div id="score_f"> Score : 0</div>
+        <img src="img/pause.gif" id="pausebutton"/>
+        <div id="Max_gauge"> 
+          <div id="gauge"></div>
+        </div>
+        <div class="progressBar">
+            <div class="percenBar"></div>
+        </div>
+        <div id="E_maxhealth"> <div id="E_health"> </div></div>
+          </div>
+        </div>
+      <div class="congratulations">
+        <h1>ยินดีด้วย!</h1>
+        <h2>คุณได้ฝ่าฟันอุปสรรคทุกอย่างมาแล้ว...แต่</h2>
+        <button class="btn" onclick="story()">เย้ๆๆ</button>
+      </div>
+      <div class="pauseui">
+        <h1>Pause!</h1>
+        <p>BGM</p>
+        <input type="range" min="0" max="100" value="100" class="slider thumb1" onchange="updatesound('bgm',this.value)">
+        <p>Effect</p>
+        <input type="range" min="0" max="100" value="100" class="slider thumb2" onchange="updatesound('eff',this.value)">
+        <h2>แค่นี้ก็เหนื่อยแล้วหรอ...แล้วชาตินี้จะจีบติดไหม ?</h2>
+        <button class="btn" onclick="resume()">RESUME</button>
+      </div>
+      <div class="game-over">
+        <h1>GAME OVER</h1>
+        <h2>เป็นเพื่อนกันก็ดีอยู่แล้วเนอะ :)</h2>
+        <button class="btn" onclick="window.location.reload()">เพื่อนพ่อง</button>
+      </div>
+    </div>
+    <footer>I love you but as friend</footer>
+  </div>
+  <div>
+      <!-- <embed src="sound/lazer.mp3" loop> -->
+      <audio loop autoplay>
+        <source src="sound/bgm.mp3" type="audio/mpeg">
+      </audio>
+  </div>
+  <script src="js/game.js"></script>
+</body>
+
+</html>

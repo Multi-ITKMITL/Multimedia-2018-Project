@@ -1,0 +1,10 @@
+#FF0066 = Neon Pink
+#FF00 = Neon Green
+#FFFF00 = Neon Yellow
+#FF3300 = Neon Orange
+#FF0009 = Neon Red
+#56600FF = Neon Purple
+#FF99 = Neon Mint Green
+#BF = Neon Dark Blue
+#FF = Neon Blue
+#FFFF = Light Blue

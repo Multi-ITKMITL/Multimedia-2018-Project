@@ -1,0 +1,131 @@
+@import url('https://fonts.googleapis.com/css?family=Comfortaa');
+
+body {
+  background-image: url(bg-13.jpg);
+  overflow-x: hidden;
+  overflow-y: hidden;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  cursor: url(https://cdn.shopify.com/s/files/1/1061/1924/products/Pink_Heart_With_Arrow_Emoji_large.png?v=1480481033.png),auto;*/
+  font-family: 'Comfortaa', cursive;
+  text-shadow: 0px 0px 5px gray;
+}
+
+body * {
+  user-select: none;
+}
+
+h1 {
+  position: absolute;
+  top: 1em;
+  left: 25em;
+  font-size: 48px;
+  font-weight: 500;
+  /*background-color: #ff634782;*/
+  color: black;
+  font-family: 'Comfortaa', cursive;
+
+}
+
+
+button {
+  display: block;
+  padding: 0.7em 1.5em;
+  outline: none;
+  border: none;
+  color: white;
+  font-size: 30px;
+  text-transform: uppercase;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  width: 250px;
+  height: 100px;
+  text-align: center;
+  transition: ease 0.2s;
+  border-radius: 4%;
+  /*cursor: url(https://cdn.shopify.com/s/files/1/1061/1924/products/Pink_Heart_With_Arrow_Emoji_large.png?v=1480481033.png),auto;*/
+
+}
+
+#startBtn {
+  position: relative;
+  background-color: tomato;
+  border: solid 3px white;
+  /*cursor: url(https://cdn.shopify.com/s/files/1/1061/1924/products/Pink_Heart_With_Arrow_Emoji_large.png?v=1480481033.png),auto;*/
+}
+#startBtn:hover {
+  background-color: white;
+  border: solid 3px tomato;
+  box-shadow: gray;
+  color: tomato;
+
+  }
+
+
+#bird {
+  height: 20%;
+  position: absolute;
+  left: 10%;
+  top: 250px;
+}
+
+.enemy {
+  background-image: url("https://2.bp.blogspot.com/-T5MY0mvl9Aw/UsZstBkZFoI/AAAAAAAAcpc/rnG_UJLfJIM/s800/renga_pattern.png");
+  width: 10%;
+  height: 100%;
+  position: absolute;
+  left: 100%;
+}
+
+/* The Modal (background) */
+.modal {
+  display: block2; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: tomato;
+  margin: 10% auto; /* 15% from the top and centered */
+  padding: 20px;
+  box-shadow: white;
+  border: 1px solid #888;
+  width: 50%; /* Could be more or less, depending on screen size */
+  border-radius: 2%;
+}
+
+/* The Close Button */
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 38px;
+  font-weight: bold;
+  font-family: 'Comfortaa', cursive;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+p{
+  text-align: center;
+  color: white;
+  font-size: 20px;
+  font-family: 'Comfortaa', cursive;
+}

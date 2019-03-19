@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="uft-8">
+    <title>Game</title>
+    <link rel="stylesheet" href="CSS/game.css">
+    <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $('.sidebarBtn').click(function(){
+                $('.sidebar').toggleClass('active');
+                $('.sidebarBtn').toggleClass('toggle');
+            })
+        })
+    </script>
+</head>
+<body onload="load()" style="background-image: url(IMG/bg_1.jpg);">
+    <iframe width="0" height="0" src="https://www.youtube.com/embed/iqtkk6bYEpk?rel=0&autoplay=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <div class="title_text">
+        <p>SHOOT EM UP</p>
+    </div>
+    <div class="game">
+        <div class="game_bar">
+            <div class="game_bar_box">
+                <p>life energy</p>
+                <div class="life_energy_bg"></div>
+            </div>
+            <div class="game_bar_box"><p id="theRound">0</p></div>
+            <div class="game_bar_box">
+                <p>score : <p id="theScore">0</p></p>
+            </div>
+        </div>
+        <center><canvas id="canvas"></canvas></center>
+        <script src="../../script/main.js"></script>
+        <div class="game_bar_bottom">
+            <div class="game_bar_box_bottom">
+                <p>Ammo : <p id="theAmmo">0</p></p>
+            </div>
+        </div>
+    </div>
+    <div class="sidebar">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="howTo.html">How To Play</a></li>
+            <!--<li><a href="board.html">Score Board</a></li>-->
+            <li><a href="dev.html">Dev Team</a></li>
+        </ul>
+        <button class="sidebarBtn">
+            <span></span>
+        </button>
+    </div>
+</body>
+</html>

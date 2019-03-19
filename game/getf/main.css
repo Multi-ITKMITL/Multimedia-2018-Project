@@ -1,0 +1,99 @@
+button{
+    display: block;
+    margin:0 auto;
+    justify-content: center;
+}
+html, body {
+    width:  100%;
+    height: 100%;
+    margin: 0;
+    background-image: url("img/bakcmain.gif");
+    background-repeat: no-repeat;
+    background-size: 100vw 100vh;
+    background-attachment: fixed;
+  }
+  canvas {
+    position:absolute; 
+    left:0px;
+    top:0px;
+}
+.start{
+  display: block;
+  position: relative;
+  top:10vh;
+  height: 60vh;
+}
+.play{
+  position: relative;
+  bottom: 12vh;
+  height: 35vh;
+  width: 38vw;
+}
+.modal-start {
+  display: block; 
+  position: fixed;
+  z-index: 1; 
+  left: 0;
+  top: 0;
+  width: 100%; 
+  height: 100%; 
+  overflow: auto; 
+  background-color: rgb(0,0,0);
+  background-color: rgba(0, 0, 0, 0.7);
+}
+.modal {
+  display: none; 
+  position: fixed;
+  z-index: 1; 
+  padding-top: 28px; 
+  left: 0;
+  top: 0;
+  width: 100%; 
+  height: 100%; 
+  overflow: auto; 
+  background-color: rgb(0,0,0);
+  background-color: rgba(0,0,0,0.4);
+}
+
+.modal-content-2 {
+  display: block;
+  margin: auto;
+  width: 45%;
+}
+
+.modal-content {
+  display: block;
+  margin: auto;
+  width: 40%;
+}
+.play:hover {
+  cursor: pointer;
+}
+.close {
+  position: relative;
+  bottom: 12vh;
+  height: 35vh;
+  width: 40vw;
+}
+#point{
+  font-family: '8BITWONDERNominal';
+  font-weight: normal; 
+  font-style: normal; 
+  display: block;
+  top: 80px;
+  position: relative;
+  text-align:center;
+  font-size: 2.5vw;
+  color:#ffc500;
+}
+.close:hover {
+  cursor: pointer;
+}
+
+#myImg{
+  display: block;
+  margin: 0 auto;
+  height: 40vh;
+  width:60vw;
+  margin-bottom: 20px;
+}

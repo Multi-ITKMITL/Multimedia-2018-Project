@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Way out</title>
+	<style type="text/css">
+		h1{ animation-name: 
+			color: red;
+		}
+		button {
+			position: absolute;
+			top: 50%
+			left: 50%;
+			transform: translate(-50%, -50%);
+		}
+		button {
+			background:  green;
+			color :#ccc;
+			width: 319px;
+			height:101px;
+			border: 5px solid black;
+			font-size: 30px;
+			border-radius: 4px;
+			transition: .6s;
+			overflow: hidden;
+			font-weight: bolder;
+
+		}
+		button:focus{
+			outline: none;
+		}
+		button:before{
+			content: '';
+			display: block;
+			position: absolute;
+			background: rgba(255,255,255,.5);
+			width:60px;
+			height:100%;
+			left:0;
+			top:0;
+			opacity: .5s;
+			filter: blur(30px);
+			transform: translateX(-130px) skewX(-15deg);
+
+		}
+		button:after {
+			content: '';
+			display: block;
+			position: absolute;
+			background: rgba(180,255,255,.2);
+			width: 30px;
+			height: 100%;
+			left: 30px;
+			top: 0;
+			opacity: 0;
+			filter: blur(30px);
+			transform: translate(-100px) scaleX(-15deg);
+		}
+		button:hover{
+			background:  hsl(223,95%,21%);
+			cursor: pointer;
+		}
+		button:hover:before {
+			transform: translateX(300px) skewX(-15deg);
+			opacity: .6;
+			transition: .7s;
+		}
+		button:hover:after {
+			transform: translateX(300px) skewX(-15deg);
+			opacity: 1;
+			transition: .7s;
+		}
+		
+
+		body{
+			background-image: url("1.png");
+		}
+
+	}
+	</style>
+</head>
+<body>
+	<br>
+	<br>
+	<center>
+		<img src="wayout.png">
+	</center>
+	<br>
+	<br>
+	<bottom>
+	<center>
+		
+		<button type="button1" onclick="kuy">START</button>
+		<br><br><br><br><br><br><br>
+
+		<button type="button2">GUIDE</button>
+		<br><br><br><br><br><br><br>
+		
+
+		<button type="button3">CREDITS</button>
+	</center>
+	<audio  autoplay id="my">
+  <source src="8.mp3">
+	</audio>
+	<script > 
+		 var audio = document.getElementById("8");
+  	audio.volume = 0.2;
+	</script>
+
+	
+</body>
+</html>

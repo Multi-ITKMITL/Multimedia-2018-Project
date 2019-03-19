@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Snake 3019</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+        <link rel="stylesheet" type="text/css" href="../file/style.css">
+        <link rel="icon" href="../src/pic/icon.png">
+        <!-- This is for font -->
+        <link href="https://fonts.googleapis.com/css?family=Kaushan+Script" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Prompt" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Monoton" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Audiowide" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Orbitron" rel="stylesheet">
+
+        <!-- This is for Audio -->
+        <audio id="bite" preload="auto">
+            <source src="../src/sound/bite.mp3" type="audio/ogg">
+        </audio>
+        <audio id="clock" preload="auto">
+            <source src="../src/sound/clock.mp3" type="audio/ogg">
+        </audio>
+        <audio id="fire" preload="auto">
+            <source src="../src/sound/fire.mp3" type="audio/ogg">
+        </audio>
+        <audio id="gameover">
+            <source src="../src/sound/game_over.mp3" type="audio/ogg">
+        </audio>
+        <audio id="cdtime">
+            <source src="../src/sound/Warning2.mp3" type="audio/ogg">
+        </audio>
+        <audio id="blink">
+            <source src="../src/sound/time.mp3" type="audio/ogg">
+        </audio>
+        <audio id="pop">
+            <source src="../src/sound/pop.mp3" type="audio/ogg">
+        </audio>
+        <audio id="hit">
+            <source src="../src/sound/hit2.mp3" type="audio/ogg">
+        </audio>
+        <audio id="beep">
+            <source src="../src/sound/beep3.mp3" type="audio/ogg">
+        </audio>
+        <audio id="beep1">
+            <source src="../src/sound/beep3.mp3" type="audio/ogg">
+        </audio>
+        <audio id="flat">
+                <source src="../src/sound/flat2.mp3" type="audio/ogg">
+            </audio>
+        <!-- <iframe src="src/sound/bgm3.mp3" allow="autoplay" id="stopbgm" style="display:none"></iframe> -->
+        <audio volume="0.1" id="bgm" autoplay loop>
+            <source src="../src/sound/bgm3.mp3" type="audio/ogg">
+        </audio>
+        <audio volume="0.1" id="blue" preload="auto">
+            <source src="../src/sound/bgm2.5.mp3" type="audio/ogg">
+        </audio>
+    </head>
+    <body>
+        <!-- Start Screen -->
+        <div id="startGame">
+            <h1 id="pressStart"><img id="keyW" src="../src/pic/str.png"></h1>
+        </div>
+        <!-- Game Screen -->
+            <div id="playGame" style="width:100%">
+                <h2>score: <span id="theScore">3</span></h2>
+                <h2 id="www">Energy : <span id="Energy">30</span> / <span id="maxEnergy">30</span></h2>
+                <canvas id="myCanvas" height="625";
+                width="625";>
+                </canvas>
+        </div>
+        <!-- Item Box -->
+        <div id="itembox">
+            <!-- <img src="../src/pic/bmbr.png" style="width:40px;height:40px;"  class="item"> -->
+            <img src="../src/pic/energyball.png" style="width:40px;height:40px;" class="item">
+            <p class="txtitem" id="energy">ENERGY</p></br>
+            <img src="../src/pic/shield.png" style="width:40px;height:40px;" class="item">
+            <p class="txtitem">SHIELD</p></br>
+            <img src="../src/pic/bmbg.png" style="width:40px;height:40px" class="item">
+            <p class="txtitem">BOMB</p></br>
+            <img src="../src/pic/food.png" style="width:40px;height:40px;" class="item">
+            <p class="txtitem">MACHINE</p></br>
+        </div>
+
+        <!-- End Screen -->
+        <center>
+        <div id="endGame">
+            <audio muted></audio>
+            <div id="endContent">
+                <h1 id="youDied">Game Over</h1>
+                <h2 id="nscoreone">High Score: <span id="total">0</span></h2>
+                <h2 id="nscoretwo">Final Score: <span id="final">0</span></h2>
+                <button class="myButton" onclick="start()">Replay!</button>
+            </div>
+        </div>
+        </center>
+    <script src="snakegame.js"></script>
+    </body>
+</html>

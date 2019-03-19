@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>DECODER</title>
+  <style>
+@import url('https://fonts.googleapis.com/css?family=Press+Start+2P');
+</style>
+  <link rel="stylesheet" href="css.css">
+</head>
+<body>
+    <script type="text/javascript" src="myjs.js"></script>
+    <div class="board">
+        <div pos="left">Level : <span id="level">1</span></div>
+        <div pos="score">Score : <span id="score">0</span></div>
+        <div pos="mid" id="warn"></div>
+        <div pos="mid">
+            <button onclick="start()" id="play">Play</button>
+            <button onclick="enter()" id="enter">Enter</button>
+            <button onclick="erase()" id="erase">Clear</button>
+        </div>
+        <div pos="right">Time Left : <span id="time">20</span></div>
+    </div>
+    <center>
+    <div id="button">
+        <div class="ans">
+            <div class="boxinans">
+                <br>
+                <div class="textinans"><b>Code</b></div>
+                <div class="box" id="prop0"></div>
+                <div class="box" id="prop1"></div>
+                <div class="box" id="prop2"></div>
+                <div class="box" id="prop3"></div>
+                <div class="box" id="prop4"></div>
+                <div class="box" id="prop5"></div>
+                <div class="box" id="prop6"></div>
+                <div class="box" id="prop7"></div>
+                <div class="box" id="prop8"></div>
+                <div class="box" id="prop9"></div>
+            </div>
+            <div class="boxinans">
+                <div class="textinans" id="ETD"><b>Enter the Code</b></div>
+                <div class="box" id="choose0"></div>
+                <div class="box" id="choose1"></div>
+                <div class="box" id="choose2"></div>
+                <div class="box" id="choose3"></div>
+                <div class="box" id="choose4"></div>
+                <div class="box" id="choose5"></div>
+                <div class="box" id="choose6"></div>
+                <div class="box" id="choose7"></div>
+                <div class="box" id="choose8"></div>
+                <div class="box" id="choose9"></div>
+            </div>
+        </div>
+        <div id="buttontop">
+            <button class="select" id="button1" >1</button>
+            <button class="select" id="button2" >2</button>
+            <button class="select" id="button3" >3</button>
+            <button class="select" id="button4" >4</button>
+            <button class="select" id="button5" >5</button>
+        </div>
+        <div id="buttonbot">
+            <button class="select" id="button6" >6</button>
+            <button class="select" id="button7" >7</button>
+            <button class="select" id="button8" >8</button>
+            <button class="select" id="button9" >9</button>
+            <button class="select" id="button0" >0</button>
+        </div>
+    </div>
+    </center>
+    <div id="winn">
+        <div id='win'>WIN</div>
+        <div id="result">Score : <span id="scorew"></span></div>
+        <button id='restart' class='third' onclick='restart()'>Restart</button>
+    </div>
+    <div id="losee">
+        <div id ='lose'>LOSE</div>
+        <div id="result">Score : <span id="scorel"></span></div>
+        <button id='restart' class='third' onclick='restart()'>Restart</button>
+    </div>
+
+
+</div>
+<audio autoplay>
+        <source src="game_music.mp3" type="audio/mp3" loop="50"/>
+</audio>
+
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>How To Play</title>
+    <link rel="stylesheet" type="text/css" href="CSS/howTo.css">
+    <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $('.sidebarBtn').click(function(){
+                $('.sidebar').toggleClass('active');
+                $('.sidebarBtn').toggleClass('toggle');
+            })
+        })
+    </script>
+</head>
+<body>
+    <iframe width="0" height="0" src="https://www.youtube.com/embed/HW3l3IpcjP0?rel=0&autoplay=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <div class="title_text">
+        <p>SHOOT EM UP</p>
+    </div>
+    <div class="container">
+        <img src="IMG/how2play_2.png">
+    </div>
+    <div class="sidebar">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="howTo.html">How To Play</a></li>
+            <!--<li><a href="board.html">Score Board</a></li>-->
+            <li><a href="dev.html">Dev Team</a></li>
+        </ul>
+        <button class="sidebarBtn">
+            <span></span>
+        </button>
+    </div>
+</body>
+</html>

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>
+   Victory Path
+  </title>
+  <link rel="shortcut icon" type="image/x-icon" href="image/icon.ico" />
+	<script
+  src="http://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNf<Ou91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+  <link rel="stylesheet" type="text/css" href="style.css">
+
+</head>
+<center>
+<body>
+  <iframe src="sound/bgmusic.mp3" allow="autoplay" style="display:none"></iframe>
+    <h1>Victory Path</h1>
+
+	<h2>score : <span id="score"> 0</span></h2>
+  <script language="javascript">
+
+// ENTER TEXT BELOW. CAN *NOT* INCLUDE NORMAL HTML CODE.
+var text='PRAYUT';
+var delay=30;              // ตั้งค่าความเร็วในการกระเด้ง (ยิ่งเลขน้อยยิ่งเร็ว)
+var txtw=30;               // ตั้งค่าความห่างระหว่างตัวอักษร
+var xoff=0;               // ตำแหน่งให้แสดงตัวอักษรจากด้านบนซ้าย
+var yoff=-60;               // ตำแหน่งให้แสดงตัวอักษรจากด้านบน
+var sampleinc=0.3;
+var amplitude=20;          // ความสูงที่ตัวอักษรษรกระเด้งถึง (ยิ่งเลขมากยิ่งสูง
+var mousefollow=true;
+var beghtml='<h1>';
+var endhtml='</h1>';
+
+ns4 = (navigator.appName.indexOf("Netscape")>=0 && document.layers)? true : false;
+ie4 = (document.all && !document.getElementById)? true : false;
+ie5 = (document.all && document.getElementById)? true : false;
+ns6 = (document.getElementById && navigator.appName.indexOf("Netscape")>=0 )? true: false;
+var txtA=new Array();
+text=text.split('');
+var t='';
+var ex=sampleinc;
+var mousex=0;
+var mousey=0;
+for(i=1;i<=text.length;i++){
+t+=(ns4)? '<layer name="txt'+i+'" top="-1000" left="0" width="'+txtw+'" height="1">' : '<div id="txt'+i+'" style="position:absolute; top:-1000px; left:0px; height:1px; width:'+txtw+'; visibility:visible;">';
+t+=beghtml+text[i-1]+endhtml;
+t+=(ns4)? '</layer>' : '</div>';
+}
+document.write(t);
+
+function adjmousepos(evt){
+mousex=xoff+((ie4||ie5)?event.clientX+document.body.scrollLeft:evt.pageX);
+mousey=yoff+((ie4||ie5)?event.clientY+document.body.scrollTop:evt.pageY);
+}
+
+function getidleft(id){
+if(ns4)return id.left;
+else return parseInt(id.style.left);
+}
+
+function getidtop(id){
+if(ns4)return id.top;
+else return parseInt(id.style.top);
+}
+
+function getwindowwidth(){
+if(ie4||ie5)return document.body.clientWidth+document.body.scrollLeft;
+else return window.innerWidth+pageXOffset;
+}
+
+function moveid(id,x,y){
+if(ns4)id.moveTo(x,y);
+else{
+id.style.left=x+'px';
+id.style.top=y+'px';
+}}
+
+function movetxts(){
+for(i=text.length;i>1;i=i-1){
+if(getidleft(txtA[i-1])+txtw*2>=getwindowwidth()){
+moveid(txtA[i-1],0,-1000);
+moveid(txtA[i],0,-1000);
+}else moveid(txtA[i], getidleft(txtA[i-1])+txtw, getidtop(txtA[i-1]));
+}
+moveid(txtA[1],x1,y1);
+ex=ex+sampleinc;
+}
+
+function movetxts(){
+for(i=text.length;i>1;i=i-1){
+if(getidleft(txtA[i-1])+txtw*2>=getwindowwidth()){
+moveid(txtA[i-1],0,-1000);
+moveid(txtA[i],0,-1000);
+}else moveid(txtA[i], getidleft(txtA[i-1])+txtw, getidtop(txtA[i-1]));
+}
+moveid(txtA[1],xoff+mousex,yoff+mousey+(Math.sin(ex)*amplitude)+Math.abs(amplitude));
+ex=ex+sampleinc;
+}
+
+window.onload=function(){
+for(i=1;i<=text.length;i++)txtA[i]=(ns4)?document.layers['txt'+i]:(ie4)?document.all['txt'+i]:document.getElementById('txt'+i);
+setInterval('movetxts()',delay);
+if(mousefollow){
+if(ns4)document.captureEvents(Event.MOUSEMOVE);
+document.onmousemove=adjmousepos;
+}}
+
+</script>
+	<span id="appendHere"></span>
+  <a href="index.html"><div id="mode">Select Mode</div></a>
+
+
+<div id="myModal" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <h2 class="b">Game over your score is <span id="score"> 0</span></h2>
+    <img class="button" src="image/replay.png">
+  </div>
+</body>
+</center>
+<script type="text/javascript" src="script.js">
+
+</script>
+</html>

@@ -1,0 +1,445 @@
+@import url('https://fonts.googleapis.com/css?family=Bubblegum+Sans');
+/* colors */
+.a, .a-x {background: #009900;}
+.b, .b-x {background: #009933;}
+.c, .c-x {background: #660000;}
+.d, .d-x {background: #660033;}
+.e, .e-x {background: #FFEBCD;}
+.f, .f-x {background: #FFEFD5;}
+.g, .g-x {background: #FFCC00;}
+.h, .h-x {background: #FFCC33;}
+.i, .i-x {background: #FF0099;}
+.j, .j-x {background: #FF3399;}
+// *, *::before, *::after {box-sizing: border-box;}
+html, body {height: 100%}
+html {font-size: 16px}
+body {
+  margin: 0;
+  height: 100vh;
+  display: flex; 
+  align-items: center;
+  justify-content: center;
+  font-size: calc(1em + 1vmin);
+  background-image: url("../img/3.gif");
+   background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: fixed;
+  -o-background-size: 100% 100%, auto;
+  -moz-background-size: 100% 100%, auto;
+  -webkit-background-size: 100% 100%, auto;
+  background-size: 100% 100%, auto;
+  font-family: 'Bubblegum Sans', Helvetica, FontAwesome, sans-serif;
+  color: #fffced;
+}
+#img2{
+  margin: auto;
+  width: 25%;
+  height: 25%;
+  top: 10px;
+  left: 10px;
+  position:absolute;
+  transition: 2s;
+  animation: img 2s infinite ease-in alternate;
+}
+/*ปรับให้ที่เล่นเพลงไปอยู่ข้างล่าง*/
+audio{ 
+  margin:auto;
+  position: absolute;
+  top: 800px;
+}
+.level{
+  font-family: 'Bubblegum Sans', Helvetica, FontAwesome, sans-serif;
+  opacity:0.5;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  background-color: white; 
+  color: black; 
+  box-shadow: 0 0 10px #FFFFFF;
+  margin: auto;
+  position: absolute;
+  top: 10px;
+  color: #696969;
+  right: 50px;
+}
+.level:hover{
+  opacity: 1;
+}
+.easy{
+  width: 100px;
+  height: 100px;
+  font-family: 'Bubblegum Sans', Helvetica, FontAwesome, sans-serif;
+  opacity:0.5;
+  border: none;
+  color: white;
+  right:14%;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 25px;
+  box-shadow: 0 0 10px #FFFFFF;
+  position: relative;
+  color: #D02090;
+
+}
+.easy:hover{
+  opacity: 1;
+}
+.hard{
+  width: 100px;
+  height: 100px;
+  font-family: 'Bubblegum Sans', Helvetica, FontAwesome, sans-serif;
+  opacity:0.5;
+  border: none;
+  right: 5%;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 25px;
+  box-shadow: 0 0 10px #FFFFFF;
+  position: relative;
+
+}
+.hard:hover{
+  opacity: 1;
+}
+.howto{
+  font-family: 'Bubblegum Sans', Helvetica, FontAwesome, sans-serif;
+  opacity:0.5;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  background-color: white; 
+  color: black; 
+  box-shadow: 0 0 10px #FFFFFF;
+  margin: auto;
+  position: absolute;
+  top: 10px;
+  color: #696969;
+  right: 250px;
+}
+.howto:hover{
+  opacity: 1;
+}
+.ttt{
+  width: 100px;
+  height: 100px;
+  font-family: 'Bubblegum Sans', Helvetica, FontAwesome, sans-serif;
+  opacity:0.5;
+  border: none;
+  right: 31%;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 25px;
+  box-shadow: 0 0 10px #FFFFFF;
+  position: absolute;
+
+}
+.ttt:hover{
+  color: #FF0000;
+  opacity: 1;
+}
+.home{
+  font-family: 'Bubblegum Sans', Helvetica, FontAwesome, sans-serif;
+  opacity:0.5;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  background-color: white; 
+  color: black; 
+  box-shadow: 0 0 10px #FFFFFF;
+  margin: auto;
+  position: absolute;
+  top: 10px;
+  color: #696969;
+  right: 29%;
+}
+.home:hover{
+  opacity: 1;
+}
+#time{
+  text-align: center;
+  text-decoration: none;
+  font-size: 25px;
+}
+#text2{
+  margin:auto;
+  position: relative;
+  right: 17%;
+  top: 10px;
+  font-size: 18px;
+}
+#text3{
+  margin:auto;
+  position: relative;
+  right: 1%;
+  top: -30px;
+  font-size: 18px;
+}
+#text4{
+  margin:auto;
+  position: relative;
+  left: 16%;
+  top: -70px;
+  font-size: 18px;
+}
+/*สร้างกล่อง*/
+.box {
+  position: relative;
+  top: 35px;
+  left: 5%;
+  width: 100px;
+  height: 100px;
+  perspective: 800;
+}
+/*ตั้งให้เมื่อเอาเมาส์ชี้จะเริ่มอนิเมชั่น*/
+.box:hover{
+  transform-style: preserve-3d;
+  will-change: transform;
+  animation: box-3d 12s linear Infinite;
+
+}
+/*ทำให้ที่นับจำนวนรอบไปอยู่มุมขวา*/
+.text{
+  position: absolute;
+  right: 35%;
+}
+/*ปรับสีของกล่อง 3D*/
+.item {
+  opacity:0.4; /*ทำให้สีกล่องโปร่งใส*/
+  position: absolute;
+  width: 100%;
+  height: 100%;}
+.item:nth-child(1) {
+  background-color: #4682B4;
+  transform: translateZ(50px); /*ปรับมุมของแกนzให้ประกบให้ได้เป็นกล่อง3d*/
+  }
+  .item:nth-child(2) {
+  background-color: #00CED1;
+  transform: translateZ(-50px);/*ปรับมุมของแกนzให้ประกบให้ได้เป็นกล่อง3d*/
+  }
+.item:nth-child(3) {
+  background-color: #EEE8AA;
+  transform: rotateY(90deg) translateZ(50px);/*ปรับมุมของแกนzให้ประกบให้ได้เป็นกล่อง3d*/
+  }
+.item:nth-child(4) {
+  background-color: #FF69B4;
+  transform: rotateY(-90deg) translateZ(50px);/*ปรับมุมของแกนzให้ประกบให้ได้เป็นกล่อง3d*/
+  }
+.item:nth-child(5) {
+  background-color: #D8BFD8;
+  transform: rotateX(90deg) translateZ(50px);/*ปรับมุมของแกนzให้ประกบให้ได้เป็นกล่อง3d*/
+  }
+.item:nth-child(6) {
+  background-color: #BC8F8F;
+  transform: rotateX(-90deg) translateZ(50px);/*ปรับมุมของแกนzให้ประกบให้ได้เป็นกล่อง3d*/
+  }
+}
+.controls {
+  display: flex;
+  justify-content: space-between;
+  user-select: none;
+  padding: 1em 0;
+}
+
+#board {
+  display: flex;
+  flex-flow: row wrap;
+  border: 0.5ch;
+  margin:2em auto;
+  box-shadow: 1px 1px 150px #FF00CC;
+  transform: all 2s;
+  animation: box 2s infinite ease-in alternate;
+  height: 70vmin;
+  width: 70vmin;
+  border-radius: .3em;
+}
+
+#board > * {
+  flex: 0 1 7vmin;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 7vmin;
+  transition: background 300ms linear;
+}
+
+#board:not(.started) > *:first-of-type::after {
+  content: '\01F3C1';
+}
+
+#colors {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  margin-top: -1ch;
+}
+
+#colors > * {
+  flex: 0 1 7vmin;
+  height: 7vmin;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border-radius: .3em;
+  border: 2px double white;
+}
+@-webkit-keyframes colorled {
+  0%   {background-color: #FFC0CB;}
+  25%  {background-color: #FFB6C1;}
+  50%  {background-color: #9932CC;}
+  75%  {background-color: #FFFFE0;}
+  100% {background-color: #F5F5DC;}
+}
+
+/* Standard syntax */
+@keyframes colorled {
+  0%   {background-color: #FFC0CB;}
+  25%  {background-color: #FFB6C1;}
+  50%  {background-color: #9932CC;}
+  75%  {background-color: #FFFFE0;}
+  100% {background-color: #F5F5DC;}
+}
+#contain .mf .options .option {
+  z-index: 1000;
+  font-family: 'Caveat', cursive;
+  font-size: 4vh;
+  color: #1a1a1a;
+  text-align: center;
+  animation-name: pulse;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+  margin: 2vh 0 1vh 0;
+}
+.overlay {
+  z-index: 1000;
+  height: 100%;
+  width: 100%;
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  top: 0;
+  left: 0;
+  background-color:  rgb(0,0,0);
+  background-color: rgba(0,0,0, 0.9);
+}
+
+.overlay-content{
+  position: absolute;
+  top: 25%;
+  width: 100%;
+  text-align: center;
+  font-size: 30px;
+  margin-top: 30px;
+  color : #818181;
+}
+.overlay-content:hover, .overlay-content:focus {
+  z-index: 1000;
+  color: #f1f1f1;
+}
+.overlay a {
+  z-index: 1000;
+  padding: 8px;
+  text-decoration: none;
+  font-size: 36px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.overlay a:hover, .overlay a:focus {
+  z-index: 1000;
+  color: #f1f1f1;
+}
+
+.overlay .closebtn {
+  position: absolute;
+  top: 20px;
+  right: 45px;
+  font-size: 60px;
+}
+@media screen and (max-height: 450px) {
+  .overlay a {font-size: 20px }
+  .overlay .closebtn {
+  font-size: 40px;
+  top: 15px;
+  right: 35px;
+
+  }
+}
+.new-game {
+  pointer-events: auto;
+  cursor: pointer;
+  color: #00bcd4;
+  border: none;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 50px;
+}
+#game-over {
+  pointer-events: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 3em;
+}
+#game-over {
+  pointer-events: auto;
+  cursor: pointer;
+  color: #00bcd4;
+  border: none;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 50px;
+}
+/*ทำอนิเมะชั่นแสงวิ้งแวบของกรอบboard*/
+@keyframes box{
+  from{
+    box-shadow: 1px 1px 100px #FF00CC;
+  }
+  to{
+    box-shadow: 1px 1px 200px #FFFFFF;
+
+  }
+}
+/*สร้างอนิเมชั่นกล่อหมุน360องศา*/
+@keyframes box-3d {
+  100% {
+  transform: rotateY(360deg) rotate(720deg);
+  }
+}
+
+@keyframes img{
+  from{
+    transform: scale(0.8);
+  }
+  to{
+    transform: scale(1);
+
+  }
+}

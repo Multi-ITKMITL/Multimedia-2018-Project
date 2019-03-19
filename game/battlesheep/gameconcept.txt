@@ -1,0 +1,4 @@
+Game concept: sheep + farm (harvest moon) + 
+Game theme / art: fantasy 8bit
+Game styles: roguelike hack-n-slash
+Camera: 2d (bird eye)

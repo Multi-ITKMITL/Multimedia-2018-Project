@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Flappy Bird Cyber Punk</title>
+    <style>
+    #canvas, #scream {
+    width: 100%;
+    height: 700px;
+    position: relative;
+    display: block;
+}
+    body{
+      margin-left: 10%;
+      width: 80%;
+      overflow:hidden;
+      background-color: black;
+    }
+#scream {
+  z-index: -10;
+  height: 700px;
+
+}
+#canvas {
+  opacity: 0.9;
+  margin-top: -700px;
+}
+img{
+  position: absolute;
+  width: 550px;
+  height: 200px;
+  margin: auto;
+  left: 0px;
+  right: 0px;
+  top: 0px;
+  bottom: 30px;
+}
+#test{
+  margin-bottom: 400px;
+  width: 700px;
+  height: 300px;
+}
+#gameover{
+  z-index: -11;
+  width: 800px;
+  height: 400px;
+  margin-bottom: 400px;
+}
+#bird{
+  bottom: unset;
+  margin-left: 10%;
+  width: 172px;
+  height: 97px;
+}
+    </style>
+  </head>
+  <body>
+   <img id="test" src="flap.gif">
+   <img id="gameover" src="gameover.png">
+   <img id="scream" src="bg.gif" alt="The Scream">
+   <canvas id="canvas" width="900" height="500"></canvas>
+   <!--<img id="bird" src="images/bird.gif">-->
+   <script src="flappyBird.js"></script>
+  </body>
+</html>

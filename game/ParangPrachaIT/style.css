@@ -1,0 +1,56 @@
+
+html{margin: 0; height: 100%; overflow: hidden;}
+body {
+    /* background: url('images/background.jpg'); */
+   	margin: 0;
+	padding: 0;
+	cursor: none;
+}
+#game-canvas{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+}
+
+#wrapper{
+	position: absolute;
+	width: 100%;
+	height: 100vh;
+	/* display: block; */
+	background-color: aquamarine;
+}
+
+#yay{
+	position: absolute;
+	z-index: 1;
+	width: 30px;
+	height: 30px;
+	top:65px; 
+	left:1140px;
+}
+
+#wow{
+	position: absolute;
+	z-index: 1;
+	width: 30px;
+	height: 30px;
+	top:65px; 
+	left:970px;
+}
+
+#yeah{
+	position: absolute;
+	z-index: 1;
+	width: 30px;
+	height: 30px;
+	top:65px; 
+	left:1305px;
+}
+
+#cursorID{
+	z-index:9;
+	position:absolute;
+	visibility:visible; 
+	left:100px; top:100px; 
+	transition: width 3s cubic-bezier(0.25, 0.1, 0.87, 0.16);
+}

@@ -1,0 +1,1079 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Space X</title>
+<link rel="shortcut icon" type="image/png" href="images/360.png" />
+</head>
+<body style="height: 100%; margin:0 0 0 0;">
+
+<!-- Start game screen -->
+<center>
+	<div id="startGame">
+		<center><a id="text">Space X</a></center>
+		<div id="howto" style="display:block; background-color:hsla(10,0%,0%,0); color:white; width:70%; height:35%; position:absolute; top:25%; left:23%; text-align:left;">
+				<p>Space X เป็นแกมแนวยิงมุมมองด้านบนที่เราจะได้เล่นเป็นคนขับยานอวกาศเดินทางไปสู้กับยุทธ์ตัวร้ายเเห่งกาแล็กซี่สารขัณฑ์<br>
+					Item<br>
+					-  <img src="images/heal.png" style="width:20px; height:20px;"> Heal (เป็นอุปกรณ์ที่ใช้ซ่อมยาน ทำให้ยานมีความทนต้านมากขึ้น)<br>
+					-  <img src="images/firerate.png" style="width:20px; height:20px;"> Charge bullet (เป็นอุปกรณ์ที่ช่วยในการยิง ทำให้ยิงได้เร็วขึ้น เเต่ใช้เเล้วหมดไป)<br>
+					-  <img src="images/roundbullet.png" style="width:20px; height:20px;"> Laser gun (เป็นปืนที่ใส่เพิ่มในยานได้ สามารถยิงได้หลายกระบอกได้พร้อมกัน เเต่จะเสียความเร็วในการยิงไป)<br>
+					Control<br>
+					- ตัวละครจะเคลื่อนที่ไปตามเมาส์<br>
+					- คลิกซ้ายเพื่อหมุนไปทางซ้าย (เนื่องจากคนขับยานถนัดซ้าย ดังนั้นยานจะหมุนไปเเค่ทางซ้ายเท่านั้น)<br>
+					- การยิงปืนนั้น ไม่ต้องกดปุ่มใด เพราะยานมีระบบยิงแบบ Full-auto<br>
+					- กดปุ่ม + / -  เพื่อ เพิ่ม / ลดเสียง<br>
+					- กดปุ่ม > เพื่อเปลี่ยนเพลง</p>
+				</div>
+		<div class="buttons">
+			<button class="btn-hover color-8" onclick="startgame()">ARE U READY?</button>
+		</div>
+	</div>
+</center>
+
+<!-- End game screen -->
+<center>
+    <div id="endGame">
+        <a id="endtext">Game Over</a><br><br>
+        <h1 id="score">Score :&nbsp;<span id="test">0</span></h1>
+		<div class="buttons">
+			<button class="btn-hover color-3" onclick="endgame()">TRY AGAIN?</button>
+		</div>
+    </div>
+</center>
+
+<!-- FIN screen-->
+<center>
+	<div id="fin">
+		<a id="fintext">FIN</a><br><br>
+		<h1 id="score">Score : &nbsp;<span id ="test2">0</span></h1>
+		<div class="buttons">
+			<button class="btn-hover color-2" onclick="endgame()">NEW GAME</button>
+		</div>
+	</div>
+</center>
+
+<!-- Background -->
+<div class='stars'></div>
+<div class='twinkling'></div>
+<div class='clouds'></div>
+
+<!-- MAIN -->
+<canvas id="canvas" style="position: absolute; background-size:cover; top:0%; left:0%; height: 100%; width:100%; display:none;"></canvas>
+
+<!-- PLAY HP BAR-->
+<progress id="power_bar" class="progress" max="200" value="0"></progress>
+
+<!-- BOSS HP BAR-->
+<progress id="boss_bar" class="progressboss" max="300" value="0"></progress>
+
+<!-- Sound -->
+<audio id="bg_music" loop>
+	<source src="sound/playing.mp3" type="audio/ogg">
+</audio>
+<audio id="bg_music2" loop>
+	<source src="sound/playing2.mp3" type="audio/ogg">
+</audio>
+<audio id="bg_music3" loop>
+	<source src="sound/playing3.mp3" type="audio/ogg">
+</audio>
+<audio id="bg_music4" loop>
+	<source src="sound/playing4.mp3" type="audio/ogg">
+</audio>
+<audio id="startscreen" autoplay loop>
+	<source src="sound/startgame.mp3" type="audio/mp3">
+</audio>
+<audio id="endscreen" loop>
+	<source src="sound/endgame.mp3" type="audio/ogg">
+</audio>
+<audio id="bgboss" loop>
+	<source src="sound/boss.mp3" type="audio/ogg">
+</audio>
+<audio id="bgfin" loop>
+	<source src="sound/bgfin2.mp3" type="audio/ogg">
+</audio>
+<audio id="attack" preload="auto">
+	<source src="sound/attacksound.mp3" type="audio/ogg">
+</audio>
+<audio id="damage" preload="auto">
+	<source src="sound/damage.mp3" type="audio/ogg">
+</audio>
+<audio id="diedagain" preload="auto">
+	<source src="sound/died.mp3" type="audio/ogg">
+</audio>
+<audio id="shoot" preload="auto">
+	<source src="sound/shoot.mp3" type="audio/ogg">
+</audio>
+<audio id="heal" preload="auto">
+	<source src="sound/heal.mp3" type="audio/ogg">
+</audio>
+<audio id="speedup" preload="auto">
+	<source src="sound/speedup.mp3" type="audio/ogg">
+</audio>
+<audio id="upgrade" preload="auto">
+	<source src="sound/upgrade.mp3" type="audio/ogg">
+</audio>
+<audio id="rotate" preload="auto">
+	<source src="sound/rotate.mp3" type="audio/ogg">
+</audio>
+<audio id="bossdied" preload="auto">
+	<source src="sound/bossdied.mp3" type="audio/ogg">
+</audio>
+<audio id="genboss" preload="auto">
+	<source src="sound/genboss.mp3" type="audio/ogg">
+</audio>
+<audio id="bossattack" preload="auto">
+	<source src="sound/bossattack.mp3" type="audio/ogg">
+</audio>
+<audio id="cheat" preload="auto">
+	<source src="sound/cheat.mp3" type="audio/ogg">
+</audio>
+<video autoplay muted id="video-background1" loop>
+  	<source src="vdo/background1.mp4" type="video/mp4">
+</video>
+<video muted id="video-background2" loop>
+  	<source src="vdo/background2.mp4" type="video/mp4">
+</video>
+<video muted id="video-background3" loop>
+  	<source src="vdo/background3.mp4" type="video/mp4">
+</video>
+
+<!-- STYLE -->
+<style type="text/css">
+	/* BACKGROUND STYLE */
+	#video-background1 {
+		position: fixed;
+		right: 0;
+		bottom: 0;
+		min-width: 100%;
+		min-height: 100%;
+		width: auto;
+		height: auto;
+		z-index: -1;
+	}
+	#video-background2 {
+		position: fixed;
+		right: 0;
+		bottom: 0;
+		min-width: 100%;
+		min-height: 100%;
+		width: auto;
+		height: auto;
+		z-index: -2;
+	}
+	#video-background3 {
+		position: fixed;
+		right: 0;
+		bottom: 0;
+		min-width: 100%;
+		min-height: 100%;
+		width: auto;
+		height: auto;
+		z-index: -3;
+	}
+	/* Player HP Bar */
+	#power_bar{
+		position: fixed;
+		width: 12%;height: 3%;
+		right: 5%;top: 2.3%;
+		transform: rotate(180deg);
+		z-index: -4;
+	}
+	.progress {background:lightgreen;}
+	.progress::-webkit-progress-bar{background: transparent;}
+	.progress::-webkit-progress-value{background: #808080;}
+	/* Boss HP Bar */
+	#boss_bar{
+		position: fixed;
+		width: 50%;height: 3%;
+		left:25%; top: 2.3%;
+		transform: rotate(180deg);
+		z-index: -4;
+	}
+	.progressboss {background:lightgreen;}
+	.progressboss::-webkit-progress-bar{background: transparent;}
+	.progressboss::-webkit-progress-value{background: #808080;}
+	
+
+/* Button */
+	* {
+		-webkit-box-sizing: border-box;
+		-moz-box-sizing: border-box;
+		box-sizing: border-box;
+	}
+	.buttons {
+		margin: 10%;
+		position: absolute;
+		top:45%;
+		left:32%;
+		font-family: 'Pacifico', cursive;
+		text-align: center;
+	}
+	.btn-hover {
+		width: 200px;
+		font-size: 16px;
+		font-weight: 600;
+		color: #fff;
+		cursor: pointer;
+		margin: 20px;
+		height: 55px;
+		text-align:center;
+		border: none;
+		background-size: 300% 100%;
+		border-radius: 50px;
+		moz-transition: all .4s ease-in-out;
+		-o-transition: all .4s ease-in-out;
+		-webkit-transition: all .4s ease-in-out;
+		transition: all .4s ease-in-out;
+	}
+	.btn-hover:hover {
+		background-position: 100% 0;
+		moz-transition: all .4s ease-in-out;
+		-o-transition: all .4s ease-in-out;
+		-webkit-transition: all .4s ease-in-out;
+		transition: all .4s ease-in-out;
+	}
+	.btn-hover:focus {
+		outline: none;
+	}
+	.btn-hover.color-2 {
+    background-image: linear-gradient(to right, #f5ce62, #e43603, #fa7199, #e85a19);
+    box-shadow: 0 4px 15px 0 rgba(229, 66, 10, 0.75);
+	}
+	.btn-hover.color-3 {
+		background-image: linear-gradient(to right, #667eea, #764ba2, #6B8DD6, #8E37D7);
+		box-shadow: 0 4px 15px 0 rgba(116, 79, 168, 0.75);
+	}
+	.btn-hover.color-8 {
+		background-image: linear-gradient(to right, #29323c, #485563, #2b5876, #4e4376);
+		box-shadow: 0 4px 15px 0 rgba(45, 54, 65, 0.75);
+	}
+
+/* Body background */
+	body{
+		background: #000 url('images/stars.png') repeat top center;
+		font-family: 'Pacifico', cursive;
+	}
+	.stars, .twinkling, .clouds {
+	    position:absolute;
+	    display:block;
+	    top:0; bottom:0;
+	    left:0; right:0;
+	    width:100%; height:100%;
+	}
+	.stars {
+	    z-index: -3;
+	    background: #000 url('images/stars.png') repeat top center;
+	    animation: move-star-back 100s linear infinite;
+	}
+	.twinkling{
+	    z-index: -2;
+	    background:transparent url('images/twinkling.png') repeat top center;
+	    animation: move-twink-back 200s linear infinite;
+	}
+	.clouds{
+	    z-index: -1;
+	    background:transparent url('images/clouds.png') repeat top center;
+	    animation: move-clouds-back 150s linear infinite;
+	}
+	@keyframes move-star-back {
+	    from {background-position:0 0;}
+	    to {background-position:0 5000px;}
+	}
+	@keyframes move-twink-back {
+	    from {background-position:0 0;}
+	    to {background-position:-10000px 5000px;}
+	}
+	@keyframes move-clouds-back {
+	    from {background-position:0 0;}
+	    to {background-position:10000px 5000px;}
+	}
+
+/* Game over screen */
+	#gameover{
+    position: relative;
+    top:200px;
+    margin: 0px;
+    color: aliceblue;
+    font-size: 50px;
+    font-family: 'Pacifico', cursive;
+	}
+	#score{
+    font-size: 50px;
+    position: relative;
+    top: 200px;
+    color: #fff;
+	font-family: 'Pacifico', cursive;
+	}
+	#endGame{
+    position: absolute;
+    background-size:cover;
+    top:0%;
+    left:0%;
+    height: 100%;
+    width:100%;
+    display: none;
+	}
+	#endtext{
+		top:20%;
+		left:37%;
+	}
+
+/* Start game screen */
+	@import url('https://fonts.googleapis.com/css?family=Pacifico');
+	#startGame{
+	position:absolute;
+	background-size: cover;
+	top:0%;
+	left:0%;
+	height: 100%;
+	width: 100%;
+	display : block;
+	}
+	a#text{
+		top:8%;
+	}
+	#input{
+		position:absolute;
+		top:60%;
+		left:40.5%;
+		padding: 30px 60px;
+		font-size: 24px;
+		text-align: center;
+		cursor: pointer;
+		outline: none;
+		color: #fff;
+		background-color: #4CAF50;
+		border: none;
+		border-radius: 15px;
+		box-shadow: 0 9px #999;
+  	}
+	#input:hover{
+	    background-color: #3e8e41;
+	}
+	#input:active {
+		background-color: #3e8e41;
+		box-shadow: 0 5px #666;
+		transform: translateY(4px);
+	}
+	@keyframes rainbow {
+		0%{color: #B53471;text-shadow: 0 1px 20px #B53471;}
+		5%{color: #12CBC4;text-shadow: 0 1px 40px #12CBC4;}
+		10%{color: #0652DD;text-shadow: 0 1px 60px #0652DD;}
+		20%{color: #C4E538;text-shadow: 0 1px 80px #C4E538;}
+		40%{color: #FFC312;text-shadow: 0 1px 100px #FFC312;}
+		60%{color: #F79F1F;text-shadow: 0 1px 120px #F79F1F;}
+		70%{color: #EE5A24;text-shadow: 0 1px 100px #EE5A24;}
+		80%{color: #ED4C67;text-shadow: 0 1px 80px #ED4C67;}
+		85%{color: #FFEE58;text-shadow: 0 1px 60px #FFEE58;}
+		90%{color: #1976D2;text-shadow: 0 1px 40px #1976D2;}
+	}
+	a {
+	color: #fffbf1;
+	text-shadow: 0 1px 50px #fff;
+	font-size: 80px;
+	font-weight: bold;
+	text-decoration: none;
+	font-family: 'Pacifico', cursive;
+	letter-spacing: -3px;
+	margin: 0;
+	position: absolute;
+	top: 20%;
+	left:40%;
+	animation: rainbow 5s linear infinite;
+	}
+
+/* FIN Game Screen */
+	#fin{
+		position: absolute;
+		background-size:cover;
+		top:0%;
+		left:0%;
+		height: 100%;
+		width:100%;
+		display: none;
+	}
+	a#fintext{
+		top:20%;
+		left:45%;
+	}
+</style>
+
+<!-- ALL IN ONE -->
+<script type="text/javascript">
+
+// Sound set
+var music_lis = [bg_music, bg_music2, bg_music3, bg_music4];
+var game_playing = 0;
+var index_music = 1;
+var main_music = music_lis[0];
+bg_music.volume = 0.09;
+bg_music2.volume = 0.3;
+bg_music3.volume = 0.3;
+bg_music4.volume = 0.4;
+startscreen.volume = 0.4;
+endscreen.volume = 0.3;
+damage.volume = 0.4;
+shoot.volume = 0.09;
+rotate.volume = 0.15;
+bgboss.volume = 0.3;
+bossattack.volume = 0.5;
+attack.volume = 0.4;
+upgrade.volume = 0.5;
+bgfin.volume = 0.3;
+bossdied.volume = 0.4;
+startscreen.play();
+function sound(id){
+        document.getElementById(id).play();
+    }
+
+// Initial setup
+var canvas = document.getElementById('canvas'),
+    c = canvas.getContext('2d');
+var innerWidth = 2000,
+	innerHeight = 800;
+	canvas.width = innerWidth;
+	canvas.height = innerHeight;
+
+// Variables
+let power_bar = document.getElementById("power_bar");
+var score = 0,
+	lastTime = 0;
+
+// Mouse movement
+addEventListener("mousemove", function(event)
+{
+  	player.x = event.clientX*1.3;
+	player.y = event.clientY*1.2;
+});
+
+// Player setup
+var player = {},
+    player_width =  80,
+	player_height = 80,
+	player_img = new Image();
+	player_img.src = 'images/360.png';
+
+// Create player
+	player = {
+	width : player_width,
+	height: player_height,
+	x : innerWidth/2 - player_width/2,
+	y : innerHeight - (player_height+10),
+	power : 100,
+	draw: function(){
+	   if(this.x <= 0){
+	     this.x = 0;
+	   }else if(this.x >= (innerWidth - this.width)){
+	     this.x = (innerWidth -this.width);
+	   }
+	   if(this.y <= 0){
+	     this.y = 0;
+	   }else if(this.y >= (innerHeight - this.height)){
+	     this.y = (innerHeight - this.height);
+	   }
+	   c.drawImage(player_img, this.x, this.y, this.width, this.height);
+	}
+};
+power_bar.value = player.power;
+
+// Rotate player
+var click_c = 0;
+addEventListener("click", function(event){
+	
+	if(click_c == 0){
+		player_img.src = 'images/360.png';
+		click_c++;
+		roubullest();
+	}
+	else if(click_c == 1){
+		player_img.src = 'images/45.png';
+		click_c++;
+		roubullest();
+	}
+	else if(click_c == 2){
+		player_img.src = 'images/90.png';
+		click_c++;
+		roubullest();
+	}
+	else if(click_c == 3){
+		player_img.src = 'images/135.png';
+		click_c++;
+		roubullest();
+	}
+	else if(click_c == 4){
+		player_img.src = 'images/180.png';
+		click_c++;
+		roubullest();
+	}
+	else if(click_c == 5){
+		player_img.src = 'images/225.png';
+		click_c++;
+		roubullest();
+	}
+	else if(click_c == 6){
+		player_img.src = 'images/270.png';
+		click_c++;
+		roubullest();
+	}
+	else if(click_c == 7){
+		player_img.src = 'images/315.png'
+		click_c = 0;
+		roubullest();
+	}
+	else if(click_c == 8){
+		player_img.src = 'images/360.png'
+		roubullest();
+	}
+	rotate.currentTime = 0;
+	sound("rotate");
+});
+
+// Enemy setup
+var index = 0;
+var boss_hp = 0;
+var enemyArray = [], enemyIndex = 0, enemy_width = 55, enemy_height = 43, enemy_timer = 500,
+	random_i = 8,
+	enemy_img = new Image();
+	enemy_img.src = 'images/Meteor_10.png';
+	enemy_img2 = new Image();
+	enemy_img2.src = 'images/Meteor_02.png';
+	enemy_img3 = new Image();
+	enemy_img3.src = 'images/Meteor_07.png';
+	boom_img = new Image();
+	boom_img.src = 'images/boom.png';
+	heal_img = new Image();
+	heal_img.src = 'images/heal.png';
+	fireR_img = new Image();
+	fireR_img.src = 'images/firerate.png';
+	gun_img = new Image();
+	gun_img.src = 'images/roundbullet.png';
+	boss_img = new Image();
+	boss_img.src = 'images/boss.png';
+	boss_fire_img = new Image();
+	boss_fire_img.src = 'images/Missile_03.png';
+
+// Create enemy object
+function enemy(x, y, dx, dy, enemy_img, enemy_width, enemy_height, rotation, point, item, hp){
+	var enemy_img_lis = [enemy_img, enemy_img2, enemy_img3];
+	this.x = x;////ตำเเหน่งเเนวเเกน X Y
+	this.y = y;
+	this.dx = dx;//ความเร็วตามเเกน X Y
+	this.dy = dy;
+	this.width = enemy_width;// ขนาด
+	this.height = enemy_height;
+	this.rotation = rotation;
+	enemyIndex++;// ID ประจำ
+	enemyArray[enemyIndex] = this;
+	this.id = enemyIndex;
+	this.point = point;//เกิดด้านไหน
+	this.item = item;//ประเภทของ 0 = enemy;   1,2,3 = ไอเท็ม; 4 = boss; 5 = กระสุนบอส;
+	this.hp = hp;//ก็HPไง(เลือดก็ได้)          ^^^1 = Heal ; 2 = Charge bullet; 3 =Laser gun ;
+	if (this.item == 1)
+		{this.img = heal_img;}
+	else if (this.item == 2)
+		{this.img = fireR_img;}
+	else if (this.item == 2)
+		{this.img = fireR_img;}
+	else if (this.item == 3)
+		{this.img = gun_img;}
+	else if (this.item == 0)
+		{this.img = enemy_img_lis[index];index += 1;if(index == 3){index = 0;}} // เปลี่ยนภาพ meteor
+	else if (this.item == 4)
+		{this.img = boss_img;}
+	else {this.img = boss_fire_img;}
+	if (this.point < 2) {
+		if(this.rotation < 0.3){
+			this.dx = this.dx;
+		}else if(this.rotation > 0.6){
+			this.dx = -this.dx;
+		}else{
+			this.dx = 0;
+			this.dy = this.dy;
+		}
+	}
+	else {
+		if(this.rotation < 0.3){
+			this.dy = this.dy;
+		}else if(this.rotation > 0.6){
+			this.dy = -this.dy;
+		}else{
+			this.dy = 0;
+			this.dx = this.dx;
+		}
+	}
+	if (this.item != 4)
+		{this.update = function(){
+		this.y += this.dy;
+		this.x += this.dx;
+		if(this.x < -this.width){this.delete()
+			if (this.item == 5) {summon_last_num  -=1};}
+		if(this.y < -this.height){this.delete()
+			if (this.item == 5) {summon_last_num  -=1};}
+		if(this.y > innerHeight + this.height){
+			this.delete()
+			if (this.item == 5) {summon_last_num  -=1};
+		}
+		if(this.x > innerWidth + this.width){
+		this.delete();if (this.item == 5) {summon_last_num  -=1};
+		}
+		this.draw();
+		}}
+	else{this.update = function(){
+		this.x -= this.dx;
+		boss_hp = this.hp;
+		boss_bar.value = 300-boss_hp;
+		if (this.x > innerWidth- this.width) {this.dx *=-1}
+		if (this.x < 0+ this.width) {this.dx *=-1}
+		this.draw();boss_fire();
+			}}
+	this.delete = function(){
+		delete enemyArray[this.id];
+	}
+	this.draw = function(){
+		c.drawImage(this.img, this.x, this.y, this.width, this.height);
+	}
+}
+
+// Create enemy function
+var ramdom_HP_enemy = 10,
+index = 0,
+HP_enemy_Lvboss = 0, enemy_width = 55, enemy_height = 43;
+function create_enemy(){
+	//Position
+	var random_create_enemy = Math.floor(Math.random() * 4);
+	if (random_create_enemy == 0) {
+		var x = Math.random() * (innerWidth - enemy_width); //top to below
+		var y = -enemy_height;
+		var dx = 3+dxU;
+		var dy = 3+dyU;
+	}
+	else if (random_create_enemy == 1) {
+		var x = Math.random() * (innerWidth - enemy_width); //below to top
+		var y = innerHeight-enemy_height;
+		var dx = 3+dxU;
+		var dy = -3-dyU;
+	}
+	else if (random_create_enemy == 2) {
+		var x =  -enemy_width;
+		var y = Math.random() * (innerHeight-enemy_height);//Left to right
+		var dx = 3+dxU;
+		var dy = 1+dyU;
+	}
+	else  {
+		var x =  innerWidth - enemy_width;
+		var y = Math.random() * (innerHeight - enemy_height);//right to Left
+		var dx = -3-dxU;
+		var dy = 1+dyU;
+	}
+	//Random item
+	if (random_i >Math.floor(Math.random() * 100)) {if (Math.floor(Math.random() * 10) > 3) {var random_heal_or_enemy =1;}
+	else if (Math.floor(Math.random() * 3 )!= 2) {var random_heal_or_enemy =2;} else {var random_heal_or_enemy =3;}}
+	else {var random_heal_or_enemy =0;}
+
+	var rotation = Math.random();//rotation
+	point = random_create_enemy;
+	//Random HP
+	if (random_heal_or_enemy != 0) {var hpp = 1,enemy_w = enemy_width,enemy_h = enemy_height;}
+	else {if (ramdom_HP_enemy >Math.floor(Math.random() * 100))	 {var hpp = 5+HP_enemy_Lvboss;var enemy_w = enemy_width +30;
+		enemy_h = enemy_height +30;}
+	 else {var hpp = 1+HP_enemy_Lvboss,enemy_w = enemy_width,enemy_h = enemy_height ;}}
+	new enemy(x, y, dx, dy, enemy_img, enemy_w, enemy_h, rotation, point, random_heal_or_enemy, hpp);
+}
+
+// Bullets setup
+var bulletsArray = [],
+	bulletIndex = 0,
+	bullet_width = 10,
+	bullet_height = 20,
+	bullet_last_time = 0,
+	bullet_timer = 150;
+	bullet_speed = 0;
+var bulla = 0,	bullb = 1,	bullc = 0,	bulld = 0,	bulle = 0,	bullf = 0,	bullg = 0,	bullh = 0;
+var a=0, b=0, cc=0,d=0, f=0, g=0, h=0, e=0;
+
+// Create bullet object
+function bullet(x, y, width, height, speedx, speedy){
+	this.x = x;//ตำเเหน่งเเนวเเกน X Y
+	this.y = y;
+	this.width = width;// ขนาด
+	this.height = height;
+	this.speedx = speedx;//ความเร็วตามเเกน X Y
+	this.speedy = speedy;
+	bulletIndex++;// ID ประจำกระสุนนั้นๆ
+	bulletsArray[bulletIndex] = this;
+	this.id = bulletIndex; 
+	this.update = function(){//กระสุนเคลื่อนที่
+		this.y += -this.speedy;
+		if(this.y < -this.height){
+			delete this.delete();
+		}
+		this.x += -this.speedx;
+		if(this.x < -this.width){
+			delete this.delete();
+		}
+		if(this.y > innerHeight + this.height){delete this.delete();}
+		if(this.x > innerWidth + this.width){delete this.delete();}
+		this.draw();
+	}
+	this.delete = function(){
+		delete bulletsArray[this.id];
+	}
+	this.draw = function(){
+		c.beginPath();
+		c.rect(this.x, this.y, this.width, this.height);
+		c.fillStyle = '#fff';
+		c.fill();
+		c.stroke();
+	}
+}
+
+// Fire bullets
+function fire(){                                         //  <^  ^  ^>     h  a  b
+	var x = (player.x + player.width/2) - bullet_width/2;//  <       >   = g     c
+	var y = player.y;  									 //  <v  v   v>    f  e  d
+	if (bulla) {new bullet(x, y+30, bullet_width, bullet_width, 0, bullet_speed+20);}                       //       ^
+	if (bullb) {new bullet(x+12, y+22, bullet_width, bullet_width,bullet_speed/-2+ -10, bullet_speed/2+10);}//       ^>
+	if (bullc) {new bullet(x, y+25,  bullet_width,  bullet_width, bullet_speed/-1+-20, 0);}                  //       >
+	if (bulld) {new bullet(x+15, y+25, bullet_width, bullet_width, bullet_speed/-2+-10, bullet_speed/-2+-10);}//     v>
+	if (bulle) {new bullet(x, y+25, bullet_width, bullet_width, 0, bullet_speed/-2+-20);}                     //     v
+	if (bullf) {new bullet(x, y+25, bullet_width, bullet_width,bullet_speed/2+ 10, bullet_speed/-2+-10);}     //    <v	
+	if (bullg) {new bullet(x, y+30, bullet_width, bullet_width, bullet_speed+20, 0);}                         //     <
+	if (bullh) {new bullet(x-15, y+25, bullet_width, bullet_width, bullet_speed/2+10, bullet_speed/2+10);}    //     <^
+	shoot.volume = 0.05;
+	shoot.currentTime = 0;
+	sound("shoot");
+}
+// ทิศทางของกระสุน
+function roubullest(){
+	b = bullb; cc = bullc; d = bulld; e = bulle; f = bullf;
+	g = bullg;	h = bullh;	a = bulla;	bulla = b;
+
+	bullb = cc;	bullc = d;	bulld = e;	bulle = f;	bullf = g;
+	bullg = h;	bullh = a;
+}
+
+// Collision function
+function collides(a, b){
+	return a.x < b.x + b.width &&
+	a.x + a.width > b.x &&
+	a.y < b.y + b.height &&
+	a.y+ a.height > b.y;
+}
+
+//Add gun เพิ่มปืนในทิศต่างๆ
+function add_gun(R){
+
+	if (R==1) {if (bulla == 1) {R+=1;} else {bulla = 1}}
+	if (R==2) {if (bullb == 1) {R+=1;} else {bullb = 1}}    //  <^  ^  ^>     8  1  2
+	if (R==3) {if (bullc == 1) {R+=1;} else {bullc = 1}}         //  <       >   = 7     3 
+	if (R==4) {if (bulld == 1) {R+=1;} else {bulld = 1}}    //  <v  v   v>    6  5  4
+	if (R==5) {if (bulle == 1) {R+=1;} else {bulle = 1}}
+	if (R==6) {if (bullf == 1) {R+=1;} else {bullf = 1}}
+	if (R==7) {if (bullg == 1) {R+=1;} else {bullg = 1}}
+	if (R==8) {if (bullh == 1) {bulla = 1} else {bullh = 1}}
+	bullet_timer += 40;
+}
+var summon_num = 2,
+	summon_last_num = 0;
+	boss_num = 0,
+	dxU = 0,
+	dyU = 0;
+// บอสเกิดป่ะ
+function setboss(){
+	boss_bar.value = boss_hp;
+	sound("genboss");
+	main_music.pause();
+	enemyArray.forEach(function(enemy){
+	enemy.img = boom_img;
+	enemy.dx = 0;
+	enemy.dy =0;});
+	setTimeout(function() {
+		enemyArray = [], enemyIndex = 0;
+		attack.currentTime = 0;
+		sound("attack");}, 1500);
+	dyU += 3;//ความเร็วมอน
+	dxU += 3;
+	enemy_timer = 200000;//มอนเกิด 
+	setTimeout(function(){bgboss.play();			//    v เลือดบอสอยู่นี่ครับ
+	new enemy(1000, 60, 5, 0, boss_img,120, 120, 0, 0, 4, 300);score +=10;enemy_timer = 300;}, 2000);
+	ramdom_HP_enemy = 35//สุ่มตัวใหญ่
+	boss_num++; // boss
+}
+//ยิงกระสุนของบอส
+function boss_fire() {
+	if(summon_last_num < summon_num){
+		summon_last_num += 1;
+		var w = Math.random() * (innerWidth - enemy_width);
+		bossattack.currentTime = 0;
+		sound("bossattack");
+		new enemy( w, -60, 0, 10, boss_fire_img,45, 70, 0, 0, 5, 1);
+	}
+	if (summon_last_num < 0) {summon_last_num = 0}
+}
+
+// Detect collision
+function handleCollisions(){
+	bulletsArray.forEach(function(bullet){
+		enemyArray.forEach(function(enemy){
+			if(collides(bullet,enemy)){
+				bullet.delete();
+				enemy.hp = enemy.hp-1
+				if (enemy.hp <= 0) {
+				enemy.img = boom_img;
+				enemy.dx = 0;
+				enemy.dy = 0;
+				score += 10;
+				setTimeout(function() {
+  					enemy.delete();
+  					attack.currentTime = 0;
+					sound("attack");
+				}, 100);
+				// Level
+				if (score <= 5000){
+				if (enemy_timer > 150) {if (score %120 == 0) {enemy_timer  -= 25;}}
+				if (ramdom_HP_enemy < 35 ) {if (score+60 %120 == 0) {ramdom_HP_enemy += 2;}}
+				}
+				//กระสุนบอส
+				if (enemy.item == 5) {summon_last_num  -=1};
+				// บอสตายตรงนี้ VVVV
+				if (enemy.item == 4){
+					sound("bossdied");
+					bgboss.pause();
+					player.power = -100;
+				};
+			}} });
+	});
+	enemyArray.forEach(function(enemy){
+			if(collides(player,enemy)){
+				//heal
+				if (enemy.item == 1) {	if (player.power < 200) {player.power += 10;power_bar.value -= 10; score += 10;heal.currentTime = 0;
+						sound("heal");		}}
+				//Charge bullet
+				else if (enemy.item == 2 ) {if ( bullet_timer >= 150) {
+					bullet_timer -= 25;
+					bullet_width += 2.5;
+					bullet_speed += 30;
+					setTimeout(function() {
+  					bullet_timer += 25;
+  					bullet_width -= 2.5;
+  					bullet_speed -= 30;
+										}, 20000);
+					speedup.currentTime = 0;
+					sound("speedup");
+					}}
+				//Laser gun
+				else if (enemy.item == 3){
+					add_gun((Math.floor(Math.random() * 8)+1));
+					upgrade.currentTime = 0;
+					sound("upgrade");
+				}
+				//โดนไรว่ะ อ๋ออะไรก็ตามที่ไม่ใช่ไอเท็ม
+				else {player.power += -20;power_bar.value += 20; sound("damage");damage.currentTime = 0;if (enemy.item == 5) {summon_last_num  -=1};}
+				//ถ้าไม่ใช่บอส ก็โดนชนก็หายหมด
+				if(enemy.item != 4){enemy.delete()};
+			}
+		});
+}
+// Game over screen function
+function died(){
+	sound("diedagain");
+    canvas.style.display = 'none';
+    document.getElementById('endGame').style.display = 'block';
+	document.body.style.cursor = '';
+	main_music.pause();
+	bgboss.pause();
+	endscreen.play();
+	document.getElementById("video-background2").play();
+	document.getElementById('video-background2').style.zIndex = -1;
+}
+
+// Refresh function
+function endgame(){
+	window.location.reload();
+	document.getElementById('endGame').style.display = 'none';
+	document.body.style.cursor = 'none';
+}
+
+// Start game screen function
+function startgame(){
+	canvas.style.display = 'block';
+	document.getElementById('startGame').style.display = 'none';
+	document.body.style.cursor = 'none';
+	animate();
+	click_c = 0;
+	main_music.play(); startscreen.pause();game_playing = 1;
+	bulla = 0; bullb = 1; bullc = 0; bulld = 0; bulle = 0; bullf = 0; bullg = 0; bullh = 0;
+	document.getElementById("video-background1").pause();
+	document.getElementById('video-background1').style.zIndex = -4;
+	document.getElementById('video-background2').style.zIndex = -4;
+	document.getElementById('video-background3').style.zIndex = -4;
+	document.getElementById('power_bar').style.zIndex = -1;
+}
+
+// FIN screen function
+function fin(){
+	canvas.style.display = 'none';
+	document.getElementById('fin').style.display = 'block';
+	document.body.style.cursor = '';
+	document.getElementById("video-background3").play();
+	document.getElementById('video-background3').style.zIndex = -1;
+	main_music.pause();
+	bgfin.play();	
+	
+}
+
+// Animation loop
+function animate(currentTime){
+    var animation = requestAnimationFrame(animate);
+	c.clearRect(0,0, canvas.width, canvas.height);
+	// Score
+	c.font = '30px Pacifico';
+	c.fillStyle = '#fff';
+	c.fillText('SCORE : '+score, 20, 40);
+	// Power
+	c.font = '22px Pacifico';
+	c.fillStyle = '#000';
+	c.fillText('POWER              '+player.power+"%", innerWidth-250, 38);
+	// Player power
+	c.font = '30px Pacifico';
+	c.fillStyle = '#fff';
+	c.fillText(player.power+" %", innerWidth-90, 40);
+	// Draw player
+	player.draw();
+	// Create new enemy every 1 seconds
+	if(currentTime >= lastTime + enemy_timer){
+		lastTime = currentTime;
+		create_enemy();
+	}
+	// Update enemy positions
+	enemyArray.forEach(function(enemy){
+		enemy.update();
+	});
+	// Fire bullet every 150 milliseconds
+	if(currentTime >= bullet_last_time+ bullet_timer){
+		bullet_last_time = currentTime;
+		fire();
+	}
+	// Update bullet positions
+	bulletsArray.forEach(function(bullet){
+		bullet.update();
+	});
+	// Detect collisions
+	handleCollisions();
+	if (score >= 5000) {if (boss_num < 1) {setboss()}} // บอสเกิด
+		
+	if(player.power == -100) // บอสตายแล้ว player.power = -100
+	{
+		cancelAnimationFrame(animation);
+		fin();
+		score += 10000;
+		document.getElementById("test2").innerText = score;
+	}
+	// Game Over
+	if(player.power <= 0 && player.power > -100){
+		cancelAnimationFrame(animation);
+		died();
+		document.getElementById("test").innerText = score;
+	
+	}
+	// Boss HP
+	if(boss_hp != 0)
+	{
+		c.font = '25px Pacifico';
+		c.fillStyle = '#000';
+		c.fillText('BOSS', 945, 40);
+		document.getElementById('boss_bar').style.zIndex = -1;
+	}
+	// เปลี่ยนสี Boss HP
+	if(boss_hp <= 20){document.getElementsByClassName('progressboss')[0].style.backgroundColor = '#FF0000';}
+	else if(boss_hp <= 50){document.getElementsByClassName('progressboss')[0].style.backgroundColor = '#FF8000';}
+	else if(boss_hp <= 70){document.getElementsByClassName('progressboss')[0].style.backgroundColor = '#FFFF00';}
+	else if(boss_hp <= 90){document.getElementsByClassName('progressboss')[0].style.backgroundColor = '#80FF00';}
+	else if(boss_hp <= 120){document.getElementsByClassName('progressboss')[0].style.backgroundColor = '#00FF00';}
+	else if(boss_hp <= 130){document.getElementsByClassName('progressboss')[0].style.backgroundColor = '#00FF80';}
+	else if(boss_hp <= 170){document.getElementsByClassName('progressboss')[0].style.backgroundColor = '#00FFFF';}
+	else if(boss_hp <= 200){document.getElementsByClassName('progressboss')[0].style.backgroundColor = '#0080FF';}
+	else if(boss_hp <= 230){document.getElementsByClassName('progressboss')[0].style.backgroundColor = '#0000FF';}
+	else if(boss_hp <= 260){document.getElementsByClassName('progressboss')[0].style.backgroundColor = '#FF00FF';}
+	else if(boss_hp <= 300){document.getElementsByClassName('progressboss')[0].style.backgroundColor = '#FF007F';}
+	// เปลี่ยนสี Play HP
+	if(player.power <= 20){document.getElementsByClassName('progress')[0].style.backgroundColor = '#FF0000';}
+	else if(player.power <= 50){document.getElementsByClassName('progress')[0].style.backgroundColor = '#FF8000';}
+	else if(player.power <= 80){document.getElementsByClassName('progress')[0].style.backgroundColor = '#FFFF00';}
+	else if(player.power <= 100){document.getElementsByClassName('progress')[0].style.backgroundColor = '#80FF00';}
+	else if(player.power <= 120){document.getElementsByClassName('progress')[0].style.backgroundColor = '#00FF00';}
+	else if(player.power <= 150){document.getElementsByClassName('progress')[0].style.backgroundColor = '#00FF80';}
+	else if(player.power <= 170){document.getElementsByClassName('progress')[0].style.backgroundColor = '#00FFFF';}
+	else if(player.power <= 180){document.getElementsByClassName('progress')[0].style.backgroundColor = '#0080FF';}
+	else if(player.power <= 190){document.getElementsByClassName('progress')[0].style.backgroundColor = '#0000FF';}
+	else if(player.power <= 200){document.getElementsByClassName('progress')[0].style.backgroundColor = '#FF00FF';}
+
+}
+// KEY INPUT
+var num = 0;
+var nub = 0;
+var delay = 1;
+document.addEventListener("keypress", function(event) {
+	var key = event.keyCode;
+	// Cheat >>> "helloworld" 
+    if(key == 104){nub = 1; num = 0;}
+    if(nub == 1){num += key;}
+    if(num == 1084)
+    {
+    	if(player.power < 90 && score != 0 && delay == 1)
+    	{
+    		delay = 0;
+    		player.power = 200;
+    		power_bar.value -= 200;
+    		cheat.currentTime = 0;
+    		sound("cheat");
+    		setTimeout(function(){delay = 1;}, 5000);
+    	}
+        nub = 0;
+        num = 0;
+    }
+    // volume up +, down -
+    if(key == 43 || key == 61 || key == 45)
+    {
+    	if(key == 43 || key == 61) {var vol = 0.01;}
+    	else {var vol = -0.01;}
+    	main_music.volume = main_music.volume + vol;
+		startscreen.volume = startscreen.volume + vol;
+		endscreen.volume =endscreen.volume+ vol;
+		damage.volume = damage.volume +vol;
+		shoot.volume = shoot.volume +vol;
+		rotate.volume = rotate.volume +vol;
+		bgboss.volume = bgboss.volume +vol;
+		bossattack.volume = bossattack.volume +vol;
+		attack.volume = attack.volume +vol;
+		upgrade.volume = upgrade.volume +vol;
+		bgfin.volume = bgfin.volume +vol;
+    }
+    // next music >
+    if(key == 46 || key == 62)
+    {	
+    	if (game_playing == 1 && boss_num == 0) // playing
+    	{	
+    		main_music.pause();
+    		main_music.currentTime = 0;
+    		music_lis[index_music].currentTime = 0;
+    		main_music = music_lis[index_music];
+    		main_music.play();
+    		index_music += 1;
+    		if(index_music == 4){index_music = 0;}
+    	}
+    }
+    // player.power += 20
+    if(key == 112 && player.power < 190)
+    {
+    	player.power += 20;
+    	power_bar.value -= 20;
+    	bossdied.currentTime = 0;
+    	sound("bossdied");
+    	document.getElementsByClassName('progress')[0].style.backgroundColor = '#E0E0E0';
+    }
+})
+
+</script>
+</body>
+</html>

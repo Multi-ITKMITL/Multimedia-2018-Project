@@ -1,0 +1,600 @@
+@import url('https://fonts.googleapis.com/css?family=Concert+One');
+@import url('https://fonts.googleapis.com/css?family=Mitr');
+
+* {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    cursor: url("img/cursor.png"), auto;
+}
+
+body {
+    background: black;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    font-family: 'Concert One', cursive;
+}
+
+a {
+    text-decoration: none;
+    background: rgba(255, 255, 255, 0.4);
+    padding: 1%;
+    border: 10px solid #86d9ff;
+    border-radius: 50px;
+    box-shadow: 0px 0px 100px #03A9F4;
+    font-size: 4vh;
+    color:hsl(187, 100%, 42%);
+    margin: 2px;
+    transition: 0.3s;
+}
+
+a:hover {
+    background: rgb(255, 255, 255);
+    box-shadow: 0px 0px 30px #03A9F4;
+    color: black;
+}
+
+#contact {
+    display: none;
+    position: fixed;
+    bottom: 5vmin;
+    right: 10vmin;
+    animation: fadein 2.5s;
+}
+
+#contact img {
+    opacity: 0.7;
+    width: 8vmin;
+    height: 8vmin;
+    transition: 0.5s;
+}
+
+#contact img:hover {
+    transform: rotate(45deg);
+}
+
+#contact a {
+    border: none;
+    background: none;
+    box-shadow: none;
+}
+
+#loadingstart {
+    position: absolute;
+    font-size: 3vmin;
+    text-align: center;
+    color: white;
+    text-shadow: 0px 0px 20px #03A9F4;
+    left: 0;
+    right: 0;
+    bottom: 10vmin;
+    opacity: 0.7;
+}
+
+#presshere {
+    display: none;
+    position: absolute;
+    text-align: center;
+    color: white;
+    text-shadow: 0px 0px 20px #03A9F4;
+    left: 0;
+    right: 0;
+    bottom: 14vmin;
+}
+
+#presshere a {
+    font-size: 6vmin;
+    color: white;
+    background: black;
+    border: none;
+    text-shadow: 0px 0px 20px #03A9F4;
+    box-shadow: none;
+    opacity: 0.7;
+}
+
+#presshere a:hover {
+    color: #fffa76;
+}
+
+#load{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 25vmin;
+    height: 25vmin;
+}
+
+#load hr{
+    width: calc(40% - 8px);
+    height: calc(40% - 8px);
+    position: absolute;
+    border: 5px solid #86d9ff;
+    box-shadow: 0px 0px 10px #03A9F4;
+    border-radius: 25%;
+    animation:spin 2s ease infinite;
+}
+
+#load :nth-child(1){
+    background: #1c395b;
+    opacity: 0.7;
+    animation-delay: -1.5s;
+}
+
+#load :nth-child(2){
+    background: #3dff89;
+    opacity: 0.7;
+    animation-delay: -1s;
+}
+
+#load :nth-child(3){
+    background: #fffa76;
+    opacity: 0.7;
+    animation-delay: -0.5s;
+}
+
+#load :nth-child(4){
+    background: #ef692f;
+    opacity: 0.7;
+    animation-delay: 0s;
+}
+
+#loadsuccess {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 25vmin;
+    height: 25vmin;
+    animation: fadein 2s;
+}
+
+#loadsuccess a{
+    font-size: 0;
+    width: none;
+    height: none;
+    border: none;
+    background: none;
+    text-shadow: none;
+}
+
+#loadsuccess hr{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background: #2ab25f;
+    border: 5px solid #86d9ff;
+    box-shadow: 0px 0px 100px #03A9F4;
+    border-radius: 25%;
+    transition: 1s;
+}
+
+#loadsuccess hr:hover{
+    background: #fffa76;
+    box-shadow: 0px 0px 10px #03A9F4;
+}
+
+@keyframes spin{
+    0%, 100%{
+        transform: translate(0);
+    }
+    25%{
+        transform: translate(160%);
+    }
+    50%{
+        transform: translate(160%, 160%);
+    }
+    75%{
+        transform: translate(0, 160%);
+    }
+}
+
+#preload {
+    display: none;
+}
+
+#gameover a {
+    font-size: 5vh;
+    padding: 2%;
+    border: 10px solid #e80000;
+    box-shadow: 0px 0px 100px #ff0000;
+    color: white;
+    transition: 0.3s;
+}
+
+#gamewin a {
+    font-size: 5vh;
+    padding: 2%;
+    border: 10px solid #00e800;
+    box-shadow: 0px 0px 100px #00ff00;
+    color: white;
+    transition: 0.3s;
+}
+
+#gamewin a:hover, #gameover a:hover {
+    color: black;
+}
+
+#game {
+    display: none;
+    position: fixed;
+    top: calc(50% - 40vh);
+    left: 20%;
+    width: 60%;
+    height: 80vh;
+    background: rgba(0, 0, 0, 0.5);
+    text-align: center;
+    border: 10px solid #86d9ff;
+    border-radius: 50px;
+    box-shadow: 0px 0px 100px #03A9F4;
+}
+
+#level {
+    display: none;
+    position: fixed;
+    top: calc(50% - 40vh);
+    left: 20%;
+    width: 60%;
+    height: 80vh;
+    background: rgba(0, 0, 0, 0.5);
+    text-align: center;
+    border: 10px solid #86d9ff;
+    border-radius: 50px;
+    box-shadow: 0px 0px 100px #03A9F4;
+}
+
+.mylevel {
+    margin-top: 3vmax;
+}
+
+.rightturn {
+    display: inline-block;
+    color: white;
+    width: 10%;
+    margin-top: 15%;
+    font-size: 6vmax;
+}
+
+.rightturn:hover {
+    color: black;
+}
+
+#statusmode {
+    display: inline-block;
+    color: black;
+    width: 45%;
+    font-size: 6vmax;
+    background: #00a800;
+    border: 1.5vmin solid white;
+    border-radius: 50px;
+    margin: 1%;
+    transition: 0.5s;
+}
+
+#statusmode:hover {
+    border: 2vmin solid white;
+}
+
+#statusmode[mode="easy"] {
+    background: #00a800;
+}
+
+#statusmode[mode="medium"] {
+    background: #e6e62e;
+}
+
+#statusmode[mode="hard"] {
+    background: #bd1010;
+}
+
+#statusmode[mode="expert"] {
+    background: linear-gradient(to right, #00a800, #e6e62e, #bd1010);
+}
+
+#mainmenu {
+    display: none;
+    animation: fadein 2.5s;
+    position: fixed;
+    top: calc(50% - 40vh);
+    left: 20%;
+    width: 60%;
+    height: 80vh;
+    background: rgba(0, 0, 0, 0.5);
+    text-align: center;
+    border: 10px solid #86d9ff;
+    border-radius: 50px;
+    box-shadow: 0px 0px 100px #03A9F4;
+}
+
+@keyframes fadein {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+
+#menu {
+    margin-top: 60vh;
+}
+
+.mainlogo {
+    width: 70%;
+    height: 40%;
+    position: absolute;
+    left: 15%;
+    top: 15vh;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.7);
+    transition: opacity 500ms;
+    visibility: hidden;
+    opacity: 0;
+  }
+
+.overlay:target {
+    visibility: visible;
+    opacity: 1;
+}
+
+.popup {
+    text-align: left;
+    font-size: 1.25vmax;
+    margin: 7% auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 5px;
+    width: 30%;
+    height: 60%;
+    border: 10px solid #86d9ff;
+    border-radius: 50px;
+    box-shadow: 0px 0px 100px #03A9F4;
+    position: relative;
+    transition: all .5s ease-in-out;
+}
+
+.popup h1 {
+    text-align: center;
+    color: #333;
+}
+
+.popup .close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    transition: all 200ms;
+}
+
+.popup .close:hover {
+    color: #F00;
+}
+
+#startdelay {
+    font-size: 20vmax;
+    color: white;
+    position: absolute;
+    left: calc(50% - 4.5vmax);
+    top: calc(50% - 12vmax);
+    animation: titletime 1s infinite ease-in-out;
+}
+
+@keyframes titletime {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+#gamewin {
+    display: none;
+    position: fixed;
+    top: calc(50% - 40vh);
+    left: 20%;
+    width: 60%;
+    height: 80vh;
+    background: rgba(0, 0, 0, 0.5);
+    text-align: center;
+    border: 10px solid #8fff86;
+    border-radius: 50px;
+    box-shadow: 0px 0px 100px #42f403;
+    font-size: 4vmax;
+}
+
+.win {
+    color: white;
+    text-shadow: 0px 0px 250px #00ef00;
+}
+
+#gameover {
+    display: none;
+    position: fixed;
+    top: calc(50% - 40vh);
+    left: 20%;
+    width: 60%;
+    height: 80vh;
+    background: rgba(0, 0, 0, 0.5);
+    text-align: center;
+    border: 10px solid #ff8686;
+    border-radius: 50px;
+    box-shadow: 0px 0px 100px #f40303;
+    font-size: 4vmax;
+}
+
+.lose {
+    color: white;
+    text-shadow: 0px 0px 250px #ef0000;
+}
+
+.menuLogo {
+    width: 50%;
+    height: 18vh;
+    margin-top: -9vh;
+}
+
+#monster_start, #monster_die {
+    display: none;
+    width: 20vmax;
+    height: 20vmax;
+    position: absolute;
+    left: calc(50% - 10vmax);
+    top: calc(50% - 10vmax);
+}
+
+.healthBar {
+    position: absolute;
+    top: 5vmax;
+    left: calc(50% - 15vmax);
+}
+
+.bossHp {
+    color: white;
+    position: absolute;
+    font-size: 1.5vmax;
+    top: .5vmax;
+    left: -5vmax;
+}
+
+.healthBg {
+    position: relative;
+    height: 2vmax;
+    width: 30vmax;
+    background: black;
+    left: calc(50% - 12vmax);
+}
+
+.health {
+    position: relative;
+    top: calc(50% - 0.75vmax);
+    left: calc(50% - 14.5vmax);
+    background: #54eb54;
+    height: 1.5vmax;
+    max-width: 29.1vmax;
+    width: 100%;
+    transition: 1s ease-in-out;
+}
+
+.myhealthBar {
+    position: absolute;
+    top: 8vmax;
+    left: calc(50% - 15vmax);
+}
+
+.myHp {
+    color: white;
+    position: absolute;
+    font-size: 1.5vmax;
+    top: .5vmax;
+    left: -5vmax;
+}
+
+.myhealthBg {
+    position: relative;
+    height: 2vmax;
+    width: 30vmax;
+    background: black;
+    left: calc(50% - 12vmax);
+}
+
+.myhealth {
+    position: relative;
+    top: calc(50% - 0.75vmax);
+    left: calc(50% - 14.5vmax);
+    background: #ae0000;
+    height: 1.5vmax;
+    max-width: 29.1vmax;
+    width: 100%;
+    transition: 1s ease-in-out;
+}
+
+.playerHp {
+    position: absolute;
+    top: 65%;
+    left: -18vh;
+}
+
+.bg {
+    background-color: #04AF71;
+}
+
+.wordsWrap {
+    margin-top: 50vh;
+    color: white;
+    text-align: center;
+    font-size: 6vmax;
+    letter-spacing: 5px;
+}
+
+.words {
+    margin: 0px;
+}
+
+#mytranslate {
+    font-family: 'Mitr', sans-serif;
+    color: white;
+    margin: 0;
+    font-size: 2vmax;
+    letter-spacing: 5px;
+}
+
+.time {
+    position: absolute;
+    right: 2vmax;
+    top: -1vmax;
+    color: white;
+    font-size: 2.5vmax;
+}
+
+#theTime {
+    color: yellow;
+    position: relative;
+}
+
+#score {
+    display: none;
+    width: 15vmax;
+    height: 20vmax;
+    font-size: 2.5vmax;
+    text-align: center;
+    position: absolute;
+    left: 2.5vmax;
+    top: 15vmax;
+    background: rgba(0, 0, 0, 0.5);
+    border: 10px solid #86d9ff;
+    border-radius: 25px;
+    box-shadow: 0px 0px 50px #03A9F4;
+    animation:colorchange 0.5s infinite alternate;
+}
+
+@keyframes colorchange {
+    from {border-color: #ffffff;}
+    to {border-color: #86d9ff;}
+    }
+
+.mycombo {
+    color: white;
+    width: 100%;
+    height: 25%;
+    border-bottom: 10px solid #86d9ff;
+    margin-top: 5%;
+    animation:colorchange 0.5s infinite alternate;
+}
+
+.myscore {
+    color: white;
+    width: 100%;
+    height: 75%;
+}
+
+#updatescore {
+    padding: 10%;
+    font-size: 6vmax;
+    display: block;
+}

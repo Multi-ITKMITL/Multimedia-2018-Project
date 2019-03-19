@@ -1,0 +1,239 @@
+    :root{
+    --w:10%;
+    --h:10vh;
+}
+body{
+    width: 100%
+    height: 100vh;
+    font-size:0;
+    margin:0;
+    /*background-color: red;*/
+    background-image: url(pic0.gif);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100%;
+
+}
+h2{
+    background-color: hsl(51, 100%, 65%);
+    color: hsl(240, 100%, 50%);
+    border-radius: 8%;
+    font-size:30px;
+    position:fixed;
+    margin-left: 43.5%;
+    margin-right: 43.5%;
+    padding: 10px;
+    z-index: 1;
+}
+h3{
+    font-size:20px;
+    z-index: 10;
+    margin-left:37%;
+    margin-right:40%;
+    color:hsl(240, 100%, 50%);
+    background-color: hsl(51, 100%, 65%);
+    border-radius: 8%;
+}
+p{
+    font-size:18px;
+    z-index: 10;
+    text-align: center;
+    color:white;
+
+    border-radius: 8%;
+}
+#map div{
+    width:10%;
+    height:10vh;
+    display:inline-block;
+    /*background-color: white;*/
+    /*box-shadow: 0px 0px 5px black;*/
+}
+div.player{
+    width: 10%;
+    height: 10vh;
+    background-image: url(pic5.gif);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: fixed;
+    top: var(--y);
+    left: var(--x);
+    transition: 0.1s cubic-bezier(0, 0, 0.18, 1.25);
+}
+div.random1{
+    width:var(--w);
+    height:var(--h);
+    position:fixed;
+    top:var(--y);
+    /*background-color:red;*/
+    left:var(--x);
+    transition:.3s;
+}
+
+div.random2{
+    width:var(--w);
+    height:var(--h);
+    position:fixed;
+    top:var(--y);
+    /*background-color:red;*/
+    left:var(--x);
+    transition:.3s;
+}
+
+div.random3{
+    width:var(--w);
+    height:var(--h);
+    position:fixed;
+    top:var(--y);
+    /*background-color:red;*/
+    left:var(--x);
+    transition:.3s;
+}
+
+div.random4{
+    width:var(--w);
+    height:var(--h);
+    position:fixed;
+    top:var(--y);
+    /*background-color:red;*/
+    left:var(--x);
+    transition:.3s;
+}
+
+div.enemy1{ /*top*/
+    background-image: url(pic1.gif);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    width:var(--w);
+    height:var(--h);
+    position:fixed;
+    top:var(--y);
+    left:var(--x);
+    transition: ;
+}
+
+div.enemy2{ /*top*/
+    width:var(--w);
+    height:var(--h);
+    background-image: url(pic1.gif);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    position:fixed;
+    top:var(--y);
+    left:var(--x);
+    transition: ;
+}
+
+div.enemy3{ /*bottom*/
+    width:var(--w);
+    height:var(--h);
+    background-image: url(pic2.gif);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    position:fixed;
+    top:var(--y);
+    left:var(--x);
+    transition:.5s;
+}
+
+div.enemy4{ /*bottom*/
+    width:var(--w);
+    height:var(--h);
+    background-image: url(pic2.gif);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    position:fixed;
+    top:var(--y);
+    left:var(--x);
+    transition:.5s;
+}
+
+div.enemy5{ /*right*/
+    width:var(--w);
+    height:var(--h);
+    background-image: url(pic3.gif);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    position:fixed;
+    top:var(--y);
+    left:var(--x);
+    transition:.5s;
+}
+
+div.enemy6{ /*right*/
+    width:var(--w);
+    height:var(--h);
+    background-image: url(pic3.gif);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    position:fixed;
+    top:var(--y);
+    left:var(--x);
+    transition:.5s;
+}
+
+div.enemy7{ /*left*/
+    width:var(--w);
+    height:var(--h);
+    background-image: url(pic4.gif);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    position:fixed;
+    top:var(--y);
+    left:var(--x);
+    transition:.5s;
+}
+
+div.enemy8{ /*left*/
+    width:var(--w);
+    height:var(--h);
+    background-image: url(pic4.gif);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    position:fixed;
+    top:var(--y);
+    left:var(--x);
+    transition:.5s;
+}
+#history {
+    z-index: 1;
+    border:5px solid;
+    border-color:white;
+    width: 15%;
+    height: 52vh;
+    margin-left:84%;
+    margin-top: 1%;
+    box-shadow:1px 1px 50px hsl(170, 100%, 50%);
+    position: fixed;
+}
+
+div[x = '0']{--x: 0%;}
+div[x = '1']{--x: 10%;}
+div[x = '2']{--x: 20%;}
+div[x = '3']{--x: 30%;}
+div[x = '4']{--x: 40%;}
+div[x = '5']{--x: 50%;}
+div[x = '6']{--x: 60%;}
+div[x = '7']{--x: 70%;}
+div[x = '8']{--x: 80%;}
+div[x = '9']{--x: 90%;}
+
+div[y = '0']{--y: 0%;}
+div[y = '1']{--y: 10%;}
+div[y = '2']{--y: 20%;}
+div[y = '3']{--y: 30%;}
+div[y = '4']{--y: 40%;}
+div[y = '5']{--y: 50%;}
+div[y = '6']{--y: 60%;}
+div[y = '7']{--y: 70%;}
+div[y = '8']{--y: 80%;}
+div[y = '9']{--y: 90%;}

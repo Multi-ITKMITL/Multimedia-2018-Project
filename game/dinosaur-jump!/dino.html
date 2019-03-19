@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Dinosaur Jump!</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="./image/logo.ico">
+    <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
+    <link href="dino.css" rel="stylesheet">
+</head>
+<body>
+    <section id="top">
+        <h1 id="gameTitle" >Dinosaur Jump!</h1>
+    </section>
+	<section id="game">
+        <canvas width="1200px" height="700px"></canvas> 
+    </section>
+	 <section id="bottom">
+        <h3 id="myScore">SCORE: 0000</h3> <h3 id="step">STEP: 0</h3>
+    </section>
+    <!--เสียงเกมส์-->
+    <audio autoplay id="bgm" preload="auto" loop>
+        <source src="./sound/bgm.mp3" type="audio/ogg">
+    </audio>
+	<!--เสียงชน-->
+	<audio id="hit" preload="auto">
+        <source src="./sound/hit.wav" type="audio/ogg">
+    </audio>
+    <!--เสียงกระโดด-->
+    <audio id="jump" preload="auto">
+        <source src="./sound/jump.wav" type="audio/ogg">
+    </audio>
+    <script src="dino.js"></script>
+</body>
+</html>

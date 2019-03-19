@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>gamygame</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script type="text/javascript" src="java.js"></script>
+    <iframe src="nyancat.mp3" allow="autoplay" style="display:none" id="iframeAudio">
+</iframe>
+</head>
+<body>
+
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <div id="selectCharacter" align="center">
+                <p>Selet Your Character!</p>
+                <img src="kirby.png" width="100px" onclick="changeKirby()">
+                <img src="fish3.gif" width="150px" onclick="changeFish()" style="padding-left: 15px">
+                <img src="cat.gif" width="75px" onclick="changeCat()">
+                <img src="mario2.png" width="75px" onclick="changeMario()" style="padding-left: 50px">
+
+            </div>
+            <p id="endPopup">Help this cat to pass the way by tapping Spacebar or your Leftclick</p>
+            <button  id="startBtn" onclick="init()"> start</button>
+        </div>
+    </div>
+
+    <img id="bird" src="cat.gif">
+    
+    <div id="boxscore"><h1 id="score_text">score: <span id="score">0</span></h1></div>
+
+</body>
+</html>

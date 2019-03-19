@@ -1,0 +1,236 @@
+
+* {
+  margin:0;
+  padding:0;
+  outline:none;
+  list-style:none;
+  text-decoration:none;
+  box-sizing:border-box;
+  color:#111;
+  background: transparent;
+  border:none;
+}
+
+body {
+  color: #fff;
+  background: #111;
+  font-family: 'Itim', cursive;
+}
+
+h1, h2, h3 {
+  font-family: 'Itim', cursive;
+  font-weight: 700;
+}
+
+#stage{
+  width: 100%;
+  height: 100vh;
+  background:url(https://i.ibb.co/5kQ1hPD/nastya-friday-platformer-background-1.jpg) repeat-x;
+  background-position: 0 bottom;
+  margin: 0 auto;
+  overflow: hidden;
+  position: relative;
+  animation: bgAnim 5s linear infinite;
+}
+
+#bird{
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  position: absolute;
+  top:8%;
+  left: 8%;
+  transition: 1s all linear;
+}
+
+#bird.goDown {
+  top: calc(100% - 100px);
+  transition: 1s all ease-in;
+}
+#bird.birdMove {
+  top: -100px;
+  transition: 0.7s all linear;
+}
+#bird.birdMoveleft {
+  left:100px;
+  transition: 0.7s all linear;
+}
+#bird.birdMoveright {
+  right:100px;
+  transition: 0.7s all linear;
+}
+
+#bird:after {
+  content:"";
+  background: url('http://thomaspodgro.com/pen/fire.png') no-repeat center center;
+  background-size: contain;
+  height: 50px;
+  width: 25px;
+  display: block;
+  position: absolute;
+  left: 0;right: 0;
+  margin: auto;
+  bottom: 0;
+  top: 120%;
+  z-index: 0;
+  transition: 0.3s all linear;
+  transform: scale(0);
+  -webkit-transform: scale(0);
+  -moz-transform: scale(0);
+  transform-origin: top;
+  -webkit-transform-origin: top;
+  -moz-transform-origin: top;
+}
+
+#bird.birdMove:after {
+  transform: scale(1);
+  -webkit-transform: scale(1);
+  -moz-transform: scale(1);
+}
+#bird img {
+  width: 100%;
+}
+
+
+
+.enemy{
+  position: absolute;
+  height:50px;
+  width: 50px;
+}
+
+#ceiling.enemy{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  background-color: green;
+}
+
+#ground.enemy{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  background-color: green;
+}
+
+.item.enemy {
+  width: 100px;
+  height: 100px;
+}
+.item.enemy:after {
+  content: "";
+  position: absolute;
+  height: 150%;
+  width: 150%;
+  background: url(https://i.ibb.co/4WqLjbX/F.png) no-repeat center center;
+  background-size: contain;
+  transform: translate(-25%,-25%);
+}
+
+.item.gold {
+  width: 100px;
+  height: 100px;
+  position: absolute;
+}
+.item.gold.goldFound {
+  transform: scale(0);
+  -webkit-transform: scale(0);
+  -moz-transform: scale(0);
+  transition: 0.3s all ease-out;
+  -webkit-transition: 0.3s all ease-out;
+  -moz-transition: 0.3s all ease-out;
+}
+.item.gold:after {
+  content: "";
+  position: absolute;
+  height: 150%;
+  width: 150%;
+  background:url(https://i.ibb.co/h2zHGW1/geta.png) no-repeat center center;
+  background-size: contain;
+  transform: translate(-25%,-25%);
+}
+
+.textWrap {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  text-align: center;
+}
+
+.textWrap h2 {
+  font-size: 72px;
+  margin-bottom: 30px;
+  color: #fff;
+}
+.textWrap p {
+  margin-bottom: 40px;
+  color: #fff;
+  font-size: 30px;
+}
+
+.welcomePop, .restartGamePop {
+  position: absolute;
+  top: 0;left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  background: rgba(0,0,0,0.7);
+  display: none;
+}
+
+.cta {
+  display: inline-block;
+  background: red;
+  padding:20px 50px;
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+#credits {
+  position: absolute;
+  top: 30px;
+  left: 0;right: 0;
+  margin: auto;
+  font-size: 40px;
+  width: 100%;
+  text-align: center;
+}
+#credits p, #credits span {
+  color: black;
+  display: inline-block;
+}
+
+
+@keyframes bgAnim {
+  0% {
+    background-position: 0 bottom;
+  }
+  100%{
+    background-position: -1920px bottom;
+  }
+}
+
+-webkit-@keyframes bgAnim {
+  0% {
+    background-position: 0 bottom;
+  }
+  100%{
+    background-position: -1920px bottom;
+  }
+}
+
+-moz-@keyframes bgAnim {
+  0% {
+    background-position: 0 bottom;
+  }
+  100%{
+    background-position: -1920px bottom;
+  }
+}

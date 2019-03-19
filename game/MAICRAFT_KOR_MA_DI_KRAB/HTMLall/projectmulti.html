@@ -1,0 +1,766 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style type="text/css">
+    body {
+        height: 100vh;
+        width: 100%;
+        margin: 0;
+        position: absolute;
+        background-color: purple;
+    }
+
+    #gameo {
+        position: fixed;
+        top: 15%;
+        left: 15%;
+        height: 70vh;
+        width: 70%;
+        background-image: url("bg gameover.png");
+        background-size: 100% 100%;
+        display: flex;
+        justify-content: center;
+  		align-content: center;
+  		flex-direction: column;
+    }
+
+    .back {
+        z-index: -1006;
+    }
+
+    .front {
+        z-index: 1006;
+    }
+
+    #textg {
+  		text-align: center;
+        font-size: 90px;
+        top: 40%;
+        left: 20%;
+    }
+
+    #sow {
+        left: 295%;
+    }
+
+    #sow1 {
+        left: 395%;
+    }
+
+    .sow {
+        top: 0%;
+        left: 195%;
+        height: 80vh;
+        width: 10%;
+        background-image: url("post.png");
+        position: absolute;
+        background-size: 100% 100%;
+        z-index: 1005;
+    }
+
+    #c1 {
+    	font-size: 90px;
+    }
+
+    #c2 {
+        font-size: 90px;
+        top: 45%;
+    }
+
+    .end {
+        position: fixed;
+        top: 15%;
+        left: 15%;
+        height: 70vh;
+        width: 70%;
+        background-image: url("bg gameover.png");
+        background-size: 100% 100%;
+        z-index: 1006;
+        font-size: 200px;
+        display: flex;
+        justify-content: center;
+  		align-content: center;
+  		flex-direction: column;
+    }
+
+    .ends {
+        position: absolute;
+        z-index: 0;
+    }
+
+    button.replay {
+        background-color: hsl(0, 60%, 50%);
+  		color: white;
+  		padding: 15px 32px;
+  		text-align: center;
+  		font-size: 16px;
+  		margin: 4px 2px;
+  		border-radius: 10%;
+  		cursor: pointer;
+    }
+
+    button {
+        position: absolute;
+        top: 80%;
+        left: 50%;
+    }
+
+    .background {
+        height: 100%;
+        width: 100%;
+        position: absolute;
+    }
+
+    #p1 {
+        background-image: url("bg1.png");
+        background-size: contain;
+        left: 0;
+    }
+
+    #p2 {
+        background-image: url("bg2.png");
+        background-size: contain;
+        left: 100%;
+    }
+
+    #p3 {
+        background-image: url("bg3.png");
+        background-size: contain;
+        left: 200%;
+    }
+
+    #p4 {
+        background-image: url("bg3.png");
+        background-size: contain;
+        left: 300%;
+    }
+
+    #p5 {
+        background-image: url("bg3.png");
+        background-size: contain;
+        left: 400%;
+    }
+
+    .pll {
+        opacity: 0;
+        height: 0px;
+        width: 0px;
+    }
+
+    #time {
+        position: fixed;
+        left: 45%;
+        transition: 2s;
+        font-size:50PX;
+        color:white;
+    }
+
+    div.start {
+        font-family: "Minecrafter Alt", sans-serif;
+        position: fixed;
+        top: 18.2%;
+        left: 3.5%;
+        height: 60vh;
+        width: 90%;
+        display: block;
+        background-image: url(entertostart.png);
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        z-index: 1000;
+    }
+
+    @font-face {
+        font-family: "Minecrafter.Alt.ttf";
+        src: url(Multi/Minecrafter.Alt.ttf) format("TrueType");
+    }
+
+    .close {
+        position: fixed;
+        top: -20%;
+        z-index: 0;
+    }
+
+    .floor {
+        position: absolute;
+        top: 80%;
+        left: 0%;
+        display: block;
+        height: 25vh;
+        width: 500%;
+        background-color: #5E2c04;
+        opacity: 1;
+        z-index: 1004;
+    }
+
+    #charac {
+        position: absolute;
+        top: 60%;
+        left: 10%;
+        display: block;
+        height: 20vh;
+        width: 5%;
+        background-image: url("mid.png");
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
+        background-position: center;
+        transition: top .1s;
+    }
+
+    #charac[class='right'] {
+        -webkit-animation: right 0.5s infinite;
+    }
+
+    #charac[class="jump"] {
+        -webkit-animation: jump 1s infinite;
+    }
+
+    @-webkit-keyframes jump {
+        0% {
+            background-image: url("jump.png");
+        }
+
+    }
+
+    @-webkit-keyframes right {
+        0% {
+            background-image: url("run-M.png");
+        }
+
+        25% {
+            background-image: url("run-L.png");
+        }
+
+        50% {
+            background-image: url("run-M2.png");
+        }
+
+        75% {
+            background-image: url("run-R.png");
+        }
+    }
+
+    #c {
+        position: absolute;
+        top: 60%;
+        left: 50%;
+        display: block;
+        height: 10vh;
+        width: 40%;
+        background-image: url("wood.png");
+        background-size: 100% 100%;
+        z-index: 1002;
+    }
+
+    #d {
+        position: absolute;
+        top: 80%;
+        left: 115%;
+        display: block;
+        height: 50vh;
+        width: 10%;
+        background-image: url("tree.png");
+        background-size: 100% 100%;
+        d z-index: 1002;
+    }
+
+    #e {
+        position: absolute;
+        top: 60%;
+        left: 160%;
+        display: block;
+        height: 43vh;
+        width: 10%;
+        background-image: url("tree.png");
+        background-size: 100% 100%;
+        z-index: 1002;
+    }
+
+    /**/
+    .state3 {
+        position: absolute;
+        display: block;
+        height: 60vh;
+        width: 10%;
+        background-image: url("posts3.png");
+        z-index: 1002;
+        background-size: 100% 100%;
+    }
+
+    #f {
+        top: 80%;
+        left: 200%;
+    }
+
+    #g {
+        top: -60%;
+        left: 210%;
+    }
+
+    #h {
+        top: 80%;
+        left: 220%;
+    }
+
+    #i {
+        top: -60%;
+        left: 230%;
+    }
+
+    #j {
+        top: 80%;
+        left: 240%;
+    }
+
+    #k {
+        top: -60%;
+        left: 250%;
+    }
+
+    #l {
+        top: 80%;
+        left: 260%;
+    }
+
+    #m {
+        top: -60%;
+        left: 270%;
+    }
+
+    #n {
+        top: 80%;
+        left: 280%;
+    }
+
+    #o {
+        top: -60%;
+        left: 290%;
+    }
+
+    #p {
+        top: 50%;
+        left: 310%;
+    }
+
+    #q {
+        top: 50%;
+        left: 330%;
+    }
+
+    #r {
+        top: 50%;
+        left: 350%;
+    }
+
+    #s {
+        top: 50%;
+        left: 370%;
+    }
+
+    #state4 {
+        top: 75%;
+        left: 300%;
+        height: 5vh;
+        width: 100%;
+        background-image: url("thorn.png");
+        background-size: 100% 100%;
+        position: absolute;
+        z-index: 1001;
+    }
+    </style>
+    <title></title>
+</head>
+
+<body>
+    <EMBED SRC="mario.mp3" HIDDEN="True" AUTOSTART="Yes" LOOP="True">
+    <div class="sow"></div>
+    <div id="sow" class="sow"></div>
+    <div id="sow1" class="sow"></div>
+    <div id="enn" class="ends">
+        <center id="c1" class="replay">score</center>
+        <center id="c2" class="replay">YOURSCORE</center>
+        <center><button class="replay" onclick="replay()">replay</button></center>
+    </div>
+    <div id="p1" class="background"></div>
+    <div id="p2" class="background"></div>
+    <div id="p3" class="background"></div>
+    <div id="p4" class="background"></div>
+    <div id="p5" class="background"></div>
+    <div id="time">0 : 0 : 0</div>
+    <div id="start" class="start"></div>
+    <div class="floor"></div>
+    <div id="charac" class='stand'></div>
+    <div id="gameo" class="back">
+        <center id="textg">GAME OVER</center>
+        <center><button class="replay" onclick="replay()">replay</button></center>
+    </div>
+    <div id="c"></div>
+    <div id="d"></div>
+    <div id="e"></div>
+    <div id="f" class="state3"></div>
+    <div id="g" class="state3"></div>
+    <div id="h" class="state3"></div>
+    <div id="i" class="state3"></div>
+    <div id="j" class="state3"></div>
+    <div id="k" class="state3"></div>
+    <div id="l" class="state3"></div>
+    <div id="m" class="state3"></div>
+    <div id="n" class="state3"></div>
+    <div id="o" class="state3"></div>
+    <div id="p" class="state3"></div>
+    <div id="q" class="state3"></div>
+    <div id="r" class="state3"></div>
+    <div id="s" class="state3"></div>
+    <div id="state4" class="gameover">aaa</div>
+    <script type="text/javascript">
+    window.onload = window.scrollTo(0,16);
+    var windows = document.querySelector("body");
+    
+
+    function replay() {
+        window.scrollTo(0, 0);
+        location.reload();
+
+        document.getElementById("enn").setAttribute("class", "ends");
+        document.getElementById("gameo").setAttribute("class", "back");
+        x = 0;
+        t = 0;
+    }
+
+    function gameover() {
+        var random1 = Math.floor(Math.random() * 19);
+        if (true && x == xy.position[random1].lb - w && y >= xy.position[random1].tb - h && y <= xy.position[random1].tb + (xy.position[random1].hb - 1)) {
+            document.getElementById("gameo").setAttribute("class", "front");
+            t = 0;
+            i = 0;
+        }
+        if (true && x == xy.position[random1].lb + xy.position[random1].wb && y >= xy.position[random1].tb - h && y <= xy.position[random1].tb + (xy.position[random1].hb - 1)) {
+            document.getElementById("gameo").setAttribute("class", "front");
+            t = 0;
+            i = 0;
+        }
+        if (true && y == xy.position[random1].tb - h && x >= xy.position[random1].lb - (w-1) && x <= xy.position[random1].lb + (xy.position[random1].wb - 1)) {
+            document.getElementById("gameo").setAttribute("class", "front");
+            t = 0;
+            i = 0;
+        }
+        if (true && y == xy.position[random1].tb + xy.position[random1].hb && x >= xy.position[random1].lb - (w-1) && x <= xy.position[random1].lb + (xy.position[random1].wb - 1)) {
+            document.getElementById("gameo").setAttribute("class", "front");
+            t = 0;
+            i = 0;
+        }
+
+    }
+    if (true) { var mavo = setTimeout(function() { window.scrollTo(0, 0); }, 1); }
+    var up = false;
+    var down = false;
+    var left = false;
+    var right = false;
+    var start = false;
+    var hc = document.querySelector("#charac"); /*h = 20;*/
+    var wc = document.querySelector("#charac");
+    var xc = document.querySelector("#charac");
+    var yc = document.querySelector("#charac");
+    grow = 60;
+    x = 0;
+    /*x = 0;*/
+    y = 60;
+    /*y = 60;*/
+    stax = 0;
+    base = false;
+    h = 20;
+    w = 5; /*w = 5;*/
+    move = 3;
+    t = 0;
+    i = 1;
+    state3_1 = false;
+    state3_2 = false;
+    state4_1 = false;
+    state4_2 = false;
+    gavity();
+    starts = true;
+
+    var posi = '{ "position" : [' +
+        
+        '{ "tb":"60" , "lb":"50" , "hb":"10" , "wb":"40"},' +
+        '{ "tb":"80" , "lb":"115" , "hb":"50" , "wb":"10"},' +
+        '{ "tb":"60" , "lb":"160" , "hb":"43" , "wb":"10"},' +
+
+        '{ "tb":"80" , "lb":"200" , "hb":"60" , "wb":"10"},' +
+        '{ "tb":"-60" , "lb":"210" , "hb":"60" , "wb":"10"},' +
+        '{ "tb":"80" , "lb":"220" , "hb":"60" , "wb":"10"},' +
+        '{ "tb":"-60" , "lb":"230" , "hb":"60" , "wb":"10"},' +
+        '{ "tb":"80" , "lb":"240" , "hb":"60" , "wb":"10"},' +
+        '{ "tb":"-60" , "lb":"250" , "hb":"60" , "wb":"10"},' +
+        '{ "tb":"80" , "lb":"260" , "hb":"60" , "wb":"10"},' +
+        '{ "tb":"-60" , "lb":"270" , "hb":"60" , "wb":"10"},' +
+        '{ "tb":"80" , "lb":"280" , "hb":"60" , "wb":"10"},' +
+        '{ "tb":"-60" , "lb":"290" , "hb":"60" , "wb":"10"},' +
+
+        '{ "tb":"50" , "lb":"310" , "hb":"60" , "wb":"10"},' +
+        '{ "tb":"50" , "lb":"330" , "hb":"60" , "wb":"10"},' +
+        '{ "tb":"50" , "lb":"350" , "hb":"60" , "wb":"10"},' +
+        '{ "tb":"50" , "lb":"370" , "hb":"60" , "wb":"10"},' +
+
+        '{ "tb":"75" , "lb":"300" , "hb":"5" , "wb":"100"}]}';
+    var xy = JSON.parse(posi);
+
+
+    boxa = false;
+    boxb = false;
+    id2 = "#b";
+    play = false;
+
+    document.addEventListener('keydown', press)
+
+    function press(e) {
+        if (e.keyCode === 13) {
+            document.getElementById("start").setAttribute("class", "close");
+            start = true;
+            play = true;
+        }
+        if (e.keyCode === 87 || e.keyCode === 32) {
+            up = true;
+        }
+        if (e.keyCode === 40 || e.keyCode === 83) {
+            down = true;
+        }
+        if (e.keyCode === 39 || e.keyCode === 68) {
+            right = true;
+
+        }
+        if (e.keyCode === 37 || e.keyCode === 65) {
+            left = true;
+        }
+    }
+    document.addEventListener('keyup', release) /*32 = spacebar*/
+    function release(e) {
+        if (e.keyCode === 32 /* up */ || e.keyCode === 87 /* w */ || e.keyCode === 90 /* z */ ) {
+            up = false;
+            var mrs = document.querySelector("#charac").setAttribute("class", "stand");
+        }
+        if (e.keyCode === 39 /* right */ || e.keyCode === 68 /* d */ ) {
+            right = false;
+            var mr = document.querySelector("#charac").setAttribute("class", "stand");
+        }
+        if (e.keyCode === 40 /* down */ || e.keyCode === 83 /* s */ ) {
+            down = false;
+        }
+        if (e.keyCode === 37 /* left */ || e.keyCode === 65 /* a */ || e.keyCode === 81 /* q */ ) {
+            left = false;
+        }
+
+    }
+
+    function gameLoop() {
+        var div = document.querySelector('#charac')
+
+        if (start) {
+
+            /*var move = setInterval(function(){ window.scrollBy(1,0);}, 700);*/
+            if (starts) {
+                setInterval(function() {
+                    t += i;
+                    document.getElementById("time").innerHTML = (t - (t % 6000)) / 6000 + " : " + ((t % 6000) - (t % 100)) / 100 + " : " + t % 100;
+                }, 1000);
+            }
+            /*xm pb tb lb hb wb*/
+            todown(40, 80, 0, 0, 0, 0, "#c");
+            toup(100, 35, 1, 1, 1, 1, "#d");
+            check(xy.position[1].tb, xy.position[1].lb, xy.position[1].hb, xy.position[1].wb);
+            toup(150, 40, 2, 2, 2, 2, "#e");
+
+            toup(195, 20, 3, 3, 3, 3, "#f");
+            todown(205, 0, 4, 4, 4, 4, "#g");
+            toup(215, 20, 5, 5, 5, 5, "#h");
+            todown(225, 0, 6, 6, 6, 6, "#i");
+            toup(235, 20, 7, 7, 7, 7, "#j");
+
+            todown(245, 0, 8, 8, 8, 8, "#k");
+            toup(255, 20, 9, 9, 9, 9, "#l");
+            todown(265, 0, 10, 10, 10, 10, "#m");
+            toup(275, 20, 11, 11, 11, 11, "#n");
+            todown(285, 0, 12, 12, 12, 12, "#o");
+
+
+            check(xy.position[13].tb, xy.position[13].lb, xy.position[13].hb, xy.position[13].wb);
+            check(xy.position[14].tb, xy.position[14].lb, xy.position[14].hb, xy.position[14].wb);
+            check(xy.position[15].tb, xy.position[15].lb, xy.position[15].hb, xy.position[15].wb);
+            check(xy.position[16].tb, xy.position[16].lb, xy.position[16].hb, xy.position[16].wb);
+            check(xy.position[17].tb, xy.position[17].lb, xy.position[17].hb, xy.position[17].wb);
+
+        }
+            if (up) {
+                var mrp = document.querySelector("#charac").setAttribute("class", "jump");
+                y -= 5;
+            }
+            if (right) {
+                x = x + 1;
+                var mr = document.querySelector("#charac").setAttribute("class", "right");
+                window.scrollBy(12, 0);
+                if (x == 493) {
+                    x--;
+                }
+
+            }
+            if (down) {
+                if (y >= grow) { y -= 1; }
+                y = y + 1;
+
+            }
+            if (left) {
+                x = x - 1;
+                window.scrollBy(-12, 0);
+                if (x == 0) {
+                    x++;
+                }
+
+            }
+
+            div.style.top = y + '%';
+            div.style.left = x + '%';
+            if (true && y < 0) { document.getElementById("gameo").setAttribute("class", "front");i = 0; }
+            if (x >= 490) {
+                i = 0;
+                document.getElementById("enn").setAttribute("class", "end");
+                document.querySelector("center").innerHTML = (t - (t % 6000)) / 6000 + " : " + ((t % 6000) - (t % 100)) / 100 + " : " + t % 100;
+            }
+
+            window.requestAnimationFrame(gameLoop)
+
+        }
+
+        function gavity() {
+            var too = document.querySelector('#charac');
+            if (y < grow) {
+                y += 1;
+                too.style.top = y + '%';
+            }
+            window.requestAnimationFrame(gavity)
+        }
+
+        /*เช็คว่าคนชนวัตถุรึเปล่า*/
+        function check(tb, lb, hb, wb) {
+            if (x == (lb - w) && y >= (tb - (h - 2)) && y <= (tb + (hb - 0.1))) {
+                x -= 1;
+                window.scrollBy(-12, 0);
+            }
+
+            if (y == tb - (h - 1) && x >= lb - (w - 1) && x <= lb + (wb - 1)) {
+                y -= 1;
+                /*grow = tb-(h-0.1);*/
+
+            }
+
+            if (x == (lb + wb+1) && y >= (tb - (h - 2)) && y <= (tb + (hb - 1))) {
+                x += 1;
+                window.scrollBy(12, 0);
+            }
+            if (y == tb + hb && x >= lb - (w - 1) && x <= lb + (wb - 1)) {
+                up = false;
+            }
+
+        }
+
+        function toup(xm, pb, tb, lb, hb, wb, id) {
+            boxa = false;
+            if (x >= xm) { boxa = true; }
+            if (boxa) {
+                check(xy.position[tb].tb, xy.position[lb].lb, xy.position[hb].hb, xy.position[wb].wb);
+                var a = document.querySelector(id);
+                var cha = document.querySelector("#charac");
+
+                if (true && xy.position[tb].tb > pb) {
+                    xy.position[tb].tb--;
+                    a.style.top = xy.position[tb].tb + "%";
+                    check(xy.position[tb].tb, xy.position[lb].lb, xy.position[hb].hb, xy.position[wb].wb);
+                    /*if (true && y == xy.position[tb].tb - h && x >= xy.position[lb].lb - (w - 1) && x <= xy.position[lb].lb + (xy.position[wb].wb - 1)) {
+                        y--;
+                        cha.style.top = y + "%";
+                    }*/
+                }
+            }
+        }
+
+        function todown(xm, pb, tb, lb, hb, wb, id) {
+            boxb = false;
+            if (x >= xm) { boxb = true; }
+            if (boxb) {
+                check(true && xy.position[tb].tb, xy.position[lb].lb, xy.position[hb].hb, xy.position[wb].wb);
+                var b = document.querySelector(id);
+                var cha = document.querySelector("#charac");
+                if (xy.position[tb].tb < pb) {
+
+                    xy.position[tb].tb++;
+                    b.style.top = xy.position[tb].tb + "%";
+                    /*if (true && y == xy.position[tb].tb + xy.position[hb].hb && x >= xy.position[lb].lb - (w - 1) && x <= xy.position[lb].lb + (xy.position[wb].wb - 1)) {
+                        y += 2;
+                        cha.style.top = y + "%";
+                    }*/
+                    check(xy.position[tb].tb, xy.position[lb].lb, xy.position[hb].hb, xy.position[wb].wb);
+                }
+            }
+        }
+
+        function toleft(xm, pb, tb, lb, hb, wb, id) {
+            boxc = false;
+            if (x >= xm) { boxc = true; }
+            if (boxc) {
+                check(xy.position[tb].tb, xy.position[lb].lb, xy.position[hb].hb, xy.position[wb].wb);
+                var c = document.querySelector(id);
+                var cha = document.querySelector("#charac");
+                if (true && xy.position[lb].lb >= pb) {
+                    xy.position[lb].lb--;
+                    c.style.left = xy.position[lb].lb + "%";
+                    if (true && x == xy.position[lb].lb - w && y >= xy.position[tb].tb - (h - 1) && y <= xy.position[tb].tb + (h - 1) && x >= xy.position[lb].lb - w) {
+                        x -= 2;
+                        cha.style.left = x + "%";
+                    }
+                    check(xy.position[tb].tb, xy.position[lb].lb, xy.position[hb].hb, xy.position[wb].wb);
+                }
+            }
+        }
+        /*function toleft()*/
+        function torigth(xm, pb, tb, lb, hb, wb, id) {
+            boxd = false;
+            if (x >= xm) { boxd = true; }
+            if (boxd) {
+                check(xy.position[tb].tb, xy.position[lb].lb, xy.position[hb].hb, xy.position[wb].wb);
+                var c = document.querySelector(id);
+                var cha = document.querySelector("#charac");
+                if (true && xy.position[lb].lb <= pb) {
+                    xy.position[lb].lb++;
+                    c.style.left = xy.position[lb].lb + "%";
+                    if (true && x === xy.position[lb].lb + xy.position[wb].wb && y >= xy.position[tb].tb - (h - 1) && y <= xy.position[tb].tb + (h - 1) && x >= xy.position[lb].lb + xy.position[wb].wb) {
+                        x += 2;
+                        cha.style.left = x + "%";
+                    }
+                    check(xy.position[tb].tb, xy.position[lb].lb, xy.position[hb].hb, xy.position[wb].wb);
+                }
+            }
+        }
+
+        var stext = document.getElementById("#end");
+        var scoreb = ["0", "0", "0", "0"];
+
+        function highscore() {
+            var checks = 3
+            for (var i = 2; i >= 0; i--) {
+                if (t >= scoreb[i]) {
+                    scoreb[i + 1] = scoreb[i];
+                    checks--;
+                }
+            }
+            if (checks == 0) { document.getElementById("end").innerHTML = (t - (t % 6000)) / 6000 + " : " + ((t % 6000) - (t % 100)) / 100 + " : " + t % 100; }
+        }
+     
+        window.onscroll = function(){window.scrollTo(x*12,16);}
+        function settop(){
+        	var topw = document.getElementById("body").value;
+        	document.documentElement.pageYOffset = topw;
+        }
+        window.requestAnimationFrame(gameLoop)
+    </script>
+</body>
+
+</html>

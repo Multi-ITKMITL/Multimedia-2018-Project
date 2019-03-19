@@ -1,0 +1,98 @@
+* { box-sizing:border-box; margin:0; padding:0; }
+
+html { height:100%; width:100%; }
+
+body {
+
+  align-content:center;
+  align-items:space-around;
+  background-color:#202830;
+  display:grid;
+  justify-items:center;
+  height:100%;
+  width:100%;
+
+}
+
+/* 04/07/2018 */
+
+canvas { image-rendering:pixelated; }
+
+#menu {
+
+  background-color:rgba(0, 0, 0, 0.5);
+  color:#ffffff;
+  cursor:pointer;
+  display:grid;
+  max-height:100%;
+  overflow-y:auto;
+  padding:8px;
+  position:fixed;
+  right:0px;
+  top:0px;
+  user-select:none;
+
+  -webkit-tap-highlight-color:transparent;
+
+}
+
+#menu p {
+
+  color:#ffffff;
+  font-size:2.0em;
+
+}
+
+#menu-list {
+
+  display:none;
+
+}
+
+#menu-list a {
+
+  color:#ffffff;
+  font-size:1.5em;
+  text-decoration:none;
+
+}
+
+/*text*/
+
+@keyframes textcolor{
+  0%   {color: red;}
+    25%  {color: yellow;}
+    50%  {color: green;}
+    100% {color: blue;}
+}
+
+.text{
+  position: fixed;
+  right: 0;
+  top: 700px;
+  text-decoration: none;
+  animation-name: textcolor;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+#score{
+  color: white;
+  font-family: sans-serif;
+  position: absolute;
+  font-size: 20px;
+  left: 90%;
+  top: 1%;
+  text-shadow: 0 0 16px #FF0000, 0 0 16px #fff;
+}
+
+#highscore{
+  color: white;
+  font-family: sans-serif;
+  position: absolute;
+  font-size: 20px;
+  left: 80%;
+  top: 1%;
+  text-shadow: 0 0 16px #FF0000, 0 0 16px #fff;
+}

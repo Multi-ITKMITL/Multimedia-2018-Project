@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>VICTORY PATH</title>
+    <link rel="shortcut icon" type="image/x-icon" href="image/icon.ico" />
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body align="center">
+
+        <h1>Victory Path</h1>
+        <br>
+    <div>
+    <iframe src="sound/bgmusic.mp3" allow="autoplay" style="display:none"></iframe>
+
+    <img src="image/wallpaper3.gif"></img>
+    <br>
+
+    <a class="butt" id="mode" href="game.html" onclick="set_value(1)" onclick="soundclic()">easy</a>
+    <a class="butt" id="mode" href="game.html" onclick="set_value(2)">normal</a>
+    <a class="butt" id="mode" href="game.html" onclick="set_value(3)">hard</a>
+    <br>
+    <a class="butt" id="mode" onclick="howto()">how to play</a>
+
+    </div>
+<div id="howto" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-howto">
+    <span class="close">&times;</span>
+    <img src="image/howtoplay.png" width="800" height="600">
+  </div>
+
+</body>
+<script type="text/javascript" src="script.js"></script>
+</html>

@@ -1,0 +1,24 @@
+﻿[Arrow]
+Path=Harry Potter Cursor Normal Wand.cur
+
+[Wait]
+Path=Harry Potter Cursor Working in Background.ani
+
+[NWPen]
+Path=Harry Potter Cursor Handwriting.cur
+
+[Help]
+Path=Harry Potter Cursor Help.cur
+
+[Hand]
+Path=Harry Potter Cursor Link Select.ani
+
+[IBeam]
+Path=Harry potter Cursor Text Select.cur
+
+[SizeNS]
+Path=Harry potter cursor resize.cur
+
+[SizeWE]
+Path=Harry potter cursor resize 2.cur
+

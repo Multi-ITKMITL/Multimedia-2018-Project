@@ -1,0 +1,43 @@
+body{
+	font-family: sans-serif;
+	background: url("foแดง.png");
+	background-size:cover;
+	background-position: all; 
+}
+div.time{
+	height:30px;
+	width: 150px; 
+	background-image:url("clock.gif");
+	background-size: contain;
+	background-repeat:no-repeat;
+	margin: 5px;
+	border: 2px dotted gold;
+	position: absolute;
+	}
+h2{
+	position:absolute;
+	left: 25%;
+	top:-20px;
+	color:#0000db;
+	font-weight:200px
+}
+h1{
+	font-style: oblique;
+	color: red;
+	background-image: linear-gradient(red, yellow, green); 
+}
+
+canvas {
+    border: 1px solid #d3d3d3;
+    background-color: #f1f1f1;
+    position: absolute;
+    top:20%;
+    left:18%;
+    background:url("ป่าไง.jpg");
+}
+
+img.platform{
+	width:100px;
+	height:100px;
+}
+

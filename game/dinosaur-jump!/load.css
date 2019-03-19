@@ -1,0 +1,44 @@
+html,body {
+	margin:0;
+	padding:0;
+	 font-family: 'Press Start 2P', cursive;
+	 cursor: url(image/cursor.cur), auto;
+}
+
+section {
+	background:linear-gradient(
+          rgba(0, 0, 0, 0.5), 
+          rgba(0, 0, 0, 0.5)
+        ), url(image/bg.gif);
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	width: 100vw;
+    min-height: 100vh;
+	display: flex;
+	 align-items: center;
+	 color: #fff;
+}
+section div {
+    width: 100%;
+    text-align: center;
+}
+
+#gameTitle {
+	display:block;
+	width: 100%;
+    text-align: center;
+	font-size: 5vw;
+	text-shadow: -5px 0 black, 0 5px black, 5px 0 black, 0 -5px black;
+}
+
+#press {
+	animation: press 1.5s infinite alternate;
+	font-size: 2vw;
+}
+
+@keyframes press {
+    100% {opacity: 1;}
+	60% {opacity: 1;}
+    0% {opacity: 0;}
+}

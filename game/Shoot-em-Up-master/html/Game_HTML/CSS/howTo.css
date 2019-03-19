@@ -1,0 +1,142 @@
+body {
+    padding: 0;
+    margin: 0;
+    background-image: url(../IMG/bg_1.jpg);
+    background-repeat: no-repeat;
+    background-position: top;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    font-family: 'Press Start 2P', cursive;
+}
+/*============================================================*/
+/*sideBar*/
+/*============================================================*/
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: -250px;
+    background: #262626;
+    width: 250px;
+    height: 100%;
+    transition: .3s;
+}
+.active {
+    left: 0;
+}
+ul{
+    margin: 0;
+    padding: 20px 0;
+}
+ul li {
+    list-style: none;
+}
+ul li a {
+    padding: 10px 20px;
+    color: #fff;
+    display: block;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(0, 0, 0, .2);
+}
+.sidebarBtn {
+    position: absolute;
+    top: 0;
+    right: -50px;
+    width: 50px;
+    height: 50px;
+    box-sizing: border-box;
+    cursor: pointer;
+    background: #f5f5f6;
+    border: none;
+    outline: none;
+}
+
+.sidebarBtn:hover {
+    background: grey;
+}
+
+.sidebarBtn span {
+    display: block;
+    width: 35px;
+    height: 3px;
+    background: #262626;
+    position: absolute;
+    top: 24px;
+    transition: .3s;
+}
+.sidebarBtn span:before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: #262626;
+    transition: .3s;
+}
+.sidebarBtn span:after {
+    content: '';
+    position: absolute;
+    top: 10px;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: #262626;
+    transition: .3s;
+}
+.sidebarBtn.toggle span {
+    background: transparent;
+}
+.sidebarBtn.toggle span:before {
+    top: 0;
+    transform: rotate(45deg);
+    background: red;
+}
+.sidebarBtn.toggle span:after {
+    top: 0;
+    transform: rotate(-45deg);
+    background: red;
+}
+
+/*============================================================*/
+/*Container*/
+/*============================================================*/
+
+.container {
+    position: absolute;
+    width: 1200px;
+    height: 700px;
+}
+
+.container img {
+    width: 1200px;
+    height: 750px;
+    background-color: rgba(170, 170, 170, 0.50);
+    border-radius: 50px;
+}
+
+.title_text {
+    width: 100%;
+    height: 100px;
+    text-align: center;
+}
+
+.title_text p {
+    z-index: 100;
+    border: 4px solid #fff;
+    padding: 0;
+    font-size: 40px;
+    width: 470px;
+    margin-right: 10px;
+    margin-top: 10px;
+    position: absolute;
+    top:0;
+    right:0;
+    line-height: 150%;
+    color: #fff;
+}
+
+

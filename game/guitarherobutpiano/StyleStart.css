@@ -1,0 +1,188 @@
+@import url('https://fonts.googleapis.com/css?family=Nova+Flat');
+
+body {
+    margin: 0;
+    padding: 0;
+    background-image: url(images/bg-6.jpg);
+    background-size: cover;
+}
+
+.entertain {
+    text-align: center;
+    margin-top: 250px;
+}
+
+.beauty {
+    border: 1.5px solid #3498db;
+    background: none;
+    padding: 10px 20px;
+    font-size: 20px;
+    font-family: 'Nova Flat', cursive;
+    cursor: pointer;
+    margin: 10px;
+    transition: 0.8s;
+    position: fixed;
+    right: 25%;
+    left: 43%;
+    top: 45%;
+    bottom: 45%;
+    overflow: hidden; 
+    border-radius: 10px;
+    text-shadow: 0px 0px 10px white;
+}
+
+
+
+.group{
+    width: 370px;
+    height: 150px;
+    padding: 10px 20px;
+    float: right;
+    margin-top: 35%;
+    margin-right: 15px;
+    background-color: rgba(56, 160, 179, 0.068);
+    border-radius:10px;
+    
+    
+}
+.member {
+    text-align: center;
+    color: white;
+    
+
+}
+
+.ul{
+    color: white;
+}
+
+#swap {
+    margin: auto;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 33%;
+    position: fixed;
+
+}
+@keyframes show1{
+    0% {background-image: url(pic2/guitar.png);}
+    25% {background-image: url(pic/guitar.png);}
+    50% {background-image: url(pic2/guitar.png);}
+    100% {background-image: url(pic/guitar.png);}
+}
+@keyframes show2{
+    0% {background-image: url(pic2/guitar-pic.png);}
+    25% {background-image: url(pic/guitar-pic.png);}
+    50% {background-image: url(pic2/guitar-pic.png);}
+    100% {background-image: url(pic/guitar-pic.png);}
+}
+@keyframes show3{
+    0% {background-image: url(pic2/but.png);}
+    100% {background-image: url(pic/but.png);}
+}
+@keyframes show4{
+    0% {background-image: url(pic2/piano.png);}
+    25% {background-image: url(pic/piano.png);}
+    50% {background-image: url(pic2/piano.png);}
+    100% {background-image: url(pic/piano.png);}
+}
+@keyframes show5{
+    0% {background-image: url(pic2/piano-pic.png);}
+    25% {background-image: url(pic/piano-pic.png);}
+    50% {background-image: url(pic2/piano-pic.png);}
+    100% {background-image: url(pic/piano-pic.png);}
+}
+@keyframes show6{
+    0% {background-image: url(pic2/note.png);}
+    25% {background-image: url(images/note.png);}
+    50% {background-image: url(pic2/note.png);}
+    100% {background-image: url(images/note.png);}
+}
+@keyframes show7{
+    0% {background-image: url(pic2/note1.png);}
+    25% {background-image: url(images/note1.png);}
+    50% {background-image: url(pic2/note1.png);}
+    100% {background-image: url(images/note1.png);}
+}
+
+#logo1 {
+    width: 476px;
+    height: 476px;
+    background-size:cover;
+    background-image: url(pic2/guitar.png);
+    display: block;
+    position: absolute;
+    animation: show1 1s forwards;
+    animation-delay: 1s;
+    
+}
+#logo2 {
+    width: 476px;
+    height: 476px;
+    background-size:cover;
+    background-image: url(pic2/guitar-pic.png);
+    display: block;
+    position: absolute;
+    animation: show2 1s forwards;
+    animation-delay: 2s;
+    
+}
+#logo3 {
+    width: 476px;
+    height: 476px;
+    background-size:cover;
+    background-image: url(pic2/but.png);
+    display: block;
+    position: absolute;
+    animation: show3 0.5s forwards;
+    animation-delay: 3s;
+    
+}
+#logo4 {
+    width: 476px;
+    height: 476px;
+    background-size:cover;
+    background-image: url(pic2/piano.png);
+    display: block;
+    position: absolute;
+    animation: show4 1s forwards;
+    animation-delay: 3.5s;
+    
+}
+#logo5 {
+    width: 476px;
+    height: 476px;
+    background-size:cover;
+    background-image: url(pic2/piano-pic.png);
+    display: block;
+    position: absolute;
+    animation: show5 1s forwards;
+    animation-delay: 4.5s;
+}
+
+.note {
+    width: 274px;
+    height: 168px;
+    background-size:contain;
+    background-image: url(pic2/note.png);
+    display: block;
+    top: 75%;
+    position: absolute;
+    animation: show6 1s forwards;
+    animation-delay: 2.5s;
+    
+}
+
+.noteadd {
+    width: 300px;
+    height: 300px;
+    background-size:cover;
+    background-image: url(pic2/note1.png);
+    top: 45%;
+    left: 15%;
+    display: block;
+    position: absolute;
+    animation: show7 1s forwards;
+    animation-delay: 3.15s;
+}

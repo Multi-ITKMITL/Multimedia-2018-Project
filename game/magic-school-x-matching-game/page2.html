@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>【Hard-Mode】 • Magic School •</title>
+    <link rel="stylesheet" type="text/css" href="page2.css">
+    <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+</head>
+<body>
+    <button onclick="Fullscreen()" id="fullscreen"><img src="src/full.png"></button>
+    <button onclick="Mute()" id="mute"><img id="imgmute" src="src/mute.png"></button>
+    <h2>Magic school X Matching Game</h2>
+    <audio id="main_audio" autoplay="autoplay" loop="loop" preload="auto">
+      <source src="sound/creepyhard1.mp3" type="audio/mpeg"/>
+      <embed src="sound/creepyhard1.mp3" width="0" height="0" loop="true" autostart="true" hidden="true" />
+    </audio>
+    <div class="overlay-text visible" id="game-start-text">
+      Click to Start
+    </div>
+    <div class="time-text" id="time-text">3</div>
+    <div class="overlay-text" id="game-over-text"><img id="over" src="src/rain.gif">
+      GAME OVER<br><div class="overlay-text-small" id="result"></div>
+      <span class="overlay-text-small"><button id="restart" onclick="restart()"><img id="imgrestart" src="src/restart2.png"></button><br><a href="page.html"><img id="pre" src="src/pre.png"></a></span>
+      <a href="index.html"><span class="back-menu">Click Here to Back to Main Menu</span></a>
+    </div>
+    <div class="overlay-text" id="victory-text"><img id="ball" src="src/ball.gif">
+      VICTORY<br><div class="overlay-text-small" id="result-vic"></div>
+      <span class="overlay-text-small"><button id="restart" onclick="restart()"><img id="imgrestart" src="src/restart2.png"></button><br><a href="page.html"><img id="pre" src="src/pre.png"></a></span>
+      <a href="index.html"><span class="back-menu">Click Here to Back to Main Menu</span></a>
+    </div>
+  <div class="game-container">
+    <div class="game-info-container">
+      <div class="game-info">
+        <div class=heartrow>
+            <img class="heart" id="heart1" src="src/heart.gif">
+            <img class="heart" id="heart2" src="src/heart.gif">
+            <img class="heart" id="heart3" src="src/heart.gif">
+            <img class="heart" id="heart4" src="src/heart.gif">
+            <img class="heart" id="heart5" src="src/heart.gif">
+            <img class="heart" id="heart6" src="src/heart.gif">
+            <img class="heart" id="heart7" src="src/heart.gif">
+            <img class="heart" id="heart8" src="src/heart.gif">
+            <img class="heart" id="heart9" src="src/heart.gif">
+            <img class="heart" id="heart10"src="src/heart.gif">
+        </div>
+      </div>
+      <div class="game-info">
+        Flip : <span id="flips"> 0</span>
+      </div>
+    </div>
+    <div class="card" id="show1">
+      <div class="card-back card-face">
+        <img class="cob-web cob-web-top-left"
+        src="src/Hard/CardHard2.png">
+        <img class="cob-web cob-web-top-right"
+        src="src/Hard/CardHard2.png">
+        <img class="cob-web cob-web-bottom-left"
+        src="src/Hard/CardHard2.png">
+        <img class="cob-web cob-web-bottom-right"
+        src="src/Hard/CardHard2.png">
+      </div>
+      <div class="card-front card-face">
+        <img class="cob-web cob-web-top-left"
+        src="src/Hard/front1.png">
+        <img class="cob-web cob-web-top-right"
+        src="src/Hard/front1.png">
+        <img class="cob-web cob-web-bottom-left"
+        src="src/Hard/front1.png">
+        <img class="cob-web cob-web-bottom-right"
+        src="src/Hard/front1.png">
+        <img class="card-value" src="src/Hard/charac1h.png">
+      </div>
+    </div>
+    <div class="card" id="show2">
+      <div class="card-back card-face">
+        <img class="cob-web cob-web-top-left"
+        src="src/Hard/CardHard2.png">
+        <img class="cob-web cob-web-top-right"
+        src="src/Hard/CardHard2.png">
+        <img class="cob-web cob-web-bottom-left"
+        src="src/Hard/CardHard2.png">
+        <img class="cob-web cob-web-bottom-right"
+        src="src/Hard/CardHard2.png">
+      </div>
+      <div class="card-front card-face">
+        <img class="cob-web cob-web-top-left"
+        src="src/Hard/front1.png">
+        <img class="cob-web cob-web-top-right"
+        src="src/Hard/front1.png">
+        <img class="cob-web cob-web-bottom-left"
+        src="src/Hard/front1.png">
+        <img class="cob-web cob-web-bottom-right"
+        src="src/Hard/front1.png">
+        <img class="card-value" src="src/Hard/charac1h.png">
+      </div>
+    </div>
+    <div class="card" id="show3">
+      <div class="card-back card-face">
+        <img class="cob-web cob-web-top-left"
+        src="src/Hard/CardHard2.png">
+        <img class="cob-web cob-web-top-right"
+        src="src/Hard/CardHard2.png">
+        <img class="cob-web cob-web-bottom-left"
+        src="src/Hard/CardHard2.png">
+        <img class="cob-web cob-web-bottom-right"
+        src="src/Hard/CardHard2.png">
+      </div>
+      <div class="card-front card-face">
+        <img class="cob-web cob-web-top-left"
+        src="src/Hard/front1.png">
+        <img class="cob-web cob-web-top-right"
+        src="src/Hard/front1.png">
+        <img class="cob-web cob-web-bottom-left"
+        src="src/Hard/front1.png">
+        <img class="cob-web cob-web-bottom-right"
+        src="src/Hard/front1.png">
+        <img class="card-value" src="src/Hard/charac2h.png">
+      </div>
+    </div>
+    <div class="card" id="show4">
+      <div class="card-back card-face">
+        <img class="cob-web cob-web-top-left"
+        src="src/Hard/CardHard2.png">
+        <img class="cob-web cob-web-top-right"
+        src="src/Hard/CardHard2.png">
+        <img class="cob-web cob-web-bottom-left"
+        src="src/Hard/CardHard2.png">
+        <img class="cob-web cob-web-bottom-right"
+        src="src/Hard/CardHard2.png">
+      </div>
+      <div class="card-front card-face">
+        <img class="cob-web cob-web-top-left"
+        src="src/Hard/front1.png">
+        <img class="cob-web cob-web-top-right"
+        src="src/Hard/front1.png">
+        <img class="cob-web cob-web-bottom-left"
+        src="src/Hard/front1.png">
+        <img class="cob-web cob-web-bottom-right"
+        src="src/Hard/front1.png">
+        <img class="card-value" src="src/Hard/charac2h.png">
+      </div>
+    </div>
+    <div class="card" id="show5">
+      <div class="card-back card-face">
+        <img class="cob-web cob-web-top-left"
+        src="src/Hard/CardHard2.png">
+        <img class="cob-web cob-web-top-right"
+        src="src/Hard/CardHard2.png">
+        <img class="cob-web cob-web-bottom-left"
+        src="src/Hard/CardHard2.png">
+        <img class="cob-web cob-web-bottom-right"
+        src="src/Hard/CardHard2.png">
+      </div>
+      <div class="card-front card-face">
+        <img class="cob-web cob-web-top-left"
+        src="src/Hard/front1.png">
+        <img class="cob-web cob-web-top-right"
+        src="src/Hard/front1.png">
+        <img class="cob-web cob-web-bottom-left"
+        src="src/Hard/front1.png">
+        <img class="cob-web cob-web-bottom-right"
+        src="src/Hard/front1.png">
+        <img class="card-value" src="src/Hard/charac3h.png">
+      </div>
+    </div>
+    <div class="card" id="show6">
+      <div class="card-back card-face">
+        <img class="cob-web cob-web-top-left"
+        src="src/Hard/CardHard2.png">
+        <img class="cob-web cob-web-top-right"
+        src="src/Hard/CardHard2.png">
+        <img class="cob-web cob-web-bottom-left"
+        src="src/Hard/CardHard2.png">
+        <img class="cob-web cob-web-bottom-right"
+        src="src/Hard/CardHard2.png">
+      </div>
+      <div class="card-front card-face">
+        <img class="cob-web cob-web-top-left"
+        src="src/Hard/front1.png">
+        <img class="cob-web cob-web-top-right"
+        src="src/Hard/front1.png">
+        <img class="cob-web cob-web-bottom-left"
+        src="src/Hard/front1.png">
+        <img class="cob-web cob-web-bottom-right"
+        src="src/Hard/front1.png">
+        <img class="card-value" src="src/Hard/charac3h.png">
+      </div>
+    </div>
+    <div class="card" id="show7">
+      <div class="card-back card-face">
+        <img class="cob-web cob-web-top-left"
+        src="src/Hard/CardHard2.png">
+        <img class="cob-web cob-web-top-right"
+        src="src/Hard/CardHard2.png">
+        <img class="cob-web cob-web-bottom-left"
+        src="src/Hard/CardHard2.png">
+        <img class="cob-web cob-web-bottom-right"
+        src="src/Hard/CardHard2.png">
+      </div>
+      <div class="card-front card-face">
+        <img class="cob-web cob-web-top-left"
+        src="src/Hard/front1.png">
+        <img class="cob-web cob-web-top-right"
+        src="src/Hard/front1.png">
+        <img class="cob-web cob-web-bottom-left"
+        src="src/Hard/front1.png">
+        <img class="cob-web cob-web-bottom-right"
+        src="src/Hard/front1.png">
+        <img class="card-value" src="src/Hard/charac4h.png">
+      </div>
+    </div>
+    <div class="card" id="show8">
+      <div class="card-back card-face">
+        <img class="cob-web cob-web-top-left"
+        src="src/Hard/CardHard2.png">
+        <img class="cob-web cob-web-top-right"
+        src="src/Hard/CardHard2.png">
+        <img class="cob-web cob-web-bottom-left"
+        src="src/Hard/CardHard2.png">
+        <img class="cob-web cob-web-bottom-right"
+        src="src/Hard/CardHard2.png">
+      </div>
+      <div class="card-front card-face">
+        <img class="cob-web cob-web-top-left"
+        src="src/Hard/front1.png">
+        <img class="cob-web cob-web-top-right"
+        src="src/Hard/front1.png">
+        <img class="cob-web cob-web-bottom-left"
+        src="src/Hard/front1.png">
+        <img class="cob-web cob-web-bottom-right"
+        src="src/Hard/front1.png">
+        <img class="card-value" src="src/Hard/charac4h.png">
+      </div>
+    </div>
+    <div class="card" id="show9">
+      <div class="card-back card-face">
+        <img class="cob-web cob-web-top-left"
+        src="src/Hard/CardHard2.png">
+        <img class="cob-web cob-web-top-right"
+        src="src/Hard/CardHard2.png">
+        <img class="cob-web cob-web-bottom-left"
+        src="src/Hard/CardHard2.png">
+        <img class="cob-web cob-web-bottom-right"
+        src="src/Hard/CardHard2.png">
+      </div>
+      <div class="card-front card-face">
+        <img class="cob-web cob-web-top-left"
+        src="src/Hard/front1.png">
+        <img class="cob-web cob-web-top-right"
+        src="src/Hard/front1.png">
+        <img class="cob-web cob-web-bottom-left"
+        src="src/Hard/front1.png">
+        <img class="cob-web cob-web-bottom-right"
+        src="src/Hard/front1.png">
+        <img class="card-value" src="src/Hard/charac5h.png">
+      </div>
+    </div>
+    <div class="card" id="show10">
+      <div class="card-back card-face">
+        <img class="cob-web cob-web-top-left"
+        src="src/Hard/CardHard2.png">
+        <img class="cob-web cob-web-top-right"
+        src="src/Hard/CardHard2.png">
+        <img class="cob-web cob-web-bottom-left"
+        src="src/Hard/CardHard2.png">
+        <img class="cob-web cob-web-bottom-right"
+        src="src/Hard/CardHard2.png">
+      </div>
+      <div class="card-front card-face">
+        <img class="cob-web cob-web-top-left"
+        src="src/Hard/front1.png">
+        <img class="cob-web cob-web-top-right"
+        src="src/Hard/front1.png">
+        <img class="cob-web cob-web-bottom-left"
+        src="src/Hard/front1.png">
+        <img class="cob-web cob-web-bottom-right"
+        src="src/Hard/front1.png">
+        <img class="card-value" src="src/Hard/charac5h.png">
+      </div>
+    </div>
+    <div class="card" id="show11">
+      <div class="card-back card-face">
+        <img class="cob-web cob-web-top-left"
+        src="src/Hard/CardHard2.png">
+        <img class="cob-web cob-web-top-right"
+        src="src/Hard/CardHard2.png">
+        <img class="cob-web cob-web-bottom-left"
+        src="src/Hard/CardHard2.png">
+        <img class="cob-web cob-web-bottom-right"
+        src="src/Hard/CardHard2.png">
+      </div>
+      <div class="card-front card-face">
+        <img class="cob-web cob-web-top-left"
+        src="src/Hard/front1.png">
+        <img class="cob-web cob-web-top-right"
+        src="src/Hard/front1.png">
+        <img class="cob-web cob-web-bottom-left"
+        src="src/Hard/front1.png">
+        <img class="cob-web cob-web-bottom-right"
+        src="src/Hard/front1.png">
+        <img class="card-value" src="src/Hard/charac6h.png">
+      </div>
+    </div>
+    <div class="card" id="show12">
+      <div class="card-back card-face">
+        <img class="cob-web cob-web-top-left"
+        src="src/Hard/CardHard2.png">
+        <img class="cob-web cob-web-top-right"
+        src="src/Hard/CardHard2.png">
+        <img class="cob-web cob-web-bottom-left"
+        src="src/Hard/CardHard2.png">
+        <img class="cob-web cob-web-bottom-right"
+        src="src/Hard/CardHard2.png">
+      </div>
+      <div class="card-front card-face">
+        <img class="cob-web cob-web-top-left"
+        src="src/Hard/front1.png">
+        <img class="cob-web cob-web-top-right"
+        src="src/Hard/front1.png">
+        <img class="cob-web cob-web-bottom-left"
+        src="src/Hard/front1.png">
+        <img class="cob-web cob-web-bottom-right"
+        src="src/Hard/front1.png">
+        <img class="card-value" src="src/Hard/charac6h.png">
+      </div>
+    </div>
+    <div class="card" id="show13">
+      <div class="card-back card-face">
+        <img class="cob-web cob-web-top-left"
+        src="src/Hard/CardHard2.png">
+        <img class="cob-web cob-web-top-right"
+        src="src/Hard/CardHard2.png">
+        <img class="cob-web cob-web-bottom-left"
+        src="src/Hard/CardHard2.png">
+        <img class="cob-web cob-web-bottom-right"
+        src="src/Hard/CardHard2.png">
+      </div>
+      <div class="card-front card-face">
+        <img class="cob-web cob-web-top-left"
+        src="src/Hard/front1.png">
+        <img class="cob-web cob-web-top-right"
+        src="src/Hard/front1.png">
+        <img class="cob-web cob-web-bottom-left"
+        src="src/Hard/front1.png">
+        <img class="cob-web cob-web-bottom-right"
+        src="src/Hard/front1.png">
+        <img class="card-value" src="src/Hard/charac7h.png">
+      </div>
+    </div>
+    <div class="card" id="show14">
+      <div class="card-back card-face">
+        <img class="cob-web cob-web-top-left"
+        src="src/Hard/CardHard2.png">
+        <img class="cob-web cob-web-top-right"
+        src="src/Hard/CardHard2.png">
+        <img class="cob-web cob-web-bottom-left"
+        src="src/Hard/CardHard2.png">
+        <img class="cob-web cob-web-bottom-right"
+        src="src/Hard/CardHard2.png">
+      </div>
+      <div class="card-front card-face">
+        <img class="cob-web cob-web-top-left"
+        src="src/Hard/front1.png">
+        <img class="cob-web cob-web-top-right"
+        src="src/Hard/front1.png">
+        <img class="cob-web cob-web-bottom-left"
+        src="src/Hard/front1.png">
+        <img class="cob-web cob-web-bottom-right"
+        src="src/Hard/front1.png">
+        <img class="card-value" src="src/Hard/charac7h.png">
+      </div>
+    </div>
+    <div class="card" id="show15">
+      <div class="card-back card-face">
+        <img class="cob-web cob-web-top-left"
+        src="src/Hard/CardHard2.png">
+        <img class="cob-web cob-web-top-right"
+        src="src/Hard/CardHard2.png">
+        <img class="cob-web cob-web-bottom-left"
+        src="src/Hard/CardHard2.png">
+        <img class="cob-web cob-web-bottom-right"
+        src="src/Hard/CardHard2.png">
+      </div>
+      <div class="card-front card-face">
+        <img class="cob-web cob-web-top-left"
+        src="src/Hard/front1.png">
+        <img class="cob-web cob-web-top-right"
+        src="src/Hard/front1.png">
+        <img class="cob-web cob-web-bottom-left"
+        src="src/Hard/front1.png">
+        <img class="cob-web cob-web-bottom-right"
+        src="src/Hard/front1.png">
+        <img class="card-value" src="src/Hard/charac8h.png">
+      </div>
+    </div>
+    <div class="card" id="show16">
+      <div class="card-back card-face">
+        <img class="cob-web cob-web-top-left"
+        src="src/Hard/CardHard2.png">
+        <img class="cob-web cob-web-top-right"
+        src="src/Hard/CardHard2.png">
+        <img class="cob-web cob-web-bottom-left"
+        src="src/Hard/CardHard2.png">
+        <img class="cob-web cob-web-bottom-right"
+        src="src/Hard/CardHard2.png">
+      </div>
+      <div class="card-front card-face">
+        <img class="cob-web cob-web-top-left"
+        src="src/Hard/front1.png">
+        <img class="cob-web cob-web-top-right"
+        src="src/Hard/front1.png">
+        <img class="cob-web cob-web-bottom-left"
+        src="src/Hard/front1.png">
+        <img class="cob-web cob-web-bottom-right"
+        src="src/Hard/front1.png">
+        <img class="card-value" src="src/Hard/charac8h.png">
+      </div>
+    </div>
+    <div class="card" id="show17">
+      <div class="card-back card-face">
+        <img class="cob-web cob-web-top-left"
+        src="src/Hard/CardHard2.png">
+        <img class="cob-web cob-web-top-right"
+        src="src/Hard/CardHard2.png">
+        <img class="cob-web cob-web-bottom-left"
+        src="src/Hard/CardHard2.png">
+        <img class="cob-web cob-web-bottom-right"
+        src="src/Hard/CardHard2.png">
+      </div>
+      <div class="card-front card-face">
+        <img class="cob-web cob-web-top-left"
+        src="src/Hard/front1.png">
+        <img class="cob-web cob-web-top-right"
+        src="src/Hard/front1.png">
+        <img class="cob-web cob-web-bottom-left"
+        src="src/Hard/front1.png">
+        <img class="cob-web cob-web-bottom-right"
+        src="src/Hard/front1.png">
+        <img class="card-value" src="src/Hard/charac9h.png">
+      </div>
+    </div>
+    <div class="card" id="show18">
+      <div class="card-back card-face">
+        <img class="cob-web cob-web-top-left"
+        src="src/Hard/CardHard2.png">
+        <img class="cob-web cob-web-top-right"
+        src="src/Hard/CardHard2.png">
+        <img class="cob-web cob-web-bottom-left"
+        src="src/Hard/CardHard2.png">
+        <img class="cob-web cob-web-bottom-right"
+        src="src/Hard/CardHard2.png">
+      </div>
+      <div class="card-front card-face">
+        <img class="cob-web cob-web-top-left"
+        src="src/Hard/front1.png">
+        <img class="cob-web cob-web-top-right"
+        src="src/Hard/front1.png">
+        <img class="cob-web cob-web-bottom-left"
+        src="src/Hard/front1.png">
+        <img class="cob-web cob-web-bottom-right"
+        src="src/Hard/front1.png">
+        <img class="card-value" src="src/Hard/charac9h.png">
+      </div>
+    </div>
+    <div class="card" id="show19">
+      <div class="card-back card-face">
+        <img class="cob-web cob-web-top-left"
+        src="src/Hard/CardHard2.png">
+        <img class="cob-web cob-web-top-right"
+        src="src/Hard/CardHard2.png">
+        <img class="cob-web cob-web-bottom-left"
+        src="src/Hard/CardHard2.png">
+        <img class="cob-web cob-web-bottom-right"
+        src="src/Hard/CardHard2.png">
+      </div>
+      <div class="card-front card-face">
+        <img class="cob-web cob-web-top-left"
+        src="src/Hard/front1.png">
+        <img class="cob-web cob-web-top-right"
+        src="src/Hard/front1.png">
+        <img class="cob-web cob-web-bottom-left"
+        src="src/Hard/front1.png">
+        <img class="cob-web cob-web-bottom-right"
+        src="src/Hard/front1.png">
+        <img class="card-value" src="src/Hard/charac10h.png">
+      </div>
+    </div>
+    <div class="card" id="show20">
+      <div class="card-back card-face">
+        <img class="cob-web cob-web-top-left"
+        src="src/Hard/CardHard2.png">
+        <img class="cob-web cob-web-top-right"
+        src="src/Hard/CardHard2.png">
+        <img class="cob-web cob-web-bottom-left"
+        src="src/Hard/CardHard2.png">
+        <img class="cob-web cob-web-bottom-right"
+        src="src/Hard/CardHard2.png">
+      </div>
+      <div class="card-front card-face">
+        <img class="cob-web cob-web-top-left"
+        src="src/Hard/front1.png">
+        <img class="cob-web cob-web-top-right"
+        src="src/Hard/front1.png">
+        <img class="cob-web cob-web-bottom-left"
+        src="src/Hard/front1.png">
+        <img class="cob-web cob-web-bottom-right"
+        src="src/Hard/front1.png">
+        <img class="card-value" src="src/Hard/charac10h.png">
+      </div>
+    </div>
+    <div class="card" id="show21">
+      <div class="card-back card-face">
+        <img class="cob-web cob-web-top-left"
+        src="src/Hard/CardHard2.png">
+        <img class="cob-web cob-web-top-right"
+        src="src/Hard/CardHard2.png">
+        <img class="cob-web cob-web-bottom-left"
+        src="src/Hard/CardHard2.png">
+        <img class="cob-web cob-web-bottom-right"
+        src="src/Hard/CardHard2.png">
+      </div>
+      <div class="card-front card-face">
+        <img class="cob-web cob-web-top-left"
+        src="src/Hard/front1.png">
+        <img class="cob-web cob-web-top-right"
+        src="src/Hard/front1.png">
+        <img class="cob-web cob-web-bottom-left"
+        src="src/Hard/front1.png">
+        <img class="cob-web cob-web-bottom-right"
+        src="src/Hard/front1.png">
+        <img class="card-value" src="src/Hard/charac11h.png">
+      </div>
+    </div>
+    <div class="card" id="show22">
+      <div class="card-back card-face">
+        <img class="cob-web cob-web-top-left"
+        src="src/Hard/CardHard2.png">
+        <img class="cob-web cob-web-top-right"
+        src="src/Hard/CardHard2.png">
+        <img class="cob-web cob-web-bottom-left"
+        src="src/Hard/CardHard2.png">
+        <img class="cob-web cob-web-bottom-right"
+        src="src/Hard/CardHard2.png">
+      </div>
+      <div class="card-front card-face">
+        <img class="cob-web cob-web-top-left"
+        src="src/Hard/front1.png">
+        <img class="cob-web cob-web-top-right"
+        src="src/Hard/front1.png">
+        <img class="cob-web cob-web-bottom-left"
+        src="src/Hard/front1.png">
+        <img class="cob-web cob-web-bottom-right"
+        src="src/Hard/front1.png">
+        <img class="card-value" src="src/Hard/charac11h.png">
+      </div>
+    </div>
+    <div class="card" id="show23">
+      <div class="card-back card-face">
+        <img class="cob-web cob-web-top-left"
+        src="src/Hard/CardHard2.png">
+        <img class="cob-web cob-web-top-right"
+        src="src/Hard/CardHard2.png">
+        <img class="cob-web cob-web-bottom-left"
+        src="src/Hard/CardHard2.png">
+        <img class="cob-web cob-web-bottom-right"
+        src="src/Hard/CardHard2.png">
+      </div>
+      <div class="card-front card-face">
+        <img class="cob-web cob-web-top-left"
+        src="src/Hard/front1.png">
+        <img class="cob-web cob-web-top-right"
+        src="src/Hard/front1.png">
+        <img class="cob-web cob-web-bottom-left"
+        src="src/Hard/front1.png">
+        <img class="cob-web cob-web-bottom-right"
+        src="src/Hard/front1.png">
+        <img class="card-value" src="src/Hard/charac12h.png">
+      </div>
+    </div>
+    <div class="card" id="show24">
+      <div class="card-back card-face">
+        <img class="cob-web cob-web-top-left"
+        src="src/Hard/CardHard2.png">
+        <img class="cob-web cob-web-top-right"
+        src="src/Hard/CardHard2.png">
+        <img class="cob-web cob-web-bottom-left"
+        src="src/Hard/CardHard2.png">
+        <img class="cob-web cob-web-bottom-right"
+        src="src/Hard/CardHard2.png">
+      </div>
+      <div class="card-front card-face">
+        <img class="cob-web cob-web-top-left"
+        src="src/Hard/front1.png">
+        <img class="cob-web cob-web-top-right"
+        src="src/Hard/front1.png">
+        <img class="cob-web cob-web-bottom-left"
+        src="src/Hard/front1.png">
+        <img class="cob-web cob-web-bottom-right"
+        src="src/Hard/front1.png">
+        <img class="card-value" src="src/Hard/charac12h.png">
+      </div>
+    </div>
+  </div>
+  <!--Add Sandclock Here I Here-->
+  <div class="time-block" id="time-block">
+    <img class="Sandclock" src="src/sandclock2.gif">
+  </div>
+  <script type="text/javascript" src="page2.js"></script>
+</body>
+</html>

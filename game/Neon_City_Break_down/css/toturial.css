@@ -1,0 +1,141 @@
+body{
+	margin: 0;
+	padding: 0;
+	background: url(../image/bg.png);
+	background-position: 0 0;
+	background-repeat: repeat-y;
+	animation: moving 7s infinite alternate;
+}
+
+@keyframes moving{
+	from{
+		background-position: 0 0;
+	}
+	to{
+		background-position: 0 40%;
+	}
+}
+
+.back{
+	position: absolute;
+	bottom: 0;
+	left: 170px;
+	transform: translate(-50%, -50%);
+	font-size: 30px;
+	width: 300px;
+	height: 80px;
+	background: #00072f;
+	text-align: center;
+	line-height: 80px;
+	border-radius: 40px;
+	color: #555;
+	text-transform: uppercase;
+	text-decoration: none;
+	font-family: sans-serif;
+	letter-spacing: 3px;
+	transition: 1s;
+	overflow: hidden;
+}
+
+.back:hover{
+	color: #fff;
+	box-shadow: -15px 0 100px rgba(255,20,152,1), 15px 0 100px rgba(122,0,255,1);
+	text-shadow: 0 0 100px rgba(255, 255, 255, 0.50), 0 0 250px rgba(255, 255, 255, 0.50), 0 0 350px rgba(255, 255, 255, 0.50);
+}
+
+.back:before{
+	content: '';
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 80px;
+	height: 80px;
+	border-radius: 50%;
+	background: rgba(122,0,255,0);
+	filter: blur(10px);
+	transition: 1s;
+	z-index: -1;
+}
+
+.back:hover:before{
+	background: rgba(122,0,255,1);
+	transform: scaleX(5);
+}
+
+.back:after{
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 80px;
+	height: 80px;
+	border-radius: 50%;
+	background: rgba(255,20,152,0);
+	filter: blur(10px);
+	transition: 1s;
+	z-index: -1;
+	mix-blend-mode: lighten;
+}
+
+.back:hover:after{
+	background: rgba(255,20,152,1);
+	transform: scaleX(5);
+}
+
+.attacking{
+	background: #00041d;
+	height: 400px;
+	width: 320px;
+	position: absolute;
+	left: 30%;
+	top: 10%;
+	text-align: center;
+	font-size: 30px;
+	color: #fff;
+	font-family: Impact, Charcoal, sans-serif;
+	border-radius: 5px;
+	box-shadow: 0 0 30px #ee4fe3, 0px 0px 30px #fff;
+	transition: 1s;
+}
+
+.attacking:hover{
+	box-shadow: 0 0 100px #ee4fe3, 0px 0px 100px #fff;
+}
+
+.jumping{
+	background: #00041d;
+	height: 400px;
+	width: 320px;
+	position: absolute;
+	left: 60%;
+	top: 10%;
+	text-align: center;
+	font-size: 30px;
+	color: #fff;
+	font-family: Impact, Charcoal, sans-serif;
+	border-radius: 5px;
+	box-shadow: 0 0 30px #ee4fe3, 0px 0px 30px #fff;
+	transition: 1s;
+}
+
+.jumping:hover{
+	box-shadow: 0 0 100px #ee4fe3, 0px 0px 100px #fff;
+}
+
+@keyframes textcolor{
+	0%   {color: red;}
+  	25%  {color: yellow;}
+  	50%  {color: green;}
+  	100% {color: blue;}
+}
+
+.text{
+	position: fixed;
+	right: 0;
+	top: 700px;
+	text-decoration: none;
+	animation-name: textcolor;
+	animation-duration: 4s;
+	animation-iteration-count: infinite;
+	animation-direction: alternate;
+}

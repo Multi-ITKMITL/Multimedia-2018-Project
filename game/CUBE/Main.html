@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="Chapter/icon.gif" type="image/x-icon" />
+<title>Main Page</title>
+<style>
+  @font-face {
+    font-family: 'TST std letter1';
+    src: url('TSTstdletter1.woff2') format('woff2'),
+        url('TSTstdletter1.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+  body{
+    font-family: 'TST std letter1';
+    background-image: url("bgindex.gif");
+    background-size: cover; 
+}
+* { box-sizing: border-box; }
+
+.column1,.column2,.column3 {
+    top: 10px;
+    float: left;
+    width: 30%;
+    padding: 10px;
+    height: 90vh;
+    border-radius: 1em;
+    margin: 20px;
+    border: 2px solid white;
+    box-shadow: 0px 0px 50px lightgrey;
+    
+}
+
+.icon_game{
+    background-image: url("cube.png");
+    background-position: center;
+    background-size: cover;
+}
+.icon_game, .mode{
+    top: 10px;
+    position: relative;
+    width: 85%;
+    height: 30%;
+    background-color: #000033;
+    margin: auto;
+    border-radius: 1em;
+    box-shadow: 0px 0px 10px black;
+}
+#mode{
+    font-size: 50px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%); 
+}
+.mode{
+    top: 50px;
+    width: 50%;
+    height: 18%;
+    background-color: transparent;
+    box-shadow: 0px 0px 10px black;
+}
+#easy{
+    font-size: 50px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    left: 80px;
+    transform: translate(-50%,-50%); 
+}
+.boxeasy{
+    position: relative;
+    background-color: #339999;
+    top: 85px;
+    width: 85%;
+    height: 80px;
+    box-shadow: 0px 0px 10px #33CC99;
+    border-radius: 0%;
+    left: 30px;
+}
+#normal{
+    font-size: 50px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    left: 116px;
+    transform: translate(-50%,-50%); 
+}
+.boxnormal{
+    position: relative;
+    background-color: #339999;
+    top: 110px;
+    width: 85%;
+    height: 80px;
+    background-color: #CC3333;
+    box-shadow: 0px 0px 5px #CC6633;
+    border-radius: 0%;
+    left: 30px;
+}
+
+.boxeasy:hover{
+    top: 83px;
+}
+.boxeasy:active{
+    top: 87px;
+}
+
+.boxnormal:hover{
+    top: 108px;
+}
+.boxnormal:active{
+    top: 112px;
+}
+p1{
+    color: white;
+    text-shadow: 0px 0px 15px lightgreen;
+}
+#textboss{
+    font-size: 40px;
+    position: absolute; 
+}
+#textboss2{
+    font-size: 40px;
+    position: absolute;
+    top: 90px;
+}
+#boxboss{
+    font-size: 40px;
+    position: absolute;
+    bottom: 60px;
+    left: 550px;
+}
+
+.unit1{
+    height: 120px;
+    width: 9.85%;
+    margin: 1px;
+    animation-name: unit1;
+    animation-duration: 0.7s;
+    animation-iteration-count: infinite;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    position:fixed;
+    left: 250px;
+    top: 360px;
+}
+#textac{
+    font-size: 40px;
+    position: absolute;
+    top: 90px;
+    right: 120px;
+}
+#middletext{
+    font-size: 100px;
+    position: absolute;
+    bottom: 250px;
+    right: 100px;
+}
+
+@keyframes unit1 {
+    0%      {background-image: url("player/C1.png");}
+    16%     {background-image: url("player/C2.png");}
+    32%     {background-image: url("player/C3.png");}
+    48%     {background-image: url("player/C4.png");}
+    64%     {background-image: url("player/C5.png");}
+    80%     {background-image: url("player/C6.png");}
+    96%     {background-image: url("player/C7.png");}
+    100%    {background-image: url("player/C1.png");}
+}
+
+.unit2{
+    height: 120px;
+    width: 9.85%;
+    margin: 1px;
+    animation-name: unit2;
+    animation-duration: 0.7s;
+    animation-iteration-count: infinite;
+    background-image: url("player/A1.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: fixed;
+    left: 300px;
+    top: 465px;  
+}
+
+@keyframes unit2 { /* for boss - enermy */
+    0%      {background-image: url("player/A1.png");}
+    16%     {background-image: url("player/A2.png");}
+    32%     {background-image: url("player/A3.png");}
+    48%     {background-image: url("player/A4.png");}
+    64%     {background-image: url("player/A5.png");}
+    80%     {background-image: url("player/A6.png");}
+    96%     {background-image: url("player/A7.png");}
+    100%    {background-image: url("player/A1.png");}
+}
+
+
+.boss{
+    height: 360px;
+    width: 300px;
+    margin: 1px;
+    animation-name: boss;
+    animation-duration: 1.4s;
+    animation-iteration-count: infinite;
+    background-image: url("Enermy/s2.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: absolute;
+    left: 550px;
+    top: 150px;
+
+}
+
+@keyframes boss { /* for boss - enermy */
+    0%      {background-image: url("Enermy/s1.png");}
+    10%     {background-image: url("Enermy/s2.png");}
+    20%     {background-image: url("Enermy/s3.png");}
+    30%     {background-image: url("Enermy/s4.png");}
+    40%     {background-image: url("Enermy/s5.png");}
+    50%     {background-image: url("Enermy/s6.png");}
+    60%     {background-image: url("Enermy/s7.png");}
+    70%     {background-image: url("Enermy/s8.png");}
+    80%     {background-image: url("Enermy/s9.png");}
+    90%     {background-image: url("Enermy/s10.png");}
+    100%    {background-image: url("Enermy/s1.png");}
+}
+
+
+</style>
+</head>
+
+<body>
+
+<div class="row">
+  <div class="column1">
+    <div class="icon_game"></div>
+
+    <div class="mode">
+        <p1 id="mode">MODE</p1>
+    </div>
+
+    <div class="boxeasy">
+        <a href="Game1-easy.html">
+        <p1 id="easy" >EASY</p1>
+        <div class="unit1"></div>
+    </a>
+    </div>
+
+    <div class="boxnormal">
+            <a href="Game1-normal.html">
+        <p1 id="normal">NORMAL</p1>
+        <div class="unit2"></div>
+    </a>
+    </div>
+  </div>
+
+  <div class="column2">
+        <div class="boss"></div>
+        <p1 id="textboss">NAME: UROBOROS</p1><br>
+        <p1 id="textboss2">HP: 1000</p1><br>
+    <div class="indexboss">
+        <p1 id="boxboss">INDEX (SOON)</p1>
+    </div>
+
+  </div>
+
+  <div class="column3">
+    <div class="achievement">
+        <p1 id="textac">ACHIEVEMENT</p1>
+    </div>
+    
+    <div class="list">
+        <p1 id="middletext">SOON!</p1>
+    </div>
+
+
+
+  </div>
+</div>
+
+
+
+</body>
+</html>

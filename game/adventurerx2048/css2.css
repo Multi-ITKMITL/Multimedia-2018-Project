@@ -1,0 +1,23 @@
+body {
+  background-image: url("materials/frame2-1.gif");
+  background-size: 100%; 
+}
+img {
+  width: 50%;
+  margin: auto;
+  display: block;
+  margin-top: 10vh;
+}
+.arrow {
+  position: absolute;
+  width: 6%;
+  top: 68vh;
+  right: 32%;
+}
+.arrow:hover{
+  opacity: 0.5;
+}
+p {
+  size: 30px;
+  color: black;
+}

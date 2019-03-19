@@ -1,0 +1,113 @@
+.theBoard{
+    display:inline-block;
+    width:2700px;
+    height:700px;
+    position:absolute;
+    overflow:hidden;
+    left: 290px;
+    top: 10px;
+}
+box{
+    display:inline-block;
+    width:140px;
+    height:140px;
+    position:absolute;
+    left:var(--x);
+    top:var(--y);
+    background-size: cover;
+    text-align: center;
+    font-size: 30px;
+    color: white;
+    opacity: 0.6;
+}
+
+box[y="1"]{--y:0px;}
+box[y="1"]{--y:140px;}
+box[y="2"]{--y:280px;}
+box[y="3"]{--y:420px;}
+box[y="4"]{--y:560px;}
+
+box[x="0"]{--x:0px;}
+box[x="1"]{--x:140px;}
+box[x="2"]{--x:280px;}
+box[x="3"]{--x:420px;}
+box[x="4"]{--x:560px;}
+box[x="5"]{--x:700px;}
+box[x="6"]{--x:840px;}
+box[x="7"]{--x:980px;}
+box[x="8"]{--x:1120px;}
+box[x="9"]{--x:1260px;}
+box[x="10"]{--x:1400px;}
+box[x="11"]{--x:1540px;}
+box[x="12"]{--x:1680px;}
+box[x="13"]{--x:1820px;}
+box[x="14"]{--x:1960px;}
+box[x="15"]{--x:2100px;}
+box[x="16"]{--x:2240px;}
+box[x="17"]{--x:2380px;}
+
+box#b0{background-image: url("../imgs/board/board_00.png");}
+box#b1{background-image: url("../imgs/board/board_01.png");}
+box#b2{background-image: url("../imgs/board/board_02.png");}
+box#b3{background-image: url("../imgs/board/board_03.png");}
+box#b4{background-image: url("../imgs/board/board_04.png");}
+box#b5{background-image: url("../imgs/board/board_05.png");}
+box#b6{background-image: url("../imgs/board/board_06.png");}
+box#b7{background-image: url("../imgs/board/board_07.png");}
+box#b8{background-image: url("../imgs/board/board_08.png");}
+box#b9{background-image: url("../imgs/board/board_09.png");}
+box#b10{background-image: url("../imgs/board/board_10.png");}
+box#b11{background-image: url("../imgs/board/board_11.png");}
+box#b12{background-image: url("../imgs/board/board_12.png");}
+box#b13{background-image: url("../imgs/board/board_13.png");}
+box#b14{background-image: url("../imgs/board/board_14.png");}
+box#b15{background-image: url("../imgs/board/board_15.png");}
+box#b16{background-image: url("../imgs/board/board_16.png");}
+box#b17{background-image: url("../imgs/board/board_17.png");}
+box#b18{background-image: url("../imgs/board/board_18.png");}
+box#b19{background-image: url("../imgs/board/board_19.png");}
+box#b20{background-image: url("../imgs/board/board_20.png");}
+box#b21{background-image: url("../imgs/board/board_21.png");}
+box#b22{background-image: url("../imgs/board/board_22.png");}
+box#b23{background-image: url("../imgs/board/board_23.png");}
+box#b24{background-image: url("../imgs/board/board_24.png");}
+box#b25{background-image: url("../imgs/board/board_25.png");}
+box#b26{background-image: url("../imgs/board/board_26.png");}
+box#b27{background-image: url("../imgs/board/board_27.png");}
+box#b28{background-image: url("../imgs/board/board_28.png");}
+box#b29{background-image: url("../imgs/board/board_29.png");}
+box#b30{background-image: url("../imgs/board/board_30.png");}
+box#b31{background-image: url("../imgs/board/board_31.png");}
+box#b32{background-image: url("../imgs/board/board_32.png");}
+box#b33{background-image: url("../imgs/board/board_33.png");}
+box#b34{background-image: url("../imgs/board/board_34.png");}
+box#b35{background-image: url("../imgs/board/board_35.png");}
+box#b36{background-image: url("../imgs/board/board_36.png");}
+box#b37{background-image: url("../imgs/board/board_37.png");}
+box#b38{background-image: url("../imgs/board/board_38.png");}
+box#b39{background-image: url("../imgs/board/board_39.png");}
+box#b40{background-image: url("../imgs/board/board_40.png");}
+box#b41{background-image: url("../imgs/board/board_41.png");}
+box#b42{background-image: url("../imgs/board/board_42.png");}
+box#b43{background-image: url("../imgs/board/board_43.png");}
+box#b44{background-image: url("../imgs/board/board_44.png");}
+box#b45{background-image: url("../imgs/board/board_45.png");}
+box#b46{background-image: url("../imgs/board/board_46.png");}
+box#b47{background-image: url("../imgs/board/board_47.png");}
+box#b48{background-image: url("../imgs/board/board_48.png");}
+box#b49{background-image: url("../imgs/board/board_49.png");}
+box#b50{background-image: url("../imgs/board/board_50.png");}
+box#b51{background-image: url("../imgs/board/board_51.png");}
+box#b52{background-image: url("../imgs/board/board_52.png");}
+box#b53{background-image: url("../imgs/board/board_53.png");}
+box#b54{background-image: url("../imgs/board/board_54.png");}
+box#b55{background-image: url("../imgs/board/board_55.png");}
+box#b56{background-image: url("../imgs/board/board_56.png");}
+box#b57{background-image: url("../imgs/board/board_57.png");}
+box#b58{background-image: url("../imgs/board/board_58.png");}
+box#b59{background-image: url("../imgs/board/board_59.png");}
+
+
+
+
+

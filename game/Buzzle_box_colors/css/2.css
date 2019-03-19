@@ -1,0 +1,243 @@
+@font-face {
+  src: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/455279/blackline.ttf") format("truetype");
+}
+body{
+	background-image: url("../img/ple.gif");
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-attachment: fixed;
+	-o-background-size: 100% 100%, auto;
+	-moz-background-size: 100% 100%, auto;
+	-webkit-background-size: 100% 100%, auto;
+	background-size: 100% 100%, auto;
+	color: #E6E6FA;
+}
+/*ปรับแต่งตัวอักษรที่อยู่ในกล่อง */
+a{
+	font-family: 'ZCOOL QingKe HuangYou', cursive;
+	display: block;
+	margin:auto;
+	font-size: 25px;
+	text-decoration:none;
+	color: #CCFFCC;
+
+}
+/*ปรับแต่งรูปภาพ ผู้หญิงฟัวชมพูฟ้า*/
+#img1{
+	margin: auto;
+	width: 500px;
+	height: 1000px;
+	left: 50%;
+	top: -100px;
+	position:absolute;
+
+}
+/*ปรับแต่งรูปโลโก้มุมบนซ้าย*/
+#img2{
+	margin: auto;
+	width: 25%;
+	height: 25%;
+	top: 10px;
+	left: 10px;
+	position:absolute;
+	transition: 2s;
+	animation: img 2s infinite ease-in alternate;
+}
+/*ตั้งให้เมื่อเอาเมาส์ไปชีที่รูปจะเรื่มอนิเมชั่น*/
+#img1:hover{
+	transition: 2s;
+	left: 55%;
+}
+/*สร้างกล่อง ของ playgame*/
+.box {
+	flex-wrap: wrap;
+  position: absolute;
+  top: 530px;
+  left: 30%;
+  width: 100px;
+  height: 100px;
+  perspective: 800;
+}
+/*ตั้งให้เมื่อเอาเมาส์ชี้จะเริ่มอนิเมชั่น*/
+.box:hover{
+	transform-style: preserve-3d;
+  will-change: transform;
+  animation: box-3d 12s linear Infinite;
+
+}
+/*สร้างกล่อง ของ howto*/
+.box1{
+	flex-wrap: wrap;
+  position: absolute;
+  top: 530px;
+  left: 20%;
+  width: 100px;
+  height: 100px;
+  perspective: 800;
+}
+/*ตั้งให้เมื่อเอาเมาส์ชี้จะเริ่มอนิเมชั่น*/
+.box1:hover{
+	transform-style: preserve-3d;
+  will-change: transform;
+  animation: box-3d 12s linear Infinite;
+
+}
+/*ปรับแต่งตัวอักษรที่เขียนว่า BUUZLE BOX COLOR ซึ่งเป็นชื่อเกมส์*/
+h1{
+	flex-wrap: wrap;
+	background: linear-gradient(to left,hsl(187, 100%, 50%),hsl(187, 96%, 45%),#ffe500); /*ทำไล่สี*/
+	-webkit-background-clip: text;   /*เพราีสีที่ทำเป็นไล่สีตอนแรกมันจะออกมาคล้านกล่องล้อมรอบเลยต้องใช้โค้ดพวกนี้ให้สีมันไปอยู่ในแท็ก*/
+  -webkit-text-fill-color: transparent;/*เพราีสีที่ทำเป็นไล่สีตอนแรกมันจะออกมาคล้านกล่องล้อมรอบเลยต้องใช้โค้ดพวกนี้ให้สีมันไปอยู่ในแท็ก*/
+	margin-top: 20vh;
+	font-size: 140px;
+	position: absolute;
+	left: 15%;
+	font-family: 'ZCOOL QingKe HuangYou', cursive;
+
+}
+h1:hover{
+	transition: 2s;
+	left: 20%;
+}
+canvas {
+  position: fixed;
+  width: 100%;
+  height: 100%
+}
+
+.item {
+	opacity:0.6; /*ทำให้สีกล่องโปร่งใส*/
+  position: absolute;
+  width: 100%;
+  height: 100%;}
+.item:nth-child(1) {
+	background-color: #FFA600;
+	transform: translateZ(50px);
+  }
+  .item:nth-child(2) {
+	background-color: #6AC239;
+	transform: translateZ(-50px);
+  }
+.item:nth-child(3) {
+	background-color: #258BFD;
+	transform: rotateY(90deg) translateZ(50px);
+  }
+.item:nth-child(4) {
+	background-color: #E3676F;
+	transform: rotateY(-90deg) translateZ(50px);
+  }
+.item:nth-child(5) {
+	background-color: #FFEA37;
+	transform: rotateX(90deg) translateZ(50px);
+  }
+.item:nth-child(6) {
+	background-color: #2FDACC;
+	transform: rotateX(-90deg) translateZ(50px);
+  }
+}
+#contain{
+	z-index: 1000;
+  font-family: 'Shojumaru', cursive;
+  font-size: 4vh;
+  color: #1a1a1a;
+  text-align: center;
+  animation-name: pulse;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+  margin: 2vh 0 1vh 0;
+}
+#button{
+	flex-wrap: wrap;
+  font-family: 'Shojumaru', cursive;
+  font-size:5vh;
+  height: 10px
+  width: 10px;
+  top: 10px;
+  color: #1a1a1a;
+  text-align: center;
+  border-radius: 200px;
+  left: 90%;
+  margin: 0;
+  position: relative;
+  align-items: center;
+}
+#img{
+  flex-wrap: wrap;
+  width: 60px;
+  height: 50px;
+  z-index: 1000;
+}
+#button:hover {
+  }
+
+.overlay {
+	z-index: 1000;
+  height: 100%;
+  width: 100%;
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  top: 0;
+  left: 0;
+  background-color:  rgb(0,0,0);
+  background-color: rgba(0,0,0, 0.9);
+}
+
+.overlay-content{
+  position: absolute;
+  top: 25%;
+  width: 100%;
+  text-align: center;
+  font-size: 30px;
+  margin-top: 30px;
+  color : #818181;
+}
+.overlay-content:hover, .overlay-content:focus {
+	z-index: 1000;
+  color: #f1f1f1;
+}
+.overlay a {
+	z-index: 1000;
+  padding: 8px;
+  text-decoration: none;
+  font-size: 36px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.overlay a:hover, .overlay a:focus {
+	z-index: 1000;
+  color: #f1f1f1;
+}
+
+.overlay .closebtn {
+  position: absolute;
+  top: 20px;
+  right: 45px;
+  font-size: 60px;
+}/*
+สร้างอนิเมะชั่นกล่องหมุ่น 360องศา*/
+@keyframes box-3d {
+  100% {
+	transform: rotateY(360deg) rotate(720deg);
+  }
+}
+@media screen and (max-height: 450px) {
+  .overlay a {font-size: 20px }
+  .overlay .closebtn {
+  font-size: 40px;
+  top: 15px;
+  right: 35px;
+
+  }
+}
+@keyframes img{
+  from{
+    transform: scale(0.8);
+  }
+  to{
+    transform: scale(1);
+
+  }
+}
